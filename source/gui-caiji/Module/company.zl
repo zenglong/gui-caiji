@@ -1,0 +1,263 @@
+use builtin;
+def TRUE 1;
+def FALSE 0;
+def NORMAL 0;
+def RED 1;
+def GREEN 2;
+
+password_random_array = array('a','b','c','d','e','f','g','h',
+			'i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+company_sex_pattern = '姓名：</(.*?)</'; //匹配性别
+company_department_pattern = '部门：</span>(.*?)\\s*?</'; //匹配部门规则
+company_office_pattern = '职位：</span>(.*?)\\s*?</'; //匹配职位规则
+company_mobile_pattern = '联系电话：</span>(.*?)</'; //匹配手机号码的规则
+company_type_random_array = array('企业单位','事业单位或社会团体','个体经营'); //公司类型随机值
+company_stand_random_array = array('1-49人',
+							'50-99人',
+							'100-499人',
+							'500-999人',
+							'1000-3000人',
+							'3000-5000人',
+							'5000-10000人',
+							'10000人以上'); //随机的公司规模数组
+company_money_random_array = array('20',
+							'30',
+							'40',
+							'50',
+							'60',
+							'70',
+							'80',
+							'90',
+							'100',
+							'150',
+							'200',
+							'300',
+							'500'); //随机的公司注册资本数组
+company_mailcode_pattern = '邮.*?编.*?</.*?>\\s*?<.*?>(\\d+)</';  //公司邮编
+company_fax_pattern = '传.*?真.*?</.*?>\\s*?<.*?>(.*?)</'; //公司传真
+company_website_pattern = '公司主页.*?</.*?>.*?>http://(.*?)</a>'; //公司主页规则
+company_introduce_pattern = 'company-more".*?>\\s*(.*?)\\s*<span id="closed-more"'; //公司介绍规则
+//company_business_pattern = '<td>主营行业：</.*?>\\s*?<.*?>(.*)</'; //公司主营行业
+company_business_pattern = '主营行业</td>.*?>(.*?)</'; //公司主营行业
+company_server_pattern = '>主营产品或服务.*?</a></td>.*?<.*?>(.*?)</'; //公司主营产品或服务
+company_thumb_pattern = 'img src="(.*?)" alt="公司图片"'; //公司缩略图规则
+
+fun gen_random_password() //生成6位的随机密码
+	global password_random_array;
+	str = '';
+	for(i=0;i<6;i++)
+		j = bltRandom()%26;
+		str += password_random_array[j];
+	endfor
+	return str;
+endfun
+
+fun company_get_sex() //获取联系人的性别
+	global company_sex_pattern,sell_contact_content;
+	if(bltRegexMatchFirst(company_sex_pattern,1,sell_contact_content,&match,1) >=0)
+		if(bltStrFind(match,'先生') >=0)
+			return '1';
+		elif(bltStrFind(match,'女士') >=0)
+			return '2';
+		else
+			ret = '';
+		endif
+	endif
+	if(ret == '')
+		return bltIntToStr(bltRandom()%2 + 1 , 0, '0');
+	endif
+endfun
+
+fun company_get_department() //获取所在部门
+	global company_department_pattern,sell_contact_content;
+	if(bltRegexMatchFirst(company_department_pattern,1,sell_contact_content,&match,TRUE) >=0)
+		match = bltStrReplace(' ','',match);
+		match = bltStrReplace('\t','',match);
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun company_get_office() //获取职位
+	global company_office_pattern,sell_contact_content;
+	if(bltRegexMatchFirst(company_office_pattern,1,sell_contact_content,&match,TRUE) >=0)
+		match = bltStrReplace(' ','',match);
+		match = bltStrReplace('\t','',match);
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun company_get_mobile() //获取手机号码
+	global company_mobile_pattern,sell_contact_content;
+	if(bltRegexMatchFirst(company_mobile_pattern,1,sell_contact_content,&match,0) >=0)
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun company_get_random_type() //获取公司类型
+	global company_type_random_array;
+	j = bltRandom()%3;
+	return company_type_random_array[j];
+endfun
+
+fun company_get_random_stand() //获取公司规模
+	global company_stand_random_array;
+	j = bltRandom()%8;
+	return company_stand_random_array[j];
+endfun
+
+fun company_get_random_money() //获取公司注册资本
+	global company_money_random_array;
+	j = bltRandom()%13;
+	return company_money_random_array[j];
+endfun
+
+fun company_get_random_year() //获取随机的公司成立年份
+	j = bltRandom()%10 + 4; //04年到13年
+	return bltIntToStr(2000+j,0,'0');
+endfun
+
+fun company_get_mailcode() //获取公司邮编
+	global company_mailcode_pattern,sell_contact_old_content;
+	if(bltRegexMatchFirst(company_mailcode_pattern,1,sell_contact_old_content,&match,0) >=0)
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun company_get_fax() //获取公司传真
+	global company_fax_pattern,sell_contact_old_content;
+	if(bltRegexMatchFirst(company_fax_pattern,1,sell_contact_old_content,&match,0) >=0)
+		match = bltStrReplace('086','',match);
+		match = bltRegexReplace("/.*?$","",
+						match,0);
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun company_get_website() //获取公司网址
+	global company_website_pattern,sell_contact_old_content;
+	if(bltRegexMatchFirst(company_website_pattern,1,sell_contact_old_content,&match,1) >=0)
+		match = bltStrReplace('/','',match);
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun company_get_introduce() //获取公司介绍
+	global company_introduce_pattern,company_info_content;
+	if(bltRegexMatchFirst(company_introduce_pattern,1,company_info_content,&match,TRUE) >=0)
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun company_get_business() //获取公司主营行业
+	global company_business_pattern,company_info_content;
+	if(bltRegexMatchFirst(company_business_pattern,1,company_info_content,&match,1) >=0)
+		match = bltStrReplace(';','|',match);
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun company_get_server() //获取公司主营产品或服务
+	global company_server_pattern,company_info_content;
+	if(bltRegexMatchFirst(company_server_pattern,1,company_info_content,&match,1) >=0)
+		match = bltStrReplace(';','|',match);
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun company_get_thumb() //获取公司缩略图
+	global company_thumb_pattern,company_info_content;
+	if(bltRegexMatchFirst(company_thumb_pattern,1,company_info_content,&match,FALSE) >=0)
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun company_PostDataToWeb() //发布公司数据到网站，添加会员
+	global caiji_url,catid,company_catid,caiji_postfileName;
+	if(company_catid == "")
+		company_catid = bltGetCompanyCatid(); //获取公司的分类ID
+		if(company_catid == "")
+			company_catid = "3"; //默认公司分类ID
+		endif
+	endif
+	printf('company_catid:'+company_catid,GREEN); //debug
+	url = "http://" + caiji_url + "/"+caiji_postfileName;
+	forward = "http://"+ caiji_url +"/"+caiji_postfileName+"?isActionOk=yes";
+	printf('发布公司信息中...',GREEN);
+	thumb = IMG.Post(bltSqlGetString('company_thumb'));
+	introduce = IMG.PostAll(bltSqlGetString('company_introduce'));
+	if(bltGetMenuCheck("图片下载到本地再上传"))
+		remote = '';
+	else
+		remote = thumb;
+	endif
+	ret = bltPostData(url,array('moduleid','2',
+						'file','index',
+						'action','add',
+						"member[regid]",'6',
+						"member[username]",bltSqlGetString('member'),
+						"member[passport]",bltSqlGetString('member'),
+						"member[password]",bltSqlGetString('random_password'),
+						"member[cpassword]",bltSqlGetString('random_password'),
+						"member[email]",bltSqlGetString('email'),
+						"member[truename]",bltSqlGetString('contactname'),
+						"member[gender]",bltSqlGetString('company_sex'),
+						"member[areaid]",bltSqlGetString('areaid'),
+						"member[department]",bltSqlGetString('company_department'),
+						"member[career]",bltSqlGetString('company_office'),
+						"member[mobile]",bltSqlGetString('company_mobile'),
+						"member[qq]",'',
+						"member[ali]",bltSqlGetString('member'),
+						"member[msn]",'',
+						"member[skype]",'',
+						"member[company]",bltSqlGetString('company'),
+						"member[type]",bltSqlGetString('company_type'),
+						"member[thumb]",thumb,
+						"remote",remote,
+						"cates",bltIntToStr(company_catid,0,'0'),
+						"member[catid]",','+bltIntToStr(company_catid,0,'0')+',',
+						"member[business]",bltSqlGetString('company_business'),
+						"member[mode]",'制造商',
+						"member[size]",bltSqlGetString('company_stand'),
+						"member[regunit]",'人民币',
+						"member[capital]",bltSqlGetString('company_money'),
+						"member[regyear]",bltSqlGetString('company_year'),
+						"member[address]",bltSqlGetString('areaname'),
+						"member[postcode]",bltSqlGetString('company_mailcode'),
+						"member[telephone]",bltSqlGetString('phone'),
+						"member[fax]",bltSqlGetString('company_fax'),
+						"member[mail]",bltSqlGetString('email'),
+						"member[homepage]",bltSqlGetString('company_website'),
+						"member[sell]",bltSqlGetString('company_server'),
+						"member[buy]",'',
+						"member[mail]",bltSqlGetString('email'),
+						"member[introduce]",introduce,
+						"member[edittime]",'1',
+						"submit","确定"
+						),&output);
+	//bltInfoBox(output); //debug
+	//bltExit("debug...");
+	
+	if(ret > 0)
+		if(bltRegexMatchFirst('<div class="head">.*?<div.*?>(提示信息)</',1,output,&match,1) < 0)
+			printf('公司信息发布成功！\n',GREEN);
+		else
+			if(bltRegexMatchFirst('<div class="content">\\s*?(.*?)\\s*?<div',1,output,&match,1) >= 0)
+				printf('公司信息发布失败！原因：' + match + '\n',RED);
+			else
+				printf('公司信息发布失败！原因未知，请在公司相关脚本中使用print或printf或bltInfoBox等进行调试分析\n' ,RED);
+			endif
+		endif
+	else
+		printf('公司信息发布未知！\n',RED);
+	endif
+endfun

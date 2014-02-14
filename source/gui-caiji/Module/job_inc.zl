@@ -1,0 +1,110 @@
+use builtin;
+def TRUE 1;
+def FALSE 0;
+def NORMAL 0;
+def RED 1;
+def GREEN 2;
+
+char_random_array = array('a','b','c','d','e','f','g','h',
+			'i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+/*当前页下面的分页链接规则*/
+job_page_links_pattern = 'a\\s*?href=(["|\'])([^"\' ]+)\\1\\s*?class="orange1"\\s*?onclick="zzSearch\\.jumpPage\\(\\s*?this\\.href\\s*?\\);return false;"\\s*?>\\d+';
+/*当前页面中内容的链接规则*/
+job_content_links_pattern = 'href=(["|\']?)(http://search\\.51job\\.com/job/[^,]+,c\\.html)\\1';
+job_title_pattern = '<title>【(.*?)】[^<]+</title>'; //标题规则
+job_total_pattern = '>招聘人数：</td><td class="txt_2">([^<]+)</td>'; //招聘总数
+job_education_pattern = '学[^历]+历：</td><td class="txt_2">([^<]+)</td>'; //学历
+job_experience_pattern = '工作年限：</td><td class="txt_2">([^<]+)</td>'; //工作年限
+job_content_pattern = '职位描述:</strong><br/>\\s*?<div style="padding-bottom:30px;">(.*?)</div></td>'; //职位描述
+job_cont_company_pattern = '<p class="graybttopbg"></p>\\s*?<div class="jobs_txt">\\s*?(<p class="txt_font">.*?</p>)\\s*?</div>\\s*?</div>\\s*?<div class="graybott">'; //公司说明
+job_cont_comp_replace_pattern = '<a[^>]+?>.*?发送到手机\\s*?</a>'; //公司说明中需要进行替换的内容
+job_areaid_pattern = '工作地点：</td><td class="txt_2">([^<]+)</td>'; //工作地点
+
+fun gen_random_chars() //生成6位的随机字符串
+	global char_random_array;
+	str = '';
+	for(i=0;i<8;i++)
+		j = bltRandom()%26;
+		str += char_random_array[j];
+	endfor
+	return str;
+endfun
+
+fun job_get_title()
+	global job_title_pattern,job_department,remote_content;
+	if(bltRegexMatchFirst(job_title_pattern,1,remote_content,&title,0) >=0) //匹配标题
+		bltRegexMatchFirst('，(.*?)$',1,title,&job_department,1); //得到部门
+		return bltTrim(title);
+	endif
+	return '';
+endfun
+
+fun job_get_total()
+	global job_total_pattern,remote_content;
+	if(bltRegexMatchFirst(job_total_pattern,1,remote_content,&match,0) >=0) //招聘总数
+		if(match == '')
+			return '0';
+		endif
+		return bltTrim(match);
+	endif
+	return '0';
+endfun
+
+fun job_get_education()
+	global job_education_pattern,remote_content;
+	if(bltRegexMatchFirst(job_education_pattern,1,remote_content,&match,0) >=0) //学历
+		if(bltStrFind(match,'不限') >= 0)
+			return '0';
+		elif(bltStrFind(match,'大专') >= 0)
+			return '3';
+		elif(bltStrFind(match,'本科') >= 0)
+			return '4';
+		elif(bltStrFind(match,'中专') >= 0)
+			return '2';
+		elif(bltStrFind(match,'高中') >= 0)
+			return '2';
+		endif
+	endif
+	return '0';
+endfun
+
+fun job_get_experience()
+	global job_experience_pattern,remote_content;
+	if(bltRegexMatchFirst(job_experience_pattern,1,remote_content,&match,1) >=0) //工作年限
+		if(bltStrFind(match,'不限') >= 0)
+			return '0';
+		elif(bltStrFind(match,'两') >= 0)
+			return '2';
+		elif(bltStrFind(match,'三') >= 0)
+			return '3';
+		elif(bltStrFind(match,'一') >= 0)
+			return '1';
+		elif(bltStrFind(match,'四') >= 0)
+			return '4';
+		elif(bltStrFind(match,'五') >= 0)
+			return '5';
+		endif
+	endif
+	return '0';
+endfun
+
+fun job_get_content()
+	global job_content_pattern,job_cont_company_pattern,job_cont_comp_replace_pattern,remote_content;
+	if(bltRegexMatchFirst(job_content_pattern,1,remote_content,&match,1) >=0) //职位描述
+		match = bltTrim(match);
+		if(bltRegexMatchFirst(job_cont_company_pattern,1,remote_content,&match2,1) >=0) //公司简介
+			match2 = bltRegexReplace(job_cont_comp_replace_pattern,"",match2,1);
+			match += bltTrim(match2);
+		endif
+		return match;
+	endif
+	return '';
+endfun
+
+fun job_get_areaid() //工作地点
+	global job_areaid_pattern,remote_content;
+	if(bltRegexMatchFirst(job_areaid_pattern,1,remote_content,&match,1) >=0)
+		return bltTrim(bltGetAreaID(match));
+	endif
+	return '0';
+endfun

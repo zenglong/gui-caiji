@@ -1,0 +1,173 @@
+use builtin;
+def TRUE 1;
+def FALSE 0;
+def NORMAL 0;
+def RED 1;
+def GREEN 2;
+
+/*当前页下面的分页链接规则*/
+exhibit_page_links_pattern = 'href=(["|\']?)(exhi_search\\.aspx\\?[^"\' ]+page=\\d+)\\1';
+/*当前页面中内容的链接规则*/
+exhibit_content_links_pattern = 'href=(["|\']?)(/Exhibition-\\d+.html)\\1';
+exhibit_title_pattern = '<div class="hangye_t_wenzi">(.*?)</'; //标题规则
+exhibit_start_pattern = '展览时间：</strong>(.*?)---.*?</'; //展会起始时间
+exhibit_end_pattern = '展览时间：</strong>.*?---(.*?)</'; //展会结束时间
+exhibit_area_pattern = '公司地址：(.*?)</'; //展会地区
+exhibit_position_pattern = '公司地址：(.*?)</'; //联系地址
+exhibit_name_pattern = '会展场馆：</strong>(.*?)</'; //会展场馆
+exhibit_content_pattern = '展会概述.*?<p class="suoj lg18">(.*?)</p'; //会展描述
+//exhibit_cont_replace_pattern = '<h3>\\s*?广告费用\\s*?</h3>.*<h3>\\s*?其他招展联系方式\\s*?</h3>'; //会展描述中需要去掉的部分
+exhibit_sponsor_pattern = '主办单位：.*?<p>(.*?)</'; //主办
+exhibit_undertaker_pattern = '承办单位：.*?<p>(.*?)</'; //承办
+exhibit_website_pattern = '网 &nbsp;&nbsp;&nbsp;&nbsp; 址：([^<]+)<'; //网址
+exhibit_telephone_pattern = '固定电话：(.*?)</'; //联系电话
+exhibit_mobile_pattern = '手(&nbsp;)+机：(.*?)</'; //移动电话
+exhibit_postcode_pattern = '邮政编码：([^<]+)<br'; //邮政编码
+exhibit_fax_pattern = '联系传真：(.*?)<br'; //传真
+exhibit_email_pattern = '电子邮件：<a href="[^"]+">([^<]+)</a>'; //电子邮件
+
+fun exhibit_get_title()
+	global exhibit_title_pattern,remote_content;
+	if(bltRegexMatchFirst(exhibit_title_pattern,1,remote_content,&title,0) >=0) //匹配标题
+		return bltTrim(title);
+	endif
+	return '';
+endfun
+
+fun exhibit_get_start()
+	global exhibit_start_pattern,remote_content;
+	if(bltRegexMatchFirst(exhibit_start_pattern,1,remote_content,&match,0) >=0) //展会起始时间
+		match = bltStrReplace('/','-',match);
+		//match = bltStrReplace('月','-',match);
+		//match = bltStrReplace('日','',match);
+		if(bltRegexMatchFirst('-(\\d)-',1,match,&mid,0) >= 0) //将其扩充到最短9个字符，防止DT错误处理
+			match = bltRegexReplace('-\\d-','-0' + mid + '-',match,0);
+		endif
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun exhibit_get_end()
+	global exhibit_end_pattern,remote_content;
+	if(bltRegexMatchFirst(exhibit_end_pattern,1,remote_content,&match,0) >=0) //展会结束时间
+		//bltRegexMatchFirst(exhibit_end_pattern,2,remote_content,&end,0);
+		//match += end;
+		match = bltStrReplace('/','-',match);
+		/*match = bltStrReplace('年','-',match);
+		match = bltStrReplace('月','-',match);
+		match = bltStrReplace('日','',match);*/
+		match = bltStrReplace('\r','',match);
+		match = bltStrReplace('\n','',match);
+		if(bltRegexMatchFirst('-(\\d)-',1,match,&mid,0) >= 0) //将其扩充到最短9个字符，防止DT错误处理
+			match = bltRegexReplace('-\\d-','-0' + mid + '-',match,0);
+		endif
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun exhibit_get_areaid()
+	global exhibit_area_pattern,exhibit_position_pattern,exhibit_city,remote_content;
+	if(bltRegexMatchFirst(exhibit_area_pattern,1,remote_content,&match,0) >=0) //匹配地区
+		exhibit_city = bltGetAreaName_NoRandom(match,''); //展出城市
+		if(exhibit_city == '')
+			exhibit_city = bltTrim(match);
+		endif
+		areaid = bltGetAreaID_NoRandom(match);
+		if(areaid != "0")
+			return areaid;
+		endif
+	endif
+	return '0';
+endfun
+
+fun exhibit_get_position()
+	global exhibit_position_pattern,remote_content;
+	if(bltRegexMatchFirst(exhibit_position_pattern,1,remote_content,&match,0) >=0) //联系地址
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun exhibit_get_name() //会展场馆
+	global exhibit_name_pattern,remote_content;
+	if(bltRegexMatchFirst(exhibit_name_pattern,1,remote_content,&match,0) >=0)
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun exhibit_get_content() //会展描述
+	global exhibit_content_pattern,exhibit_cont_replace_pattern,remote_content;
+	if(bltRegexMatchFirst(exhibit_content_pattern,1,remote_content,&match,1) >=0)
+		//match = bltRegexReplace(exhibit_cont_replace_pattern,"",match,1);
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun exhibit_get_sponsor() //主办
+	global exhibit_sponsor_pattern , remote_content;
+	if(bltRegexMatchFirst(exhibit_sponsor_pattern,1,remote_content,&match,1) >=0) 
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun exhibit_get_undertaker() //承办
+	global exhibit_undertaker_pattern , remote_content;
+	if(bltRegexMatchFirst(exhibit_undertaker_pattern,1,remote_content,&match,1) >=0) 
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun exhibit_get_website() //网址
+	global exhibit_website_pattern , remote_content;
+	if(bltRegexMatchFirst(exhibit_website_pattern,1,remote_content,&match,1) >=0) 
+		match = bltStrReplace('http://','',match);
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun exhibit_get_telephone() //联系电话
+	global exhibit_telephone_pattern , remote_content;
+	if(bltRegexMatchFirst(exhibit_telephone_pattern,1,remote_content,&match,0) >=0) 
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun exhibit_get_mobile() //手机
+	global exhibit_mobile_pattern , remote_content;
+	if(bltRegexMatchFirst(exhibit_mobile_pattern,2,remote_content,&match,0) >=0) 
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun exhibit_get_postcode() //邮编
+	global exhibit_postcode_pattern , remote_content;
+	if(bltRegexMatchFirst(exhibit_postcode_pattern,1,remote_content,&match,1) >=0) 
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun exhibit_get_fax() //传真
+	global exhibit_fax_pattern , remote_content;
+	if(bltRegexMatchFirst(exhibit_fax_pattern,1,remote_content,&match,1) >=0) 
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun exhibit_get_email() //邮箱
+	global exhibit_email_pattern , remote_content;
+	if(bltRegexMatchFirst(exhibit_email_pattern,1,remote_content,&match,1) >=0) 
+		return bltTrim(match);
+	endif
+	return '';
+endfun

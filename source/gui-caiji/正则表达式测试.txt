@@ -1,0 +1,1996 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CCEFB中国（北京）智能家电及电器展览会,北京消费电子展，北京电博会，北京智能家电展，中国消费电子展::中国会展网 </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta name="keywords" content="北京消费电子展，北京电博会，北京智能家电展，中国消费电子展"/>
+    <meta name="Description" content="　　CCEFB是由国家批准的全国唯一消费电子专业国际性博览会，也是中国消费电子产业的旗帜性展会。由全球多个国家的政府与媒体同步组织招商。在十多年的专业化发展过程中，CCEFB为全球消费电子企业搭建行业交流平台，已成为推动全球消费电子产业发展的重要力量，目前在青岛、苏州、巡展中已得到了全球消费电子企业..."/>
+    <script src=" http://code.jquery.com/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" type="text/javascript"></script>
+    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" type="text/css" />
+    <link rel="shortcut icon" href="http://resource.expo-china.com/Images/Base/logoico.ico" />
+    <link href="http://resource.expo-china.com/style/exhibition/industry.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <style type="text/css">
+        a{ cursor:pointer;}
+    </style>
+    <script type="text/javascript"> 
+	    function setTab(name, cursel, n) {
+            
+            for (i = 1; i <= n; i++) {
+                var menu = document.getElementById(name + i); 
+                var con = document.getElementById("tab_" + name + "_" + i); 
+                menu.className = i == cursel ? "current" : ""; 
+                con.style.display = i == cursel ? "block" : "none";
+            }
+        } 
+	document.getElementById
+    </script>
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://resource.expo-china.com/script/DD_belatedPNG.js"></script>
+<script type="text/javascript">
+  
+  DD_belatedPNG.fix('img,.close_tanchu,.shouquan,.zhankai_link,.hzsmall_icon,.nav,.nav dl,.nav dl.nav_2 dt,.lijie_zhanhuitupian_t,.lijie_zhanhuitupian_t   a,.zhanweitu_t,.zhanweitu_t .t,.zaixianzhanshang_t,.zaixianzhanshang_t .t,.sidian,.shengqing_jia,.tongqizhanhui_t,.tongqizhanhui_t .t,.industy_contantUs_t,.industy_contantUs_t .t,.online_questions_t,.online_questions_t .t,.ask dt,.answer dt,.zhantai_design_t ,.zhantai_design_t .t,.huizhanfuwu_t,.huizhanfuwu_t .t,.daojishi,.order_btn_big a,.business_services .t,.zhanshi_qq_online,.zhanshi_ting a,.zhanshi_zulin a,.zhanshi_ting_tai a,.zhanshi_gongchang a');
+ </script>
+<![endif]-->
+
+</head>
+<body>
+    <form name="frmExhibition" method="post" action="Exhibition-73428.html?ex_id=73428" id="frmExhibition">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJLTUzMzQzMjMyZGQ=" />
+</div>
+
+    <div class="width100" id="ie6head">
+        
+<script type="text/javascript">
+    function addfavor(url, title) {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf("msie 8") > -1) {
+            window.external.AddToFavoritesBar(url, title, title); //IE8
+        } else {
+            try {
+                window.external.addFavorite(url, title);
+            } catch (e) {
+                try {
+                    window.sidebar.addPanel(title, url, ""); //firefox 
+                } catch (e) {
+                    alert("请使用Ctrl+D添加收藏");
+                }
+            }
+        }
+    }
+       
+
+</script>
+<div class="top_head">
+    <div class="top_left">
+        <a href='/Expo/User/Login.aspx?ReturnUrl=http://www.expo-china.com/Exhibition.aspx?ex_id=73428'>登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href='/Expo/User/Regist.aspx'>注册</a>
+        </div>
+    <div class="top_right">
+        <a style="cursor: pointer" onclick="addfavor('http://www.expo-china.com/Exhibition.aspx?ex_id=73428','中国会展网官网：会展招商，会展商旅，会展设计，会议策划，会展资讯');">
+            收藏</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.expo-china.com">返回首页</a></div>
+    <div class="clear">
+    </div>
+</div>
+
+    </div>
+    <div class="width_1000">
+    
+    
+<!--头部开始-->
+      <div class="top" style=" background:url(http://resource.expo-china.com/images/exhibition/header_bg.jpg) no-repeat;">
+    <div class="hearderLeft">
+          <div class="hangYeLogo"><img alt="log" src='/pages/exhi/201307/73428/Images/73428_3_20130802002326915080.jpg' width="120" height="90" /><!--<span class="shouquan"></span>--></div>
+          <div class="hangye_title">
+        <div class="hangye_t_wenzi"> CCEFB中国（北京）智能家电及电器展览会</div>
+        <br />
+        <br />
+        <br />
+        <span class="headerTime">2015年08月21日--2015年08月23日</span> <br />
+        <span class="hangye_c_h">
+        <span class="headerSpan3">场馆：<a target="_blank" href="/pages/hall/200406/45/index.shtml">中国国际展览中心</a></span>
+        行业:家居/家电/日用品</span> </div>
+        </div>
+    <div class="hearderRight"><a href="/"><img alt="exhi_logo" src="http://resource.expo-china.com/images/exhibition/logo.png" width="107" height="29" /></a></div>
+    <div class="clear"></div>
+    </div>
+
+
+    
+    
+     
+<div class="nav mb10">
+    <dl class="nav_1" style="float:right;">
+          <dt> </dt>
+          <dd> </dd>
+        </dl>
+    <dl class="nav_2">
+          <dt>推荐指数：</dt>
+          <dd><i class="font20 pr5">104</i>分</dd>
+        </dl>
+    <dl class="nav_2">
+          <dt>展会认证：</dt>
+          <dd><em class="renzheng_tu"><img src="http://resource.expo-china.com/images/exhibition/False.png" width="21" height="22" /></em><i class="renzheng">(未认证)</i></dd>
+        </dl>
+    <dl class="nav_2">
+          <dt>访问量：</dt>
+          <dd><i class="font20 pr5">481</i></dd>
+        </dl>
+    <dl class="nav_2 last">
+          <dt>分享到：</dt>
+          <dd class="shareLink"><!-- JiaThis Button BEGIN -->
+        <div class="jiathis_style_24x24"> <a class="jiathis_button_qzone"></a> <a class="jiathis_button_tsina"></a> <a class="jiathis_button_tqq"></a> <a class="jiathis_button_renren"></a> <a class="jiathis_button_kaixin001"></a> </div>
+        <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1356662987785668" charset="utf-8"></script> 
+        <!-- JiaThis Button END --></dd>
+        </dl>
+    
+    <div class="clear"></div>
+    </div>
+ 
+       
+        <div class="mainContant">
+        
+       
+        <div class="columnLeft">
+        
+<style type="text/css">
+            
+            .cover_style
+            {
+             position: absolute;     
+            background: #DDDDDD;  
+            left: 0%;
+            top:0%;  
+            right: 0%;  
+            z-index: 19998;  
+                     
+            }
+             .Mail_Remind
+            {
+             width:220px;
+             height:150px;
+             position:absolute;
+             left:50%;
+             right:50%;
+             border:1px solid red;
+             background-color:white;
+            margin-left:-110px;
+            margin-top:-75px;
+            display:none;
+            z-index:19999;
+            border:3px solid #FEBE8F; 
+            border-radius:5px;
+            padding:15px;
+            }
+            
+    </style>
+<div class="daojishi mb10">
+   
+   <script type="text/javascript">
+       var exid;
+       var mailhtml;
+       $(function () {
+           exid = $.cookie("exid");
+           mailhtml= $("#wrap").html();
+       })
+       function show_remind() {
+           $("#wrap").html(mailhtml);
+            $("#Mail_Remind").show();
+            Show_cover();
+            GetMail();
+            $('#txttime').datetimepicker();
+        }
+        function Show_cover() {
+            var client_width = $(window).width()
+            var clent_heigth = $(window).height()+$(document).scrollTop();
+            $("#cover").css("width", client_width + "px").css("height", clent_heigth + "px").css("filter", "alpha(opacity=80)").css("opacity", "0.8").show();
+            
+        }
+
+        function ChangeCoverSize(obj) {
+            var clientWidth = $(window).width();
+            var clientHeight = $(window).height();
+            var scrolltop = $(document).scrollTop();
+            $(obj).css("width", clientWidth + "px").css("height", clientHeight + scrolltop + "px");
+        }
+        $(function () {
+            window.onresize = function () {
+                ChangeCoverSize(document.getElementById("cover"))
+            };
+            window.onscroll = function () {
+                
+                ChangeCoverSize(document.getElementById("cover"))
+            }
+        })
+        function Close() {
+            $("#cover").hide();
+            $("#Mail_Remind").hide();
+            $("#show_div").hide();
+            $("#bid_show").hide();
+        }
+        function PostMailInfo() {
+           AddExhimailRemind($("#txttime").val(), exid);
+        }
+        function AddExhimailRemind(times,exid) {
+
+            if (exid != null) {
+                $.ajax({
+                    type: "post",
+                    url: "/Expo/Exhibition/handler/AddExhimailRemind.ashx",
+                    data: { uid: $.cookie("Uid"), time: times, ex_id: exid },
+                    beforeSend: function () {
+                        if ($("#txttime").val().length == 0) {
+                            var html = "<i style='color:red;'>*</i>";
+                            $("#timemsg").html("");
+                            $(html).appendTo($("#timemsg"));
+                            return false;
+                        }
+                        else {
+                            $("#mailmsg").html("");
+                        }
+                    },
+                    success: function (data) {
+                        if (data == 1) {
+                            var htm = "<h3>恭喜您，邮件提醒设置成功！</h3>";
+                            $("#wrap").html("");
+                            $(htm).appendTo($("#wrap"));
+//                            $.cookie("ex_id", exid);
+//                            $("#remind").html("已设置");
+
+                        }
+                        else if (data == 2) {
+                            alert("服务器忙，请稍后再试~~~");
+                        }
+                        else if (data == 3) {
+                            alert("您已添加邮件提醒，请勿重复添加！");
+                            
+                        }
+                        else if (data == 4) {
+                            alert("您输入的邮箱格式有误，请确认后重新添加！");
+                        }
+                        else {
+
+                        }
+
+                    }
+                })
+            }
+           
+        }
+        var intervalid;
+       function Checklogin() {
+            var uid = $.cookie("UserLogin");
+            if ($(".daoshi_date_number").html() == "已结束") {
+                $("#remind").hide();
+                $(".tixing_text").hide();
+                clearInterval(intervalid);
+                return false;
+            }
+            if (uid == null) {
+                $("#remind").css("color", "gray").attr("title", "登陆，设置展会提醒！").attr("href", "/Expo/User/Login.aspx?ReturnUrl=" + document.URL);
+                clearInterval(intervalid);
+                return false;
+            }
+            else {
+                $("#remind").unbind("mouseover").mouseover(function () {
+                    GetMail();
+                    CheckIsAddMail();
+                });
+               return false;
+            }
+        }
+       $(function () {
+           intervalid = setInterval("Checklogin()", 1000);
+            
+        })
+       function CheckIsAddMail() {
+           var _uid = $.cookie("Uid");
+           var _mail = $.cookie("remaindmail");
+           var _exid = exid;
+            if (_mail != null && _exid != null) {
+                $.ajax({
+                    url: "/expo/exhibition/handler/ValidataUserIsAddRemaind.ashx",
+                    type: "POST",
+                    data: { uid: _uid, exid: _exid },
+                    success: function (data) {
+                        if (data == 0) {
+                            GetMail();
+                            $("#remind").unbind("click").click(function () {
+                                show_remind();
+                            });
+                        }
+                        else {
+                            $("#remind").unbind("click").html("已设置");
+                            $(".tixing_text").show();
+                            $("#remaindmail").show()
+                            $("#remaindmail").html("已设置提醒，邮箱：" + _mail + "<div id='closemaildiv'style='color:red;'>隐藏</div>");
+                            $("#closemaildiv").unbind("click").click(function () {
+                                $("#remaindmail").hide();
+                            });
+                        }
+                    }
+                });
+            }
+            else {
+                $("#remind").unbind("click").click(function () {
+                    show_remind();
+                    
+                });
+                
+            }
+        }
+        function GetMail() {
+            $.ajax({
+                url: "/Expo/Exhibition/handler/GetUserByUserID.ashx",
+                data: { uid: $.cookie("Uid") },
+                type:"POST",
+                success: function (data) {
+                    $("#txtMail").html(data);
+                }
+            })
+        }    
+    </script>
+        <div class="dateAndTiXing">
+              <div class="daoshi_date"><i class="daoshi_date_number">613天</i></div>
+              <div class="tishi_big"><a class="daojishi_tishi" id="remind" style=" cursor:pointer;">提醒</a>
+            <div class="tixing_text" style=" display:none;">
+                  <div class="tixing_text_c" id="remaindmail"></div>
+            </div>
+          </div>
+              <div class="clear"></div>
+        </div>
+        
+        <div id="cover" class="cover_style" style=" display:none;" ></div>
+       <div class="Mail_Remind" id="Mail_Remind">
+            <div class="close_tanchu"><a href="#" onclick="Close();"> </a></div>
+            <div id="wrap">
+           <br />
+            邮箱地址：<i id="txtMail"></i><br /><br />
+            提醒时间：<input type="text" id="txttime" maxlength="20" value="" readonly="readonly" /><i id="timemsg"></i>
+            <br />
+            <div class="tanchu_sq_btn_weizhi"><a class="tijiao_shenqing_btn" style=" cursor:pointer;" id="btnsend"  onclick="PostMailInfo();">发送</a></div>        </div>
+        </div>
+        
+</div>
+             <link href="http://resource.expo-china.com/Style/Exhibition/jquery-ui.css" rel="stylesheet" type="text/css" />
+            <link href="http://resource.expo-china.com/style/exhibition/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css" />
+           <script src="http://resource.expo-china.com/Script/jquery-ui-timepicker-addon.js" type="text/javascript"></script>
+<script type="text/javascript">
+   jQuery(function ($) {
+            $.datepicker.regional['zh-CN'] = {
+                closeText: '关闭',
+                prevText: '<上月',
+                nextText: '下月>',
+                currentText: '今天',
+                monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+                    '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                monthNamesShort: ['一', '二', '三', '四', '五', '六',
+                    '七', '八', '九', '十', '十一', '十二'],
+                dayNames: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+                dayNamesShort: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+                dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'],
+                weekHeader: '周',
+                dateFormat: 'yy-mm-dd',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: true,
+                yearSuffix: '年'
+            };
+            $.datepicker.setDefaults($.datepicker.regional['zh-CN']);
+        });
+</script>
+
+         
+<div class="zhanweitu mb10">
+        <div class="zhanweitu_t">
+              <h2 class="t">展位图</h2>
+        </div>
+       <div class="zhanweitu_c" style="height:225px;">
+        	<div id="demo3" class="slideBox">
+    <ul class="items">
+    
+        <li><a href='Expo/Exhibition/ExhibitionPicViewList.aspx?PID=73428&imgType=2'><img width="208" height="220" src='/pages/exhi/201307/73428/Images/73428_2_20130802002241540628.jpg'></a></li>
+        
+    
+    </ul>
+    </div>
+	    </div>
+     
+
+</div>
+ <!--展位图js-->
+    
+  <link href="http://resource.expo-china.com/style/exhibition/jquery.slideBox.css" type="text/css" rel="Stylesheet" />
+  <script src="http://resource.expo-china.com/script/jquery.slidebox.min.js" type="text/javascript"></script>
+ <script type="text/javascript">
+      jQuery(function ($) {
+         $('#demo3').slideBox({
+              duration: 0.3, //滚动持续时间，单位：秒
+              easing: 'linear', //swing,linear//滚动特效
+              delay: 5, //滚动延迟时间，单位：秒
+              hideClickBar: false, //不自动隐藏点选按键
+              clickBarRadius: 10
+          });
+          
+      });
+</script>
+
+
+        
+<div class="zaixianzhanshang mb10">
+        <div class="zaixianzhanshang_t">
+              <h2 class="t">在线展商</h2>
+            </div>
+        <div class="zaixianzhanshang_c">
+        <ul class="zxzs">
+        
+              <li>
+              <i class="sidian"></i>
+              <a target="_blank" href=' http://' title="联系电话：020-81888556">广州赛华电子设备有限公司</a>
+              </li>
+              
+              <li>
+              <i class="sidian"></i>
+              <a target="_blank" href=' http://' title="联系电话：0755-33079870">深圳市迈奇数码有限公司</a>
+              </li>
+              
+              <li>
+              <i class="sidian"></i>
+              <a target="_blank" href=' http://www.bufsin.com' title="联系电话：010-52283471">Bufsin（中国）有限公司</a>
+              </li>
+              
+              <li>
+              <i class="sidian"></i>
+              <a target="_blank" href=' http://' title="联系电话：0312-3133136">保定市鼎宸国际进出口有限公司</a>
+              </li>
+              
+              <li>
+              <i class="sidian"></i>
+              <a target="_blank" href=' http://' title="联系电话：020-84731372">广州市国巨电子有限公司</a>
+              </li>
+              
+              <li>
+              <i class="sidian"></i>
+              <a target="_blank" href=' http://www.fengri.com' title="联系电话：010-52283471">丰日企业</a>
+              </li>
+              
+              <li>
+              <i class="sidian"></i>
+              <a target="_blank" href=' http://' title="联系电话：0755-23047663">深圳市时商创展科技有限公司</a>
+              </li>
+              
+              <li>
+              <i class="sidian"></i>
+              <a target="_blank" href=' http://www.10086.cn' title="联系电话：10086">中国移动通信集团北京有限公司</a>
+              </li>
+               
+        </ul>
+              <span class="zaixianshengqing"><a onclick="$('#show_div').empty().html(p_html);Show_p('show_div');AddWaterMark();" >申请成为在线参展商</a><i class="shengqing_jia"></i></span>
+              <div class="canzhanshang_tanchu" id="show_div">
+            <div class="tanchu_sq_bg">
+                  <div class="close_tanchu"><a href="#" onclick="Close();" > </a></div>
+                  <div class="cz_tanchu_t">
+                <p style="float: none; font-size:larger;" id="show_content"  >申请成为在线参展商</p>
+              </div>
+                  <div class="cz_tanchu_c" >
+                <table id="table_hidden" class="table_canzhanshang_tanchu" border="0" cellSpacing="0" cellPadding="0" width="100%">
+                      <tbody><tr>
+                    <td style="width: 65px;" align="right">公司名：</td>
+                    <td><input style="width: 240px;" id="C_name" class="text_bottom_line" type="text"/></td>
+                  </tr>
+                      <tr>
+                    <td align="right">联系电话：</td>
+                    <td><input style="width: 240px;" class="text_bottom_line" id="C_phone" type="text"/></td>
+                  </tr>
+                      <tr>
+                    <td align="right">公司网址：</td>
+                    <td><input style="width: 240px;" class="text_bottom_line" id="C_website" type="text"/>
+                          </td>
+                  </tr>
+                      <tr>
+                    <td style="padding-top: 8px;" vAlign="top" align="right">备注：</td>
+                    <td style="padding-top: 8px;"><textarea id="C_remark" cols="40" rows="3"></textarea></td>
+                  </tr>
+                    </tbody></table>
+                <div class="fuzhu_text" id="div_hidden">注：提交之后，我们会及时把您的申请发送给主办方，具体事宜请直接与主办方联系（中国会展网） </div>
+                <div class="tanchu_sq_btn_weizhi"><a class="tijiao_shenqing_btn" id="participant" hid="hidden"  onclick="Apply_participant();">提交申请</a></div>
+              </div>
+                </div>
+          </div>
+            </div>
+      </div>
+      <style type="text/css">
+        .mystyle{ border:solid 1px red;}
+      </style>
+
+      <script src="http://resource.expo-china.com/script/min/jquery.watermark-2.0.min.js" type="text/javascript"></script>
+      <script type="text/javascript">
+          function AddWaterMark() {
+              $("#C_phone").watermark(' 如：021-51696950-XXX ', 'water');
+              $("#C_website").watermark('如：www.a.com', 'water');
+          }
+         var p_html = $("#show_div").html();
+         $("#C_phone").watermark(' 如：021-51696950-XXX ', 'water');
+         $("#C_website").watermark('如：www.a.com', 'water');
+         function get_obj(id) {
+              return document.getElementById(id);
+          }
+          function Show_p(obj) {
+            var scrolltop = $(document).scrollTop();
+            var b_width = $(window).width();
+            var b_height = $(window).height();
+            var divS = get_obj(obj);
+            divS.style.display = "block";
+            var div_width = divS.offsetWidth;
+            var div_height = divS.offsetHeight;
+
+            var left = b_width / 2 - div_width / 2 + "px";
+            var top = b_height / 2 + scrolltop - div_height / 2 + "px";
+            $("#"+obj).css("top", top).css("left", left).css("z-index", "19999");
+            Show_cover();  
+          }
+          function ValidataInfo(obj) {
+             
+              if (obj.val()=="")
+            {
+                obj.addClass("mystyle");
+                obj.css("border", "solid 1px red;");
+                return false;
+            }
+            else {
+                obj.css("border", "");
+                obj.removeClass("mystyle");
+                return true;
+            }
+        }
+        function validatephone(obj) {
+            var pattern = new RegExp(/^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{1,4}))?$/);
+            return pattern.test(obj.val());
+        }
+        function validateEmail(email) {
+            var pattern = new RegExp(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/);
+            return pattern.test(email.val());
+        }
+          function Apply_participant() {
+                var cex_id=$("#ExhibitionUserControl1_HfExid").val();
+                var ccnname=$("#C_name").val();
+                var ccphone=$("#C_phone").val();
+                var ccwebsite=$("#C_website").val();
+                var ccremark=$("#C_remark").val();
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                    url: "/Expo/Exhibition/handler/Apply_Participant.ashx",
+                    data: { ex_id: cex_id, C_name: ccnname, C_phone: ccphone, C_website: ccwebsite, C_remark: ccremark },
+                    async: false,
+                    beforeSend: function () {
+                        var arr = new Array();
+                        arr.push(ValidataInfo($("#C_name")));
+                        arr.push(ValidataInfo($("#C_phone")));
+                        arr.push(ValidataInfo($("#C_website")));
+                        arr.push(validatephone($("#C_phone")));
+                        if (!validatephone($("#C_phone"))) {
+                            $("#C_phone").addClass("mystyle");
+                            return false;
+                        }
+                        else {
+                            $("#C_phone").removeClass("mystyle");
+                        }
+                        arr = $.grep(arr, function (n) {
+                            return n == false;
+
+                        });
+
+                        if (arr.length > 0) {
+                            return false;
+                        }
+                    },
+                    success: function (data) {
+                        $("#table_hidden").hide();
+                        $("#div_hidden").hide();
+                        $("#participant").hide();
+                        $("#show_content").html("恭喜您，您已成功提交在线展商申请,处理结果将会以邮件方式通知您")
+                    }
+
+
+                });
+            }
+         
+      </script>
+      <style type="text/css">
+        .water{ color:Gray;}
+      </style>
+
+        
+<div class="tongqizhanhui mb10">
+        <div class="tongqizhanhui_t">
+              <h2 class="t">同类型展会</h2>
+            </div>
+        <div class="tongqizhanhui_c">
+              <ul class="tqzh">
+              
+                     <li><i class="sidian"></i><a target="_blank" href="/Exhibition-75723.html">2014年韩国家电及家庭用品展 Home.Table Deco</a></li>
+              
+                     <li><i class="sidian"></i><a target="_blank" href="/Exhibition-75255.html">2013全国（郑州）日用消费品博览会</a></li>
+              
+                     <li><i class="sidian"></i><a target="_blank" href="/Exhibition-75240.html">2013中国新网工程●供销系统日用消费品订货会暨首届全国（郑州）日用消费品博览会</a></li>
+              
+                     <li><i class="sidian"></i><a target="_blank" href="/Exhibition-70836.html">2013柬埔寨家用电器、电子信息产品出口展览会</a></li>
+              
+            </ul>
+              <span class="zaixianshengqing"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=613553124&site=qq&menu=yes">申请成为同类型展会<br>
+</a><!--<i class="shengqing_jia"></i>--></span> </div>
+      </div>
+        
+<style type="text/css">
+    .style1
+    {
+        width: 251px;
+    }
+</style>
+<div class="tongqizhanhui mb10">
+    <div class="tongqizhanhui_t">
+        <h2 class="t">
+            参展招标</h2>
+        
+    </div>
+    <script src="http://resource.expo-china.com/script/jquery.cookie.js" type="text/javascript"></script>
+    <div class="tongqizhanhui_c">
+        <ul class="tqzh">
+        
+            
+        </ul>
+        <span class="zaixianshengqing"><a style="cursor: pointer;" id="doBid">发布服务信息</a><i
+            class="shengqing_jia"></i></span>
+        <!--弹出层-->
+        <div class="fabumess_tanchu" id="bid_show">
+            <div class="close_tanchu">
+                <a href="#" onclick="Close();RestHtml();"></a>
+                
+            </div>
+            <div id="S_Div">
+                <div class="cz_tanchu_t">
+                    <h3>
+                        您需要什么？</h3>
+                    <a class="zhaobiao_link" target="_blank" href="/exhibitionbidlist.aspx">看看其它人的招标</a>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="cz_tanchu_c">
+                    <table class="table_canzhanshang_tanchu" border="0" cellspacing="0" cellpadding="0"
+                        width="100%">
+                        <tbody>
+                            <tr>
+                                <td style="width: 75px;" align="right">
+                                    <i class="bixuan">*</i>招标标题：
+                                </td>
+                                <td colspan="3">
+                                    <input style="width: 200px;" class="text_bottom_line" type="text" id="Btitle" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <i class="bixuan">*</i>招标类型：
+                                </td>
+                                <td colspan="3">
+                                    <select style="width: 200px;" class="xiala_kuang" id="Btype">
+                                        <option value="-1">--选择类型--</option>
+                                        <option value="1">主办招展</option>
+                                        <option value="2">营销策划</option>
+                                        <option value="3">广告礼品</option>
+                                        <option value="4">礼仪模特</option>
+                                        <option value="5">影视媒体</option>
+                                        <option value="6">会议组织</option>
+                                        <option value="7">展览设计</option>
+                                        <option value="8">展台搭建</option>
+                                        <option value="9">展具租赁</option>
+                                        <option value="10">交通物流</option>
+                                        <option value="11">法律保险</option>
+                                        <option value="12">鲜花植物</option>
+                                        <option value="13">宾馆酒店</option>
+                                        <option value="14">旅游娱乐</option>
+                                        <option value="15">翻译服务</option>
+                                        <option value="16">订票服务</option>
+                                        <option value="17">会展培训</option>
+                                        <option value="18">综合服务</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <i class="bixuan">*</i>服务地点：
+                                </td>
+                                <td class="style1">
+                                    <select id="pro_bid" style="width: 95px; margin-right: 7px;" class="xiala_kuang">
+                                    </select>
+                                    <select style="width: 95px;" class="xiala_kuang" id="city_bid">
+                                        <option value="-1">--请选择--</option>
+                                    </select>
+                                </td>
+                                <td style="width: 75px;" align="right">
+                                    <i class="bixuan">*</i>所在展馆：
+                                </td>
+                                <td style="width: 215px;">
+                                    <select id="hall_bid" style=" width:270px;" class="xiala_kuang">
+                                        <option value="-1">--请选择--</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <i class="bixuan">*</i>费用范围：
+                                </td>
+                                <td colspan="3">
+                                    <input style="width: 200px;" class="text_bottom_line" type="text" id="Bcost" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <i class="bixuan">*</i>联系电话：
+                                </td>
+                                <td class="style1">
+                                    <input style="width: 115px;" class="text_bottom_line" type="text" id="Btel" />
+                                    <input style="margin-right: 3px;" type="checkbox" id="Bisshow" name="isshow" />
+                                    是否前台显示
+                                </td>
+                                <td style="width: 75px;" align="right">
+                                    <i class="bixuan">*</i>联系邮件：
+                                </td>
+                                <td style="width: 215px;">
+                                    <input style="width: 200px;" class="text_bottom_line" type="text" id="Bmail" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-top: 8px;" valign="top" align="right">
+                                    <i class="bixuan">*</i>招标内容：
+                                </td>
+                                <td style="padding-top: 8px;" colspan="3">
+                                    <textarea cols="85" rows="6" id="Bcontent"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input name="BidUserControl1$Bex_id" type="hidden" id="BidUserControl1_Bex_id" value="73428" />
+                    <div class="tanchu_sq_btn_weizhi">
+                        <a class="tijiao_shenqing_btn" style="cursor: pointer;" onclick="PostData();">提交</a></div>
+                        </div>
+                    
+                    <div class="fabumess_share">
+                        <strong style="padding-top: 5px; float: left; display:none;">分享到：</strong>
+                        <div style="float: left;" class="jiathis_style_24x24">
+                            <a class="jiathis_button_qzone"></a><a class="jiathis_button_tsina"></a><a class="jiathis_button_tqq">
+                            </a><a class="jiathis_button_renren"></a><a class="jiathis_button_kaixin001"></a>
+                            
+                        </div>
+                        <div style=" float:right;"><p class="guanfang_shenqing">
+                                <a href="http://wpa.qq.com/msgrd?v=3&uin=613553124&site=qq&menu=yes" title="联系人：潘小姐 QQ：613553124"><strong>申请官方微博、微刊推广</strong></a></p>
+                           </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    
+                </div>
+            <div id="H_Div">
+                    <div class="cz_tanchu_t">
+                        <h3>
+                            招标号：<i style="color: rgb(255, 0, 0);" id="S_Pid"></i></h3>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <div class="cz_tanchu_c">
+                        <!--提示语-->
+                        <div class="fabumess_tishiyu">
+                            <p class="lg24 font20 suoj p15">
+                                您的招标需求（<i id="S_title"></i>）<i style="color: rgb(23, 159, 39);">已提交成功</i>;审核通过会在一个工作日内显示招标信息。</p>
+                            
+                        </div>
+                        <!--提示语结束-->
+                    </div>
+                </div>
+            
+        </div>
+        <!--弹出层结束-->
+    </div>
+</div>
+<script type="text/javascript">
+    $("#Bmail").watermark('如：a@b.c', 'water');
+    $("#Btel").watermark('固话或手机', 'water');
+    function gelcookie() {
+        if ($.cookie("Uid") > 0) {
+            $("#doBid").unbind("click").click(function () {
+                Show_p("bid_show");
+                $("#S_Div").show();
+                $("#H_Div").hide();
+            })
+        }
+        else {
+            $("#doBid").unbind("click").css("color", "gray").attr("title", "请先登录！").attr("href", "/Expo/User/Login.aspx?ReturnUrl=" + document.URL);
+        }
+    }
+    $(function () {
+        setInterval("gelcookie()", 2000);
+    })
+    var html;
+    $(function () {
+       html= $("#bid_show").html();
+   })
+   function RestHtml() {
+       $("#bid_show").html(html);
+       LoadPro();
+       $("#pro_bid").change(function () {
+           var pid = $(this).get(0).value;
+           LoadCity(pid);
+           LoadHall(pid);
+       });
+   }
+    function PostData() {
+        var obj = $("#Bisshow");
+        var ckvalue = document.getElementById("Bisshow").checked;
+        var isreturn=true;
+        var arr = new Array();
+        $.ajax({
+            url: "/Expo/Exhibition/Handler/AddExhiBid.ashx",
+            type: "POST",
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            data: { Bex_id: $("#BidUserControl1_Bex_id").val(), Btitle: $("#Btitle").val(), Btype: $("#Btype").val(), city_bid: $("#city_bid option:selected").val(),
+                Btype: $("#Btype option:selected").val(), pro_bid: $("#pro_bid option:selected").val(), hall_bid: $("#hall_bid option:selected").val(),
+                Bcost: $("#Bcost").val(), Btel: $("#Btel").val(), BIsshow:ckvalue, Bmail: $("#Bmail").val(), Bcontent: $("#Bcontent").val(), Uid: $.cookie("Uid")
+            },
+            async: false,
+            beforeSend: function () {
+                var title = $("#Btitle");
+                var Bcost = $("#Bcost");
+                var Btel = $("#Btel");
+                var Bmail = $("#Bmail");
+                var Bcontent = $("#Bcontent");
+                var isnullarr = new Array();
+                isnullarr.push(ValidataInfo(title));
+                isnullarr.push(ValidataInfo(Bcost));
+                isnullarr.push(ValidataInfo(Btel));
+                isnullarr.push(ValidataInfo(Bmail));
+                isnullarr.push(ValidataInfo(Bcontent));
+                if (!validateEmail($("#Bmail"))) {
+                    $("#Bmail").addClass("mystyle");
+                    isnullarr.push(false);
+                }
+                else {
+                    $("#C_phone").removeClass("mystyle");
+                }
+                isnullarr = $.grep(isnullarr, function (n) {
+                    return n == false;
+                })
+                var city_bid = $("select option:selected");
+                city_bid.each(function (index, element) {
+                    if ($(this).val() == -1) {
+                        arr.push(false);
+                        $(this).css("background", "red");
+                    }
+                    else {
+                        $(this).css("background", "");
+                    }
+                });
+                arr = $.grep(arr, function (n) {
+                    return n == false;
+                })
+                if (arr.length > 0 || isnullarr.length > 0) {
+                    isreturn = false;
+                }
+                return isreturn;
+            },
+            success: function (data) {
+                $("#S_Div").hide();
+                $("#H_Div").show();
+                var pidarr = data.split("=");
+                $("#S_Pid").text(pidarr[1]);
+                $("#S_title").text($("#Btitle").val());
+            },
+            error: function (data) {
+                alert(data);
+            }
+        })
+
+    }
+                    
+</script>
+<script type="text/javascript">
+    function LoadPro() {
+        var data = getAreaData();
+        var objS = document.getElementById("pro_bid");
+        $(objS).empty();
+        objS.options[0] = new Option("--请选择--", "-1");
+        for (var i = 0; i < data.length; i++) {
+            objS.options[i + 1] = new Option(data[i].ProName, data[i].ProID);
+        }
+    }
+    function LoadCity(pid) {
+        var data = getCityData(pid / 100);
+        var objC = document.getElementById("city_bid");
+        $(objC).empty();
+        objC.options[0] = new Option("--请选择--", "-1");
+        for (var i = 0; i < data.length; i++) {
+            objC.options[i + 1] = new Option(data[i].CityName, data[i].CityID);
+        }
+    }
+    function LoadHall(pid) {
+        var data = getHallData(pid);
+        var objC = document.getElementById("hall_bid");
+        $(objC).empty();
+        objC.options[0] = new Option("--请选择--", "-1");
+        for (var i = 0; i < data.length; i++) {
+            objC.options[i + 1] = new Option(data[i].HallName, data[i].HallID);
+        }
+    }
+    $(function () {
+        LoadPro();
+        $("#pro_bid").change(function () {
+            var pid = $(this).get(0).value;
+            LoadCity(pid);
+            LoadHall(pid);
+        });
+    })
+    //获取后台数据省份+城市
+    function getAreaData() {
+        return eval($.ajax({ url: "/Expo/User/Exhibition/GetAreaData.ashx", type: 'GET', async: false, cache:false }).responseText);
+    }
+    //获取城市名字
+    function getCityData(ProID) {
+        return eval($.ajax({ url: "/Expo/User/Exhibition/GetAreaData.ashx?proid=" + ProID, type: 'GET', async: false, cache: true }).responseText);
+    }
+
+    //获取展馆
+    function getHallData(ProIDs) {
+        return eval($.ajax({ url: "/Expo/User/Exhibition/GetHallDate.ashx?proids=" + ProIDs, type: 'GET', async: false, cache: true }).responseText);
+    }
+    function get_obj(id) {
+        return document.getElementById(id);
+    }
+    
+</script>
+
+
+         </div>
+         <div class="columnCenter"> 
+             
+<input type="hidden" id="hiderange" value='●数码产品   ● 汽车电子  ●通讯产品  
+<br/>●视听产品   ●智能手机及苹果周边产品
+<br/>●家用电子产品  ●计算机及周边产品  
+<br/>● 绿色环保家电  ●音视频及平板显示技术
+<br/>● 智能电器与家电  ● 医疗健康电子  ' />
+<div class="zhanhuijieshao mb10">
+    <div class="zhanhuijieshao_t">
+        <a id="zhanhui1" class="current" onclick="setTab('zhanhui',1,6)">展会概况</a> <a id="zhanhui2"
+            onclick="setTab('zhanhui',2,6);GuideLoadData();">参展指南</a> <a id="zhanhui3" onclick="setTab('zhanhui',3,6);LoadvisitguideData()">
+                观展指南</a> <a id="zhanhui4" onclick="setTab('zhanhui',4,6);LoadNews();">最新动态</a>
+        <a id="zhanhui5" onclick="setTab('zhanhui',5,6);LoadPreviousData()">上届回顾</a> <a style="border: currentColor;"
+            id="zhanhui6" onclick="setTab('zhanhui',6,6);LoadHostInfo();">关于主办方</a>
+        <div class="clear">
+        </div>
+        <script type="text/javascript">
+            var arr = new Array();
+            var height;
+            $(function () {
+                height = $("#tab_zhanhui_1").get(0).clientHeight;
+                if (height > 650) {
+                    $("#tab_zhanhui_1").css("overflow", "scroll");
+                    $("#brief").slideUp();
+                }
+                arr[0] = $("#brief").html();
+                arr[1] = $("#hiderange").val();
+                arr[2] = $("#feature").html();
+                arr[5] = $("#pastsummary").html();
+                var pastsummaryhtml = arr[5].substring(0, 140);
+                var brief = arr[0];
+                var range = arr[1];
+                var feature = arr[2];
+                //                var featurehtml = feature.substring(0, 140);
+                var rangehtml = range.substring(0, 140);
+                //var html = brief.substring(0, 140);
+                $("#pastsummary").html(pastsummaryhtml).slideDown();
+                //                $("#feature").html(featurehtml).slideDown();
+                //$("#brief").html(html).slideDown();
+                $("#range").html(rangehtml).slideDown();
+
+            })
+            function Myshow(obj, arr, div_obj) {
+                var link = $(event.srcElement);
+                if (link.attr("ishow") == "false") {
+                    obj.html(arr);
+                    link.attr("ishow", "true");
+                    $(event.srcElement).removeClass("zhankai_link").addClass("shouqi_link");
+
+                }
+                else {
+                    obj.html("");
+                    link.attr("ishow", "false");
+                    $(event.srcElement).removeClass("shouqi_link").addClass("zhankai_link")
+                }
+                obj.slideDown();
+                if (height > 650) {
+                    div_obj.css("overflow", "scroll");
+                }
+
+            }
+
+            function GuideLoadData() {
+                $.ajax({
+                    url: "/expo/exhibition/handler/loadexhidata.ashx",
+                    type: "POST",
+                    data: { ex_id: $("#ExhibitionUserControl1_HfExid").val() },
+                    success: function (data) {
+                        if (data.length > 0) {
+                            var ev = eval('(' + data + ')');
+                            arr[3] = ev.ex_brief;
+                            $("#guide_brief").html(arr[3].substring(0, 140));
+                            $("#ex_time").html(ev.ex_feature);
+                            $("#participant_pricle").html(ev.ex_fee_show);
+                            $("#preferential").html(ev.ex_promotion);
+                            if (ev.ex_fee_adv.length == 0) {
+                                $("#adv_cost").html("发布者未填写广告费用相关信息。");
+                            }
+                            else {
+                                $("#adv_cost").html(ev.ex_fee_adv);
+                            }
+                        }
+                    },
+                    error: function () {
+                        alert("服务器忙，请稍后再试！");
+                    }
+
+                })
+            }
+            function LoadvisitguideData() {
+                $.ajax({
+                    url: "/expo/exhibition/handler/Load_visit_guide.ashx",
+                    type: "POST",
+                    data: { ex_id: $("#ExhibitionUserControl1_HfExid").val() },
+                    success: function (data) {
+                        if (data.length > 0) {
+                            var ev = eval('(' + data + ')');
+                            $("#visit_time").html(ev.Temp);
+                            if (ev.Exhi_visit_require.length == 0) {
+                                $("#ex_require").html("发布者未填写观众要求相关信息！");
+                            }
+                            else {
+                                $("#ex_require").html(ev.Exhi_visit_require);
+                            }
+                        }
+                    }
+                })
+            }
+            function LoadPreviousData() {
+                $.ajax({
+                    url: "/Expo/Exhibition/handler/LoadPreviousExhi.ashx",
+                    type: "POST",
+                    data: { ex_id: $("#ExhibitionUserControl1_HfExid").val() },
+                    success: function (data) {
+                        var table = document.getElementById("previous_exhi");
+                        if (data.length > 0 && data != "null") {
+                            for (i = table.rows.length - 1; i > 0; i--) {
+                                table.deleteRow(i);
+                            }
+                            var ev = eval("(" + data + ")");
+                            var count = ev.length;
+                            if (count > 3) {
+                                count = 3;
+                            }
+                            for (var i = 0; i < count; i++) {
+                                var tr = table.insertRow(-1);
+                                var td1 = tr.insertCell(-1);
+                                var td2 = tr.insertCell(-1);
+                                var td3 = tr.insertCell(-1);
+                                var td4 = tr.insertCell(-1);
+                                var td5 = tr.insertCell(-1);
+                                td1.innerHTML = ev[i].Ex_name;
+                                td2.innerHTML = ev[i].Temp;
+                                td3.innerHTML = ev[i].Ex_address;
+                                td4.innerHTML = "展商：" + ev[i].Ex_viewer_counts + "人<br/>观众：" + ev[i].Ex_participant_counts + "人";
+                                td5.innerHTML = ev[i].Ex_size;
+                            }
+                        }
+                        else {
+                            for (i = table.rows.length - 1; i > 0; i--) {
+                                table.deleteRow(i);
+                            }
+                            var tr = table.insertRow(-1);
+                            var td1 = tr.insertCell(-1);
+                            var td2 = tr.insertCell(-1);
+                            var td3 = tr.insertCell(-1);
+                            var td4 = tr.insertCell(-1);
+                            var td5 = tr.insertCell(-1);
+                            td1.innerHTML = "暂无";
+                            td2.innerHTML = "暂无";
+                            td3.innerHTML = "暂无";
+                            td4.innerHTML = "暂无";
+                            td5.innerHTML = "暂无";
+                        }
+                    },
+                    error: function () {
+                        alert("服务器忙，请稍后再试！");
+                    }
+                })
+            }
+            function LoadNews() {
+                $.ajax({
+                    url: "/Expo/Exhibition/handler/Getexhinews.ashx",
+                    type: "POST",
+                    data: { ex_id: $("#ExhibitionUserControl1_HfExid").val() },
+                    success: function (data) {
+                        if (data.length > 0) {
+                            var ev = eval("(" + data + ")");
+                            var html = "";
+                            var html_div = "";
+                            for (var i = 0; i < ev.length; i++) {
+                                html += "<li><i class='sidian'></i><a class='my_onclick_a' data='" + i.toString() + "'>" + ev[i].Title + "</a><span>" + ev[i].Temp + "</span></li>"
+                               // html_div += "<div id='my_onclick_div_" + i.toString() + "'class='my_onclick_div'>" + ev[i].Content + "</div></br>"
+                                html += "<div style='display: none;'  id='my_onclick_div_" + i.toString() + "'class='my_onclick_div'></br>" + ev[i].Content + "</br></br></div>"
+                            }
+                            $("#exhi_news").html(html);
+                            //$("#exhi_news_div").html(html_div);
+
+
+                            $(".my_onclick_a").click(function () {
+                                $(".my_onclick_div").hide();
+                                $("#my_onclick_div_" + $(this).attr("data")).show();                              
+                                //$("#exhi_news_div_show").html($("#my_onclick_div_" + $(this).attr("data"))[0].outerHTML);                               
+                            });
+                        }
+                    },
+                    error: function () {
+                        $("#exhi_news").html("<li><i class='sidian'></i><a>暂无</a><span></span></li>");
+                    }
+
+
+                })
+            }
+            function LoadHostInfo() {
+                $.ajax({
+                    url: "/Expo/Exhibition/handler/GetHostInfo.ashx",
+                    type: "POST",
+                    data: { ex_id: $("#ExhibitionUserControl1_HfExid").val() },
+                    success: function (data) {
+                        if (data == "null") {
+                            alert("服务器忙，请稍后再试！");
+                        }
+                        else {
+                            var ev = eval('(' + data + ')');
+
+
+                            $("#host_info").html(ev.Ex_unit_hostInfo);
+                            $("#host_contact").html(ev.Ex_unit_hostcontact);
+
+                        }
+                    },
+                    error: function (data) {
+                        alert("服务器忙，请稍后再试！");
+                    }
+                })
+            }
+        </script>
+    </div>
+    <input type="hidden" name="ExhibitionUserControl1$HfExid" id="ExhibitionUserControl1_HfExid" value="73428" />
+    <div class="zhanhuijieshao_c">
+        <!--展会概况begin-->
+        <div id="tab_zhanhui_1" class="tab_content">
+            <ul class="time_zhanguang bdb clearfix">
+                <li><strong>展览时间：</strong>2015/08/21---2015/08/23</li>
+                <li><strong>会展场馆：</strong>中国国际展览中心</li>
+            </ul>
+            <div class="zhanhui_gaishu bdb">
+                <div class="zhanhui_gaishu_t">
+                    <strong class="zhanhui_gaishu_l">展会概述：</strong>
+                    <div class="clear">
+                    </div>
+                </div>
+                <p class="suoj lg18">
+                    　　CCEFB是由国家批准的全国唯一消费电子专业国际性博览会，也是中国消费电子产业的旗帜性展会。由全球多个国家的政府与媒体同步组织招商。在十多年的专业化发展过程中，CCEFB为全球消费电子企业搭建行业交流平台，已成为推动全球消费电子产业发展的重要力量，目前在青岛、苏州、巡展中已得到了全球消费电子企业的认可。微软、惠普、IBM、GE、苹果、索尼、松下、东芝、INTEL、三星、LG、海尔、TCL、海信、长虹等消费电子巨头都给予了展会认可和支持。
+                </p>
+            </div>
+            <div class="zhuban_danwei_big bdb">
+                <div class="zhuban_danwei">
+                    <strong>主办单位：</strong>
+                    <p>
+                        中国电子质量管理协会
+                    </p>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="zhuban_danwei">
+                    <strong>承办单位：</strong>
+                    <p>
+                        百森（中国）展览有限公司</p>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="zhuban_danwei">
+                    <strong>协办单位：</strong>
+                    <p>
+                        美国消费电子协会、SOSA台北市消费者电子商务协会</p>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+            <div class="zhanpin_fanwei_big bdb">
+                <div class="zhanpin_fanwei_t">
+                    <strong class="zhanpin_fanwei_l">展品范围：</strong> <a class="zhankai_link" ishow="false"
+                        onclick='Myshow($("#range"),arr[1],$("#tab_zhanhui_1"));$("#rangecontent").show();'>
+                    </a>
+                    <div class="clear">
+                    </div>
+                </div>
+                <p id="range">
+                    ●数码产品   ● 汽车电子  ●通讯产品  
+<br/>●视听产品   ●智能手机及苹果周边产品
+<br/>●家用电子产品  ●计算机及周边产品  
+<br/>● 绿色环保家电  ●音视频及平板显示技术
+<br/>● 智能电器与家电  ● 医疗健康电子  </p>
+            </div>
+            <!--
+            <div class="zhanpin_fanwei_big bdb">
+                <div class="zhanpin_fanwei_t">
+                    <strong class="zhanpin_fanwei_l">展会特色：</strong> <a class="zhankai_link" ishow="false" onclick='Myshow($("#feature"),arr[2],$("#tab_zhanhui_1"))'>
+                    </a>
+                    <div class="clear">
+                    </div>
+                </div>
+                <p id="feature">
+                 　　获取海外定单―与来自海外的200余家采购商、需求商面对面地交流，成为供应商之一；
+　　销售内需产品－与来自国内的千余家采购经理见面，根据内需开拓国内市场，销售产品；
+　　提升品牌价值－在同行和客户间展示形象，提升行业地位、品牌价值度、知名度；
+　　得到媒体关注－近百家专业及大众媒体到会，新产品得到关注并有可能接受现场专访；
+　　拓展销售渠道－获取、谈判、确定潜在客户、代理商、批发商；
+　　维护销售网络－与新老客户见面，维护、加强您的销售网络；
+　　了解市场信息－直面终端消费者，了解新品上市前的市场反馈信息，快速获取市场动态；
+　　把握发展趋势－聆听海内外专家谈市场动态及成功销售模式，判断和把握未来发展趋势。</p>
+            </div>
+            -->
+        </div>
+        <!--展会概况end-->
+        <!--参展begin-->
+        <div style="display: none;" id="tab_zhanhui_2" class="tab_content">
+            <div style="border-top-color: rgb(110, 110, 110); border-top-width: 1px; border-top-style: dashed;"
+                class="zhanhui_gaishu bdb">
+                <div class="zhanhui_gaishu_t">
+                    <strong class="zhanhui_gaishu_l">展会概述：</strong> <a class="zhankai_link" ishow="false"
+                        onclick='Myshow($("#guide_brief"),arr[3],$("#tab_zhanhui_2"))'></a>
+                    <div class="clear">
+                    </div>
+                </div>
+                <p class="suoj lg18" id="guide_brief">
+                </p>
+            </div>
+            <div class="zhuban_danwei_big bdb">
+                <div class="zhuban_danwei">
+                    <strong>开展时间：</strong>
+                    <p id="ex_time">
+                    </p>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+            <div class="zhuban_danwei_big bdb">
+                <div class="zhuban_danwei">
+                    <strong>参展价格：</strong>
+                    <p id="participant_pricle">
+                    </p>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div class="zhuban_danwei_big bdb">
+               
+                <div class="zhuban_danwei">
+                    <strong>优惠活动：</strong>
+                    <p id="preferential">
+                    </p>
+                    <div class="clear">
+                    </div>
+                </div>
+               
+            </div>
+             -->
+            <div class="zhuban_danwei_big bdb">
+                <div class="zhuban_danwei">
+                    <strong>广告费用：</strong>
+                    <p id="adv_cost">
+                    </p>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--参展end-->
+        <!--观展begin-->
+        <div style="display: none;" id="tab_zhanhui_3" class="tab_content">
+            <div class="zhuban_danwei_big bdb">
+                <div class="zhuban_danwei">
+                    <strong>展会时间：</strong>
+                    <p id="visit_time">
+                    </p>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+            <div class="zhuban_danwei_big bdb">
+                <div class="zhuban_danwei">
+                    <strong>观众要求：</strong>
+                    <p id="ex_require">
+                    </p>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--观展end-->
+        <!--最新动态begin-->
+        <div style="display: none;" id="tab_zhanhui_4" class="tab_content_">
+            <ul class="huizhan_news_list" id="exhi_news">
+            </ul>
+            <div id="exhi_news_div_show"></div>
+            <div id="exhi_news_div"  style="display:none" ></div>
+        </div>
+        <!--最新动态end-->
+        <!--往届回顾begin-->
+        <div style="display: none;" id="tab_zhanhui_5" class="tab_content">
+            <div style="border-top-color: rgb(110, 110, 110); border-top-width: 1px; border-top-style: dashed;"
+                class="zhanpin_fanwei_big bdb">
+                <div class="zhanpin_fanwei_t">
+                    <strong class="zhanpin_fanwei_l">上届回顾：</strong> <a class="zhankai_link" ishow="false"
+                        onclick='Myshow($("#pastsummary"),arr[5],$("#tab_zhanhui_5"))'></a>
+                    <div class="clear">
+                    </div>
+                </div>
+                <p id="pastsummary">
+                    2015年中国国际消费电子博览会巡回北京展出，将着重搭建资本与产业创新，工业生产与消费个性化需求的交流平台，依靠各级政府职能部门、行业媒体、专业协会、专业研究机构的协作力量，利用展览展示、高峰论坛、网络互动、社会化传媒手段将消费电子企业终端消费需求进行紧密对接。与参展商一同为消费者带来一场规模最大、产品最全，集娱乐、时尚、互动、体验为一体的“饕餮盛宴”。
+                </p>
+            </div>
+            <div style="padding-top: 15px;">
+                <table id="previous_exhi" class="table_lijieshuju" border="0" cellspacing="1" cellpadding="0"
+                    width="100%">
+                    <tbody>
+                        <tr>
+                            <td style="width: 140px;" class="t">
+                                展会名
+                            </td>
+                            <td style="width: 100px;" class="t">
+                                时间
+                            </td>
+                            <td style="width: 115px;" class="t">
+                                地点
+                            </td>
+                            <td style="width: 85px;" class="t">
+                                到展人数
+                            </td>
+                            <td style="width: 75px;" class="t">
+                                展览面积(M2)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--往届回顾end-->
+        <div style="display: none;" id="tab_zhanhui_6" class="tab_content">
+            <div class="zhuban_danwei_big bdb">
+                <div class="zhuban_danwei">
+                    <strong style="display: block; width: 90px;">主办方介绍：</strong>
+                    <p id="host_info">
+                    </p>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+            <div class="zhuban_danwei_big bdb">
+                <div class="zhuban_danwei">
+                    <strong>联系方式：</strong>
+                    <p id="host_contact">
+                    </p>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--展会介绍结束-->
+</div>
+ 
+             
+<script type="text/javascript">
+    window.onload = function () {
+        LoadData();
+    }
+    function LoadData() {
+        $.ajax({
+            url: "/Expo/Exhibition/handler/LoadPreviousExhi.ashx",
+            type: "post",
+            data: { ex_id: "73428" },
+            success: function (data) {
+                var table = document.getElementById("BottomTable");
+                if (data.length > 0 && data != "null") {
+                    for (i = table.rows.length - 1; i > 0; i--) {
+                        table.deleteRow(i);
+                    }
+                    var ev = eval("(" + data + ")");
+                    var count = ev.length;
+                    if (count > 3) {
+                        count = 3;
+                    }
+
+                    for (var i = 0; i < count; i++) {
+                        var tr = table.insertRow(-1);
+                        var td1 = tr.insertCell(-1);
+                        var td2 = tr.insertCell(-1);
+                        var td3 = tr.insertCell(-1);
+                        var td4 = tr.insertCell(-1);
+                        var td5 = tr.insertCell(-1);
+                        td1.innerHTML = ev[i].Ex_name;
+                        td2.innerHTML = ev[i].Temp;
+                        td3.innerHTML = ev[i].Ex_address;
+                        td4.innerHTML = "展商：" + ev[i].Ex_viewer_counts + "人<br/>观众：" + ev[i].Ex_participant_counts + "人";
+                        td5.innerHTML = ev[i].Ex_size;
+                    }
+
+
+
+                }
+                else {
+                    for (i = table.rows.length - 1; i > 0; i--) {
+                        table.deleteRow(i);
+                    }
+                    var tr = table.insertRow(-1);
+                    var td1 = tr.insertCell(-1);
+                    var td2 = tr.insertCell(-1);
+                    var td3 = tr.insertCell(-1);
+                    var td4 = tr.insertCell(-1);
+                    var td5 = tr.insertCell(-1);
+                    td1.innerHTML = "暂无";
+                    td2.innerHTML = "暂无";
+                    td3.innerHTML = "暂无";
+                    td4.innerHTML = "暂无";
+                    td5.innerHTML = "暂无";
+                    
+
+                }
+            },
+            Error: function () {
+                alert(" 服务器忙，请稍后重试！");
+            }
+
+        });
+    }
+</script>
+ <!--历届展会和展会图片开始-->
+          <div class="lijie_zhanhuitupian mb10">
+        <div class="lijie_zhanhuitupian_t"><a  id="lijieimg1"  onclick="setTab('lijieimg',1,2);" class="current">历届数据</a><a style=" cursor:pointer;" id="lijieimg2" onclick="setTab('lijieimg',2,2)">展会图片</a></div>
+        <div class="lijie_zhanhuitupian_c">
+              <div class="lijie_tab_cont" id="tab_lijieimg_1">
+              <div class="no_lijieshuju" style="display:none;">暂无历届数据</div>
+              	<table width="100%" border="0" cellpadding="0" cellspacing="1" class="table_lijieshuju" id="BottomTable">
+  <tr>
+    <td class="t" style=" width:140px;">展会名</td>
+    <td class="t" style=" width:100px;">时间</td>
+    <td class="t" style="width:115px;">地点</td>
+    <td class="t" style="width:85px;">到展人数</td>
+    <td class="t" style="width:75px;">展览面积(M2)</td>
+  </tr>
+  
+</table>
+
+              </div>
+              <div class="lijie_tab_cont" id="tab_lijieimg_2" style="display:none; position:relative;">
+              <a href="Expo/Exhibition/ExhibitionPicViewList.aspx?PID=73428&imgType=1" class="on_liulan">更多</a>
+              	<ul class="lijie_tab_img">
+                    
+                        <li><img src="/pages/exhi/201307/73428/Images/small/73428_1_20130731152202181036.jpg" alt="展会图片" width="165" height="110" /></li>
+                    
+                        <li><img src="/pages/exhi/201307/73428/Images/small/73428_1_20130731152456149656.jpg" alt="展会图片" width="165" height="110" /></li>
+                    
+                        <li><img src="/pages/exhi/201307/73428/Images/small/73428_1_20130815201219865003.jpg" alt="展会图片" width="165" height="110" /></li>
+                    
+                </ul>
+              </div>
+            </div>
+      </div>
+          <!--历届展会和展会图片结束-->
+         
+       
+            
+ <div class="industy_contantUs mb10">
+        <div class="industy_contantUs_t">
+              <h2 class="t">联系方式</h2>
+            </div>
+        <div class="industy_contantUs_c">
+              <div class="industy_contant_left">
+                <img alt="CompanyLogo" width="120px" height="80px" src='/pages/exhi/201307/73428/Images/73428_5_20130731151924582445.jpg' />
+              </div>
+              <div class="industy_contant_right">
+            <p>公司名称：德国百森展览(中国)有限公司</p>
+            <p>公司地址：北京市朝阳区霞光里66号院</p>
+            <p class="industy_con_textTwo">联&nbsp; 系&nbsp;人：韩旭</p>
+            <p class="industy_con_textTwo">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：18800180338 </p>
+            <p class="industy_con_textTwo">在&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;线：
+            
+                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=4007489&site=qq&menu=yes">
+            <img border="0" src="http://wpa.qq.com/pa?p=2:4007489:42" alt="4007489" title="4007489">
+            </a>
+            
+            </p>
+            <p class="industy_con_textTwo">固定电话：010-52283471 </p>
+            <!--
+            <p class="industy_con_textTwo">官方微博：http://t.qq.com/bufsin</p>
+            <p>展会信息：<a href="#" class="zhanhui_mess_order">订阅</a></p>-->
+          </div>
+              <div class="clear"></div>
+            </div>
+      </div>
+             
+     <style type="text/css">
+        .mystyle{ border:solid 1px red;}
+    </style>
+<div class="online_questions">
+    <div class="online_questions_t">
+        <h2 class="t">
+            在线答疑</h2>
+    </div>
+   
+    <div class="online_questions_c">
+        <div class="question">
+        
+            <div class="refer">
+                
+                <dl>
+                    <dt></dt>
+                    <dd>
+                        暂无提问。
+                    </dd>
+                </dl>
+                
+            </div>
+        
+            
+        </div>
+        <!--我要提问开始-->
+        <div class="my_say">
+            <div class="say_text">
+                <div class="t">
+                    <strong>我要提问</strong></div>
+                <textarea class="textarea_text" rows="4" cols="85" id="askinfo"></textarea>
+            </div>
+            <div class="my_say_login">
+               <i id="readinfo"> 用户名：
+                <input type="text" id="uid" />
+                密码：
+                <input type="password" id="pwd" /></i>
+                <a class="jitiwenti" style="cursor: pointer;" id="btnsubmit">提交问题</a>
+            </div>
+            <div class="mail_tixing">
+                注：答疑回复将发到您的注册账号邮箱中</div>
+        </div>
+        <!--我要提结束-->
+    </div>
+</div>
+<script type="text/javascript">
+    function ValidataUserInfo(obj) {
+
+        if (obj.val() == "") {
+            
+            obj.css("border", "solid 1px red");
+            return false;
+        }
+        else {
+            obj.css("border", "");
+            return true;
+        }
+    }
+    $(function () {
+        $("div[class='refer']").each(function (index, element) {
+           if (index % 2 == 1) {
+                $(this).addClass("refer_bg");
+            }
+        });
+        var cuid = $.cookie("ex_cookieuid");
+        var cpwd = $.cookie("ex_cookiep");
+        var ex_id = 73428;
+        if (cuid != null && cpwd != null) {
+            $.ajax({
+                url: "/expo/exhibition/handler/ValidataUserLogin.ashx",
+                type: "POST",
+                data: { uid: cuid, pwd: cpwd, iscookie:1},
+                success: function (data) {
+                    var ev = eval("(" + data + ")");
+                    if (ev.status == "ok") {
+                        $("#readinfo").hide();
+                        $("#btnsubmit").html("提交问题").unbind("click").click(function () {
+                            SendAskInfo();
+                        });
+                    }
+                    else {
+                        $("#readinfo").show();
+                        $("#btnsubmit").html("登陆");
+                        $.cookie("ex_cookieuid", null);
+                        $.cookie("ex_cookiep", null);
+                        $("#btnsubmit").unbind('click').click(function () {
+                            ValidataUser($("#uid").val(), $("#pwd").val());
+                        });
+                    }
+                }
+            })
+        }
+        else {
+            $("#askinfo").html("未登陆，请先登陆！").attr("disabled", "disabled");
+            $("#btnsubmit").html("登陆");
+            $("#btnsubmit").unbind('click').click(function () {
+                ValidataUser($("#uid").val(), $("#pwd").val());
+            });
+        }
+
+    })
+    function ValidataUser(cuid, cpwd) {
+    $.ajax({
+            url: "/expo/exhibition/handler/ValidataUserLogin.ashx",
+            type: "POST",
+            data: { uid: cuid, pwd: cpwd, iscookie: 0 },
+            beforeSend: function () {
+                var arr = new Array();
+                arr.push(ValidataUserInfo($("#uid")));
+                arr.push(ValidataUserInfo($("#pwd")));
+                arr = $.grep(arr, function (n) {
+                    return n == false;
+                });
+                if (arr.length > 0) {
+                    return false;
+                }
+
+            },
+            success: function (data) {
+                var ev = eval("(" + data + ")");
+                if (ev.status == "ok") {
+                    $("#readinfo").hide();
+                    $("#btnsubmit").html("提交问题").click(function () {
+                        SendAskInfo();
+                    });
+                    $("#askinfo").html("").removeAttr("disabled", "disabled");
+
+                }
+                else {
+                    $("#readinfo").show();
+                    $("#btnsubmit").html("登陆");
+                    alert(ev.log);
+                }
+            }
+        })
+    }
+    function SendAskInfo() {
+        var exid = 73428;
+        var caskinfo = $("#askinfo").val();
+        var cuid = $.cookie("ex_cookieuid");
+        var cpwd = $.cookie("ex_cookiep");
+        $.ajax({
+            url: "/expo/exhibition/handler/addaskinfo.ashx",
+            type: "post",
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            data: { ex_id: exid, uid: cuid, askinfo: caskinfo },
+            beforeSend: function () {
+                var arr = new Array();
+                arr.push(ValidataUserInfo($("#askinfo")));
+                arr = $.grep(arr, function (n) {
+                    return n == false;
+                });
+                if (arr.length > 0) {
+                    return false;
+                }
+            },
+            success: function (data) {
+                if (data == "ok") {
+                    alert("您的问题已提交成功，我们将会以邮件的方式提醒您回复内容.");
+                    $("#askinfo").html("").hide();
+                    $(".my_say").hide().html("");
+                }
+            },
+            error: function (data) {
+                alert("服务器异常" + data);
+            }
+        })
+    }
+</script>
+
+             
+         </div>
+         <div class="columnRight"> 
+            
+<!--展位预订按钮开始-->
+<div class="order_btn_big mb10">
+    <a href="/Expo/ExpoServices/Exhibition/LogParticipate.aspx?ex_id=73428&mark=1" id="OrderEnterUserControl1_aPOrder" style="cursor: pointer;" class="zhanweiyuding"></a>
+    <a href="/Expo/ExpoServices/Exhibition/LogParticipate.aspx?ex_id=73428&mark=2" id="OrderEnterUserControl1_aVOrder" style="cursor: pointer;" class="guangzhanyuding">
+    </a>
+</div>
+<!--展位预订按钮结束-->
+<!--商旅服务开始-->
+<div class="business_services mb10">
+    <!-- <h2 class="t"><a href="#"></a></h2>-->
+    <a href="http://hotel.expo-china.com" target="_blank" class="s_img hotel">
+        <img src="http://resource.expo-china.com/images/exhibition/01.jpg" width="198" height="52" /></a>
+    <div class="four_img_big">
+        <div style="margin-bottom: 10px;">
+            <a href="http://jipiao.kuxun.cn/index_s.html?utm_source=expo-china.com" target="_blank"
+                class="s_img four_img">
+                <img src="http://resource.expo-china.com/images/exhibition/02.jpg" width="180" height="48" /></a></div>
+        <div style="margin-bottom: 10px;">
+            <a href="http://www.yongche.com/?utm_source=expo-china.com" target="_blank" class="s_img four_img"
+                style="margin-bottom: 10px;">
+                <img src="http://resource.expo-china.com/images/exhibition/03.jpg" width="180" height="48" /></a></div>
+        <div style="margin-bottom: 10px;">
+            <a href="http://vacations.ctrip.com/?utm_source=expo-china.com" target="_blank" class="s_img four_img"
+                style="margin-bottom: 10px;">
+                <img src="http://resource.expo-china.com/images/exhibition/04.jpg" width="180" height="48" /></a></div>
+        <div style="margin-bottom: 10px;">
+            <a href="http://www.xiaomishu.com/shop/search/?utm_source=expo-china.com" target="_blank"
+                class="s_img four_img" style="margin-bottom: 10px;">
+                <img src="http://resource.expo-china.com/images/exhibition/05.jpg" width="180" height="48" /></a></div>
+        <p class="fuwushang_p">
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=613553124&site=qq&menu=yes">
+                申请成为服务商<br />
+                <img border="0" src="http://wpa.qq.com/pa?p=2:613553124:42" alt="613553124" title="613553124"></a>
+        </p>
+    </div>
+</div>
+<!--商旅服务结束-->
+
+             
+<!--展台设计开始-->
+<div class="zhantai_design mb10">
+    <div class="zhantai_design_t">
+        <h2 class="t">
+            展台设计</h2>
+    </div>
+    <div class="zhantai_design_c">
+        <div class="design_c_tab">
+            <ul class="design_tab">
+                <li><a href="#" id="zwdesign1" onmouseover="setTab('zwdesign',1,3)">经济型</a></li>
+                <li><a href="#" id="zwdesign2" onmouseover="setTab('zwdesign',2,3)" class="current">
+                    标准型</a></li>
+                <li><a href="#" id="zwdesign3" onmouseover="setTab('zwdesign',3,3)">豪华型</a></li>
+            </ul>
+            <div class="design_con">
+                <div class="design_contant" id="tab_zwdesign_1" style="display: none">
+                    <dl class="ztdesign_tu">
+                        <dd>
+                            <img src="http://www.expo-china.com/Static/ExDesk/Images/367_20110413170133916601.jpg" width="110" height="70" /></dd>
+                        <dt>500~800/平米</dt>
+                    </dl>
+                </div>
+                <div class="design_contant" id="tab_zwdesign_2" style="display: block">
+                    <dl class="ztdesign_tu">
+                        <dd>
+                            <img src="http://www.expo-china.com/Static/ExDesk/Images/413_20110422160012613099.jpg" width="110" height="70" /></dd>
+                        <dt>800~1000/平米</dt>
+                    </dl>
+                </div>
+                <div class="design_contant" id="tab_zwdesign_3" style="display: none">
+                    <dl class="ztdesign_tu">
+                        <dd>
+                            <img src="http://www.expo-china.com/Static/ExDesk/Images/461_20110713173354317857.jpg" width="110" height="70" /></dd>
+                        <dt>1200/平米</dt>
+                    </dl>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="zhanshi_gongchang" style="border-bottom: 1px solid #bed8f1; display: none;">
+            <a href="#"></a>
+        </div>
+        <div class="zhanshi_ting" style="border-bottom: 1px solid #bed8f1;">
+            <a href="http://sr.expo-china.com/zhanting/show_office.html" target="_blank"></a>
+        </div>
+        <div class="zhanshi_zulin">
+            <a href="http://www.expo-china.com/web/corp/corp_zhantai.aspx?type=4" target="_blank">
+            </a>
+        </div>
+        <div class="zhanshi_ting_tai" style="display: none;">
+            <a href="#"></a>
+        </div>
+        <div class="zhanshi_qq_online">
+            <a target="_blank" class="design_qq_num" href="http://wpa.qq.com/msgrd?v=3&uin=613553124&site=qq&menu=yes">
+                <strong>613553124</strong></a></div>
+    </div>
+</div>
+<!--展台设计结束-->
+
+             
+<!--会展服务开始-->
+<style type="text/css">
+    h3
+    {
+        border-top: 1px solid #bed8f1;
+        color: #0097dd;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 36px;
+        cursor: pointer;
+    }
+    .hzsmall_icon
+    {
+        background-image: url(http://resource.expo-china.com/images/exhibition/index_bg.png);
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 26px;
+        height: 24px;
+        float: left;
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 15px;
+    }
+    .icon_1
+    {
+        background-position: -5px -382px;
+    }
+    .icon_2
+    {
+        background-position: -5px -405px;
+    }
+    .icon_3
+    {
+        background-position: -5px -558px;
+    }
+    .icon_4
+    {
+        background-position: -5px -427px;
+    }
+    .icon_5
+    {
+        background-position: -5px -450px;
+    }
+    .icon_6
+    {
+        background-position: -5px -530px;
+    }
+    .icon_7
+    {
+        background-position: -5px -476px;
+    }
+    .icon_8
+    {
+        background-position: -5px -502px;
+    }
+    .divBorder
+    {
+        border-top: 1px solid #bed8f1;
+        background: #f9f9f9;
+        padding: 5px 0px 5px 10px;
+    }
+    a
+    {
+        text-decoration: none;
+    }
+    a:hover
+    {
+        color: #0097dd;
+        text-decoration: underline;
+    }
+</style>
+<div class="huizhanfuwu">
+    <div class="huizhanfuwu_t">
+        <h2 class="t">
+            会展服务</h2><a target="_blank" style=" margin-left:85px; font-size:larger;" href="http://www.expo-china.com/web/corp/corp_main.aspx">更多</a>
+    </div>
+    <div id="accordion" class="huizhanfuwu_c">
+        <h3><i class='hzsmall_icon icon_1'></i>广告礼品</h3>
+                                    <div class='divBorder'>
+                                        <ul class='fuwu_cont_list'>
+                                            <li><a href='www.ashongying.com' title='中视鸿影（北京）数字科技有限公司'><i class='sidian'></i>中视鸿影（北京）数字科技有...</a></li><li><a href='' title='北京晶奥广告有限公司'><i class='sidian'></i>北京晶奥广告有限公司</a></li><li><a href='www.dmwantong.com/CEOWEN_ContactUs/' title='北京万通北方广告公司'><i class='sidian'></i>北京万通北方广告公司</a></li><li><a href='http://' title='北京冶金大业印刷有限公司'><i class='sidian'></i>北京冶金大业印刷有限公司</a></li><li><a href='http://www.cvivip.com' title='北京兰新雅志诚广告有限公司'><i class='sidian'></i>北京兰新雅志诚广告有限公司</a></li><li><a href='' title='北京思卓文化发展有限公司'><i class='sidian'></i>北京思卓文化发展有限公司</a></li>
+                                        </ul>
+                                    </div><h3><i class='hzsmall_icon icon_2'></i>礼仪模特</h3>
+                                    <div class='divBorder'>
+                                        <ul class='fuwu_cont_list'>
+                                            <li><a href='www.yinghuatengfei.com' title='英华腾飞（北京）文化传播有限公司'><i class='sidian'></i>英华腾飞（北京）文化传播有...</a></li><li><a href='jghk.com' title='北京金冠宏坤文化发展有限公司'><i class='sidian'></i>北京金冠宏坤文化发展有限公...</a></li><li><a href='http://www.nacww.cn/' title='北京娜尚文化传播有限公司'><i class='sidian'></i>北京娜尚文化传播有限公司</a></li><li><a href='' title='北京大为文化发展有限公司'><i class='sidian'></i>北京大为文化发展有限公司</a></li><li><a href='' title='深圳市英达思企业管理咨询有限公司北京办事处'><i class='sidian'></i>深圳市英达思企业管理咨询有...</a></li><li><a href='www.bjycw.com/' title='北京驰誉励勤文化艺术传播有限公司'><i class='sidian'></i>北京驰誉励勤文化艺术传播有...</a></li>
+                                        </ul>
+                                    </div><h3><i class='hzsmall_icon icon_3'></i>影视媒体</h3>
+                                    <div class='divBorder'>
+                                        <ul class='fuwu_cont_list'>
+                                            <li><a href='' title='北京若天之星文化传播有限公司'><i class='sidian'></i>北京若天之星文化传播有限公...</a></li><li><a href='http://' title='卓瑟林国际文化传播（北京）有限公司'><i class='sidian'></i>卓瑟林国际文化传播（北京）...</a></li><li><a href='http://www.chinatradenews.com.cn/' title='中国贸易报'><i class='sidian'></i>中国贸易报</a></li><li><a href='http://' title='北京企国强文化传媒有限公司'><i class='sidian'></i>北京企国强文化传媒有限公司</a></li><li><a href='www.tv-cf.com.cn' title='北京光彩东方影视文化传播有限公司'><i class='sidian'></i>北京光彩东方影视文化传播有...</a></li><li><a href='http://' title='俄罗斯国信公司'><i class='sidian'></i>俄罗斯国信公司</a></li>
+                                        </ul>
+                                    </div><h3><i class='hzsmall_icon icon_4'></i>展具租赁</h3>
+                                    <div class='divBorder'>
+                                        <ul class='fuwu_cont_list'>
+                                            <li><a href='www.shengshijiahe.com/index.asp' title='北京盛世嘉禾科技发展有限公司'><i class='sidian'></i>北京盛世嘉禾科技发展有限公...</a></li><li><a href='www.solarcg.com' title='北京阳光中图数字科技有限公司'><i class='sidian'></i>北京阳光中图数字科技有限公...</a></li><li><a href='http://www.tshmodel.com/' title='北京市清雅华苑模型技术有限公司'><i class='sidian'></i>北京市清雅华苑模型技术有限...</a></li><li><a href='bjhllycqczl.my.sme.cn' title='北京红绿蓝演出器材租赁有限公司'><i class='sidian'></i>北京红绿蓝演出器材租赁有限...</a></li><li><a href='' title='北京同方瑞博文化传媒有限公司'><i class='sidian'></i>北京同方瑞博文化传媒有限公...</a></li><li><a href='www.yuanpengwenhua.com' title='北京圆鹏文化艺术发展有限公司'><i class='sidian'></i>北京圆鹏文化艺术发展有限公...</a></li>
+                                        </ul>
+                                    </div><h3><i class='hzsmall_icon icon_5'></i>交通物流</h3>
+                                    <div class='divBorder'>
+                                        <ul class='fuwu_cont_list'>
+                                            <li><a href='http://' title='北京重力诚成起重搬运有限公司'><i class='sidian'></i>北京重力诚成起重搬运有限公...</a></li><li><a href='www.xdsl365.com' title='北京新都国际旅行社会展部'><i class='sidian'></i>北京新都国际旅行社会展部</a></li><li><a href='http://www.56114.net.cn/comp/114761/' title='北京久程物流有限公司'><i class='sidian'></i>北京久程物流有限公司</a></li><li><a href='http://' title='北京华夏航空服务有限公司（会展销售部）'><i class='sidian'></i>北京华夏航空服务有限公司（...</a></li><li><a href='http://www.ytjy56.com' title='北京源通捷运国际货运代理有限公司'><i class='sidian'></i>北京源通捷运国际货运代理有...</a></li><li><a href='' title='北京尚森货物运输服务有限公司'><i class='sidian'></i>北京尚森货物运输服务有限公...</a></li>
+                                        </ul>
+                                    </div><h3><i class='hzsmall_icon icon_6'></i>鲜花植物</h3>
+                                    <div class='divBorder'>
+                                        <ul class='fuwu_cont_list'>
+                                            <li><a href='http://www.bjzuhua.com' title='北京福运花鲜花店'><i class='sidian'></i>北京福运花鲜花店</a></li><li><a href='www.ipbzs.com' title='一品邦众商务服务（北京）有限公司'><i class='sidian'></i>一品邦众商务服务（北京）有...</a></li>
+                                        </ul>
+                                    </div><h3><i class='hzsmall_icon icon_7'></i>翻译服务</h3>
+                                    <div class='divBorder'>
+                                        <ul class='fuwu_cont_list'>
+                                            <li><a href='www.hlyt.com' title='北京华联亚通网络信息技术有限公司'><i class='sidian'></i>北京华联亚通网络信息技术有...</a></li><li><a href='www.transfu.com' title='北京天译时代翻译有限责任公司'><i class='sidian'></i>北京天译时代翻译有限责任公...</a></li><li><a href='www.jdyq.cn' title='北京经典语泉翻译中心'><i class='sidian'></i>北京经典语泉翻译中心</a></li><li><a href='www.jdr-trans.com' title='北京嘉德瑞翻译有限公司'><i class='sidian'></i>北京嘉德瑞翻译有限公司</a></li><li><a href='www.bjfyw.cn ' title='北京京译通翻译公司'><i class='sidian'></i>北京京译通翻译公司</a></li><li><a href='www.param.com.cn' title='北京百若萌翻译有限公司'><i class='sidian'></i>北京百若萌翻译有限公司</a></li>
+                                        </ul>
+                                    </div><h3><i class='hzsmall_icon icon_8'></i>综合服务</h3>
+                                    <div class='divBorder'>
+                                        <ul class='fuwu_cont_list'>
+                                            <li><a href='wwww.bjhczx.com' title='华成致信信息咨询有限公司'><i class='sidian'></i>华成致信信息咨询有限公司</a></li><li><a href='www.ipimb.com' title='今视博洋（北京）展示有限公司'><i class='sidian'></i>今视博洋（北京）展示有限公...</a></li><li><a href='' title='北京拓威国际展览有限公司'><i class='sidian'></i>北京拓威国际展览有限公司</a></li><li><a href='' title='北京天成视佳广告有限公司'><i class='sidian'></i>北京天成视佳广告有限公司</a></li><li><a href='www.elite-display.com.cn' title='北京迪亚锋展示有限公司'><i class='sidian'></i>北京迪亚锋展示有限公司</a></li><li><a href='http://' title='北京倍智国际会展有限公司'><i class='sidian'></i>北京倍智国际会展有限公司</a></li>
+                                        </ul>
+                                    </div>
+    </div>
+</div>
+<!--会展服务结束-->
+<div class="clear">
+</div>
+<!--主题内容结束-->
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $(".divBorder").hide();
+        $("#accordion h3").each(function () {
+            $(this).click(function () {
+                $(".divBorder").hide();
+                $(this).next("div").slideDown();
+            })
+        })
+    });
+</script>
+
+        </div>
+        <div class="clear"/>
+        
+     </div>
+    </div>
+    
+<link href="http://Resource.expo-china.com/Style/Footer.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+   a, a:link, a:hover, a:visited, img, a img{
+ border: none; }
+ #footer a:link,  #footer a:visited, #footer a:active{color:#666; text-decoration:none;}
+  #footer a:hover{ color:Blue; text-decoration:underline;}
+</style>
+<div id="footer">
+    <p id="end_text">
+        <a href="/Expo/Enterprise/AboutUs.aspx" class="footerLink">关于我们</a> | <a href="/Expo/Enterprise/Corperation.aspx"
+            class="footerLink">商务合作</a> | <a href="/Expo/Enterprise/user_service.aspx" class="footerLink">
+                会员服务</a> | <a href="/Expo/Enterprise/AdService.aspx" class="footerLink">广告服务</a>
+        | <a href="/Expo/Enterprise/ExhibitionIndex.aspx" class="footerLink">展会索引</a>
+        | <a href="/Expo/Enterprise/Career.aspx" class="footerLink">诚聘英才</a> | <a href="/Expo/Enterprise/ContactUs.aspx"
+            class="footerLink">联系我们</a> | <a href="/Expo/Enterprise/FriendLink.aspx" class="footerLink">
+                友情链接</a> |
+        <script type="text/javascript" language="javascript" src="http://s13.cnzz.com/stat.php?id=3802636&web_id=3802636"></script>
+        <br />
+        &copy; 2003-2013
+        <a href="http://www.expo-china.com" target="_blank">expo-china.com</a> | <a href="http://www.miibeian.gov.cn"
+            target="_blank">ICP证：沪09019491号</a></p>
+    <p style="padding: 5px 0px 10px 0;">
+        <a href="http://www.sceia.com.cn/" target="_blank" rel="nofollow">
+            <img alt="中国会展网,上海行业会展协会" src="http://Resource.expo-china.com/Images/Enterprise/foot1.jpg"
+                width="128" height="47" title="上海行业会展协会" />
+        </a>
+        <script src="https://kxlogo.knet.cn/seallogo.dll?sn=e12090731010035588000000&size=0"></script>
+        <a href="http://pinggu.zx110.org/checkWebsite.do?lt=1&wd=www.expo-china.com" target="_blank"
+            rel="nofollow">
+            <img alt="中国会展网,征信网" src="http://Resource.expo-china.com/Images/Enterprise/foot3.jpg"
+                width="128" height="47" title="征信网" />
+        </a><a href="http://www.shjubao.cn/" target="_blank" rel="nofollow">
+            <img alt="中国会展网,上海市互联网违法与违规信息举报中心" src="http://Resource.expo-china.com/Images/Enterprise/foot4.jpg"
+                width="128" height="47" title="上海市互联网违法与违规信息举报中心" />
+        </a><a target="blank" rel="nofollow" href="http://sh.cyberpolice.cn/">
+            <img alt="中国会展网,police" src="http://Resource.expo-china.com/Images/Enterprise/shcyberpolice.jpg"
+                width="128" height="47" title="police" />
+        </a>
+        <script language="javascript" type="text/javascript">
+            document.writeln("<a href='http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20120516101658865' target='_blank' rel='nofollow'><img src='http://Resource.expo-china.com/Images/enterprise/icon.gif' border=0></a>");
+        </script>
+    </p>
+    <script language="javascript" type="text/javascript" src="http://Resource.expo-china.com/Script/google_analytics.js"></script>
+</div>
+
+    </form>
+    
+</body>
+   
+</html>

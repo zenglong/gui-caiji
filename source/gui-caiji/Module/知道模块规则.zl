@@ -1,0 +1,276 @@
+//本脚本采用zengl编程语言的语法 知道规则
+inc 'remote_local_img.zl'; //将远程图片下载到本地再上传的类
+inc 'know_inc.zl';
+tablename = 'know';
+Max_CaijiNum = bltGetCaijiNum();
+catid = bltGetCatid();
+modid = bltGetModid();
+catname = bltGetCatName();
+keywords = array();
+mustwords = array();
+caiji_url = bltGetWebUrl();
+caiji_totalcount = 0;
+totalpostNum = 0;
+caiji_postfileName = bltGetInitManageUrl(); //获取采集的上传接口文件名
+//maxCaijiImgs_Num = bltGetMaxUploadIMG(); //获取最多采集多少张图片
+
+//myPostDataToWeb(); //debug调试 
+//bltExit(); //debug调试 
+
+Auth.authorize(&Max_CaijiNum,caiji_url); //域名授权认证
+
+keywords_count = bltGetKeyWords(keywords,mustwords);
+if(keywords_count > 0)
+	for(i=0;i<keywords_count && caiji_totalcount < Max_CaijiNum;i++)
+		print '关键词'+i+':'+keywords[i] + '\n必需包含词:'+
+			mustwords[i];
+		escape_keyword = bltCurlEncode(keywords[i]);
+		print '转义关键词:' + escape_keyword;
+		remote_url = 'http://zhidao.baidu.com/search?lm=0&rn=10&pn=0&fr=search&ie=gbk&word=' + 
+					escape_keyword + '&f=sug&rsp=' + escape_keyword;
+		print '采集分页：' + remote_url;
+		remote_content = bltCurlGetUrl(remote_url);
+		//print remote_content;
+		page_links = array(); //初始化分页链接数组
+		bltRegexMatches(know_page_links_pattern,1,remote_content,page_links,1,0); /*根据分页链接规则获取底部分页的链接*/
+		pagecount = bltArrayInsertString(page_links,remote_url,0); //将当前页链接也压入分页链接数组中。
+		for(pageindex = 0 ;pageindex < pagecount;pageindex++)
+			if(pageindex>0)
+				page_links[pageindex] = 'http://zhidao.baidu.com' + page_links[pageindex];
+			endif
+		endfor
+		for(pageindex = 0 ;pageindex < pagecount && caiji_totalcount < Max_CaijiNum; pageindex++)
+			content_links = array(); //初始化内容链接数组
+			if(pageindex != 0)
+				remote_content = bltCurlGetUrl(page_links[pageindex]); //得到当前分页的内容链接页面。
+				print '采集分页：' + page_links[pageindex];
+			endif
+			contentCount = bltRegexMatches(know_content_links_pattern,2,remote_content,content_links,1,0); /*根据内容链接规则获取内容链接数组*/
+			for(contentIndex = 0 ; contentIndex < contentCount && caiji_totalcount < Max_CaijiNum; contentIndex++)
+				if(myCheckContentLinkExists())
+					continue;
+				endif
+				remote_content = bltCurlGetUrl(content_links[contentIndex]); //根据文章链接得到每篇文章的内容
+				print content_links[contentIndex]; //debug
+				title = know_get_title(); //匹配标题
+				if(title =='') 
+					myInsertToDb_whenError(content_links[contentIndex] + '标题为空!\n');
+					continue;
+				elif(myDetectTitle(title) == 'Y')
+					myInsertToDb_whenError('<'+title+'>服务端标题已经存在!\n','titleExists');
+					continue;
+				endif
+				if(!bltCheckTitleMust(title,mustwords[i]))
+					myInsertToDb_whenError(content_links[contentIndex] + title +' 不包含必须词：'+bltStrReplace('&',' ',mustwords[i]) + '\n');
+					continue;
+				endif
+				know_content = know_get_content(); //知道内容
+				know_areaid = know_get_areaid(); //获取地区ID
+				
+				/*print '标题：' + title + ' job_total:'+job_total+' job_minsalary:'+job_minsalary+' job_maxsalary:'+job_maxsalary  +
+					' job_areaid:' + job_areaid + ' job_type:'+job_type + ' job_gender:'+job_gender + ' job_marriage:'+job_marriage + ' job_education:'+job_education + 
+					' job_minage:' + job_minage + ' job_experience:'+job_experience + ' job_content'+job_content + ' job_department:'+job_department;*/ //debug 调试
+				
+				myInsertToDb();
+				//break;
+			endfor
+			//break;
+		endfor
+		//break;
+	endfor
+elif(keywords_count == 0)
+	printf('分类的关键词为空\n',RED);
+else
+	printf('获取分类的关键词时发生错误\n',RED);
+endif
+
+bltCheckUserPause();
+myPostDataToWeb();
+bltTellSysCaijiStatus(caiji_totalcount,totalpostNum);
+print '\n分类['+catname+']一共采集了'+caiji_totalcount+'条信息！发布成功'+totalpostNum+'条信息//////////////////////////////';
+
+fun myCheckContentLinkExists()
+	global tablename,content_links,contentIndex,catid;
+	if(bltSqlTableExists(tablename))
+		sql = "SELECT * FROM "+tablename+" WHERE linkurl='"+bltSqlEscape(content_links[contentIndex])+"' AND catid='"+catid+"'";
+		if(!bltSqlQuery(sql))
+			bltExit('查询'+sql+'失败');
+		elif(bltSqlMoveToNext())
+			print bltSqlGetString('linkurl') + '["' + bltSqlGetString('title') + ']"采集地址已经存在！';
+			bltSqlRelease();
+			return TRUE;
+		endif
+		bltSqlRelease();
+		return FALSE;
+	else
+		bltSqlExec('CREATE TABLE '+tablename+' (id INTEGER PRIMARY KEY ASC,catid,title,content,state,linkurl,status,hits,areaid,addtime)');
+		print '创建'+tablename+'数据库表！';
+		return FALSE;
+	endif
+endfun
+
+fun myCheckIsNeedSuffix() //判断是否需要后缀
+	global catid,catname;
+	sql = "SELECT * FROM keywords WHERE catid='"+catid+"'";
+	if(!bltSqlQuery(sql))
+		bltExit('查询'+sql+'失败');
+	endif
+	if(bltSqlMoveToNext())
+		ret = bltConvToInt(bltSqlGetString('needSuffix'));
+	else
+		bltExit('myCheckIsNeedSuffix运行时错误: 在数据库的keywords表中没有找到分类('+catname+') 对应catid为'+catid);
+	endif
+	bltSqlRelease();
+	return ret;
+	//bltInfoBox('结果：'+ printStr);
+endfun
+
+fun myInsertToDb()
+	global tablename,catname,catid,title,know_content,content_links,contentIndex,caiji_totalcount,know_areaid;
+	
+	sql = "INSERT INTO "+ tablename +
+			" (catid,title,content,state,linkurl,status,hits,areaid,addtime) VALUES ('" + 
+			catid + "','" +
+			bltSqlEscape(title) + "','" +
+			bltSqlEscape(know_content) + "','0','" +
+			bltSqlEscape(content_links[contentIndex]) + "','" +
+			'3' + "','" +
+			bltIntToStr(bltRandom()%1000 + 200,0,'0') + "','" +
+			bltSqlEscape(know_areaid) + "','" +
+			bltGetTimeNow('%Y-%m-%d %H:%M:%S') + "')";
+	//bltInfoBox(sql);
+	if(!bltSqlExec(sql))
+		bltExit('执行'+sql+'失败');
+	endif
+	caiji_totalcount++;
+	bltAddProgress(1);
+	printf('采集(' + title + ')到本地数据库的['+catname+']分类中\n',GREEN);
+endfun
+
+fun myInsertToDb_whenError(errorStr,extraInfo)
+	global tablename,catid,content_links,contentIndex;
+	extraInfo += ''; //当extraInfo没提供参数时，为默认的整数0，此时需要转为字符串格式，和字符串相加就可以转为字符串。
+	if(bltCheckAutoPass() || extraInfo == 'titleExists')
+		errorStr = '系统自动过滤:' + errorStr;
+		sql = "INSERT INTO "+ tablename +
+			" (catid,title,content,state,linkurl,status,hits,areaid,addtime) VALUES ('" + 
+			catid + "','" +
+			bltSqlEscape(errorStr) + "','','1','" +
+			bltSqlEscape(content_links[contentIndex]) + "','3','','','')";
+		if(!bltSqlExec(sql))
+			bltExit('执行'+sql+'失败');
+		endif
+	endif
+	if(extraInfo == 'titleExists')
+		printf(errorStr,NORMAL);
+	else
+		printf(errorStr,RED);
+	endif
+endfun
+
+fun myPostDataToWeb()
+	global tablename,catid,modid,caiji_url,catname,totalpostNum,caiji_postfileName,maxCaijiImgs_Num;
+	totalRowCount = myGetTotalNum();
+	if(totalRowCount <= 0)
+		printf('本地数据库的采集量为0，目前['+catname+"]分类没采集到数据！跳过不继续发布！\n",RED);
+		return;
+	endif
+	if(bltGetMenuCheck("倒序发布"))
+		sql = "SELECT * FROM "+tablename+" WHERE catid='" + catid + "' AND state='0' order by id desc";
+	else
+		sql = "SELECT * FROM "+tablename+" WHERE catid='" + catid + "' AND state='0'";
+	endif
+	//sql = "SELECT * FROM "+tablename+" WHERE catid='" + catid + "' AND state='0'";
+	if(!bltSqlQuery(sql))
+		bltExit('查询'+sql+'失败');
+	endif
+	url = "http://" + caiji_url + "/"+caiji_postfileName;
+	forward = "http://"+ caiji_url +"/"+caiji_postfileName+"/action/left";
+	RowCount = 0;
+	for(;bltSqlMoveToNext();bltAddProgressEx(RowCount,totalRowCount))
+		RowCount++;
+		//bltAddProgressEx(RowCount,totalRowCount);
+		title = bltSqlGetString('title');
+		if(myDetectTitle(title) == 'Y')
+			print title + '已经采集过了跳过！';
+			sql = "UPDATE "+tablename+" SET state='1' WHERE id='"+bltSqlGetString('id')+"'";
+			if(!bltSqlExec(sql))
+				bltExit('执行'+sql+'失败');
+			endif
+			continue;
+		endif
+		maxCaijiImgs_Num = bltGetMaxUploadIMG(); //获取最多采集多少张图片
+		if(bltGetMenuCheck("发布到待审核"))
+			status = '2';
+		else
+			status = '3';
+		endif
+		printf('发布中...',GREEN);
+		ret = bltPostData(url,array('moduleid',bltIntToStr(modid,0,'0'),
+							'file','index',
+							'action','add',
+							'itemid',"0",
+							'forward',forward,
+							"post[title]",title,
+							"post[level]","1",
+							"post[catid]",bltIntToStr(catid,0,'0'),
+							"post[content]",IMG.PostAll(bltSqlGetString('content')),
+							"post[thumb]","",
+							"post[username]","",
+							"post[status]",status,
+							"post[areaid]",bltSqlGetString('areaid'),
+							"post[hits]",bltSqlGetString('hits'),
+							//"post[addtime]",bltSqlGetString('addtime'),
+							"post[addtime]",bltGetTimeNow('%Y-%m-%d %H:%M:%S'),
+							"post[save_remotepic]",'1',
+							"post[clear_link]",'1',
+							"post[maxcaiji_num]",maxCaijiImgs_Num,
+							"submit","确定"
+							),&output);
+
+		if(ret > 0)
+			if(bltRegexMatchFirst('<div class="head">.*?<div.*?>(提示信息)</',1,output,&match,1) < 0)
+				printf('【'+ title + '】发布成功！\n',GREEN);
+				sql = "UPDATE "+tablename+" SET state='1' WHERE id='"+bltSqlGetString('id')+"'";
+				if(!bltSqlExec(sql))
+					bltExit('执行'+sql+'失败');
+				endif
+				totalpostNum++;
+			else
+				if(bltRegexMatchFirst('<div class="content">\\s*?(.*?)\\s*?<div',1,output,&match,1) >= 0)
+					printf('【'+ title + '】发布失败！原因：' + match + '\n',RED);
+				else
+					printf('【'+ title + '】发布失败！原因未知，请在对应模块脚本中使用print或printf或bltInfoBox等进行调试分析\n' ,RED);
+				endif
+			endif
+		else
+			printf('【'+ title + '】发布未知！\n',RED);
+		endif
+		//break;
+	endfor
+	bltSqlRelease();
+endfun
+
+fun myDetectTitle(title)
+	global tablename,caiji_url,modid,catid;
+	detectUrl = "http://"+ caiji_url +"/mydetectTitle.php";
+	bltPostData(detectUrl,array(
+					"_zlmy_detectTable",tablename,
+					"_zlmy_detectTitle",title,
+					"_zlmy_catid",bltIntToStr(catid,0,'0')
+					),&output);
+	return output;
+endfun
+
+fun myGetTotalNum()
+	global tablename,catid;
+	sql = "SELECT count(*) as MyTotalCnt FROM "+tablename+" WHERE catid='" + catid + "' AND state='0'";
+	if(!bltSqlQuery(sql))
+		bltExit('查询'+sql+'失败');
+	endif
+	if(bltSqlMoveToNext())
+		return bltConvToInt(bltSqlGetString('MyTotalCnt'));
+	else
+		return 0;
+	endif
+endfun

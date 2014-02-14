@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html;charset=gbk" http-equiv="Content-Type">
+<title>test</title>
+<meta content="IE=7" http-equiv="x-ua-compatible">
+</head>
+<body>
+	<form action="http://www.destoongbk5.qq/zengl_caiji.php" method="post">
+		<input name='moduleid' value='12'>
+		<input name='file' value='index'>
+		<input name='action' value='item'>
+		<input name='itemid' value='4'>
+		<input name='forward' value='http://www.destoongbk5.qq/zengl_caiji.php/action/left'>
+		<input name='swf_upload' value=''>
+		<input name='post[2][thumb]' value='http://www.destoongbk5.qq/file/upload/201308/25/18-11-33-91-1.jpg.thumb.jpg'>
+		<input name='post[2][introduce]' value='ceshiceshiceshi'>
+		<input name='post[2][listorder]' value='0'>
+		<input name='post[0][thumb]' value=''>
+		<input name='post[0][introduce]' value='jianjie'>
+		<input name='post[0][listorder]' value='0'>
+		<input name='post[clear_link]' value='1'>
+		<input name='post[save_remotepic]' value='1'>
+		<input name='post[maxcaiji_num]' value='所有'>
+		<input name='submit' type='submit' value=' 更 新 '>
+	</form>
+</body>
+</html>

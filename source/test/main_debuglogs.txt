@@ -1,0 +1,2648 @@
+nodenum:0 reserve token: use line:1,col:1 <'test2.zl'>
+(0) use has 1 childs: 
+(0) use (0) child is nodenum:1 identifier token: builtin line:1,col:5 <'test2.zl'>
+(0) use childs end 
+(0) use has nextnode: nodenum:3 funcall token: printf line:2,col:1 <'test2.zl'>
+(3) printf has 1 childs: 
+(3) printf (0) child is nodenum:5 string token: 'i am in test2.zl,haha 
+' line:2,col:8 <'test2.zl'>
+(3) printf childs end 
+(3) printf has nextnode: nodenum:8 reserve token: use line:2,col:1 <'test.zl'>
+(8) use has 1 childs: 
+(8) use (0) child is nodenum:9 identifier token: sdl line:2,col:5 <'test.zl'>
+(8) use childs end 
+(8) use has nextnode: nodenum:11 reserve token: class line:4,col:1 <'test.zl'>
+(11) class has 2 childs: 
+(11) class (0) child is nodenum:12 identifier token: clsTest line:4,col:7 <'test.zl'>
+(11) class (1) child is nodenum:13 identifier token: a line:5,col:2 <'test.zl'>
+(13) a has nextnode: nodenum:15 identifier token: b line:6,col:2 <'test.zl'>
+(15) b has nextnode: nodenum:17 reserve token: fun line:7,col:2 <'test.zl'>
+(17) fun has 3 childs: 
+(17) fun (0) child is nodenum:18 identifier token: init line:7,col:6 <'test.zl'>
+(17) fun (1) child is nodenum:20 identifier token: obj line:7,col:11 <'test.zl'>
+(17) fun (2) child is nodenum:22 class statement token: 'clsTest' line:8,col:3 <'test.zl'>
+(22) clsTest has 1 childs: 
+(22) clsTest (0) child is nodenum:24 ops token: : line:8,col:14 <'test.zl'>
+(24) : has 2 childs: 
+(24) : (0) child is nodenum:23 identifier token: obj line:8,col:11 <'test.zl'>
+(24) : (1) child is nodenum:25 identifier token: obj2 line:8,col:15 <'test.zl'>
+(24) : childs end 
+(22) clsTest childs end 
+(22) clsTest has nextnode: nodenum:27 class statement token: 'clsTestOther' line:9,col:3 <'test.zl'>
+(27) clsTestOther has 1 childs: 
+(27) clsTestOther (0) child is nodenum:28 identifier token: obj3 line:9,col:16 <'test.zl'>
+(27) clsTestOther childs end 
+(27) clsTestOther has nextnode: nodenum:31 ops token: = line:10,col:5 <'test.zl'>
+(31) = has 2 childs: 
+(31) = (0) child is nodenum:30 identifier token: c line:10,col:3 <'test.zl'>
+(31) = (1) child is nodenum:32 number token: 3 line:10,col:7 <'test.zl'>
+(31) = childs end 
+(31) = has nextnode: nodenum:35 ops token: = line:11,col:5 <'test.zl'>
+(35) = has 2 childs: 
+(35) = (0) child is nodenum:34 identifier token: d line:11,col:3 <'test.zl'>
+(35) = (1) child is nodenum:36 number token: 6 line:11,col:7 <'test.zl'>
+(35) = childs end 
+(35) = has nextnode: nodenum:41 ops token: = line:12,col:10 <'test.zl'>
+(41) = has 2 childs: 
+(41) = (0) child is nodenum:39 ops token: (null) line:12,col:7 <'test.zl'>
+(39) (null) has 2 childs: 
+(39) (null) (0) child is nodenum:38 identifier token: obj2 line:12,col:3 <'test.zl'>
+(39) (null) (1) child is nodenum:40 identifier token: b line:12,col:8 <'test.zl'>
+(39) (null) childs end 
+(41) = (1) child is nodenum:42 string token: 'welcome to zengl' line:12,col:12 <'test.zl'>
+(41) = childs end 
+(41) = has nextnode: nodenum:47 ops token: = line:13,col:10 <'test.zl'>
+(47) = has 2 childs: 
+(47) = (0) child is nodenum:45 ops token: (null) line:13,col:7 <'test.zl'>
+(45) (null) has 2 childs: 
+(45) (null) (0) child is nodenum:44 identifier token: obj3 line:13,col:3 <'test.zl'>
+(45) (null) (1) child is nodenum:46 identifier token: n line:13,col:8 <'test.zl'>
+(45) (null) childs end 
+(47) = (1) child is nodenum:48 string token: 'thank you!' line:13,col:12 <'test.zl'>
+(47) = childs end 
+(47) = has nextnode: nodenum:50 reserve token: print line:14,col:3 <'test.zl'>
+(50) print has 1 childs: 
+(50) print (0) child is nodenum:52 ops token: (null) line:14,col:13 <'test.zl'>
+(52) (null) has 2 childs: 
+(52) (null) (0) child is nodenum:51 identifier token: obj2 line:14,col:9 <'test.zl'>
+(52) (null) (1) child is nodenum:53 identifier token: b line:14,col:14 <'test.zl'>
+(52) (null) childs end 
+(50) print childs end 
+(50) print has nextnode: nodenum:55 reserve token: print line:15,col:3 <'test.zl'>
+(55) print has 1 childs: 
+(55) print (0) child is nodenum:57 ops token: (null) line:15,col:13 <'test.zl'>
+(57) (null) has 2 childs: 
+(57) (null) (0) child is nodenum:56 identifier token: obj3 line:15,col:9 <'test.zl'>
+(57) (null) (1) child is nodenum:58 identifier token: n line:15,col:14 <'test.zl'>
+(57) (null) childs end 
+(55) print childs end 
+(55) print has nextnode: nodenum:60 reserve token: switch line:16,col:3 <'test.zl'>
+(60) switch has 9 childs: 
+(60) switch (0) child is nodenum:62 identifier token: c line:16,col:10 <'test.zl'>
+(60) switch (1) child is nodenum:64 reserve token: case line:17,col:3 <'test.zl'>
+(64) case has 1 childs: 
+(64) case (0) child is nodenum:65 number token: 1 line:17,col:8 <'test.zl'>
+(64) case childs end 
+(60) switch (2) child is nodenum:67 reserve token: print line:18,col:4 <'test.zl'>
+(67) print has 1 childs: 
+(67) print (0) child is nodenum:68 string token: 'c is 1' line:18,col:10 <'test.zl'>
+(67) print childs end 
+(67) print has nextnode: nodenum:70 reserve token: break line:19,col:4 <'test.zl'>
+(70) break has 1 childs: 
+(70) break (0) child is nodenum:-1 NULL node 
+(70) break childs end 
+(60) switch (3) child is nodenum:72 reserve token: case line:20,col:3 <'test.zl'>
+(72) case has 1 childs: 
+(72) case (0) child is nodenum:73 number token: 3 line:20,col:8 <'test.zl'>
+(72) case childs end 
+(60) switch (4) child is nodenum:75 reserve token: print line:21,col:4 <'test.zl'>
+(75) print has 1 childs: 
+(75) print (0) child is nodenum:76 string token: 'c is 3' line:21,col:10 <'test.zl'>
+(75) print childs end 
+(75) print has nextnode: nodenum:78 reserve token: break line:22,col:4 <'test.zl'>
+(78) break has 1 childs: 
+(78) break (0) child is nodenum:-1 NULL node 
+(78) break childs end 
+(60) switch (5) child is nodenum:80 reserve token: case line:23,col:3 <'test.zl'>
+(80) case has 1 childs: 
+(80) case (0) child is nodenum:81 number token: 5 line:23,col:8 <'test.zl'>
+(80) case childs end 
+(60) switch (6) child is nodenum:83 reserve token: print line:24,col:4 <'test.zl'>
+(83) print has 1 childs: 
+(83) print (0) child is nodenum:84 string token: 'c is 5' line:24,col:10 <'test.zl'>
+(83) print childs end 
+(83) print has nextnode: nodenum:86 reserve token: break line:25,col:4 <'test.zl'>
+(86) break has 1 childs: 
+(86) break (0) child is nodenum:-1 NULL node 
+(86) break childs end 
+(60) switch (7) child is nodenum:88 reserve token: default line:26,col:3 <'test.zl'>
+(60) switch (8) child is nodenum:90 reserve token: print line:27,col:4 <'test.zl'>
+(90) print has 1 childs: 
+(90) print (0) child is nodenum:91 string token: 'init invalid c value!' line:27,col:10 <'test.zl'>
+(90) print childs end 
+(90) print has nextnode: nodenum:93 reserve token: break line:28,col:4 <'test.zl'>
+(93) break has 1 childs: 
+(93) break (0) child is nodenum:-1 NULL node 
+(93) break childs end 
+(60) switch childs end 
+(60) switch has nextnode: nodenum:96 reserve token: print line:30,col:3 <'test.zl'>
+(96) print has 1 childs: 
+(96) print (0) child is nodenum:98 ops token: + line:30,col:17 <'test.zl'>
+(98) + has 2 childs: 
+(98) + (0) child is nodenum:97 string token: 'c is ' line:30,col:9 <'test.zl'>
+(98) + (1) child is nodenum:100 ops token: = line:30,col:21 <'test.zl'>
+(100) = has 2 childs: 
+(100) = (0) child is nodenum:99 identifier token: c line:30,col:19 <'test.zl'>
+(100) = (1) child is nodenum:108 ops token: ? line:30,col:37 <'test.zl'>
+(108) ? has 2 childs: 
+(108) ? (0) child is nodenum:104 ops token: . line:30,col:29 <'test.zl'>
+(104) . has 2 childs: 
+(104) . (0) child is nodenum:102 ops token: > line:30,col:25 <'test.zl'>
+(102) > has 2 childs: 
+(102) > (0) child is nodenum:101 identifier token: c line:30,col:23 <'test.zl'>
+(102) > (1) child is nodenum:103 number token: 3 line:30,col:27 <'test.zl'>
+(102) > childs end 
+(104) . (1) child is nodenum:106 ops token: = line:30,col:33 <'test.zl'>
+(106) = has 2 childs: 
+(106) = (0) child is nodenum:105 identifier token: d line:30,col:31 <'test.zl'>
+(106) = (1) child is nodenum:107 number token: 9 line:30,col:35 <'test.zl'>
+(106) = childs end 
+(104) . childs end 
+(108) ? (1) child is nodenum:110 ops token: = line:30,col:41 <'test.zl'>
+(110) = has 2 childs: 
+(110) = (0) child is nodenum:109 identifier token: d line:30,col:39 <'test.zl'>
+(110) = (1) child is nodenum:111 number token: 2 line:30,col:43 <'test.zl'>
+(110) = childs end 
+(108) ? childs end 
+(100) = childs end 
+(98) + childs end 
+(96) print childs end 
+(96) print has nextnode: nodenum:113 reserve token: print line:31,col:3 <'test.zl'>
+(113) print has 1 childs: 
+(113) print (0) child is nodenum:115 ops token: + line:31,col:17 <'test.zl'>
+(115) + has 2 childs: 
+(115) + (0) child is nodenum:114 string token: 'd is ' line:31,col:9 <'test.zl'>
+(115) + (1) child is nodenum:116 identifier token: d line:31,col:19 <'test.zl'>
+(115) + childs end 
+(113) print childs end 
+(113) print has nextnode: nodenum:118 reserve token: print line:32,col:3 <'test.zl'>
+(118) print has 1 childs: 
+(118) print (0) child is nodenum:120 ops token: + line:32,col:17 <'test.zl'>
+(120) + has 2 childs: 
+(120) + (0) child is nodenum:119 string token: 'c is ' line:32,col:9 <'test.zl'>
+(120) + (1) child is nodenum:121 identifier token: c line:32,col:19 <'test.zl'>
+(120) + childs end 
+(118) print childs end 
+(118) print has nextnode: nodenum:123 reserve token: while line:33,col:3 <'test.zl'>
+(123) while has 2 childs: 
+(123) while (0) child is nodenum:128 ops token: > line:33,col:15 <'test.zl'>
+(128) > has 2 childs: 
+(128) > (0) child is nodenum:126 ops token: (null) line:33,col:12 <'test.zl'>
+(126) (null) has 2 childs: 
+(126) (null) (0) child is nodenum:125 identifier token: obj line:33,col:9 <'test.zl'>
+(126) (null) (1) child is nodenum:127 identifier token: a line:33,col:13 <'test.zl'>
+(126) (null) childs end 
+(128) > (1) child is nodenum:129 number token: 4 line:33,col:17 <'test.zl'>
+(128) > childs end 
+(123) while (1) child is nodenum:131 reserve token: if line:34,col:4 <'test.zl'>
+(131) if has 4 childs: 
+(131) if (0) child is nodenum:136 ops token: > line:34,col:13 <'test.zl'>
+(136) > has 2 childs: 
+(136) > (0) child is nodenum:134 ops token: (null) line:34,col:10 <'test.zl'>
+(134) (null) has 2 childs: 
+(134) (null) (0) child is nodenum:133 identifier token: obj line:34,col:7 <'test.zl'>
+(134) (null) (1) child is nodenum:135 identifier token: a line:34,col:11 <'test.zl'>
+(134) (null) childs end 
+(136) > (1) child is nodenum:137 number token: 7 line:34,col:15 <'test.zl'>
+(136) > childs end 
+(131) if (1) child is nodenum:142 ops token: -- line:35,col:10 <'test.zl'>
+(142) -- has 1 childs: 
+(142) -- (0) child is nodenum:140 ops token: (null) line:35,col:8 <'test.zl'>
+(140) (null) has 2 childs: 
+(140) (null) (0) child is nodenum:139 identifier token: obj line:35,col:5 <'test.zl'>
+(140) (null) (1) child is nodenum:141 identifier token: a line:35,col:9 <'test.zl'>
+(140) (null) childs end 
+(142) -- childs end 
+(142) -- has nextnode: nodenum:144 reserve token: continue line:36,col:5 <'test.zl'>
+(144) continue has 1 childs: 
+(144) continue (0) child is (-1) (null) childs end 
+(144) continue childs end 
+(131) if (2) child is nodenum:146 reserve token: elif line:37,col:4 <'test.zl'>
+(146) elif has 1 childs: 
+(146) elif (0) child is nodenum:151 ops token: <= line:37,col:15 <'test.zl'>
+(151) <= has 2 childs: 
+(151) <= (0) child is nodenum:149 ops token: (null) line:37,col:12 <'test.zl'>
+(149) (null) has 2 childs: 
+(149) (null) (0) child is nodenum:148 identifier token: obj line:37,col:9 <'test.zl'>
+(149) (null) (1) child is nodenum:150 identifier token: a line:37,col:13 <'test.zl'>
+(149) (null) childs end 
+(151) <= (1) child is nodenum:152 number token: 5 line:37,col:18 <'test.zl'>
+(151) <= childs end 
+(146) elif childs end 
+(131) if (3) child is nodenum:154 reserve token: break line:38,col:5 <'test.zl'>
+(154) break has 1 childs: 
+(154) break (0) child is (-1) (null) childs end 
+(154) break childs end 
+(131) if childs end 
+(131) if has nextnode: nodenum:157 reserve token: print line:40,col:4 <'test.zl'>
+(157) print has 1 childs: 
+(157) print (0) child is nodenum:159 ops token: + line:40,col:49 <'test.zl'>
+(159) + has 2 childs: 
+(159) + (0) child is nodenum:158 string token: 'i am in clsTest.init while obj.a is ' line:40,col:10 <'test.zl'>
+(159) + (1) child is nodenum:161 ops token: (null) line:40,col:54 <'test.zl'>
+(161) (null) has 2 childs: 
+(161) (null) (0) child is nodenum:160 identifier token: obj line:40,col:51 <'test.zl'>
+(161) (null) (1) child is nodenum:162 identifier token: a line:40,col:55 <'test.zl'>
+(161) (null) childs end 
+(159) + childs end 
+(157) print childs end 
+(157) print has nextnode: nodenum:167 ops token: -- line:41,col:9 <'test.zl'>
+(167) -- has 1 childs: 
+(167) -- (0) child is nodenum:165 ops token: (null) line:41,col:7 <'test.zl'>
+(165) (null) has 2 childs: 
+(165) (null) (0) child is nodenum:164 identifier token: obj line:41,col:4 <'test.zl'>
+(165) (null) (1) child is nodenum:166 identifier token: a line:41,col:8 <'test.zl'>
+(165) (null) childs end 
+(167) -- childs end 
+(123) while childs end 
+(123) while has nextnode: nodenum:173 ops token: = line:43,col:9 <'test.zl'>
+(173) = has 2 childs: 
+(173) = (0) child is nodenum:171 ops token: (null) line:43,col:6 <'test.zl'>
+(171) (null) has 2 childs: 
+(171) (null) (0) child is nodenum:170 identifier token: obj line:43,col:3 <'test.zl'>
+(171) (null) (1) child is nodenum:172 identifier token: a line:43,col:7 <'test.zl'>
+(171) (null) childs end 
+(173) = (1) child is nodenum:174 number token: 8 line:43,col:11 <'test.zl'>
+(173) = childs end 
+(173) = has nextnode: nodenum:176 reserve token: do line:44,col:3 <'test.zl'>
+(176) do has 2 childs: 
+(176) do (0) child is nodenum:177 reserve token: if line:45,col:4 <'test.zl'>
+(177) if has 4 childs: 
+(177) if (0) child is nodenum:182 ops token: > line:45,col:13 <'test.zl'>
+(182) > has 2 childs: 
+(182) > (0) child is nodenum:180 ops token: (null) line:45,col:10 <'test.zl'>
+(180) (null) has 2 childs: 
+(180) (null) (0) child is nodenum:179 identifier token: obj line:45,col:7 <'test.zl'>
+(180) (null) (1) child is nodenum:181 identifier token: a line:45,col:11 <'test.zl'>
+(180) (null) childs end 
+(182) > (1) child is nodenum:183 number token: 7 line:45,col:15 <'test.zl'>
+(182) > childs end 
+(177) if (1) child is nodenum:188 ops token: -- line:46,col:10 <'test.zl'>
+(188) -- has 1 childs: 
+(188) -- (0) child is nodenum:186 ops token: (null) line:46,col:8 <'test.zl'>
+(186) (null) has 2 childs: 
+(186) (null) (0) child is nodenum:185 identifier token: obj line:46,col:5 <'test.zl'>
+(186) (null) (1) child is nodenum:187 identifier token: a line:46,col:9 <'test.zl'>
+(186) (null) childs end 
+(188) -- childs end 
+(188) -- has nextnode: nodenum:190 reserve token: continue line:47,col:5 <'test.zl'>
+(190) continue has 1 childs: 
+(190) continue (0) child is (-1) (null) childs end 
+(190) continue childs end 
+(177) if (2) child is nodenum:192 reserve token: elif line:48,col:4 <'test.zl'>
+(192) elif has 1 childs: 
+(192) elif (0) child is nodenum:197 ops token: <= line:48,col:15 <'test.zl'>
+(197) <= has 2 childs: 
+(197) <= (0) child is nodenum:195 ops token: (null) line:48,col:12 <'test.zl'>
+(195) (null) has 2 childs: 
+(195) (null) (0) child is nodenum:194 identifier token: obj line:48,col:9 <'test.zl'>
+(195) (null) (1) child is nodenum:196 identifier token: a line:48,col:13 <'test.zl'>
+(195) (null) childs end 
+(197) <= (1) child is nodenum:198 number token: 5 line:48,col:18 <'test.zl'>
+(197) <= childs end 
+(192) elif childs end 
+(177) if (3) child is nodenum:200 reserve token: break line:49,col:5 <'test.zl'>
+(200) break has 1 childs: 
+(200) break (0) child is (-1) (null) childs end 
+(200) break childs end 
+(177) if childs end 
+(177) if has nextnode: nodenum:203 reserve token: print line:51,col:4 <'test.zl'>
+(203) print has 1 childs: 
+(203) print (0) child is nodenum:205 ops token: + line:51,col:52 <'test.zl'>
+(205) + has 2 childs: 
+(205) + (0) child is nodenum:204 string token: 'i am in clsTest.init do while obj.a is ' line:51,col:10 <'test.zl'>
+(205) + (1) child is nodenum:207 ops token: (null) line:51,col:57 <'test.zl'>
+(207) (null) has 2 childs: 
+(207) (null) (0) child is nodenum:206 identifier token: obj line:51,col:54 <'test.zl'>
+(207) (null) (1) child is nodenum:208 identifier token: a line:51,col:58 <'test.zl'>
+(207) (null) childs end 
+(205) + childs end 
+(203) print childs end 
+(203) print has nextnode: nodenum:213 ops token: -- line:52,col:9 <'test.zl'>
+(213) -- has 1 childs: 
+(213) -- (0) child is nodenum:211 ops token: (null) line:52,col:7 <'test.zl'>
+(211) (null) has 2 childs: 
+(211) (null) (0) child is nodenum:210 identifier token: obj line:52,col:4 <'test.zl'>
+(211) (null) (1) child is nodenum:212 identifier token: a line:52,col:8 <'test.zl'>
+(211) (null) childs end 
+(213) -- childs end 
+(176) do (1) child is nodenum:220 ops token: > line:53,col:17 <'test.zl'>
+(220) > has 2 childs: 
+(220) > (0) child is nodenum:218 ops token: (null) line:53,col:14 <'test.zl'>
+(218) (null) has 2 childs: 
+(218) (null) (0) child is nodenum:217 identifier token: obj line:53,col:11 <'test.zl'>
+(218) (null) (1) child is nodenum:219 identifier token: a line:53,col:15 <'test.zl'>
+(218) (null) childs end 
+(220) > (1) child is nodenum:221 number token: 4 line:53,col:19 <'test.zl'>
+(220) > childs end 
+(176) do childs end 
+(176) do has nextnode: nodenum:223 reserve token: print line:54,col:3 <'test.zl'>
+(223) print has 1 childs: 
+(223) print (0) child is nodenum:225 ops token: = line:54,col:11 <'test.zl'>
+(225) = has 2 childs: 
+(225) = (0) child is nodenum:224 identifier token: m line:54,col:9 <'test.zl'>
+(225) = (1) child is nodenum:233 ops token: %= line:54,col:27 <'test.zl'>
+(233) %= has 2 childs: 
+(233) %= (0) child is nodenum:229 ops token: /= line:54,col:19 <'test.zl'>
+(229) /= has 2 childs: 
+(229) /= (0) child is nodenum:227 ops token: (null) line:54,col:16 <'test.zl'>
+(227) (null) has 2 childs: 
+(227) (null) (0) child is nodenum:226 identifier token: obj line:54,col:13 <'test.zl'>
+(227) (null) (1) child is nodenum:228 identifier token: a line:54,col:17 <'test.zl'>
+(227) (null) childs end 
+(229) /= (1) child is nodenum:231 ops token: (null) line:54,col:24 <'test.zl'>
+(231) (null) has 2 childs: 
+(231) (null) (0) child is nodenum:230 identifier token: obj line:54,col:21 <'test.zl'>
+(231) (null) (1) child is nodenum:232 identifier token: b line:54,col:25 <'test.zl'>
+(231) (null) childs end 
+(229) /= childs end 
+(233) %= (1) child is nodenum:234 number token: 2 line:54,col:29 <'test.zl'>
+(233) %= childs end 
+(225) = childs end 
+(223) print childs end 
+(17) fun childs end 
+(17) fun has nextnode: nodenum:237 reserve token: fun line:57,col:2 <'test.zl'>
+(237) fun has 3 childs: 
+(237) fun (0) child is nodenum:238 identifier token: OutIn line:57,col:6 <'test.zl'>
+(237) fun (1) child is nodenum:241 ops token: : line:57,col:16 <'test.zl'>
+(241) : has 2 childs: 
+(241) : (0) child is nodenum:240 identifier token: arg1 line:57,col:12 <'test.zl'>
+(241) : (1) child is nodenum:242 identifier token: arg2 line:57,col:17 <'test.zl'>
+(241) : childs end 
+(237) fun (2) child is nodenum:244 reserve token: print line:58,col:3 <'test.zl'>
+(244) print has 1 childs: 
+(244) print (0) child is nodenum:246 ops token: + line:58,col:20 <'test.zl'>
+(246) + has 2 childs: 
+(246) + (0) child is nodenum:245 string token: 'arg1 is ' line:58,col:9 <'test.zl'>
+(246) + (1) child is nodenum:247 identifier token: arg1 line:58,col:22 <'test.zl'>
+(246) + childs end 
+(244) print childs end 
+(244) print has nextnode: nodenum:249 reserve token: print line:59,col:3 <'test.zl'>
+(249) print has 1 childs: 
+(249) print (0) child is nodenum:251 ops token: + line:59,col:20 <'test.zl'>
+(251) + has 2 childs: 
+(251) + (0) child is nodenum:250 string token: 'arg2 is ' line:59,col:9 <'test.zl'>
+(251) + (1) child is nodenum:252 identifier token: arg2 line:59,col:22 <'test.zl'>
+(251) + childs end 
+(249) print childs end 
+(237) fun childs end 
+(11) class childs end 
+(11) class has nextnode: nodenum:256 reserve token: fun line:63,col:1 <'test.zl'>
+(256) fun has 3 childs: 
+(256) fun (0) child is nodenum:257 identifier token: init line:63,col:5 <'test.zl'>
+(256) fun (1) child is nodenum:-1 NULL node 
+(256) fun (2) child is nodenum:260 reserve token: print line:64,col:2 <'test.zl'>
+(260) print has 1 childs: 
+(260) print (0) child is nodenum:261 string token: 'global init' line:64,col:8 <'test.zl'>
+(260) print childs end 
+(256) fun childs end 
+(256) fun has nextnode: nodenum:265 ops token: (null) line:67,col:8 <'test.zl'>
+(265) (null) has 2 childs: 
+(265) (null) (0) child is nodenum:264 identifier token: clsTest line:67,col:1 <'test.zl'>
+(265) (null) (1) child is nodenum:266 funcall token: init line:67,col:9 <'test.zl'>
+(266) init has 1 childs: 
+(266) init (0) child is nodenum:-1 NULL node 
+(266) init childs end 
+(265) (null) childs end 
+(265) (null) has nextnode: nodenum:270 reserve token: print line:68,col:1 <'test.zl'>
+(270) print has 1 childs: 
+(270) print (0) child is nodenum:271 funcall token: bltGetExtraData line:68,col:7 <'test.zl'>
+(271) bltGetExtraData has 1 childs: 
+(271) bltGetExtraData (0) child is nodenum:273 string token: 'name' line:68,col:23 <'test.zl'>
+(271) bltGetExtraData childs end 
+(270) print childs end 
+(270) print has nextnode: nodenum:276 reserve token: print line:69,col:1 <'test.zl'>
+(276) print has 1 childs: 
+(276) print (0) child is nodenum:277 funcall token: bltGetExtraData line:69,col:7 <'test.zl'>
+(277) bltGetExtraData has 1 childs: 
+(277) bltGetExtraData (0) child is nodenum:279 string token: 'val' line:69,col:23 <'test.zl'>
+(277) bltGetExtraData childs end 
+(276) print childs end 
+(276) print has nextnode: nodenum:282 funcall token: init line:71,col:1 <'test.zl'>
+(282) init has 1 childs: 
+(282) init (0) child is (-1) (null) childs end 
+(282) init childs end 
+(282) init has nextnode: nodenum:286 class statement token: 'clsTest' line:72,col:1 <'test.zl'>
+(286) clsTest has 1 childs: 
+(286) clsTest (0) child is nodenum:287 identifier token: test line:72,col:9 <'test.zl'>
+(286) clsTest childs end 
+(286) clsTest has nextnode: nodenum:290 ops token: = line:73,col:10 <'test.zl'>
+(290) = has 2 childs: 
+(290) = (0) child is nodenum:289 identifier token: glmytest line:73,col:1 <'test.zl'>
+(290) = (1) child is nodenum:291 number token: 5 line:73,col:12 <'test.zl'>
+(290) = childs end 
+(290) = has nextnode: nodenum:294 ops token: = line:74,col:3 <'test.zl'>
+(294) = has 2 childs: 
+(294) = (0) child is nodenum:293 identifier token: i line:74,col:1 <'test.zl'>
+(294) = (1) child is nodenum:295 number token: 4 line:74,col:5 <'test.zl'>
+(294) = childs end 
+(294) = has nextnode: nodenum:298 ops token: = line:75,col:10 <'test.zl'>
+(298) = has 2 childs: 
+(298) = (0) child is nodenum:297 identifier token: floatnum line:75,col:1 <'test.zl'>
+(298) = (1) child is nodenum:299 float token: 3.677 line:75,col:12 <'test.zl'>
+(298) = childs end 
+(298) = has nextnode: nodenum:304 ops token: = line:76,col:8 <'test.zl'>
+(304) = has 2 childs: 
+(304) = (0) child is nodenum:302 ops token: (null) line:76,col:5 <'test.zl'>
+(302) (null) has 2 childs: 
+(302) (null) (0) child is nodenum:301 identifier token: test line:76,col:1 <'test.zl'>
+(302) (null) (1) child is nodenum:303 identifier token: a line:76,col:6 <'test.zl'>
+(302) (null) childs end 
+(304) = (1) child is nodenum:305 number token: 8 line:76,col:10 <'test.zl'>
+(304) = childs end 
+(304) = has nextnode: nodenum:310 ops token: = line:77,col:8 <'test.zl'>
+(310) = has 2 childs: 
+(310) = (0) child is nodenum:308 ops token: (null) line:77,col:5 <'test.zl'>
+(308) (null) has 2 childs: 
+(308) (null) (0) child is nodenum:307 identifier token: test line:77,col:1 <'test.zl'>
+(308) (null) (1) child is nodenum:309 identifier token: b line:77,col:6 <'test.zl'>
+(308) (null) childs end 
+(310) = (1) child is nodenum:311 number token: 10 line:77,col:10 <'test.zl'>
+(310) = childs end 
+(310) = has nextnode: nodenum:313 reserve token: print line:78,col:1 <'test.zl'>
+(313) print has 1 childs: 
+(313) print (0) child is nodenum:321 ops token: + line:78,col:43 <'test.zl'>
+(321) + has 2 childs: 
+(321) + (0) child is nodenum:319 ops token: + line:78,col:28 <'test.zl'>
+(319) + has 2 childs: 
+(319) + (0) child is nodenum:315 ops token: + line:78,col:19 <'test.zl'>
+(315) + has 2 childs: 
+(315) + (0) child is nodenum:314 string token: 'test a is ' line:78,col:7 <'test.zl'>
+(315) + (1) child is nodenum:317 ops token: (null) line:78,col:25 <'test.zl'>
+(317) (null) has 2 childs: 
+(317) (null) (0) child is nodenum:316 identifier token: test line:78,col:21 <'test.zl'>
+(317) (null) (1) child is nodenum:318 identifier token: a line:78,col:26 <'test.zl'>
+(317) (null) childs end 
+(315) + childs end 
+(319) + (1) child is nodenum:320 string token: ' test.b is ' line:78,col:30 <'test.zl'>
+(319) + childs end 
+(321) + (1) child is nodenum:323 ops token: (null) line:78,col:49 <'test.zl'>
+(323) (null) has 2 childs: 
+(323) (null) (0) child is nodenum:322 identifier token: test line:78,col:45 <'test.zl'>
+(323) (null) (1) child is nodenum:324 identifier token: b line:78,col:50 <'test.zl'>
+(323) (null) childs end 
+(321) + childs end 
+(313) print childs end 
+(313) print has nextnode: nodenum:327 ops token: (null) line:79,col:8 <'test.zl'>
+(327) (null) has 2 childs: 
+(327) (null) (0) child is nodenum:326 identifier token: clsTest line:79,col:1 <'test.zl'>
+(327) (null) (1) child is nodenum:328 funcall token: init line:79,col:9 <'test.zl'>
+(328) init has 1 childs: 
+(328) init (0) child is nodenum:330 identifier token: test line:79,col:14 <'test.zl'>
+(328) init childs end 
+(327) (null) childs end 
+(327) (null) has nextnode: nodenum:334 ops token: = line:81,col:3 <'test.zl'>
+(334) = has 2 childs: 
+(334) = (0) child is nodenum:333 identifier token: a line:81,col:1 <'test.zl'>
+(334) = (1) child is nodenum:335 number token: 678 line:81,col:5 <'test.zl'>
+(334) = childs end 
+(334) = has nextnode: nodenum:338 ops token: = line:82,col:3 <'test.zl'>
+(338) = has 2 childs: 
+(338) = (0) child is nodenum:337 identifier token: c line:82,col:1 <'test.zl'>
+(338) = (1) child is nodenum:339 funcall token: array line:82,col:5 <'test.zl'>
+(339) array has 1 childs: 
+(339) array (0) child is nodenum:342 ops token: : line:82,col:13 <'test.zl'>
+(342) : has 2 childs: 
+(342) : (0) child is nodenum:341 number token: 11 line:82,col:11 <'test.zl'>
+(342) : (1) child is nodenum:343 number token: 22 line:82,col:14 <'test.zl'>
+(342) : childs end 
+(339) array childs end 
+(338) = childs end 
+(338) = has nextnode: nodenum:347 ops token: = line:83,col:6 <'test.zl'>
+(347) = has 2 childs: 
+(347) = (0) child is nodenum:346 identifier token: test line:83,col:1 <'test.zl'>
+(347) = (1) child is nodenum:348 funcall token: array line:83,col:8 <'test.zl'>
+(348) array has 1 childs: 
+(348) array (0) child is nodenum:357 ops token: : line:83,col:37 <'test.zl'>
+(357) : has 2 childs: 
+(357) : (0) child is nodenum:355 ops token: : line:83,col:35 <'test.zl'>
+(355) : has 2 childs: 
+(355) : (0) child is nodenum:353 ops token: : line:83,col:29 <'test.zl'>
+(353) : has 2 childs: 
+(353) : (0) child is nodenum:351 ops token: : line:83,col:27 <'test.zl'>
+(351) : has 2 childs: 
+(351) : (0) child is nodenum:350 string token: 'hello world' line:83,col:14 <'test.zl'>
+(351) : (1) child is nodenum:352 number token: 3 line:83,col:28 <'test.zl'>
+(351) : childs end 
+(353) : (1) child is nodenum:354 float token: 11.45 line:83,col:30 <'test.zl'>
+(353) : childs end 
+(355) : (1) child is nodenum:356 identifier token: c line:83,col:36 <'test.zl'>
+(355) : childs end 
+(357) : (1) child is nodenum:358 string token: 'haha end' line:83,col:38 <'test.zl'>
+(357) : childs end 
+(348) array childs end 
+(347) = childs end 
+(347) = has nextnode: nodenum:361 reserve token: for line:84,col:1 <'test.zl'>
+(361) for has 4 childs: 
+(361) for (0) child is nodenum:364 ops token: = line:84,col:6 <'test.zl'>
+(364) = has 2 childs: 
+(364) = (0) child is nodenum:363 identifier token: i line:84,col:5 <'test.zl'>
+(364) = (1) child is nodenum:365 number token: 0 line:84,col:7 <'test.zl'>
+(364) = childs end 
+(361) for (1) child is nodenum:368 ops token: < line:84,col:10 <'test.zl'>
+(368) < has 2 childs: 
+(368) < (0) child is nodenum:367 identifier token: i line:84,col:9 <'test.zl'>
+(368) < (1) child is nodenum:369 number token: 4 line:84,col:11 <'test.zl'>
+(368) < childs end 
+(361) for (2) child is nodenum:372 ops token: ++ line:84,col:14 <'test.zl'>
+(372) ++ has 1 childs: 
+(372) ++ (0) child is nodenum:371 identifier token: i line:84,col:13 <'test.zl'>
+(372) ++ childs end 
+(361) for (3) child is nodenum:374 reserve token: print line:85,col:2 <'test.zl'>
+(374) print has 1 childs: 
+(374) print (0) child is nodenum:375 array token: test line:85,col:8 <'test.zl'>
+(375) test has 1 childs: 
+(375) test (0) child is nodenum:377 identifier token: i line:85,col:13 <'test.zl'>
+(375) test childs end 
+(374) print childs end 
+(361) for childs end 
+(361) for has nextnode: nodenum:381 reserve token: print line:87,col:1 <'test.zl'>
+(381) print has 1 childs: 
+(381) print (0) child is nodenum:382 array token: test line:87,col:7 <'test.zl'>
+(382) test has 1 childs: 
+(382) test (0) child is nodenum:385 ops token: : line:87,col:13 <'test.zl'>
+(385) : has 2 childs: 
+(385) : (0) child is nodenum:384 number token: 3 line:87,col:12 <'test.zl'>
+(385) : (1) child is nodenum:386 number token: 1 line:87,col:14 <'test.zl'>
+(385) : childs end 
+(382) test childs end 
+(381) print childs end 
+(381) print has nextnode: nodenum:389 funcall token: bltPrintArray line:88,col:1 <'test.zl'>
+(389) bltPrintArray has 1 childs: 
+(389) bltPrintArray (0) child is nodenum:391 identifier token: test line:88,col:15 <'test.zl'>
+(389) bltPrintArray childs end 
+(389) bltPrintArray has nextnode: nodenum:394 funcall token: bltTestAddr line:89,col:1 <'test.zl'>
+(394) bltTestAddr has 1 childs: 
+(394) bltTestAddr (0) child is nodenum:401 ops token: : line:89,col:21 <'test.zl'>
+(401) : has 2 childs: 
+(401) : (0) child is nodenum:396 address token: & line:89,col:13 <'test.zl'>
+(396) & has 1 childs: 
+(396) & (0) child is nodenum:397 array token: test line:89,col:14 <'test.zl'>
+(397) test has 1 childs: 
+(397) test (0) child is nodenum:399 number token: 0 line:89,col:19 <'test.zl'>
+(397) test childs end 
+(396) & childs end 
+(401) : (1) child is nodenum:402 string token: 'test[0] is modify in bltTestAddr haha' line:89,col:22 <'test.zl'>
+(401) : childs end 
+(394) bltTestAddr childs end 
+(394) bltTestAddr has nextnode: nodenum:405 funcall token: bltPrintArray line:90,col:1 <'test.zl'>
+(405) bltPrintArray has 1 childs: 
+(405) bltPrintArray (0) child is nodenum:407 address token: & line:90,col:15 <'test.zl'>
+(407) & has 1 childs: 
+(407) & (0) child is nodenum:408 identifier token: test line:90,col:16 <'test.zl'>
+(407) & childs end 
+(405) bltPrintArray childs end 
+(405) bltPrintArray has nextnode: nodenum:412 ops token: = line:91,col:7 <'test.zl'>
+(412) = has 2 childs: 
+(412) = (0) child is nodenum:411 identifier token: test2 line:91,col:1 <'test.zl'>
+(412) = (1) child is nodenum:413 string token: 'i am test2' line:91,col:9 <'test.zl'>
+(412) = childs end 
+(412) = has nextnode: nodenum:415 reserve token: print line:92,col:1 <'test.zl'>
+(415) print has 1 childs: 
+(415) print (0) child is nodenum:417 ops token: + line:92,col:18 <'test.zl'>
+(417) + has 2 childs: 
+(417) + (0) child is nodenum:416 string token: 'test2 is ' line:92,col:7 <'test.zl'>
+(417) + (1) child is nodenum:418 identifier token: test2 line:92,col:19 <'test.zl'>
+(417) + childs end 
+(415) print childs end 
+(415) print has nextnode: nodenum:420 funcall token: bltTestAddr line:93,col:1 <'test.zl'>
+(420) bltTestAddr has 1 childs: 
+(420) bltTestAddr (0) child is nodenum:424 ops token: : line:93,col:19 <'test.zl'>
+(424) : has 2 childs: 
+(424) : (0) child is nodenum:422 address token: & line:93,col:13 <'test.zl'>
+(422) & has 1 childs: 
+(422) & (0) child is nodenum:423 identifier token: test2 line:93,col:14 <'test.zl'>
+(422) & childs end 
+(424) : (1) child is nodenum:425 string token: 'test2 is modify in bltTestAddr haha' line:93,col:20 <'test.zl'>
+(424) : childs end 
+(420) bltTestAddr childs end 
+(420) bltTestAddr has nextnode: nodenum:428 reserve token: print line:94,col:1 <'test.zl'>
+(428) print has 1 childs: 
+(428) print (0) child is nodenum:430 ops token: + line:94,col:18 <'test.zl'>
+(430) + has 2 childs: 
+(430) + (0) child is nodenum:429 string token: 'test2 is ' line:94,col:7 <'test.zl'>
+(430) + (1) child is nodenum:431 identifier token: test2 line:94,col:19 <'test.zl'>
+(430) + childs end 
+(428) print childs end 
+(428) print has nextnode: nodenum:433 funcall token: bltSetArray line:95,col:1 <'test.zl'>
+(433) bltSetArray has 1 childs: 
+(433) bltSetArray (0) child is nodenum:438 ops token: : line:95,col:35 <'test.zl'>
+(438) : has 2 childs: 
+(438) : (0) child is nodenum:436 ops token: : line:95,col:17 <'test.zl'>
+(436) : has 2 childs: 
+(436) : (0) child is nodenum:435 identifier token: test line:95,col:13 <'test.zl'>
+(436) : (1) child is nodenum:437 string token: 'hello Set Array' line:95,col:18 <'test.zl'>
+(436) : childs end 
+(438) : (1) child is nodenum:439 number token: 44 line:95,col:36 <'test.zl'>
+(438) : childs end 
+(433) bltSetArray childs end 
+(433) bltSetArray has nextnode: nodenum:442 funcall token: bltPrintArray line:96,col:1 <'test.zl'>
+(442) bltPrintArray has 1 childs: 
+(442) bltPrintArray (0) child is nodenum:444 identifier token: test line:96,col:15 <'test.zl'>
+(442) bltPrintArray childs end 
+(442) bltPrintArray has nextnode: nodenum:447 funcall token: bltLoadScript line:97,col:1 <'test.zl'>
+(447) bltLoadScript has 1 childs: 
+(447) bltLoadScript (0) child is nodenum:449 string token: 'test3.zl' line:97,col:15 <'test.zl'>
+(447) bltLoadScript childs end 
+(447) bltLoadScript has nextnode: nodenum:452 reserve token: print line:98,col:1 <'test.zl'>
+(452) print has 1 childs: 
+(452) print (0) child is nodenum:453 string token: 'i am test macro' line:98,col:7 <'test.zl'>
+(452) print childs end 
+(452) print has nextnode: nodenum:455 reserve token: print line:99,col:1 <'test.zl'>
+(455) print has 1 childs: 
+(455) print (0) child is nodenum:456 string token: 'test2 macro' line:99,col:7 <'test.zl'>
+(455) print childs end 
+(455) print has nextnode: nodenum:458 reserve token: print line:100,col:1 <'test.zl'>
+(458) print has 1 childs: 
+(458) print (0) child is nodenum:460 ops token: + line:100,col:28 <'test.zl'>
+(460) + has 2 childs: 
+(460) + (0) child is nodenum:459 string token: 'zengl version is v' line:100,col:7 <'test.zl'>
+(460) + (1) child is nodenum:461 funcall token: bltGetZLVersion line:100,col:30 <'test.zl'>
+(461) bltGetZLVersion has 1 childs: 
+(461) bltGetZLVersion (0) child is nodenum:-1 NULL node 
+(461) bltGetZLVersion childs end 
+(460) + childs end 
+(458) print childs end 
+(458) print has nextnode: nodenum:466 ops token: (null) line:101,col:13 <'test.zl'>
+(466) (null) has 2 childs: 
+(466) (null) (0) child is nodenum:465 identifier token: clsTestOther line:101,col:1 <'test.zl'>
+(466) (null) (1) child is nodenum:467 funcall token: testOther line:101,col:14 <'test.zl'>
+(467) testOther has 1 childs: 
+(467) testOther (0) child is (-1) (null) childs end 
+(467) testOther childs end 
+(466) (null) childs end 
+(466) (null) has nextnode: nodenum:471 funcall token: sdlInit line:102,col:1 <'test.zl'>
+(471) sdlInit has 1 childs: 
+(471) sdlInit (0) child is nodenum:476 ops token: : line:102,col:19 <'test.zl'>
+(476) : has 2 childs: 
+(476) : (0) child is nodenum:474 ops token: : line:102,col:12 <'test.zl'>
+(474) : has 2 childs: 
+(474) : (0) child is nodenum:473 identifier token: xdf line:102,col:9 <'test.zl'>
+(474) : (1) child is nodenum:475 string token: 'dfsf' line:102,col:13 <'test.zl'>
+(474) : childs end 
+(476) : (1) child is nodenum:477 number token: 123 line:102,col:20 <'test.zl'>
+(476) : childs end 
+(471) sdlInit childs end 
+(471) sdlInit has nextnode: nodenum:480 reserve token: class line:104,col:1 <'test.zl'>
+(480) class has 2 childs: 
+(480) class (0) child is nodenum:481 identifier token: clsTestOther line:104,col:7 <'test.zl'>
+(480) class (1) child is nodenum:482 identifier token: m line:105,col:2 <'test.zl'>
+(482) m has nextnode: nodenum:484 identifier token: n line:106,col:2 <'test.zl'>
+(484) n has nextnode: nodenum:486 reserve token: fun line:107,col:2 <'test.zl'>
+(486) fun has 3 childs: 
+(486) fun (0) child is nodenum:487 identifier token: testOther line:107,col:6 <'test.zl'>
+(486) fun (1) child is nodenum:-1 NULL node 
+(486) fun (2) child is nodenum:490 reserve token: print line:108,col:3 <'test.zl'>
+(490) print has 1 childs: 
+(490) print (0) child is nodenum:491 string token: 'i am in testOther' line:108,col:9 <'test.zl'>
+(490) print childs end 
+(490) print has nextnode: nodenum:493 reserve token: print line:109,col:3 <'test.zl'>
+(493) print has 1 childs: 
+(493) print (0) child is nodenum:494 string token: 'hello zengl' line:109,col:9 <'test.zl'>
+(493) print childs end 
+(486) fun childs end 
+(480) class childs end 
+(480) class has nextnode: nodenum:499 ops token: = line:117,col:3 <'test.zl'>
+(499) = has 2 childs: 
+(499) = (0) child is nodenum:498 identifier token: r line:117,col:1 <'test.zl'>
+(499) = (1) child is nodenum:501 ops token: + line:117,col:7 <'test.zl'>
+(501) + has 2 childs: 
+(501) + (0) child is nodenum:500 number token: 4 line:117,col:5 <'test.zl'>
+(501) + (1) child is nodenum:502 number token: -114 line:117,col:9 <'test.zl'>
+(501) + childs end 
+(499) = childs end 
+(499) = has nextnode: nodenum:504 reserve token: if line:118,col:1 <'test.zl'>
+(504) if has 4 childs: 
+(504) if (0) child is nodenum:507 ops token: == line:118,col:6 <'test.zl'>
+(507) == has 2 childs: 
+(507) == (0) child is nodenum:506 identifier token: r line:118,col:4 <'test.zl'>
+(507) == (1) child is nodenum:508 error unknown token: *=, tokentype: 23 line:118,col:9 <'test.zl'>
+(508) *= has 1 childs: 
+(508) *= (0) child is nodenum:509 number token: 110 line:118,col:10 <'test.zl'>
+(508) *= childs end 
+(507) == childs end 
+(504) if (1) child is nodenum:511 reserve token: print line:119,col:2 <'test.zl'>
+(511) print has 1 childs: 
+(511) print (0) child is nodenum:512 string token: 'r is -110' line:119,col:8 <'test.zl'>
+(511) print childs end 
+(504) if (2) child is nodenum:514 reserve token: else line:120,col:1 <'test.zl'>
+(504) if (3) child is nodenum:515 reserve token: print line:121,col:2 <'test.zl'>
+(515) print has 1 childs: 
+(515) print (0) child is nodenum:516 string token: 'r not -110' line:121,col:8 <'test.zl'>
+(515) print childs end 
+(504) if childs end 
+(504) if has nextnode: nodenum:519 reserve token: print line:124,col:1 <'test.zl'>
+(519) print has 1 childs: 
+(519) print (0) child is nodenum:521 ops token: - line:124,col:9 <'test.zl'>
+(521) - has 2 childs: 
+(521) - (0) child is nodenum:520 identifier token: r line:124,col:7 <'test.zl'>
+(521) - (1) child is nodenum:522 error unknown token: *=, tokentype: 23 line:124,col:11 <'test.zl'>
+(522) *= has 1 childs: 
+(522) *= (0) child is nodenum:523 number token: 10 line:124,col:12 <'test.zl'>
+(522) *= childs end 
+(521) - childs end 
+(519) print childs end 
+(519) print has nextnode: nodenum:525 reserve token: print line:126,col:1 <'test.zl'>
+(525) print has 1 childs: 
+(525) print (0) child is nodenum:527 ops token: + line:126,col:22 <'test.zl'>
+(527) + has 2 childs: 
+(527) + (0) child is nodenum:526 string token: 'STR_TEST is ' line:126,col:7 <'test.zl'>
+(527) + (1) child is nodenum:528 string token: '23hello world' line:126,col:24 <'test.zl'>
+(527) + childs end 
+(525) print childs end 
+
+
+ the symbol table:
+id:0 test [72 9 test.zl] [76 1 test.zl] [77 1 test.zl] [78 21 test.zl] [78 45 test.zl] [79 14 test.zl] [83 1 test.zl] [85 8 test.zl] [87 7 test.zl] [88 15 test.zl] [89 14 test.zl] [90 16 test.zl] [95 13 test.zl] [96 15 test.zl]
+id:1 glmytest [73 1 test.zl]
+id:2 i [74 1 test.zl] [84 5 test.zl] [84 9 test.zl] [84 13 test.zl] [85 13 test.zl]
+id:3 floatnum [75 1 test.zl]
+id:4 a [81 1 test.zl]
+id:5 c [82 1 test.zl] [83 36 test.zl]
+id:6 test2 [91 1 test.zl] [92 19 test.zl] [93 14 test.zl] [94 19 test.zl]
+id:7 xdf [102 9 test.zl]
+id:8 r [117 1 test.zl] [118 4 test.zl] [124 7 test.zl]
+class:1 clsTest <nodenum:11> [4 7 test.zl]
+class:2 clsTestOther <nodenum:480> [104 7 test.zl]
+classmember:0 clsTest a [5 2 test.zl]
+classmember:1 clsTest b [6 2 test.zl]
+classmember:0 clsTestOther m [105 2 test.zl]
+classmember:1 clsTestOther n [106 2 test.zl]
+fun:1 init [63 5 test.zl]
+classfun:<class:1 clsTest> fun:2 init [7 6 test.zl]
+classfun:<class:1 clsTest> fun:3 OutIn [57 6 test.zl]
+classfun:<class:2 clsTestOther> fun:4 testOther [107 6 test.zl]
+
+[zenglrun assemble code]:
+0 USE "builtin" [1 line:1,col:5,test2.zl]
+1 PUSH ARG [3 line:2,col:1,test2.zl]
+2 PUSH LOC [3 line:2,col:1,test2.zl]
+3 PUSH ARGTMP [3 line:2,col:1,test2.zl]
+4 RESET ARGTMP [3 line:2,col:1,test2.zl]
+5 MOV AX "i am in test2.zl,haha 
+" [5 line:2,col:8,test2.zl]
+6 PUSH AX [5 line:2,col:8,test2.zl]
+7 PUSH 11 [3 line:2,col:1,test2.zl]
+8 MOV ARG ARGTMP [3 line:2,col:1,test2.zl]
+9 RESET LOC [3 line:2,col:1,test2.zl]
+10 CALL "printf" [3 line:2,col:1,test2.zl]
+11 USE "sdl" [9 line:2,col:5,test.zl]
+12 JMP 198 [17 line:7,col:2,test.zl]
+13 FUNARG 1 [17 line:7,col:2,test.zl]
+14 PUSH_LOC [25 line:8,col:15,test.zl]
+15 PUSH_LOC [28 line:9,col:16,test.zl]
+16 PUSH_LOC [30 line:10,col:3,test.zl]
+17 PUSH_LOC [34 line:11,col:3,test.zl]
+18 PUSH_LOC [46 line:13,col:8,test.zl]
+19 PUSH_LOC [53 line:14,col:14,test.zl]
+20 PUSH_LOC [127 line:33,col:13,test.zl]
+21 PUSH_LOC [224 line:54,col:9,test.zl]
+22 MOV AX 3 [32 line:10,col:7,test.zl]
+23 MOV loc(2) AX [30 line:10,col:3,test.zl]
+24 MOV AX 6 [36 line:11,col:7,test.zl]
+25 MOV loc(3) AX [34 line:11,col:3,test.zl]
+26 MOV AX "welcome to zengl" [42 line:12,col:12,test.zl]
+27 PUSH AX [39 line:12,col:7,test.zl]
+28 PUSH ARRAY_ITEM [39 line:12,col:7,test.zl]
+29 RESET ARRAY_ITEM [39 line:12,col:7,test.zl]
+30 PUSH 1 [40 line:12,col:8,test.zl]
+31 SET_ARRAY loc(0) [39 line:12,col:7,test.zl]
+32 MOV AX "thank you!" [48 line:13,col:12,test.zl]
+33 PUSH AX [45 line:13,col:7,test.zl]
+34 PUSH ARRAY_ITEM [45 line:13,col:7,test.zl]
+35 RESET ARRAY_ITEM [45 line:13,col:7,test.zl]
+36 PUSH 1 [46 line:13,col:8,test.zl]
+37 SET_ARRAY loc(1) [45 line:13,col:7,test.zl]
+38 PUSH ARRAY_ITEM [52 line:14,col:13,test.zl]
+39 RESET ARRAY_ITEM [52 line:14,col:13,test.zl]
+40 PUSH 1 [53 line:14,col:14,test.zl]
+41 GET_ARRAY loc(0) [52 line:14,col:13,test.zl]
+42 PRINT AX [50 line:14,col:3,test.zl]
+43 PUSH ARRAY_ITEM [57 line:15,col:13,test.zl]
+44 RESET ARRAY_ITEM [57 line:15,col:13,test.zl]
+45 PUSH 1 [58 line:15,col:14,test.zl]
+46 GET_ARRAY loc(1) [57 line:15,col:13,test.zl]
+47 PRINT AX [55 line:15,col:3,test.zl]
+48 MOV AX loc(2) [62 line:16,col:10,test.zl]
+49 SWITCH 61 58 [60 line:16,col:3,test.zl]
+50 LONG 3 3 [60 line:16,col:3,test.zl]
+51 LONG 1 5 [60 line:16,col:3,test.zl]
+52 PRINT "c is 1" [67 line:18,col:4,test.zl]
+53 JMP 64 [70 line:19,col:4,test.zl]
+54 PRINT "c is 3" [75 line:21,col:4,test.zl]
+55 JMP 64 [78 line:22,col:4,test.zl]
+56 PRINT "c is 5" [83 line:24,col:4,test.zl]
+57 JMP 64 [86 line:25,col:4,test.zl]
+58 PRINT "init invalid c value!" [90 line:27,col:4,test.zl]
+59 JMP 64 [93 line:28,col:4,test.zl]
+60 JMP 64 [60 line:16,col:3,test.zl]
+61 LONG 52 1 [60 line:16,col:3,test.zl]
+62 LONG 54 3 [60 line:16,col:3,test.zl]
+63 LONG 56 5 [60 line:16,col:3,test.zl]
+64 MOV AX "c is " [97 line:30,col:9,test.zl]
+65 PUSH AX [100 line:30,col:21,test.zl]
+66 MOV AX loc(2) [101 line:30,col:23,test.zl]
+67 MOV BX 3 [103 line:30,col:27,test.zl]
+68 GREAT [102 line:30,col:25,test.zl]
+69 JE 73 [104 line:30,col:29,test.zl]
+70 MOV AX 9 [107 line:30,col:35,test.zl]
+71 MOV loc(3) AX [105 line:30,col:31,test.zl]
+72 JMP 75 [104 line:30,col:29,test.zl]
+73 MOV AX 2 [111 line:30,col:43,test.zl]
+74 MOV loc(3) AX [109 line:30,col:39,test.zl]
+75 MOV loc(2) AX [99 line:30,col:19,test.zl]
+76 MOV BX AX [100 line:30,col:21,test.zl]
+77 POP AX [100 line:30,col:21,test.zl]
+78 PLUS [98 line:30,col:17,test.zl]
+79 PRINT AX [96 line:30,col:3,test.zl]
+80 MOV AX "d is " [114 line:31,col:9,test.zl]
+81 MOV BX loc(3) [116 line:31,col:19,test.zl]
+82 PLUS [115 line:31,col:17,test.zl]
+83 PRINT AX [113 line:31,col:3,test.zl]
+84 MOV AX "c is " [119 line:32,col:9,test.zl]
+85 MOV BX loc(2) [121 line:32,col:19,test.zl]
+86 PLUS [120 line:32,col:17,test.zl]
+87 PRINT AX [118 line:32,col:3,test.zl]
+88 PUSH ARRAY_ITEM [126 line:33,col:12,test.zl]
+89 RESET ARRAY_ITEM [126 line:33,col:12,test.zl]
+90 PUSH 0 [127 line:33,col:13,test.zl]
+91 GET_ARRAY arg(0) [126 line:33,col:12,test.zl]
+92 MOV BX 4 [129 line:33,col:17,test.zl]
+93 GREAT [128 line:33,col:15,test.zl]
+94 JE 132 [123 line:33,col:3,test.zl]
+95 PUSH ARRAY_ITEM [134 line:34,col:10,test.zl]
+96 RESET ARRAY_ITEM [134 line:34,col:10,test.zl]
+97 PUSH 0 [135 line:34,col:11,test.zl]
+98 GET_ARRAY arg(0) [134 line:34,col:10,test.zl]
+99 MOV BX 7 [137 line:34,col:15,test.zl]
+100 GREAT [136 line:34,col:13,test.zl]
+101 JE 108 [131 line:34,col:4,test.zl]
+102 PUSH ARRAY_ITEM [140 line:35,col:8,test.zl]
+103 RESET ARRAY_ITEM [140 line:35,col:8,test.zl]
+104 PUSH 0 [141 line:35,col:9,test.zl]
+105 GETMINIS_ARRAY arg(0) [140 line:35,col:8,test.zl]
+106 JMP 88 [144 line:36,col:5,test.zl]
+107 JMP 117 [131 line:34,col:4,test.zl]
+108 PUSH ARRAY_ITEM [149 line:37,col:12,test.zl]
+109 RESET ARRAY_ITEM [149 line:37,col:12,test.zl]
+110 PUSH 0 [150 line:37,col:13,test.zl]
+111 GET_ARRAY arg(0) [149 line:37,col:12,test.zl]
+112 MOV BX 5 [152 line:37,col:18,test.zl]
+113 LESS_EQ [151 line:37,col:15,test.zl]
+114 JE 117 [146 line:37,col:4,test.zl]
+115 JMP 132 [154 line:38,col:5,test.zl]
+116 JMP 117 [0 line:1,col:1,test2.zl]
+117 MOV AX "i am in clsTest.init while obj.a is " [158 line:40,col:10,test.zl]
+118 PUSH AX [161 line:40,col:54,test.zl]
+119 PUSH ARRAY_ITEM [161 line:40,col:54,test.zl]
+120 RESET ARRAY_ITEM [161 line:40,col:54,test.zl]
+121 PUSH 0 [162 line:40,col:55,test.zl]
+122 GET_ARRAY arg(0) [161 line:40,col:54,test.zl]
+123 MOV BX AX [161 line:40,col:54,test.zl]
+124 POP AX [161 line:40,col:54,test.zl]
+125 PLUS [159 line:40,col:49,test.zl]
+126 PRINT AX [157 line:40,col:4,test.zl]
+127 PUSH ARRAY_ITEM [165 line:41,col:7,test.zl]
+128 RESET ARRAY_ITEM [165 line:41,col:7,test.zl]
+129 PUSH 0 [166 line:41,col:8,test.zl]
+130 GETMINIS_ARRAY arg(0) [165 line:41,col:7,test.zl]
+131 JMP 88 [123 line:33,col:3,test.zl]
+132 MOV AX 8 [174 line:43,col:11,test.zl]
+133 PUSH AX [171 line:43,col:6,test.zl]
+134 PUSH ARRAY_ITEM [171 line:43,col:6,test.zl]
+135 RESET ARRAY_ITEM [171 line:43,col:6,test.zl]
+136 PUSH 0 [172 line:43,col:7,test.zl]
+137 SET_ARRAY arg(0) [171 line:43,col:6,test.zl]
+138 PUSH ARRAY_ITEM [180 line:45,col:10,test.zl]
+139 RESET ARRAY_ITEM [180 line:45,col:10,test.zl]
+140 PUSH 0 [181 line:45,col:11,test.zl]
+141 GET_ARRAY arg(0) [180 line:45,col:10,test.zl]
+142 MOV BX 7 [183 line:45,col:15,test.zl]
+143 GREAT [182 line:45,col:13,test.zl]
+144 JE 151 [177 line:45,col:4,test.zl]
+145 PUSH ARRAY_ITEM [186 line:46,col:8,test.zl]
+146 RESET ARRAY_ITEM [186 line:46,col:8,test.zl]
+147 PUSH 0 [187 line:46,col:9,test.zl]
+148 GETMINIS_ARRAY arg(0) [186 line:46,col:8,test.zl]
+149 JMP 174 [190 line:47,col:5,test.zl]
+150 JMP 160 [177 line:45,col:4,test.zl]
+151 PUSH ARRAY_ITEM [195 line:48,col:12,test.zl]
+152 RESET ARRAY_ITEM [195 line:48,col:12,test.zl]
+153 PUSH 0 [196 line:48,col:13,test.zl]
+154 GET_ARRAY arg(0) [195 line:48,col:12,test.zl]
+155 MOV BX 5 [198 line:48,col:18,test.zl]
+156 LESS_EQ [197 line:48,col:15,test.zl]
+157 JE 160 [192 line:48,col:4,test.zl]
+158 JMP 181 [200 line:49,col:5,test.zl]
+159 JMP 160 [0 line:1,col:1,test2.zl]
+160 MOV AX "i am in clsTest.init do while obj.a is " [204 line:51,col:10,test.zl]
+161 PUSH AX [207 line:51,col:57,test.zl]
+162 PUSH ARRAY_ITEM [207 line:51,col:57,test.zl]
+163 RESET ARRAY_ITEM [207 line:51,col:57,test.zl]
+164 PUSH 0 [208 line:51,col:58,test.zl]
+165 GET_ARRAY arg(0) [207 line:51,col:57,test.zl]
+166 MOV BX AX [207 line:51,col:57,test.zl]
+167 POP AX [207 line:51,col:57,test.zl]
+168 PLUS [205 line:51,col:52,test.zl]
+169 PRINT AX [203 line:51,col:4,test.zl]
+170 PUSH ARRAY_ITEM [211 line:52,col:7,test.zl]
+171 RESET ARRAY_ITEM [211 line:52,col:7,test.zl]
+172 PUSH 0 [212 line:52,col:8,test.zl]
+173 GETMINIS_ARRAY arg(0) [211 line:52,col:7,test.zl]
+174 PUSH ARRAY_ITEM [218 line:53,col:14,test.zl]
+175 RESET ARRAY_ITEM [218 line:53,col:14,test.zl]
+176 PUSH 0 [219 line:53,col:15,test.zl]
+177 GET_ARRAY arg(0) [218 line:53,col:14,test.zl]
+178 MOV BX 4 [221 line:53,col:19,test.zl]
+179 GREAT [220 line:53,col:17,test.zl]
+180 JNE 138 [176 line:44,col:3,test.zl]
+181 PUSH ARRAY_ITEM [227 line:54,col:16,test.zl]
+182 RESET ARRAY_ITEM [227 line:54,col:16,test.zl]
+183 PUSH 0 [228 line:54,col:17,test.zl]
+184 GET_ARRAY arg(0) [227 line:54,col:16,test.zl]
+185 PUSH AX [231 line:54,col:24,test.zl]
+186 PUSH ARRAY_ITEM [231 line:54,col:24,test.zl]
+187 RESET ARRAY_ITEM [231 line:54,col:24,test.zl]
+188 PUSH 1 [232 line:54,col:25,test.zl]
+189 GET_ARRAY arg(0) [231 line:54,col:24,test.zl]
+190 MOV BX AX [231 line:54,col:24,test.zl]
+191 POP AX [231 line:54,col:24,test.zl]
+192 TIMES [229 line:54,col:19,test.zl]
+193 MOV BX 2 [234 line:54,col:29,test.zl]
+194 DIVIDE [233 line:54,col:27,test.zl]
+195 MOV loc(7) AX [224 line:54,col:9,test.zl]
+196 PRINT AX [223 line:54,col:3,test.zl]
+197 RET [17 line:7,col:2,test.zl]
+198 JMP 209 [237 line:57,col:2,test.zl]
+199 FUNARG 2 [237 line:57,col:2,test.zl]
+200 MOV AX "arg1 is " [245 line:58,col:9,test.zl]
+201 MOV BX arg(0) [247 line:58,col:22,test.zl]
+202 PLUS [246 line:58,col:20,test.zl]
+203 PRINT AX [244 line:58,col:3,test.zl]
+204 MOV AX "arg2 is " [250 line:59,col:9,test.zl]
+205 MOV BX arg(1) [252 line:59,col:22,test.zl]
+206 PLUS [251 line:59,col:20,test.zl]
+207 PRINT AX [249 line:59,col:3,test.zl]
+208 RET [237 line:57,col:2,test.zl]
+209 JMP 213 [256 line:63,col:1,test.zl]
+210 FUNARG 0 [256 line:63,col:1,test.zl]
+211 PRINT "global init" [260 line:64,col:2,test.zl]
+212 RET [256 line:63,col:1,test.zl]
+213 PUSH ARG [266 line:67,col:9,test.zl]
+214 PUSH LOC [266 line:67,col:9,test.zl]
+215 PUSH ARGTMP [266 line:67,col:9,test.zl]
+216 RESET ARGTMP [266 line:67,col:9,test.zl]
+217 PUSH 221 [266 line:67,col:9,test.zl]
+218 MOV ARG ARGTMP [266 line:67,col:9,test.zl]
+219 RESET LOC [266 line:67,col:9,test.zl]
+220 JMP 13 [266 line:67,col:9,test.zl]
+221 PUSH ARG [271 line:68,col:7,test.zl]
+222 PUSH LOC [271 line:68,col:7,test.zl]
+223 PUSH ARGTMP [271 line:68,col:7,test.zl]
+224 RESET ARGTMP [271 line:68,col:7,test.zl]
+225 MOV AX "name" [273 line:68,col:23,test.zl]
+226 PUSH AX [273 line:68,col:23,test.zl]
+227 PUSH 231 [271 line:68,col:7,test.zl]
+228 MOV ARG ARGTMP [271 line:68,col:7,test.zl]
+229 RESET LOC [271 line:68,col:7,test.zl]
+230 CALL "bltGetExtraData" [271 line:68,col:7,test.zl]
+231 PRINT AX [270 line:68,col:1,test.zl]
+232 PUSH ARG [277 line:69,col:7,test.zl]
+233 PUSH LOC [277 line:69,col:7,test.zl]
+234 PUSH ARGTMP [277 line:69,col:7,test.zl]
+235 RESET ARGTMP [277 line:69,col:7,test.zl]
+236 MOV AX "val" [279 line:69,col:23,test.zl]
+237 PUSH AX [279 line:69,col:23,test.zl]
+238 PUSH 242 [277 line:69,col:7,test.zl]
+239 MOV ARG ARGTMP [277 line:69,col:7,test.zl]
+240 RESET LOC [277 line:69,col:7,test.zl]
+241 CALL "bltGetExtraData" [277 line:69,col:7,test.zl]
+242 PRINT AX [276 line:69,col:1,test.zl]
+243 PUSH ARG [282 line:71,col:1,test.zl]
+244 PUSH LOC [282 line:71,col:1,test.zl]
+245 PUSH ARGTMP [282 line:71,col:1,test.zl]
+246 RESET ARGTMP [282 line:71,col:1,test.zl]
+247 PUSH 251 [282 line:71,col:1,test.zl]
+248 MOV ARG ARGTMP [282 line:71,col:1,test.zl]
+249 RESET LOC [282 line:71,col:1,test.zl]
+250 JMP 210 [282 line:71,col:1,test.zl]
+251 MOV AX 5 [291 line:73,col:12,test.zl]
+252 MOV (1) AX [289 line:73,col:1,test.zl]
+253 MOV AX 4 [295 line:74,col:5,test.zl]
+254 MOV (2) AX [293 line:74,col:1,test.zl]
+255 MOV AX 3.677 [299 line:75,col:12,test.zl]
+256 MOV (3) AX [297 line:75,col:1,test.zl]
+257 MOV AX 8 [305 line:76,col:10,test.zl]
+258 PUSH AX [302 line:76,col:5,test.zl]
+259 PUSH ARRAY_ITEM [302 line:76,col:5,test.zl]
+260 RESET ARRAY_ITEM [302 line:76,col:5,test.zl]
+261 PUSH 0 [303 line:76,col:6,test.zl]
+262 SET_ARRAY (0) [302 line:76,col:5,test.zl]
+263 MOV AX 10 [311 line:77,col:10,test.zl]
+264 PUSH AX [308 line:77,col:5,test.zl]
+265 PUSH ARRAY_ITEM [308 line:77,col:5,test.zl]
+266 RESET ARRAY_ITEM [308 line:77,col:5,test.zl]
+267 PUSH 1 [309 line:77,col:6,test.zl]
+268 SET_ARRAY (0) [308 line:77,col:5,test.zl]
+269 MOV AX "test a is " [314 line:78,col:7,test.zl]
+270 PUSH AX [317 line:78,col:25,test.zl]
+271 PUSH ARRAY_ITEM [317 line:78,col:25,test.zl]
+272 RESET ARRAY_ITEM [317 line:78,col:25,test.zl]
+273 PUSH 0 [318 line:78,col:26,test.zl]
+274 GET_ARRAY (0) [317 line:78,col:25,test.zl]
+275 MOV BX AX [317 line:78,col:25,test.zl]
+276 POP AX [317 line:78,col:25,test.zl]
+277 PLUS [315 line:78,col:19,test.zl]
+278 MOV BX " test.b is " [320 line:78,col:30,test.zl]
+279 PLUS [319 line:78,col:28,test.zl]
+280 PUSH AX [323 line:78,col:49,test.zl]
+281 PUSH ARRAY_ITEM [323 line:78,col:49,test.zl]
+282 RESET ARRAY_ITEM [323 line:78,col:49,test.zl]
+283 PUSH 1 [324 line:78,col:50,test.zl]
+284 GET_ARRAY (0) [323 line:78,col:49,test.zl]
+285 MOV BX AX [323 line:78,col:49,test.zl]
+286 POP AX [323 line:78,col:49,test.zl]
+287 PLUS [321 line:78,col:43,test.zl]
+288 PRINT AX [313 line:78,col:1,test.zl]
+289 PUSH ARG [328 line:79,col:9,test.zl]
+290 PUSH LOC [328 line:79,col:9,test.zl]
+291 PUSH ARGTMP [328 line:79,col:9,test.zl]
+292 RESET ARGTMP [328 line:79,col:9,test.zl]
+293 MOV AX (0) [330 line:79,col:14,test.zl]
+294 PUSH AX [330 line:79,col:14,test.zl]
+295 PUSH 299 [328 line:79,col:9,test.zl]
+296 MOV ARG ARGTMP [328 line:79,col:9,test.zl]
+297 RESET LOC [328 line:79,col:9,test.zl]
+298 JMP 13 [328 line:79,col:9,test.zl]
+299 MOV AX 678 [335 line:81,col:5,test.zl]
+300 MOV (4) AX [333 line:81,col:1,test.zl]
+301 PUSH ARG [339 line:82,col:5,test.zl]
+302 PUSH LOC [339 line:82,col:5,test.zl]
+303 PUSH ARGTMP [339 line:82,col:5,test.zl]
+304 RESET ARGTMP [339 line:82,col:5,test.zl]
+305 MOV AX 11 [341 line:82,col:11,test.zl]
+306 PUSH AX [341 line:82,col:11,test.zl]
+307 MOV AX 22 [343 line:82,col:14,test.zl]
+308 PUSH AX [343 line:82,col:14,test.zl]
+309 PUSH 313 [339 line:82,col:5,test.zl]
+310 MOV ARG ARGTMP [339 line:82,col:5,test.zl]
+311 RESET LOC [339 line:82,col:5,test.zl]
+312 CALL "array" [339 line:82,col:5,test.zl]
+313 MOV (5) AX [337 line:82,col:1,test.zl]
+314 PUSH ARG [348 line:83,col:8,test.zl]
+315 PUSH LOC [348 line:83,col:8,test.zl]
+316 PUSH ARGTMP [348 line:83,col:8,test.zl]
+317 RESET ARGTMP [348 line:83,col:8,test.zl]
+318 MOV AX "hello world" [350 line:83,col:14,test.zl]
+319 PUSH AX [350 line:83,col:14,test.zl]
+320 MOV AX 3 [352 line:83,col:28,test.zl]
+321 PUSH AX [352 line:83,col:28,test.zl]
+322 MOV AX 11.45 [354 line:83,col:30,test.zl]
+323 PUSH AX [354 line:83,col:30,test.zl]
+324 MOV AX (5) [356 line:83,col:36,test.zl]
+325 PUSH AX [356 line:83,col:36,test.zl]
+326 MOV AX "haha end" [358 line:83,col:38,test.zl]
+327 PUSH AX [358 line:83,col:38,test.zl]
+328 PUSH 332 [348 line:83,col:8,test.zl]
+329 MOV ARG ARGTMP [348 line:83,col:8,test.zl]
+330 RESET LOC [348 line:83,col:8,test.zl]
+331 CALL "array" [348 line:83,col:8,test.zl]
+332 MOV (0) AX [346 line:83,col:1,test.zl]
+333 MOV AX 0 [365 line:84,col:7,test.zl]
+334 MOV (2) AX [363 line:84,col:5,test.zl]
+335 MOV AX (2) [367 line:84,col:9,test.zl]
+336 MOV BX 4 [369 line:84,col:11,test.zl]
+337 LESS [368 line:84,col:10,test.zl]
+338 JE 347 [361 line:84,col:1,test.zl]
+339 PUSH ARRAY_ITEM [375 line:85,col:8,test.zl]
+340 RESET ARRAY_ITEM [375 line:85,col:8,test.zl]
+341 MOV AX (2) [377 line:85,col:13,test.zl]
+342 PUSH AX [377 line:85,col:13,test.zl]
+343 GET_ARRAY (0) [375 line:85,col:8,test.zl]
+344 PRINT AX [374 line:85,col:2,test.zl]
+345 GETADD (2) [372 line:84,col:14,test.zl]
+346 JMP 335 [361 line:84,col:1,test.zl]
+347 PUSH ARRAY_ITEM [382 line:87,col:7,test.zl]
+348 RESET ARRAY_ITEM [382 line:87,col:7,test.zl]
+349 MOV AX 3 [384 line:87,col:12,test.zl]
+350 PUSH AX [384 line:87,col:12,test.zl]
+351 MOV AX 1 [386 line:87,col:14,test.zl]
+352 PUSH AX [386 line:87,col:14,test.zl]
+353 GET_ARRAY (0) [382 line:87,col:7,test.zl]
+354 PRINT AX [381 line:87,col:1,test.zl]
+355 PUSH ARG [389 line:88,col:1,test.zl]
+356 PUSH LOC [389 line:88,col:1,test.zl]
+357 PUSH ARGTMP [389 line:88,col:1,test.zl]
+358 RESET ARGTMP [389 line:88,col:1,test.zl]
+359 MOV AX (0) [391 line:88,col:15,test.zl]
+360 PUSH AX [391 line:88,col:15,test.zl]
+361 PUSH 365 [389 line:88,col:1,test.zl]
+362 MOV ARG ARGTMP [389 line:88,col:1,test.zl]
+363 RESET LOC [389 line:88,col:1,test.zl]
+364 CALL "bltPrintArray" [389 line:88,col:1,test.zl]
+365 PUSH ARG [394 line:89,col:1,test.zl]
+366 PUSH LOC [394 line:89,col:1,test.zl]
+367 PUSH ARGTMP [394 line:89,col:1,test.zl]
+368 RESET ARGTMP [394 line:89,col:1,test.zl]
+369 PUSH ARRAY_ITEM [397 line:89,col:14,test.zl]
+370 RESET ARRAY_ITEM [397 line:89,col:14,test.zl]
+371 MOV AX 0 [399 line:89,col:19,test.zl]
+372 PUSH AX [399 line:89,col:19,test.zl]
+373 GET_ARRAY_ADDR (0) [397 line:89,col:14,test.zl]
+374 PUSH AX [396 line:89,col:13,test.zl]
+375 MOV AX "test[0] is modify in bltTestAddr haha" [402 line:89,col:22,test.zl]
+376 PUSH AX [402 line:89,col:22,test.zl]
+377 PUSH 381 [394 line:89,col:1,test.zl]
+378 MOV ARG ARGTMP [394 line:89,col:1,test.zl]
+379 RESET LOC [394 line:89,col:1,test.zl]
+380 CALL "bltTestAddr" [394 line:89,col:1,test.zl]
+381 PUSH ARG [405 line:90,col:1,test.zl]
+382 PUSH LOC [405 line:90,col:1,test.zl]
+383 PUSH ARGTMP [405 line:90,col:1,test.zl]
+384 RESET ARGTMP [405 line:90,col:1,test.zl]
+385 ADDR (0) [408 line:90,col:16,test.zl]
+386 PUSH AX [407 line:90,col:15,test.zl]
+387 PUSH 391 [405 line:90,col:1,test.zl]
+388 MOV ARG ARGTMP [405 line:90,col:1,test.zl]
+389 RESET LOC [405 line:90,col:1,test.zl]
+390 CALL "bltPrintArray" [405 line:90,col:1,test.zl]
+391 MOV AX "i am test2" [413 line:91,col:9,test.zl]
+392 MOV (6) AX [411 line:91,col:1,test.zl]
+393 MOV AX "test2 is " [416 line:92,col:7,test.zl]
+394 MOV BX (6) [418 line:92,col:19,test.zl]
+395 PLUS [417 line:92,col:18,test.zl]
+396 PRINT AX [415 line:92,col:1,test.zl]
+397 PUSH ARG [420 line:93,col:1,test.zl]
+398 PUSH LOC [420 line:93,col:1,test.zl]
+399 PUSH ARGTMP [420 line:93,col:1,test.zl]
+400 RESET ARGTMP [420 line:93,col:1,test.zl]
+401 ADDR (6) [423 line:93,col:14,test.zl]
+402 PUSH AX [422 line:93,col:13,test.zl]
+403 MOV AX "test2 is modify in bltTestAddr haha" [425 line:93,col:20,test.zl]
+404 PUSH AX [425 line:93,col:20,test.zl]
+405 PUSH 409 [420 line:93,col:1,test.zl]
+406 MOV ARG ARGTMP [420 line:93,col:1,test.zl]
+407 RESET LOC [420 line:93,col:1,test.zl]
+408 CALL "bltTestAddr" [420 line:93,col:1,test.zl]
+409 MOV AX "test2 is " [429 line:94,col:7,test.zl]
+410 MOV BX (6) [431 line:94,col:19,test.zl]
+411 PLUS [430 line:94,col:18,test.zl]
+412 PRINT AX [428 line:94,col:1,test.zl]
+413 PUSH ARG [433 line:95,col:1,test.zl]
+414 PUSH LOC [433 line:95,col:1,test.zl]
+415 PUSH ARGTMP [433 line:95,col:1,test.zl]
+416 RESET ARGTMP [433 line:95,col:1,test.zl]
+417 MOV AX (0) [435 line:95,col:13,test.zl]
+418 PUSH AX [435 line:95,col:13,test.zl]
+419 MOV AX "hello Set Array" [437 line:95,col:18,test.zl]
+420 PUSH AX [437 line:95,col:18,test.zl]
+421 MOV AX 44 [439 line:95,col:36,test.zl]
+422 PUSH AX [439 line:95,col:36,test.zl]
+423 PUSH 427 [433 line:95,col:1,test.zl]
+424 MOV ARG ARGTMP [433 line:95,col:1,test.zl]
+425 RESET LOC [433 line:95,col:1,test.zl]
+426 CALL "bltSetArray" [433 line:95,col:1,test.zl]
+427 PUSH ARG [442 line:96,col:1,test.zl]
+428 PUSH LOC [442 line:96,col:1,test.zl]
+429 PUSH ARGTMP [442 line:96,col:1,test.zl]
+430 RESET ARGTMP [442 line:96,col:1,test.zl]
+431 MOV AX (0) [444 line:96,col:15,test.zl]
+432 PUSH AX [444 line:96,col:15,test.zl]
+433 PUSH 437 [442 line:96,col:1,test.zl]
+434 MOV ARG ARGTMP [442 line:96,col:1,test.zl]
+435 RESET LOC [442 line:96,col:1,test.zl]
+436 CALL "bltPrintArray" [442 line:96,col:1,test.zl]
+437 PUSH ARG [447 line:97,col:1,test.zl]
+438 PUSH LOC [447 line:97,col:1,test.zl]
+439 PUSH ARGTMP [447 line:97,col:1,test.zl]
+440 RESET ARGTMP [447 line:97,col:1,test.zl]
+441 MOV AX "test3.zl" [449 line:97,col:15,test.zl]
+442 PUSH AX [449 line:97,col:15,test.zl]
+443 PUSH 447 [447 line:97,col:1,test.zl]
+444 MOV ARG ARGTMP [447 line:97,col:1,test.zl]
+445 RESET LOC [447 line:97,col:1,test.zl]
+446 CALL "bltLoadScript" [447 line:97,col:1,test.zl]
+447 PRINT "i am test macro" [452 line:98,col:1,test.zl]
+448 PRINT "test2 macro" [455 line:99,col:1,test.zl]
+449 MOV AX "zengl version is v" [459 line:100,col:7,test.zl]
+450 PUSH AX [461 line:100,col:30,test.zl]
+451 PUSH ARG [461 line:100,col:30,test.zl]
+452 PUSH LOC [461 line:100,col:30,test.zl]
+453 PUSH ARGTMP [461 line:100,col:30,test.zl]
+454 RESET ARGTMP [461 line:100,col:30,test.zl]
+455 PUSH 459 [461 line:100,col:30,test.zl]
+456 MOV ARG ARGTMP [461 line:100,col:30,test.zl]
+457 RESET LOC [461 line:100,col:30,test.zl]
+458 CALL "bltGetZLVersion" [461 line:100,col:30,test.zl]
+459 MOV BX AX [461 line:100,col:30,test.zl]
+460 POP AX [461 line:100,col:30,test.zl]
+461 PLUS [460 line:100,col:28,test.zl]
+462 PRINT AX [458 line:100,col:1,test.zl]
+463 PUSH ARG [467 line:101,col:14,test.zl]
+464 PUSH LOC [467 line:101,col:14,test.zl]
+465 PUSH ARGTMP [467 line:101,col:14,test.zl]
+466 RESET ARGTMP [467 line:101,col:14,test.zl]
+467 PUSH 471 [467 line:101,col:14,test.zl]
+468 MOV ARG ARGTMP [467 line:101,col:14,test.zl]
+469 RESET LOC [467 line:101,col:14,test.zl]
+470 JMP 486 [467 line:101,col:14,test.zl]
+471 PUSH ARG [471 line:102,col:1,test.zl]
+472 PUSH LOC [471 line:102,col:1,test.zl]
+473 PUSH ARGTMP [471 line:102,col:1,test.zl]
+474 RESET ARGTMP [471 line:102,col:1,test.zl]
+475 MOV AX (7) [473 line:102,col:9,test.zl]
+476 PUSH AX [473 line:102,col:9,test.zl]
+477 MOV AX "dfsf" [475 line:102,col:13,test.zl]
+478 PUSH AX [475 line:102,col:13,test.zl]
+479 MOV AX 123 [477 line:102,col:20,test.zl]
+480 PUSH AX [477 line:102,col:20,test.zl]
+481 PUSH 485 [471 line:102,col:1,test.zl]
+482 MOV ARG ARGTMP [471 line:102,col:1,test.zl]
+483 RESET LOC [471 line:102,col:1,test.zl]
+484 CALL "sdlInit" [471 line:102,col:1,test.zl]
+485 JMP 490 [486 line:107,col:2,test.zl]
+486 FUNARG 0 [486 line:107,col:2,test.zl]
+487 PRINT "i am in testOther" [490 line:108,col:3,test.zl]
+488 PRINT "hello zengl" [493 line:109,col:3,test.zl]
+489 RET [486 line:107,col:2,test.zl]
+490 MOV AX 4 [500 line:117,col:5,test.zl]
+491 MOV BX -114 [502 line:117,col:9,test.zl]
+492 PLUS [501 line:117,col:7,test.zl]
+493 MOV (8) AX [498 line:117,col:1,test.zl]
+494 MOV AX (8) [506 line:118,col:4,test.zl]
+495 PUSH AX [508 line:118,col:9,test.zl]
+496 MOV AX 0 [508 line:118,col:9,test.zl]
+497 MOV BX 110 [509 line:118,col:10,test.zl]
+498 MINIS [508 line:118,col:9,test.zl]
+499 MOV BX AX [508 line:118,col:9,test.zl]
+500 POP AX [508 line:118,col:9,test.zl]
+501 EQUAL [507 line:118,col:6,test.zl]
+502 JE 505 [504 line:118,col:1,test.zl]
+503 PRINT "r is -110" [511 line:119,col:2,test.zl]
+504 JMP 506 [504 line:118,col:1,test.zl]
+505 PRINT "r not -110" [515 line:121,col:2,test.zl]
+506 MOV AX (8) [520 line:124,col:7,test.zl]
+507 PUSH AX [522 line:124,col:11,test.zl]
+508 MOV AX 0 [522 line:124,col:11,test.zl]
+509 MOV BX 10 [523 line:124,col:12,test.zl]
+510 MINIS [522 line:124,col:11,test.zl]
+511 MOV BX AX [522 line:124,col:11,test.zl]
+512 POP AX [522 line:124,col:11,test.zl]
+513 MINIS [521 line:124,col:9,test.zl]
+514 PRINT AX [519 line:124,col:1,test.zl]
+515 MOV AX "STR_TEST is " [526 line:126,col:7,test.zl]
+516 MOV BX "23hello world" [528 line:126,col:24,test.zl]
+517 PLUS [527 line:126,col:22,test.zl]
+518 PRINT AX [525 line:126,col:1,test.zl]
+519 END [529 line:126,col:32,test.zl]
+
+ compile time:0 s totalsize: 96.7431640625 Kbyte
+nodenum:0 reserve token: use line:1,col:1 <'test3.zl'>
+(0) use has 1 childs: 
+(0) use (0) child is nodenum:1 identifier token: builtin line:1,col:5 <'test3.zl'>
+(0) use childs end 
+(0) use has nextnode: nodenum:3 funcall token: printf line:2,col:1 <'test3.zl'>
+(3) printf has 1 childs: 
+(3) printf (0) child is nodenum:5 string token: 'i am run in test3.zl,haha 
+' line:2,col:8 <'test3.zl'>
+(3) printf childs end 
+
+
+ the symbol table:
+
+[zenglrun assemble code]:
+0 USE "builtin" [1 line:1,col:5,test3.zl]
+1 PUSH ARG [3 line:2,col:1,test3.zl]
+2 PUSH LOC [3 line:2,col:1,test3.zl]
+3 PUSH ARGTMP [3 line:2,col:1,test3.zl]
+4 RESET ARGTMP [3 line:2,col:1,test3.zl]
+5 MOV AX "i am run in test3.zl,haha 
+" [5 line:2,col:8,test3.zl]
+6 PUSH AX [5 line:2,col:8,test3.zl]
+7 PUSH 11 [3 line:2,col:1,test3.zl]
+8 MOV ARG ARGTMP [3 line:2,col:1,test3.zl]
+9 RESET LOC [3 line:2,col:1,test3.zl]
+10 CALL "printf" [3 line:2,col:1,test3.zl]
+11 END [7 line:2,col:39,test3.zl]
+
+ compile time:0 s totalsize: 27.9296875 Kbyte
+
+ run time:0 s totalsize: 32.8984375 Kbyte
+ VM time:0 s totalsize: 61.15625 Kbyte
+
+ run time:0.047 s totalsize: 79.0498046875 Kbyte
+ VM time:0.047 s totalsize: 176.12109375 Kbyte
+nodenum:0 reserve token: use line:1,col:1 <'test2.zl'>
+(0) use has 1 childs: 
+(0) use (0) child is nodenum:1 identifier token: builtin line:1,col:5 <'test2.zl'>
+(0) use childs end 
+(0) use has nextnode: nodenum:3 funcall token: printf line:2,col:1 <'test2.zl'>
+(3) printf has 1 childs: 
+(3) printf (0) child is nodenum:5 string token: 'i am in test2.zl,haha 
+' line:2,col:8 <'test2.zl'>
+(3) printf childs end 
+
+
+ the symbol table:
+
+[zenglrun assemble code]:
+0 USE "builtin" [1 line:1,col:5,test2.zl]
+1 PUSH ARG [3 line:2,col:1,test2.zl]
+2 PUSH LOC [3 line:2,col:1,test2.zl]
+3 PUSH ARGTMP [3 line:2,col:1,test2.zl]
+4 RESET ARGTMP [3 line:2,col:1,test2.zl]
+5 MOV AX "i am in test2.zl,haha 
+" [5 line:2,col:8,test2.zl]
+6 PUSH AX [5 line:2,col:8,test2.zl]
+7 PUSH 11 [3 line:2,col:1,test2.zl]
+8 MOV ARG ARGTMP [3 line:2,col:1,test2.zl]
+9 RESET LOC [3 line:2,col:1,test2.zl]
+10 CALL "printf" [3 line:2,col:1,test2.zl]
+11 END [7 line:2,col:35,test2.zl]
+
+ compile time:0 s totalsize: 23.6796875 Kbyte
+
+ run time:0 s totalsize: 29.5234375 Kbyte
+ VM time:0.109 s totalsize: 53.203125 Kbyte
+nodenum:0 reserve token: use line:1,col:1 <'encrypt_script/test2.zl'>
+(0) use has 1 childs: 
+(0) use (0) child is nodenum:1 identifier token: builtin line:1,col:5 <'encrypt_script/test2.zl'>
+(0) use childs end 
+(0) use has nextnode: nodenum:3 funcall token: printf line:2,col:1 <'encrypt_script/test2.zl'>
+(3) printf has 1 childs: 
+(3) printf (0) child is nodenum:5 string token: 'i am in test2.zl,haha 
+' line:2,col:8 <'encrypt_script/test2.zl'>
+(3) printf childs end 
+(3) printf has nextnode: nodenum:8 reserve token: use line:2,col:1 <'encrypt_script/test.zl'>
+(8) use has 1 childs: 
+(8) use (0) child is nodenum:9 identifier token: sdl line:2,col:5 <'encrypt_script/test.zl'>
+(8) use childs end 
+(8) use has nextnode: nodenum:11 reserve token: class line:4,col:1 <'encrypt_script/test.zl'>
+(11) class has 2 childs: 
+(11) class (0) child is nodenum:12 identifier token: clsTest line:4,col:7 <'encrypt_script/test.zl'>
+(11) class (1) child is nodenum:13 identifier token: a line:5,col:2 <'encrypt_script/test.zl'>
+(13) a has nextnode: nodenum:15 identifier token: b line:6,col:2 <'encrypt_script/test.zl'>
+(15) b has nextnode: nodenum:17 reserve token: fun line:7,col:2 <'encrypt_script/test.zl'>
+(17) fun has 3 childs: 
+(17) fun (0) child is nodenum:18 identifier token: init line:7,col:6 <'encrypt_script/test.zl'>
+(17) fun (1) child is nodenum:20 identifier token: obj line:7,col:11 <'encrypt_script/test.zl'>
+(17) fun (2) child is nodenum:22 class statement token: 'clsTest' line:8,col:3 <'encrypt_script/test.zl'>
+(22) clsTest has 1 childs: 
+(22) clsTest (0) child is nodenum:24 ops token: : line:8,col:14 <'encrypt_script/test.zl'>
+(24) : has 2 childs: 
+(24) : (0) child is nodenum:23 identifier token: obj line:8,col:11 <'encrypt_script/test.zl'>
+(24) : (1) child is nodenum:25 identifier token: obj2 line:8,col:15 <'encrypt_script/test.zl'>
+(24) : childs end 
+(22) clsTest childs end 
+(22) clsTest has nextnode: nodenum:27 class statement token: 'clsTestOther' line:9,col:3 <'encrypt_script/test.zl'>
+(27) clsTestOther has 1 childs: 
+(27) clsTestOther (0) child is nodenum:28 identifier token: obj3 line:9,col:16 <'encrypt_script/test.zl'>
+(27) clsTestOther childs end 
+(27) clsTestOther has nextnode: nodenum:31 ops token: = line:10,col:5 <'encrypt_script/test.zl'>
+(31) = has 2 childs: 
+(31) = (0) child is nodenum:30 identifier token: c line:10,col:3 <'encrypt_script/test.zl'>
+(31) = (1) child is nodenum:32 number token: 3 line:10,col:7 <'encrypt_script/test.zl'>
+(31) = childs end 
+(31) = has nextnode: nodenum:35 ops token: = line:11,col:5 <'encrypt_script/test.zl'>
+(35) = has 2 childs: 
+(35) = (0) child is nodenum:34 identifier token: d line:11,col:3 <'encrypt_script/test.zl'>
+(35) = (1) child is nodenum:36 number token: 6 line:11,col:7 <'encrypt_script/test.zl'>
+(35) = childs end 
+(35) = has nextnode: nodenum:41 ops token: = line:12,col:10 <'encrypt_script/test.zl'>
+(41) = has 2 childs: 
+(41) = (0) child is nodenum:39 ops token: (null) line:12,col:7 <'encrypt_script/test.zl'>
+(39) (null) has 2 childs: 
+(39) (null) (0) child is nodenum:38 identifier token: obj2 line:12,col:3 <'encrypt_script/test.zl'>
+(39) (null) (1) child is nodenum:40 identifier token: b line:12,col:8 <'encrypt_script/test.zl'>
+(39) (null) childs end 
+(41) = (1) child is nodenum:42 string token: 'welcome to zengl' line:12,col:12 <'encrypt_script/test.zl'>
+(41) = childs end 
+(41) = has nextnode: nodenum:47 ops token: = line:13,col:10 <'encrypt_script/test.zl'>
+(47) = has 2 childs: 
+(47) = (0) child is nodenum:45 ops token: (null) line:13,col:7 <'encrypt_script/test.zl'>
+(45) (null) has 2 childs: 
+(45) (null) (0) child is nodenum:44 identifier token: obj3 line:13,col:3 <'encrypt_script/test.zl'>
+(45) (null) (1) child is nodenum:46 identifier token: n line:13,col:8 <'encrypt_script/test.zl'>
+(45) (null) childs end 
+(47) = (1) child is nodenum:48 string token: 'thank you!' line:13,col:12 <'encrypt_script/test.zl'>
+(47) = childs end 
+(47) = has nextnode: nodenum:50 reserve token: print line:14,col:3 <'encrypt_script/test.zl'>
+(50) print has 1 childs: 
+(50) print (0) child is nodenum:52 ops token: (null) line:14,col:13 <'encrypt_script/test.zl'>
+(52) (null) has 2 childs: 
+(52) (null) (0) child is nodenum:51 identifier token: obj2 line:14,col:9 <'encrypt_script/test.zl'>
+(52) (null) (1) child is nodenum:53 identifier token: b line:14,col:14 <'encrypt_script/test.zl'>
+(52) (null) childs end 
+(50) print childs end 
+(50) print has nextnode: nodenum:55 reserve token: print line:15,col:3 <'encrypt_script/test.zl'>
+(55) print has 1 childs: 
+(55) print (0) child is nodenum:57 ops token: (null) line:15,col:13 <'encrypt_script/test.zl'>
+(57) (null) has 2 childs: 
+(57) (null) (0) child is nodenum:56 identifier token: obj3 line:15,col:9 <'encrypt_script/test.zl'>
+(57) (null) (1) child is nodenum:58 identifier token: n line:15,col:14 <'encrypt_script/test.zl'>
+(57) (null) childs end 
+(55) print childs end 
+(55) print has nextnode: nodenum:60 reserve token: switch line:16,col:3 <'encrypt_script/test.zl'>
+(60) switch has 9 childs: 
+(60) switch (0) child is nodenum:62 identifier token: c line:16,col:10 <'encrypt_script/test.zl'>
+(60) switch (1) child is nodenum:64 reserve token: case line:17,col:3 <'encrypt_script/test.zl'>
+(64) case has 1 childs: 
+(64) case (0) child is nodenum:65 number token: 1 line:17,col:8 <'encrypt_script/test.zl'>
+(64) case childs end 
+(60) switch (2) child is nodenum:67 reserve token: print line:18,col:4 <'encrypt_script/test.zl'>
+(67) print has 1 childs: 
+(67) print (0) child is nodenum:68 string token: 'c is 1' line:18,col:10 <'encrypt_script/test.zl'>
+(67) print childs end 
+(67) print has nextnode: nodenum:70 reserve token: break line:19,col:4 <'encrypt_script/test.zl'>
+(70) break has 1 childs: 
+(70) break (0) child is nodenum:-1 NULL node 
+(70) break childs end 
+(60) switch (3) child is nodenum:72 reserve token: case line:20,col:3 <'encrypt_script/test.zl'>
+(72) case has 1 childs: 
+(72) case (0) child is nodenum:73 number token: 3 line:20,col:8 <'encrypt_script/test.zl'>
+(72) case childs end 
+(60) switch (4) child is nodenum:75 reserve token: print line:21,col:4 <'encrypt_script/test.zl'>
+(75) print has 1 childs: 
+(75) print (0) child is nodenum:76 string token: 'c is 3' line:21,col:10 <'encrypt_script/test.zl'>
+(75) print childs end 
+(75) print has nextnode: nodenum:78 reserve token: break line:22,col:4 <'encrypt_script/test.zl'>
+(78) break has 1 childs: 
+(78) break (0) child is nodenum:-1 NULL node 
+(78) break childs end 
+(60) switch (5) child is nodenum:80 reserve token: case line:23,col:3 <'encrypt_script/test.zl'>
+(80) case has 1 childs: 
+(80) case (0) child is nodenum:81 number token: 5 line:23,col:8 <'encrypt_script/test.zl'>
+(80) case childs end 
+(60) switch (6) child is nodenum:83 reserve token: print line:24,col:4 <'encrypt_script/test.zl'>
+(83) print has 1 childs: 
+(83) print (0) child is nodenum:84 string token: 'c is 5' line:24,col:10 <'encrypt_script/test.zl'>
+(83) print childs end 
+(83) print has nextnode: nodenum:86 reserve token: break line:25,col:4 <'encrypt_script/test.zl'>
+(86) break has 1 childs: 
+(86) break (0) child is nodenum:-1 NULL node 
+(86) break childs end 
+(60) switch (7) child is nodenum:88 reserve token: default line:26,col:3 <'encrypt_script/test.zl'>
+(60) switch (8) child is nodenum:90 reserve token: print line:27,col:4 <'encrypt_script/test.zl'>
+(90) print has 1 childs: 
+(90) print (0) child is nodenum:91 string token: 'init invalid c value!' line:27,col:10 <'encrypt_script/test.zl'>
+(90) print childs end 
+(90) print has nextnode: nodenum:93 reserve token: break line:28,col:4 <'encrypt_script/test.zl'>
+(93) break has 1 childs: 
+(93) break (0) child is nodenum:-1 NULL node 
+(93) break childs end 
+(60) switch childs end 
+(60) switch has nextnode: nodenum:96 reserve token: print line:30,col:3 <'encrypt_script/test.zl'>
+(96) print has 1 childs: 
+(96) print (0) child is nodenum:98 ops token: + line:30,col:17 <'encrypt_script/test.zl'>
+(98) + has 2 childs: 
+(98) + (0) child is nodenum:97 string token: 'c is ' line:30,col:9 <'encrypt_script/test.zl'>
+(98) + (1) child is nodenum:100 ops token: = line:30,col:21 <'encrypt_script/test.zl'>
+(100) = has 2 childs: 
+(100) = (0) child is nodenum:99 identifier token: c line:30,col:19 <'encrypt_script/test.zl'>
+(100) = (1) child is nodenum:108 ops token: ? line:30,col:37 <'encrypt_script/test.zl'>
+(108) ? has 2 childs: 
+(108) ? (0) child is nodenum:104 ops token: . line:30,col:29 <'encrypt_script/test.zl'>
+(104) . has 2 childs: 
+(104) . (0) child is nodenum:102 ops token: > line:30,col:25 <'encrypt_script/test.zl'>
+(102) > has 2 childs: 
+(102) > (0) child is nodenum:101 identifier token: c line:30,col:23 <'encrypt_script/test.zl'>
+(102) > (1) child is nodenum:103 number token: 3 line:30,col:27 <'encrypt_script/test.zl'>
+(102) > childs end 
+(104) . (1) child is nodenum:106 ops token: = line:30,col:33 <'encrypt_script/test.zl'>
+(106) = has 2 childs: 
+(106) = (0) child is nodenum:105 identifier token: d line:30,col:31 <'encrypt_script/test.zl'>
+(106) = (1) child is nodenum:107 number token: 9 line:30,col:35 <'encrypt_script/test.zl'>
+(106) = childs end 
+(104) . childs end 
+(108) ? (1) child is nodenum:110 ops token: = line:30,col:41 <'encrypt_script/test.zl'>
+(110) = has 2 childs: 
+(110) = (0) child is nodenum:109 identifier token: d line:30,col:39 <'encrypt_script/test.zl'>
+(110) = (1) child is nodenum:111 number token: 2 line:30,col:43 <'encrypt_script/test.zl'>
+(110) = childs end 
+(108) ? childs end 
+(100) = childs end 
+(98) + childs end 
+(96) print childs end 
+(96) print has nextnode: nodenum:113 reserve token: print line:31,col:3 <'encrypt_script/test.zl'>
+(113) print has 1 childs: 
+(113) print (0) child is nodenum:115 ops token: + line:31,col:17 <'encrypt_script/test.zl'>
+(115) + has 2 childs: 
+(115) + (0) child is nodenum:114 string token: 'd is ' line:31,col:9 <'encrypt_script/test.zl'>
+(115) + (1) child is nodenum:116 identifier token: d line:31,col:19 <'encrypt_script/test.zl'>
+(115) + childs end 
+(113) print childs end 
+(113) print has nextnode: nodenum:118 reserve token: print line:32,col:3 <'encrypt_script/test.zl'>
+(118) print has 1 childs: 
+(118) print (0) child is nodenum:120 ops token: + line:32,col:17 <'encrypt_script/test.zl'>
+(120) + has 2 childs: 
+(120) + (0) child is nodenum:119 string token: 'c is ' line:32,col:9 <'encrypt_script/test.zl'>
+(120) + (1) child is nodenum:121 identifier token: c line:32,col:19 <'encrypt_script/test.zl'>
+(120) + childs end 
+(118) print childs end 
+(118) print has nextnode: nodenum:123 reserve token: while line:33,col:3 <'encrypt_script/test.zl'>
+(123) while has 2 childs: 
+(123) while (0) child is nodenum:128 ops token: > line:33,col:15 <'encrypt_script/test.zl'>
+(128) > has 2 childs: 
+(128) > (0) child is nodenum:126 ops token: (null) line:33,col:12 <'encrypt_script/test.zl'>
+(126) (null) has 2 childs: 
+(126) (null) (0) child is nodenum:125 identifier token: obj line:33,col:9 <'encrypt_script/test.zl'>
+(126) (null) (1) child is nodenum:127 identifier token: a line:33,col:13 <'encrypt_script/test.zl'>
+(126) (null) childs end 
+(128) > (1) child is nodenum:129 number token: 4 line:33,col:17 <'encrypt_script/test.zl'>
+(128) > childs end 
+(123) while (1) child is nodenum:131 reserve token: if line:34,col:4 <'encrypt_script/test.zl'>
+(131) if has 4 childs: 
+(131) if (0) child is nodenum:136 ops token: > line:34,col:13 <'encrypt_script/test.zl'>
+(136) > has 2 childs: 
+(136) > (0) child is nodenum:134 ops token: (null) line:34,col:10 <'encrypt_script/test.zl'>
+(134) (null) has 2 childs: 
+(134) (null) (0) child is nodenum:133 identifier token: obj line:34,col:7 <'encrypt_script/test.zl'>
+(134) (null) (1) child is nodenum:135 identifier token: a line:34,col:11 <'encrypt_script/test.zl'>
+(134) (null) childs end 
+(136) > (1) child is nodenum:137 number token: 7 line:34,col:15 <'encrypt_script/test.zl'>
+(136) > childs end 
+(131) if (1) child is nodenum:142 ops token: -- line:35,col:10 <'encrypt_script/test.zl'>
+(142) -- has 1 childs: 
+(142) -- (0) child is nodenum:140 ops token: (null) line:35,col:8 <'encrypt_script/test.zl'>
+(140) (null) has 2 childs: 
+(140) (null) (0) child is nodenum:139 identifier token: obj line:35,col:5 <'encrypt_script/test.zl'>
+(140) (null) (1) child is nodenum:141 identifier token: a line:35,col:9 <'encrypt_script/test.zl'>
+(140) (null) childs end 
+(142) -- childs end 
+(142) -- has nextnode: nodenum:144 reserve token: continue line:36,col:5 <'encrypt_script/test.zl'>
+(144) continue has 1 childs: 
+(144) continue (0) child is (-1) (null) childs end 
+(144) continue childs end 
+(131) if (2) child is nodenum:146 reserve token: elif line:37,col:4 <'encrypt_script/test.zl'>
+(146) elif has 1 childs: 
+(146) elif (0) child is nodenum:151 ops token: <= line:37,col:15 <'encrypt_script/test.zl'>
+(151) <= has 2 childs: 
+(151) <= (0) child is nodenum:149 ops token: (null) line:37,col:12 <'encrypt_script/test.zl'>
+(149) (null) has 2 childs: 
+(149) (null) (0) child is nodenum:148 identifier token: obj line:37,col:9 <'encrypt_script/test.zl'>
+(149) (null) (1) child is nodenum:150 identifier token: a line:37,col:13 <'encrypt_script/test.zl'>
+(149) (null) childs end 
+(151) <= (1) child is nodenum:152 number token: 5 line:37,col:18 <'encrypt_script/test.zl'>
+(151) <= childs end 
+(146) elif childs end 
+(131) if (3) child is nodenum:154 reserve token: break line:38,col:5 <'encrypt_script/test.zl'>
+(154) break has 1 childs: 
+(154) break (0) child is (-1) (null) childs end 
+(154) break childs end 
+(131) if childs end 
+(131) if has nextnode: nodenum:157 reserve token: print line:40,col:4 <'encrypt_script/test.zl'>
+(157) print has 1 childs: 
+(157) print (0) child is nodenum:159 ops token: + line:40,col:49 <'encrypt_script/test.zl'>
+(159) + has 2 childs: 
+(159) + (0) child is nodenum:158 string token: 'i am in clsTest.init while obj.a is ' line:40,col:10 <'encrypt_script/test.zl'>
+(159) + (1) child is nodenum:161 ops token: (null) line:40,col:54 <'encrypt_script/test.zl'>
+(161) (null) has 2 childs: 
+(161) (null) (0) child is nodenum:160 identifier token: obj line:40,col:51 <'encrypt_script/test.zl'>
+(161) (null) (1) child is nodenum:162 identifier token: a line:40,col:55 <'encrypt_script/test.zl'>
+(161) (null) childs end 
+(159) + childs end 
+(157) print childs end 
+(157) print has nextnode: nodenum:167 ops token: -- line:41,col:9 <'encrypt_script/test.zl'>
+(167) -- has 1 childs: 
+(167) -- (0) child is nodenum:165 ops token: (null) line:41,col:7 <'encrypt_script/test.zl'>
+(165) (null) has 2 childs: 
+(165) (null) (0) child is nodenum:164 identifier token: obj line:41,col:4 <'encrypt_script/test.zl'>
+(165) (null) (1) child is nodenum:166 identifier token: a line:41,col:8 <'encrypt_script/test.zl'>
+(165) (null) childs end 
+(167) -- childs end 
+(123) while childs end 
+(123) while has nextnode: nodenum:173 ops token: = line:43,col:9 <'encrypt_script/test.zl'>
+(173) = has 2 childs: 
+(173) = (0) child is nodenum:171 ops token: (null) line:43,col:6 <'encrypt_script/test.zl'>
+(171) (null) has 2 childs: 
+(171) (null) (0) child is nodenum:170 identifier token: obj line:43,col:3 <'encrypt_script/test.zl'>
+(171) (null) (1) child is nodenum:172 identifier token: a line:43,col:7 <'encrypt_script/test.zl'>
+(171) (null) childs end 
+(173) = (1) child is nodenum:174 number token: 8 line:43,col:11 <'encrypt_script/test.zl'>
+(173) = childs end 
+(173) = has nextnode: nodenum:176 reserve token: do line:44,col:3 <'encrypt_script/test.zl'>
+(176) do has 2 childs: 
+(176) do (0) child is nodenum:177 reserve token: if line:45,col:4 <'encrypt_script/test.zl'>
+(177) if has 4 childs: 
+(177) if (0) child is nodenum:182 ops token: > line:45,col:13 <'encrypt_script/test.zl'>
+(182) > has 2 childs: 
+(182) > (0) child is nodenum:180 ops token: (null) line:45,col:10 <'encrypt_script/test.zl'>
+(180) (null) has 2 childs: 
+(180) (null) (0) child is nodenum:179 identifier token: obj line:45,col:7 <'encrypt_script/test.zl'>
+(180) (null) (1) child is nodenum:181 identifier token: a line:45,col:11 <'encrypt_script/test.zl'>
+(180) (null) childs end 
+(182) > (1) child is nodenum:183 number token: 7 line:45,col:15 <'encrypt_script/test.zl'>
+(182) > childs end 
+(177) if (1) child is nodenum:188 ops token: -- line:46,col:10 <'encrypt_script/test.zl'>
+(188) -- has 1 childs: 
+(188) -- (0) child is nodenum:186 ops token: (null) line:46,col:8 <'encrypt_script/test.zl'>
+(186) (null) has 2 childs: 
+(186) (null) (0) child is nodenum:185 identifier token: obj line:46,col:5 <'encrypt_script/test.zl'>
+(186) (null) (1) child is nodenum:187 identifier token: a line:46,col:9 <'encrypt_script/test.zl'>
+(186) (null) childs end 
+(188) -- childs end 
+(188) -- has nextnode: nodenum:190 reserve token: continue line:47,col:5 <'encrypt_script/test.zl'>
+(190) continue has 1 childs: 
+(190) continue (0) child is (-1) (null) childs end 
+(190) continue childs end 
+(177) if (2) child is nodenum:192 reserve token: elif line:48,col:4 <'encrypt_script/test.zl'>
+(192) elif has 1 childs: 
+(192) elif (0) child is nodenum:197 ops token: <= line:48,col:15 <'encrypt_script/test.zl'>
+(197) <= has 2 childs: 
+(197) <= (0) child is nodenum:195 ops token: (null) line:48,col:12 <'encrypt_script/test.zl'>
+(195) (null) has 2 childs: 
+(195) (null) (0) child is nodenum:194 identifier token: obj line:48,col:9 <'encrypt_script/test.zl'>
+(195) (null) (1) child is nodenum:196 identifier token: a line:48,col:13 <'encrypt_script/test.zl'>
+(195) (null) childs end 
+(197) <= (1) child is nodenum:198 number token: 5 line:48,col:18 <'encrypt_script/test.zl'>
+(197) <= childs end 
+(192) elif childs end 
+(177) if (3) child is nodenum:200 reserve token: break line:49,col:5 <'encrypt_script/test.zl'>
+(200) break has 1 childs: 
+(200) break (0) child is (-1) (null) childs end 
+(200) break childs end 
+(177) if childs end 
+(177) if has nextnode: nodenum:203 reserve token: print line:51,col:4 <'encrypt_script/test.zl'>
+(203) print has 1 childs: 
+(203) print (0) child is nodenum:205 ops token: + line:51,col:52 <'encrypt_script/test.zl'>
+(205) + has 2 childs: 
+(205) + (0) child is nodenum:204 string token: 'i am in clsTest.init do while obj.a is ' line:51,col:10 <'encrypt_script/test.zl'>
+(205) + (1) child is nodenum:207 ops token: (null) line:51,col:57 <'encrypt_script/test.zl'>
+(207) (null) has 2 childs: 
+(207) (null) (0) child is nodenum:206 identifier token: obj line:51,col:54 <'encrypt_script/test.zl'>
+(207) (null) (1) child is nodenum:208 identifier token: a line:51,col:58 <'encrypt_script/test.zl'>
+(207) (null) childs end 
+(205) + childs end 
+(203) print childs end 
+(203) print has nextnode: nodenum:213 ops token: -- line:52,col:9 <'encrypt_script/test.zl'>
+(213) -- has 1 childs: 
+(213) -- (0) child is nodenum:211 ops token: (null) line:52,col:7 <'encrypt_script/test.zl'>
+(211) (null) has 2 childs: 
+(211) (null) (0) child is nodenum:210 identifier token: obj line:52,col:4 <'encrypt_script/test.zl'>
+(211) (null) (1) child is nodenum:212 identifier token: a line:52,col:8 <'encrypt_script/test.zl'>
+(211) (null) childs end 
+(213) -- childs end 
+(176) do (1) child is nodenum:220 ops token: > line:53,col:17 <'encrypt_script/test.zl'>
+(220) > has 2 childs: 
+(220) > (0) child is nodenum:218 ops token: (null) line:53,col:14 <'encrypt_script/test.zl'>
+(218) (null) has 2 childs: 
+(218) (null) (0) child is nodenum:217 identifier token: obj line:53,col:11 <'encrypt_script/test.zl'>
+(218) (null) (1) child is nodenum:219 identifier token: a line:53,col:15 <'encrypt_script/test.zl'>
+(218) (null) childs end 
+(220) > (1) child is nodenum:221 number token: 4 line:53,col:19 <'encrypt_script/test.zl'>
+(220) > childs end 
+(176) do childs end 
+(176) do has nextnode: nodenum:223 reserve token: print line:54,col:3 <'encrypt_script/test.zl'>
+(223) print has 1 childs: 
+(223) print (0) child is nodenum:225 ops token: = line:54,col:11 <'encrypt_script/test.zl'>
+(225) = has 2 childs: 
+(225) = (0) child is nodenum:224 identifier token: m line:54,col:9 <'encrypt_script/test.zl'>
+(225) = (1) child is nodenum:233 ops token: %= line:54,col:27 <'encrypt_script/test.zl'>
+(233) %= has 2 childs: 
+(233) %= (0) child is nodenum:229 ops token: /= line:54,col:19 <'encrypt_script/test.zl'>
+(229) /= has 2 childs: 
+(229) /= (0) child is nodenum:227 ops token: (null) line:54,col:16 <'encrypt_script/test.zl'>
+(227) (null) has 2 childs: 
+(227) (null) (0) child is nodenum:226 identifier token: obj line:54,col:13 <'encrypt_script/test.zl'>
+(227) (null) (1) child is nodenum:228 identifier token: a line:54,col:17 <'encrypt_script/test.zl'>
+(227) (null) childs end 
+(229) /= (1) child is nodenum:231 ops token: (null) line:54,col:24 <'encrypt_script/test.zl'>
+(231) (null) has 2 childs: 
+(231) (null) (0) child is nodenum:230 identifier token: obj line:54,col:21 <'encrypt_script/test.zl'>
+(231) (null) (1) child is nodenum:232 identifier token: b line:54,col:25 <'encrypt_script/test.zl'>
+(231) (null) childs end 
+(229) /= childs end 
+(233) %= (1) child is nodenum:234 number token: 2 line:54,col:29 <'encrypt_script/test.zl'>
+(233) %= childs end 
+(225) = childs end 
+(223) print childs end 
+(17) fun childs end 
+(17) fun has nextnode: nodenum:237 reserve token: fun line:57,col:2 <'encrypt_script/test.zl'>
+(237) fun has 3 childs: 
+(237) fun (0) child is nodenum:238 identifier token: OutIn line:57,col:6 <'encrypt_script/test.zl'>
+(237) fun (1) child is nodenum:241 ops token: : line:57,col:16 <'encrypt_script/test.zl'>
+(241) : has 2 childs: 
+(241) : (0) child is nodenum:240 identifier token: arg1 line:57,col:12 <'encrypt_script/test.zl'>
+(241) : (1) child is nodenum:242 identifier token: arg2 line:57,col:17 <'encrypt_script/test.zl'>
+(241) : childs end 
+(237) fun (2) child is nodenum:244 reserve token: print line:58,col:3 <'encrypt_script/test.zl'>
+(244) print has 1 childs: 
+(244) print (0) child is nodenum:246 ops token: + line:58,col:20 <'encrypt_script/test.zl'>
+(246) + has 2 childs: 
+(246) + (0) child is nodenum:245 string token: 'arg1 is ' line:58,col:9 <'encrypt_script/test.zl'>
+(246) + (1) child is nodenum:247 identifier token: arg1 line:58,col:22 <'encrypt_script/test.zl'>
+(246) + childs end 
+(244) print childs end 
+(244) print has nextnode: nodenum:249 reserve token: print line:59,col:3 <'encrypt_script/test.zl'>
+(249) print has 1 childs: 
+(249) print (0) child is nodenum:251 ops token: + line:59,col:20 <'encrypt_script/test.zl'>
+(251) + has 2 childs: 
+(251) + (0) child is nodenum:250 string token: 'arg2 is ' line:59,col:9 <'encrypt_script/test.zl'>
+(251) + (1) child is nodenum:252 identifier token: arg2 line:59,col:22 <'encrypt_script/test.zl'>
+(251) + childs end 
+(249) print childs end 
+(237) fun childs end 
+(11) class childs end 
+(11) class has nextnode: nodenum:256 reserve token: fun line:63,col:1 <'encrypt_script/test.zl'>
+(256) fun has 3 childs: 
+(256) fun (0) child is nodenum:257 identifier token: init line:63,col:5 <'encrypt_script/test.zl'>
+(256) fun (1) child is nodenum:-1 NULL node 
+(256) fun (2) child is nodenum:260 reserve token: print line:64,col:2 <'encrypt_script/test.zl'>
+(260) print has 1 childs: 
+(260) print (0) child is nodenum:261 string token: 'global init' line:64,col:8 <'encrypt_script/test.zl'>
+(260) print childs end 
+(256) fun childs end 
+(256) fun has nextnode: nodenum:265 ops token: (null) line:67,col:8 <'encrypt_script/test.zl'>
+(265) (null) has 2 childs: 
+(265) (null) (0) child is nodenum:264 identifier token: clsTest line:67,col:1 <'encrypt_script/test.zl'>
+(265) (null) (1) child is nodenum:266 funcall token: init line:67,col:9 <'encrypt_script/test.zl'>
+(266) init has 1 childs: 
+(266) init (0) child is nodenum:-1 NULL node 
+(266) init childs end 
+(265) (null) childs end 
+(265) (null) has nextnode: nodenum:270 reserve token: print line:68,col:1 <'encrypt_script/test.zl'>
+(270) print has 1 childs: 
+(270) print (0) child is nodenum:271 funcall token: bltGetExtraData line:68,col:7 <'encrypt_script/test.zl'>
+(271) bltGetExtraData has 1 childs: 
+(271) bltGetExtraData (0) child is nodenum:273 string token: 'name' line:68,col:23 <'encrypt_script/test.zl'>
+(271) bltGetExtraData childs end 
+(270) print childs end 
+(270) print has nextnode: nodenum:276 reserve token: print line:69,col:1 <'encrypt_script/test.zl'>
+(276) print has 1 childs: 
+(276) print (0) child is nodenum:277 funcall token: bltGetExtraData line:69,col:7 <'encrypt_script/test.zl'>
+(277) bltGetExtraData has 1 childs: 
+(277) bltGetExtraData (0) child is nodenum:279 string token: 'val' line:69,col:23 <'encrypt_script/test.zl'>
+(277) bltGetExtraData childs end 
+(276) print childs end 
+(276) print has nextnode: nodenum:282 funcall token: init line:71,col:1 <'encrypt_script/test.zl'>
+(282) init has 1 childs: 
+(282) init (0) child is (-1) (null) childs end 
+(282) init childs end 
+(282) init has nextnode: nodenum:286 class statement token: 'clsTest' line:72,col:1 <'encrypt_script/test.zl'>
+(286) clsTest has 1 childs: 
+(286) clsTest (0) child is nodenum:287 identifier token: test line:72,col:9 <'encrypt_script/test.zl'>
+(286) clsTest childs end 
+(286) clsTest has nextnode: nodenum:290 ops token: = line:73,col:10 <'encrypt_script/test.zl'>
+(290) = has 2 childs: 
+(290) = (0) child is nodenum:289 identifier token: glmytest line:73,col:1 <'encrypt_script/test.zl'>
+(290) = (1) child is nodenum:291 number token: 5 line:73,col:12 <'encrypt_script/test.zl'>
+(290) = childs end 
+(290) = has nextnode: nodenum:294 ops token: = line:74,col:3 <'encrypt_script/test.zl'>
+(294) = has 2 childs: 
+(294) = (0) child is nodenum:293 identifier token: i line:74,col:1 <'encrypt_script/test.zl'>
+(294) = (1) child is nodenum:295 number token: 4 line:74,col:5 <'encrypt_script/test.zl'>
+(294) = childs end 
+(294) = has nextnode: nodenum:298 ops token: = line:75,col:10 <'encrypt_script/test.zl'>
+(298) = has 2 childs: 
+(298) = (0) child is nodenum:297 identifier token: floatnum line:75,col:1 <'encrypt_script/test.zl'>
+(298) = (1) child is nodenum:299 float token: 3.677 line:75,col:12 <'encrypt_script/test.zl'>
+(298) = childs end 
+(298) = has nextnode: nodenum:304 ops token: = line:76,col:8 <'encrypt_script/test.zl'>
+(304) = has 2 childs: 
+(304) = (0) child is nodenum:302 ops token: (null) line:76,col:5 <'encrypt_script/test.zl'>
+(302) (null) has 2 childs: 
+(302) (null) (0) child is nodenum:301 identifier token: test line:76,col:1 <'encrypt_script/test.zl'>
+(302) (null) (1) child is nodenum:303 identifier token: a line:76,col:6 <'encrypt_script/test.zl'>
+(302) (null) childs end 
+(304) = (1) child is nodenum:305 number token: 8 line:76,col:10 <'encrypt_script/test.zl'>
+(304) = childs end 
+(304) = has nextnode: nodenum:310 ops token: = line:77,col:8 <'encrypt_script/test.zl'>
+(310) = has 2 childs: 
+(310) = (0) child is nodenum:308 ops token: (null) line:77,col:5 <'encrypt_script/test.zl'>
+(308) (null) has 2 childs: 
+(308) (null) (0) child is nodenum:307 identifier token: test line:77,col:1 <'encrypt_script/test.zl'>
+(308) (null) (1) child is nodenum:309 identifier token: b line:77,col:6 <'encrypt_script/test.zl'>
+(308) (null) childs end 
+(310) = (1) child is nodenum:311 number token: 10 line:77,col:10 <'encrypt_script/test.zl'>
+(310) = childs end 
+(310) = has nextnode: nodenum:313 reserve token: print line:78,col:1 <'encrypt_script/test.zl'>
+(313) print has 1 childs: 
+(313) print (0) child is nodenum:321 ops token: + line:78,col:43 <'encrypt_script/test.zl'>
+(321) + has 2 childs: 
+(321) + (0) child is nodenum:319 ops token: + line:78,col:28 <'encrypt_script/test.zl'>
+(319) + has 2 childs: 
+(319) + (0) child is nodenum:315 ops token: + line:78,col:19 <'encrypt_script/test.zl'>
+(315) + has 2 childs: 
+(315) + (0) child is nodenum:314 string token: 'test a is ' line:78,col:7 <'encrypt_script/test.zl'>
+(315) + (1) child is nodenum:317 ops token: (null) line:78,col:25 <'encrypt_script/test.zl'>
+(317) (null) has 2 childs: 
+(317) (null) (0) child is nodenum:316 identifier token: test line:78,col:21 <'encrypt_script/test.zl'>
+(317) (null) (1) child is nodenum:318 identifier token: a line:78,col:26 <'encrypt_script/test.zl'>
+(317) (null) childs end 
+(315) + childs end 
+(319) + (1) child is nodenum:320 string token: ' test.b is ' line:78,col:30 <'encrypt_script/test.zl'>
+(319) + childs end 
+(321) + (1) child is nodenum:323 ops token: (null) line:78,col:49 <'encrypt_script/test.zl'>
+(323) (null) has 2 childs: 
+(323) (null) (0) child is nodenum:322 identifier token: test line:78,col:45 <'encrypt_script/test.zl'>
+(323) (null) (1) child is nodenum:324 identifier token: b line:78,col:50 <'encrypt_script/test.zl'>
+(323) (null) childs end 
+(321) + childs end 
+(313) print childs end 
+(313) print has nextnode: nodenum:327 ops token: (null) line:79,col:8 <'encrypt_script/test.zl'>
+(327) (null) has 2 childs: 
+(327) (null) (0) child is nodenum:326 identifier token: clsTest line:79,col:1 <'encrypt_script/test.zl'>
+(327) (null) (1) child is nodenum:328 funcall token: init line:79,col:9 <'encrypt_script/test.zl'>
+(328) init has 1 childs: 
+(328) init (0) child is nodenum:330 identifier token: test line:79,col:14 <'encrypt_script/test.zl'>
+(328) init childs end 
+(327) (null) childs end 
+(327) (null) has nextnode: nodenum:334 ops token: = line:81,col:3 <'encrypt_script/test.zl'>
+(334) = has 2 childs: 
+(334) = (0) child is nodenum:333 identifier token: a line:81,col:1 <'encrypt_script/test.zl'>
+(334) = (1) child is nodenum:335 number token: 678 line:81,col:5 <'encrypt_script/test.zl'>
+(334) = childs end 
+(334) = has nextnode: nodenum:338 ops token: = line:82,col:3 <'encrypt_script/test.zl'>
+(338) = has 2 childs: 
+(338) = (0) child is nodenum:337 identifier token: c line:82,col:1 <'encrypt_script/test.zl'>
+(338) = (1) child is nodenum:339 funcall token: array line:82,col:5 <'encrypt_script/test.zl'>
+(339) array has 1 childs: 
+(339) array (0) child is nodenum:342 ops token: : line:82,col:13 <'encrypt_script/test.zl'>
+(342) : has 2 childs: 
+(342) : (0) child is nodenum:341 number token: 11 line:82,col:11 <'encrypt_script/test.zl'>
+(342) : (1) child is nodenum:343 number token: 22 line:82,col:14 <'encrypt_script/test.zl'>
+(342) : childs end 
+(339) array childs end 
+(338) = childs end 
+(338) = has nextnode: nodenum:347 ops token: = line:83,col:6 <'encrypt_script/test.zl'>
+(347) = has 2 childs: 
+(347) = (0) child is nodenum:346 identifier token: test line:83,col:1 <'encrypt_script/test.zl'>
+(347) = (1) child is nodenum:348 funcall token: array line:83,col:8 <'encrypt_script/test.zl'>
+(348) array has 1 childs: 
+(348) array (0) child is nodenum:357 ops token: : line:83,col:37 <'encrypt_script/test.zl'>
+(357) : has 2 childs: 
+(357) : (0) child is nodenum:355 ops token: : line:83,col:35 <'encrypt_script/test.zl'>
+(355) : has 2 childs: 
+(355) : (0) child is nodenum:353 ops token: : line:83,col:29 <'encrypt_script/test.zl'>
+(353) : has 2 childs: 
+(353) : (0) child is nodenum:351 ops token: : line:83,col:27 <'encrypt_script/test.zl'>
+(351) : has 2 childs: 
+(351) : (0) child is nodenum:350 string token: 'hello world' line:83,col:14 <'encrypt_script/test.zl'>
+(351) : (1) child is nodenum:352 number token: 3 line:83,col:28 <'encrypt_script/test.zl'>
+(351) : childs end 
+(353) : (1) child is nodenum:354 float token: 11.45 line:83,col:30 <'encrypt_script/test.zl'>
+(353) : childs end 
+(355) : (1) child is nodenum:356 identifier token: c line:83,col:36 <'encrypt_script/test.zl'>
+(355) : childs end 
+(357) : (1) child is nodenum:358 string token: 'haha end' line:83,col:38 <'encrypt_script/test.zl'>
+(357) : childs end 
+(348) array childs end 
+(347) = childs end 
+(347) = has nextnode: nodenum:361 reserve token: for line:84,col:1 <'encrypt_script/test.zl'>
+(361) for has 4 childs: 
+(361) for (0) child is nodenum:364 ops token: = line:84,col:6 <'encrypt_script/test.zl'>
+(364) = has 2 childs: 
+(364) = (0) child is nodenum:363 identifier token: i line:84,col:5 <'encrypt_script/test.zl'>
+(364) = (1) child is nodenum:365 number token: 0 line:84,col:7 <'encrypt_script/test.zl'>
+(364) = childs end 
+(361) for (1) child is nodenum:368 ops token: < line:84,col:10 <'encrypt_script/test.zl'>
+(368) < has 2 childs: 
+(368) < (0) child is nodenum:367 identifier token: i line:84,col:9 <'encrypt_script/test.zl'>
+(368) < (1) child is nodenum:369 number token: 4 line:84,col:11 <'encrypt_script/test.zl'>
+(368) < childs end 
+(361) for (2) child is nodenum:372 ops token: ++ line:84,col:14 <'encrypt_script/test.zl'>
+(372) ++ has 1 childs: 
+(372) ++ (0) child is nodenum:371 identifier token: i line:84,col:13 <'encrypt_script/test.zl'>
+(372) ++ childs end 
+(361) for (3) child is nodenum:374 reserve token: print line:85,col:2 <'encrypt_script/test.zl'>
+(374) print has 1 childs: 
+(374) print (0) child is nodenum:375 array token: test line:85,col:8 <'encrypt_script/test.zl'>
+(375) test has 1 childs: 
+(375) test (0) child is nodenum:377 identifier token: i line:85,col:13 <'encrypt_script/test.zl'>
+(375) test childs end 
+(374) print childs end 
+(361) for childs end 
+(361) for has nextnode: nodenum:381 reserve token: print line:87,col:1 <'encrypt_script/test.zl'>
+(381) print has 1 childs: 
+(381) print (0) child is nodenum:382 array token: test line:87,col:7 <'encrypt_script/test.zl'>
+(382) test has 1 childs: 
+(382) test (0) child is nodenum:385 ops token: : line:87,col:13 <'encrypt_script/test.zl'>
+(385) : has 2 childs: 
+(385) : (0) child is nodenum:384 number token: 3 line:87,col:12 <'encrypt_script/test.zl'>
+(385) : (1) child is nodenum:386 number token: 1 line:87,col:14 <'encrypt_script/test.zl'>
+(385) : childs end 
+(382) test childs end 
+(381) print childs end 
+(381) print has nextnode: nodenum:389 funcall token: bltPrintArray line:88,col:1 <'encrypt_script/test.zl'>
+(389) bltPrintArray has 1 childs: 
+(389) bltPrintArray (0) child is nodenum:391 identifier token: test line:88,col:15 <'encrypt_script/test.zl'>
+(389) bltPrintArray childs end 
+(389) bltPrintArray has nextnode: nodenum:394 funcall token: bltTestAddr line:89,col:1 <'encrypt_script/test.zl'>
+(394) bltTestAddr has 1 childs: 
+(394) bltTestAddr (0) child is nodenum:401 ops token: : line:89,col:21 <'encrypt_script/test.zl'>
+(401) : has 2 childs: 
+(401) : (0) child is nodenum:396 address token: & line:89,col:13 <'encrypt_script/test.zl'>
+(396) & has 1 childs: 
+(396) & (0) child is nodenum:397 array token: test line:89,col:14 <'encrypt_script/test.zl'>
+(397) test has 1 childs: 
+(397) test (0) child is nodenum:399 number token: 0 line:89,col:19 <'encrypt_script/test.zl'>
+(397) test childs end 
+(396) & childs end 
+(401) : (1) child is nodenum:402 string token: 'test[0] is modify in bltTestAddr haha' line:89,col:22 <'encrypt_script/test.zl'>
+(401) : childs end 
+(394) bltTestAddr childs end 
+(394) bltTestAddr has nextnode: nodenum:405 funcall token: bltPrintArray line:90,col:1 <'encrypt_script/test.zl'>
+(405) bltPrintArray has 1 childs: 
+(405) bltPrintArray (0) child is nodenum:407 address token: & line:90,col:15 <'encrypt_script/test.zl'>
+(407) & has 1 childs: 
+(407) & (0) child is nodenum:408 identifier token: test line:90,col:16 <'encrypt_script/test.zl'>
+(407) & childs end 
+(405) bltPrintArray childs end 
+(405) bltPrintArray has nextnode: nodenum:412 ops token: = line:91,col:7 <'encrypt_script/test.zl'>
+(412) = has 2 childs: 
+(412) = (0) child is nodenum:411 identifier token: test2 line:91,col:1 <'encrypt_script/test.zl'>
+(412) = (1) child is nodenum:413 string token: 'i am test2' line:91,col:9 <'encrypt_script/test.zl'>
+(412) = childs end 
+(412) = has nextnode: nodenum:415 reserve token: print line:92,col:1 <'encrypt_script/test.zl'>
+(415) print has 1 childs: 
+(415) print (0) child is nodenum:417 ops token: + line:92,col:18 <'encrypt_script/test.zl'>
+(417) + has 2 childs: 
+(417) + (0) child is nodenum:416 string token: 'test2 is ' line:92,col:7 <'encrypt_script/test.zl'>
+(417) + (1) child is nodenum:418 identifier token: test2 line:92,col:19 <'encrypt_script/test.zl'>
+(417) + childs end 
+(415) print childs end 
+(415) print has nextnode: nodenum:420 funcall token: bltTestAddr line:93,col:1 <'encrypt_script/test.zl'>
+(420) bltTestAddr has 1 childs: 
+(420) bltTestAddr (0) child is nodenum:424 ops token: : line:93,col:19 <'encrypt_script/test.zl'>
+(424) : has 2 childs: 
+(424) : (0) child is nodenum:422 address token: & line:93,col:13 <'encrypt_script/test.zl'>
+(422) & has 1 childs: 
+(422) & (0) child is nodenum:423 identifier token: test2 line:93,col:14 <'encrypt_script/test.zl'>
+(422) & childs end 
+(424) : (1) child is nodenum:425 string token: 'test2 is modify in bltTestAddr haha' line:93,col:20 <'encrypt_script/test.zl'>
+(424) : childs end 
+(420) bltTestAddr childs end 
+(420) bltTestAddr has nextnode: nodenum:428 reserve token: print line:94,col:1 <'encrypt_script/test.zl'>
+(428) print has 1 childs: 
+(428) print (0) child is nodenum:430 ops token: + line:94,col:18 <'encrypt_script/test.zl'>
+(430) + has 2 childs: 
+(430) + (0) child is nodenum:429 string token: 'test2 is ' line:94,col:7 <'encrypt_script/test.zl'>
+(430) + (1) child is nodenum:431 identifier token: test2 line:94,col:19 <'encrypt_script/test.zl'>
+(430) + childs end 
+(428) print childs end 
+(428) print has nextnode: nodenum:433 funcall token: bltSetArray line:95,col:1 <'encrypt_script/test.zl'>
+(433) bltSetArray has 1 childs: 
+(433) bltSetArray (0) child is nodenum:438 ops token: : line:95,col:35 <'encrypt_script/test.zl'>
+(438) : has 2 childs: 
+(438) : (0) child is nodenum:436 ops token: : line:95,col:17 <'encrypt_script/test.zl'>
+(436) : has 2 childs: 
+(436) : (0) child is nodenum:435 identifier token: test line:95,col:13 <'encrypt_script/test.zl'>
+(436) : (1) child is nodenum:437 string token: 'hello Set Array' line:95,col:18 <'encrypt_script/test.zl'>
+(436) : childs end 
+(438) : (1) child is nodenum:439 number token: 44 line:95,col:36 <'encrypt_script/test.zl'>
+(438) : childs end 
+(433) bltSetArray childs end 
+(433) bltSetArray has nextnode: nodenum:442 funcall token: bltPrintArray line:96,col:1 <'encrypt_script/test.zl'>
+(442) bltPrintArray has 1 childs: 
+(442) bltPrintArray (0) child is nodenum:444 identifier token: test line:96,col:15 <'encrypt_script/test.zl'>
+(442) bltPrintArray childs end 
+(442) bltPrintArray has nextnode: nodenum:447 funcall token: bltLoadScript line:97,col:1 <'encrypt_script/test.zl'>
+(447) bltLoadScript has 1 childs: 
+(447) bltLoadScript (0) child is nodenum:449 string token: 'test3.zl' line:97,col:15 <'encrypt_script/test.zl'>
+(447) bltLoadScript childs end 
+(447) bltLoadScript has nextnode: nodenum:452 reserve token: print line:98,col:1 <'encrypt_script/test.zl'>
+(452) print has 1 childs: 
+(452) print (0) child is nodenum:453 string token: 'i am test macro' line:98,col:7 <'encrypt_script/test.zl'>
+(452) print childs end 
+(452) print has nextnode: nodenum:455 reserve token: print line:99,col:1 <'encrypt_script/test.zl'>
+(455) print has 1 childs: 
+(455) print (0) child is nodenum:456 string token: 'test2 macro' line:99,col:7 <'encrypt_script/test.zl'>
+(455) print childs end 
+(455) print has nextnode: nodenum:458 reserve token: print line:100,col:1 <'encrypt_script/test.zl'>
+(458) print has 1 childs: 
+(458) print (0) child is nodenum:460 ops token: + line:100,col:28 <'encrypt_script/test.zl'>
+(460) + has 2 childs: 
+(460) + (0) child is nodenum:459 string token: 'zengl version is v' line:100,col:7 <'encrypt_script/test.zl'>
+(460) + (1) child is nodenum:461 funcall token: bltGetZLVersion line:100,col:30 <'encrypt_script/test.zl'>
+(461) bltGetZLVersion has 1 childs: 
+(461) bltGetZLVersion (0) child is nodenum:-1 NULL node 
+(461) bltGetZLVersion childs end 
+(460) + childs end 
+(458) print childs end 
+(458) print has nextnode: nodenum:466 ops token: (null) line:101,col:13 <'encrypt_script/test.zl'>
+(466) (null) has 2 childs: 
+(466) (null) (0) child is nodenum:465 identifier token: clsTestOther line:101,col:1 <'encrypt_script/test.zl'>
+(466) (null) (1) child is nodenum:467 funcall token: testOther line:101,col:14 <'encrypt_script/test.zl'>
+(467) testOther has 1 childs: 
+(467) testOther (0) child is (-1) (null) childs end 
+(467) testOther childs end 
+(466) (null) childs end 
+(466) (null) has nextnode: nodenum:471 funcall token: sdlInit line:102,col:1 <'encrypt_script/test.zl'>
+(471) sdlInit has 1 childs: 
+(471) sdlInit (0) child is nodenum:476 ops token: : line:102,col:19 <'encrypt_script/test.zl'>
+(476) : has 2 childs: 
+(476) : (0) child is nodenum:474 ops token: : line:102,col:12 <'encrypt_script/test.zl'>
+(474) : has 2 childs: 
+(474) : (0) child is nodenum:473 identifier token: xdf line:102,col:9 <'encrypt_script/test.zl'>
+(474) : (1) child is nodenum:475 string token: 'dfsf' line:102,col:13 <'encrypt_script/test.zl'>
+(474) : childs end 
+(476) : (1) child is nodenum:477 number token: 123 line:102,col:20 <'encrypt_script/test.zl'>
+(476) : childs end 
+(471) sdlInit childs end 
+(471) sdlInit has nextnode: nodenum:480 reserve token: class line:104,col:1 <'encrypt_script/test.zl'>
+(480) class has 2 childs: 
+(480) class (0) child is nodenum:481 identifier token: clsTestOther line:104,col:7 <'encrypt_script/test.zl'>
+(480) class (1) child is nodenum:482 identifier token: m line:105,col:2 <'encrypt_script/test.zl'>
+(482) m has nextnode: nodenum:484 identifier token: n line:106,col:2 <'encrypt_script/test.zl'>
+(484) n has nextnode: nodenum:486 reserve token: fun line:107,col:2 <'encrypt_script/test.zl'>
+(486) fun has 3 childs: 
+(486) fun (0) child is nodenum:487 identifier token: testOther line:107,col:6 <'encrypt_script/test.zl'>
+(486) fun (1) child is nodenum:-1 NULL node 
+(486) fun (2) child is nodenum:490 reserve token: print line:108,col:3 <'encrypt_script/test.zl'>
+(490) print has 1 childs: 
+(490) print (0) child is nodenum:491 string token: 'i am in testOther' line:108,col:9 <'encrypt_script/test.zl'>
+(490) print childs end 
+(490) print has nextnode: nodenum:493 reserve token: print line:109,col:3 <'encrypt_script/test.zl'>
+(493) print has 1 childs: 
+(493) print (0) child is nodenum:494 string token: 'hello zengl' line:109,col:9 <'encrypt_script/test.zl'>
+(493) print childs end 
+(486) fun childs end 
+(480) class childs end 
+(480) class has nextnode: nodenum:499 ops token: = line:117,col:3 <'encrypt_script/test.zl'>
+(499) = has 2 childs: 
+(499) = (0) child is nodenum:498 identifier token: r line:117,col:1 <'encrypt_script/test.zl'>
+(499) = (1) child is nodenum:501 ops token: + line:117,col:7 <'encrypt_script/test.zl'>
+(501) + has 2 childs: 
+(501) + (0) child is nodenum:500 number token: 4 line:117,col:5 <'encrypt_script/test.zl'>
+(501) + (1) child is nodenum:502 number token: -114 line:117,col:9 <'encrypt_script/test.zl'>
+(501) + childs end 
+(499) = childs end 
+(499) = has nextnode: nodenum:504 reserve token: if line:118,col:1 <'encrypt_script/test.zl'>
+(504) if has 4 childs: 
+(504) if (0) child is nodenum:507 ops token: == line:118,col:6 <'encrypt_script/test.zl'>
+(507) == has 2 childs: 
+(507) == (0) child is nodenum:506 identifier token: r line:118,col:4 <'encrypt_script/test.zl'>
+(507) == (1) child is nodenum:508 error unknown token: *=, tokentype: 23 line:118,col:9 <'encrypt_script/test.zl'>
+(508) *= has 1 childs: 
+(508) *= (0) child is nodenum:509 number token: 110 line:118,col:10 <'encrypt_script/test.zl'>
+(508) *= childs end 
+(507) == childs end 
+(504) if (1) child is nodenum:511 reserve token: print line:119,col:2 <'encrypt_script/test.zl'>
+(511) print has 1 childs: 
+(511) print (0) child is nodenum:512 string token: 'r is -110' line:119,col:8 <'encrypt_script/test.zl'>
+(511) print childs end 
+(504) if (2) child is nodenum:514 reserve token: else line:120,col:1 <'encrypt_script/test.zl'>
+(504) if (3) child is nodenum:515 reserve token: print line:121,col:2 <'encrypt_script/test.zl'>
+(515) print has 1 childs: 
+(515) print (0) child is nodenum:516 string token: 'r not -110' line:121,col:8 <'encrypt_script/test.zl'>
+(515) print childs end 
+(504) if childs end 
+(504) if has nextnode: nodenum:519 reserve token: print line:124,col:1 <'encrypt_script/test.zl'>
+(519) print has 1 childs: 
+(519) print (0) child is nodenum:521 ops token: - line:124,col:9 <'encrypt_script/test.zl'>
+(521) - has 2 childs: 
+(521) - (0) child is nodenum:520 identifier token: r line:124,col:7 <'encrypt_script/test.zl'>
+(521) - (1) child is nodenum:522 error unknown token: *=, tokentype: 23 line:124,col:11 <'encrypt_script/test.zl'>
+(522) *= has 1 childs: 
+(522) *= (0) child is nodenum:523 number token: 10 line:124,col:12 <'encrypt_script/test.zl'>
+(522) *= childs end 
+(521) - childs end 
+(519) print childs end 
+(519) print has nextnode: nodenum:525 reserve token: print line:126,col:1 <'encrypt_script/test.zl'>
+(525) print has 1 childs: 
+(525) print (0) child is nodenum:527 ops token: + line:126,col:22 <'encrypt_script/test.zl'>
+(527) + has 2 childs: 
+(527) + (0) child is nodenum:526 string token: 'STR_TEST is ' line:126,col:7 <'encrypt_script/test.zl'>
+(527) + (1) child is nodenum:528 string token: '23hello world' line:126,col:24 <'encrypt_script/test.zl'>
+(527) + childs end 
+(525) print childs end 
+
+
+ the symbol table:
+id:0 test [72 9 encrypt_script/test.zl] [76 1 encrypt_script/test.zl] [77 1 encrypt_script/test.zl] [78 21 encrypt_script/test.zl] [78 45 encrypt_script/test.zl] [79 14 encrypt_script/test.zl] [83 1 encrypt_script/test.zl] [85 8 encrypt_script/test.zl] [87 7 encrypt_script/test.zl] [88 15 encrypt_script/test.zl] [89 14 encrypt_script/test.zl] [90 16 encrypt_script/test.zl] [95 13 encrypt_script/test.zl] [96 15 encrypt_script/test.zl]
+id:1 glmytest [73 1 encrypt_script/test.zl]
+id:2 i [74 1 encrypt_script/test.zl] [84 5 encrypt_script/test.zl] [84 9 encrypt_script/test.zl] [84 13 encrypt_script/test.zl] [85 13 encrypt_script/test.zl]
+id:3 floatnum [75 1 encrypt_script/test.zl]
+id:4 a [81 1 encrypt_script/test.zl]
+id:5 c [82 1 encrypt_script/test.zl] [83 36 encrypt_script/test.zl]
+id:6 test2 [91 1 encrypt_script/test.zl] [92 19 encrypt_script/test.zl] [93 14 encrypt_script/test.zl] [94 19 encrypt_script/test.zl]
+id:7 xdf [102 9 encrypt_script/test.zl]
+id:8 r [117 1 encrypt_script/test.zl] [118 4 encrypt_script/test.zl] [124 7 encrypt_script/test.zl]
+class:1 clsTest <nodenum:11> [4 7 encrypt_script/test.zl]
+class:2 clsTestOther <nodenum:480> [104 7 encrypt_script/test.zl]
+classmember:0 clsTest a [5 2 encrypt_script/test.zl]
+classmember:1 clsTest b [6 2 encrypt_script/test.zl]
+classmember:0 clsTestOther m [105 2 encrypt_script/test.zl]
+classmember:1 clsTestOther n [106 2 encrypt_script/test.zl]
+fun:1 init [63 5 encrypt_script/test.zl]
+classfun:<class:1 clsTest> fun:2 init [7 6 encrypt_script/test.zl]
+classfun:<class:1 clsTest> fun:3 OutIn [57 6 encrypt_script/test.zl]
+classfun:<class:2 clsTestOther> fun:4 testOther [107 6 encrypt_script/test.zl]
+
+[zenglrun assemble code]:
+0 USE "builtin" [1 line:1,col:5,encrypt_script/test2.zl]
+1 PUSH ARG [3 line:2,col:1,encrypt_script/test2.zl]
+2 PUSH LOC [3 line:2,col:1,encrypt_script/test2.zl]
+3 PUSH ARGTMP [3 line:2,col:1,encrypt_script/test2.zl]
+4 RESET ARGTMP [3 line:2,col:1,encrypt_script/test2.zl]
+5 MOV AX "i am in test2.zl,haha 
+" [5 line:2,col:8,encrypt_script/test2.zl]
+6 PUSH AX [5 line:2,col:8,encrypt_script/test2.zl]
+7 PUSH 11 [3 line:2,col:1,encrypt_script/test2.zl]
+8 MOV ARG ARGTMP [3 line:2,col:1,encrypt_script/test2.zl]
+9 RESET LOC [3 line:2,col:1,encrypt_script/test2.zl]
+10 CALL "printf" [3 line:2,col:1,encrypt_script/test2.zl]
+11 USE "sdl" [9 line:2,col:5,encrypt_script/test.zl]
+12 JMP 198 [17 line:7,col:2,encrypt_script/test.zl]
+13 FUNARG 1 [17 line:7,col:2,encrypt_script/test.zl]
+14 PUSH_LOC [25 line:8,col:15,encrypt_script/test.zl]
+15 PUSH_LOC [28 line:9,col:16,encrypt_script/test.zl]
+16 PUSH_LOC [30 line:10,col:3,encrypt_script/test.zl]
+17 PUSH_LOC [34 line:11,col:3,encrypt_script/test.zl]
+18 PUSH_LOC [46 line:13,col:8,encrypt_script/test.zl]
+19 PUSH_LOC [53 line:14,col:14,encrypt_script/test.zl]
+20 PUSH_LOC [127 line:33,col:13,encrypt_script/test.zl]
+21 PUSH_LOC [224 line:54,col:9,encrypt_script/test.zl]
+22 MOV AX 3 [32 line:10,col:7,encrypt_script/test.zl]
+23 MOV loc(2) AX [30 line:10,col:3,encrypt_script/test.zl]
+24 MOV AX 6 [36 line:11,col:7,encrypt_script/test.zl]
+25 MOV loc(3) AX [34 line:11,col:3,encrypt_script/test.zl]
+26 MOV AX "welcome to zengl" [42 line:12,col:12,encrypt_script/test.zl]
+27 PUSH AX [39 line:12,col:7,encrypt_script/test.zl]
+28 PUSH ARRAY_ITEM [39 line:12,col:7,encrypt_script/test.zl]
+29 RESET ARRAY_ITEM [39 line:12,col:7,encrypt_script/test.zl]
+30 PUSH 1 [40 line:12,col:8,encrypt_script/test.zl]
+31 SET_ARRAY loc(0) [39 line:12,col:7,encrypt_script/test.zl]
+32 MOV AX "thank you!" [48 line:13,col:12,encrypt_script/test.zl]
+33 PUSH AX [45 line:13,col:7,encrypt_script/test.zl]
+34 PUSH ARRAY_ITEM [45 line:13,col:7,encrypt_script/test.zl]
+35 RESET ARRAY_ITEM [45 line:13,col:7,encrypt_script/test.zl]
+36 PUSH 1 [46 line:13,col:8,encrypt_script/test.zl]
+37 SET_ARRAY loc(1) [45 line:13,col:7,encrypt_script/test.zl]
+38 PUSH ARRAY_ITEM [52 line:14,col:13,encrypt_script/test.zl]
+39 RESET ARRAY_ITEM [52 line:14,col:13,encrypt_script/test.zl]
+40 PUSH 1 [53 line:14,col:14,encrypt_script/test.zl]
+41 GET_ARRAY loc(0) [52 line:14,col:13,encrypt_script/test.zl]
+42 PRINT AX [50 line:14,col:3,encrypt_script/test.zl]
+43 PUSH ARRAY_ITEM [57 line:15,col:13,encrypt_script/test.zl]
+44 RESET ARRAY_ITEM [57 line:15,col:13,encrypt_script/test.zl]
+45 PUSH 1 [58 line:15,col:14,encrypt_script/test.zl]
+46 GET_ARRAY loc(1) [57 line:15,col:13,encrypt_script/test.zl]
+47 PRINT AX [55 line:15,col:3,encrypt_script/test.zl]
+48 MOV AX loc(2) [62 line:16,col:10,encrypt_script/test.zl]
+49 SWITCH 61 58 [60 line:16,col:3,encrypt_script/test.zl]
+50 LONG 3 3 [60 line:16,col:3,encrypt_script/test.zl]
+51 LONG 1 5 [60 line:16,col:3,encrypt_script/test.zl]
+52 PRINT "c is 1" [67 line:18,col:4,encrypt_script/test.zl]
+53 JMP 64 [70 line:19,col:4,encrypt_script/test.zl]
+54 PRINT "c is 3" [75 line:21,col:4,encrypt_script/test.zl]
+55 JMP 64 [78 line:22,col:4,encrypt_script/test.zl]
+56 PRINT "c is 5" [83 line:24,col:4,encrypt_script/test.zl]
+57 JMP 64 [86 line:25,col:4,encrypt_script/test.zl]
+58 PRINT "init invalid c value!" [90 line:27,col:4,encrypt_script/test.zl]
+59 JMP 64 [93 line:28,col:4,encrypt_script/test.zl]
+60 JMP 64 [60 line:16,col:3,encrypt_script/test.zl]
+61 LONG 52 1 [60 line:16,col:3,encrypt_script/test.zl]
+62 LONG 54 3 [60 line:16,col:3,encrypt_script/test.zl]
+63 LONG 56 5 [60 line:16,col:3,encrypt_script/test.zl]
+64 MOV AX "c is " [97 line:30,col:9,encrypt_script/test.zl]
+65 PUSH AX [100 line:30,col:21,encrypt_script/test.zl]
+66 MOV AX loc(2) [101 line:30,col:23,encrypt_script/test.zl]
+67 MOV BX 3 [103 line:30,col:27,encrypt_script/test.zl]
+68 GREAT [102 line:30,col:25,encrypt_script/test.zl]
+69 JE 73 [104 line:30,col:29,encrypt_script/test.zl]
+70 MOV AX 9 [107 line:30,col:35,encrypt_script/test.zl]
+71 MOV loc(3) AX [105 line:30,col:31,encrypt_script/test.zl]
+72 JMP 75 [104 line:30,col:29,encrypt_script/test.zl]
+73 MOV AX 2 [111 line:30,col:43,encrypt_script/test.zl]
+74 MOV loc(3) AX [109 line:30,col:39,encrypt_script/test.zl]
+75 MOV loc(2) AX [99 line:30,col:19,encrypt_script/test.zl]
+76 MOV BX AX [100 line:30,col:21,encrypt_script/test.zl]
+77 POP AX [100 line:30,col:21,encrypt_script/test.zl]
+78 PLUS [98 line:30,col:17,encrypt_script/test.zl]
+79 PRINT AX [96 line:30,col:3,encrypt_script/test.zl]
+80 MOV AX "d is " [114 line:31,col:9,encrypt_script/test.zl]
+81 MOV BX loc(3) [116 line:31,col:19,encrypt_script/test.zl]
+82 PLUS [115 line:31,col:17,encrypt_script/test.zl]
+83 PRINT AX [113 line:31,col:3,encrypt_script/test.zl]
+84 MOV AX "c is " [119 line:32,col:9,encrypt_script/test.zl]
+85 MOV BX loc(2) [121 line:32,col:19,encrypt_script/test.zl]
+86 PLUS [120 line:32,col:17,encrypt_script/test.zl]
+87 PRINT AX [118 line:32,col:3,encrypt_script/test.zl]
+88 PUSH ARRAY_ITEM [126 line:33,col:12,encrypt_script/test.zl]
+89 RESET ARRAY_ITEM [126 line:33,col:12,encrypt_script/test.zl]
+90 PUSH 0 [127 line:33,col:13,encrypt_script/test.zl]
+91 GET_ARRAY arg(0) [126 line:33,col:12,encrypt_script/test.zl]
+92 MOV BX 4 [129 line:33,col:17,encrypt_script/test.zl]
+93 GREAT [128 line:33,col:15,encrypt_script/test.zl]
+94 JE 132 [123 line:33,col:3,encrypt_script/test.zl]
+95 PUSH ARRAY_ITEM [134 line:34,col:10,encrypt_script/test.zl]
+96 RESET ARRAY_ITEM [134 line:34,col:10,encrypt_script/test.zl]
+97 PUSH 0 [135 line:34,col:11,encrypt_script/test.zl]
+98 GET_ARRAY arg(0) [134 line:34,col:10,encrypt_script/test.zl]
+99 MOV BX 7 [137 line:34,col:15,encrypt_script/test.zl]
+100 GREAT [136 line:34,col:13,encrypt_script/test.zl]
+101 JE 108 [131 line:34,col:4,encrypt_script/test.zl]
+102 PUSH ARRAY_ITEM [140 line:35,col:8,encrypt_script/test.zl]
+103 RESET ARRAY_ITEM [140 line:35,col:8,encrypt_script/test.zl]
+104 PUSH 0 [141 line:35,col:9,encrypt_script/test.zl]
+105 GETMINIS_ARRAY arg(0) [140 line:35,col:8,encrypt_script/test.zl]
+106 JMP 88 [144 line:36,col:5,encrypt_script/test.zl]
+107 JMP 117 [131 line:34,col:4,encrypt_script/test.zl]
+108 PUSH ARRAY_ITEM [149 line:37,col:12,encrypt_script/test.zl]
+109 RESET ARRAY_ITEM [149 line:37,col:12,encrypt_script/test.zl]
+110 PUSH 0 [150 line:37,col:13,encrypt_script/test.zl]
+111 GET_ARRAY arg(0) [149 line:37,col:12,encrypt_script/test.zl]
+112 MOV BX 5 [152 line:37,col:18,encrypt_script/test.zl]
+113 LESS_EQ [151 line:37,col:15,encrypt_script/test.zl]
+114 JE 117 [146 line:37,col:4,encrypt_script/test.zl]
+115 JMP 132 [154 line:38,col:5,encrypt_script/test.zl]
+116 JMP 117 [0 line:1,col:1,encrypt_script/test2.zl]
+117 MOV AX "i am in clsTest.init while obj.a is " [158 line:40,col:10,encrypt_script/test.zl]
+118 PUSH AX [161 line:40,col:54,encrypt_script/test.zl]
+119 PUSH ARRAY_ITEM [161 line:40,col:54,encrypt_script/test.zl]
+120 RESET ARRAY_ITEM [161 line:40,col:54,encrypt_script/test.zl]
+121 PUSH 0 [162 line:40,col:55,encrypt_script/test.zl]
+122 GET_ARRAY arg(0) [161 line:40,col:54,encrypt_script/test.zl]
+123 MOV BX AX [161 line:40,col:54,encrypt_script/test.zl]
+124 POP AX [161 line:40,col:54,encrypt_script/test.zl]
+125 PLUS [159 line:40,col:49,encrypt_script/test.zl]
+126 PRINT AX [157 line:40,col:4,encrypt_script/test.zl]
+127 PUSH ARRAY_ITEM [165 line:41,col:7,encrypt_script/test.zl]
+128 RESET ARRAY_ITEM [165 line:41,col:7,encrypt_script/test.zl]
+129 PUSH 0 [166 line:41,col:8,encrypt_script/test.zl]
+130 GETMINIS_ARRAY arg(0) [165 line:41,col:7,encrypt_script/test.zl]
+131 JMP 88 [123 line:33,col:3,encrypt_script/test.zl]
+132 MOV AX 8 [174 line:43,col:11,encrypt_script/test.zl]
+133 PUSH AX [171 line:43,col:6,encrypt_script/test.zl]
+134 PUSH ARRAY_ITEM [171 line:43,col:6,encrypt_script/test.zl]
+135 RESET ARRAY_ITEM [171 line:43,col:6,encrypt_script/test.zl]
+136 PUSH 0 [172 line:43,col:7,encrypt_script/test.zl]
+137 SET_ARRAY arg(0) [171 line:43,col:6,encrypt_script/test.zl]
+138 PUSH ARRAY_ITEM [180 line:45,col:10,encrypt_script/test.zl]
+139 RESET ARRAY_ITEM [180 line:45,col:10,encrypt_script/test.zl]
+140 PUSH 0 [181 line:45,col:11,encrypt_script/test.zl]
+141 GET_ARRAY arg(0) [180 line:45,col:10,encrypt_script/test.zl]
+142 MOV BX 7 [183 line:45,col:15,encrypt_script/test.zl]
+143 GREAT [182 line:45,col:13,encrypt_script/test.zl]
+144 JE 151 [177 line:45,col:4,encrypt_script/test.zl]
+145 PUSH ARRAY_ITEM [186 line:46,col:8,encrypt_script/test.zl]
+146 RESET ARRAY_ITEM [186 line:46,col:8,encrypt_script/test.zl]
+147 PUSH 0 [187 line:46,col:9,encrypt_script/test.zl]
+148 GETMINIS_ARRAY arg(0) [186 line:46,col:8,encrypt_script/test.zl]
+149 JMP 174 [190 line:47,col:5,encrypt_script/test.zl]
+150 JMP 160 [177 line:45,col:4,encrypt_script/test.zl]
+151 PUSH ARRAY_ITEM [195 line:48,col:12,encrypt_script/test.zl]
+152 RESET ARRAY_ITEM [195 line:48,col:12,encrypt_script/test.zl]
+153 PUSH 0 [196 line:48,col:13,encrypt_script/test.zl]
+154 GET_ARRAY arg(0) [195 line:48,col:12,encrypt_script/test.zl]
+155 MOV BX 5 [198 line:48,col:18,encrypt_script/test.zl]
+156 LESS_EQ [197 line:48,col:15,encrypt_script/test.zl]
+157 JE 160 [192 line:48,col:4,encrypt_script/test.zl]
+158 JMP 181 [200 line:49,col:5,encrypt_script/test.zl]
+159 JMP 160 [0 line:1,col:1,encrypt_script/test2.zl]
+160 MOV AX "i am in clsTest.init do while obj.a is " [204 line:51,col:10,encrypt_script/test.zl]
+161 PUSH AX [207 line:51,col:57,encrypt_script/test.zl]
+162 PUSH ARRAY_ITEM [207 line:51,col:57,encrypt_script/test.zl]
+163 RESET ARRAY_ITEM [207 line:51,col:57,encrypt_script/test.zl]
+164 PUSH 0 [208 line:51,col:58,encrypt_script/test.zl]
+165 GET_ARRAY arg(0) [207 line:51,col:57,encrypt_script/test.zl]
+166 MOV BX AX [207 line:51,col:57,encrypt_script/test.zl]
+167 POP AX [207 line:51,col:57,encrypt_script/test.zl]
+168 PLUS [205 line:51,col:52,encrypt_script/test.zl]
+169 PRINT AX [203 line:51,col:4,encrypt_script/test.zl]
+170 PUSH ARRAY_ITEM [211 line:52,col:7,encrypt_script/test.zl]
+171 RESET ARRAY_ITEM [211 line:52,col:7,encrypt_script/test.zl]
+172 PUSH 0 [212 line:52,col:8,encrypt_script/test.zl]
+173 GETMINIS_ARRAY arg(0) [211 line:52,col:7,encrypt_script/test.zl]
+174 PUSH ARRAY_ITEM [218 line:53,col:14,encrypt_script/test.zl]
+175 RESET ARRAY_ITEM [218 line:53,col:14,encrypt_script/test.zl]
+176 PUSH 0 [219 line:53,col:15,encrypt_script/test.zl]
+177 GET_ARRAY arg(0) [218 line:53,col:14,encrypt_script/test.zl]
+178 MOV BX 4 [221 line:53,col:19,encrypt_script/test.zl]
+179 GREAT [220 line:53,col:17,encrypt_script/test.zl]
+180 JNE 138 [176 line:44,col:3,encrypt_script/test.zl]
+181 PUSH ARRAY_ITEM [227 line:54,col:16,encrypt_script/test.zl]
+182 RESET ARRAY_ITEM [227 line:54,col:16,encrypt_script/test.zl]
+183 PUSH 0 [228 line:54,col:17,encrypt_script/test.zl]
+184 GET_ARRAY arg(0) [227 line:54,col:16,encrypt_script/test.zl]
+185 PUSH AX [231 line:54,col:24,encrypt_script/test.zl]
+186 PUSH ARRAY_ITEM [231 line:54,col:24,encrypt_script/test.zl]
+187 RESET ARRAY_ITEM [231 line:54,col:24,encrypt_script/test.zl]
+188 PUSH 1 [232 line:54,col:25,encrypt_script/test.zl]
+189 GET_ARRAY arg(0) [231 line:54,col:24,encrypt_script/test.zl]
+190 MOV BX AX [231 line:54,col:24,encrypt_script/test.zl]
+191 POP AX [231 line:54,col:24,encrypt_script/test.zl]
+192 TIMES [229 line:54,col:19,encrypt_script/test.zl]
+193 MOV BX 2 [234 line:54,col:29,encrypt_script/test.zl]
+194 DIVIDE [233 line:54,col:27,encrypt_script/test.zl]
+195 MOV loc(7) AX [224 line:54,col:9,encrypt_script/test.zl]
+196 PRINT AX [223 line:54,col:3,encrypt_script/test.zl]
+197 RET [17 line:7,col:2,encrypt_script/test.zl]
+198 JMP 209 [237 line:57,col:2,encrypt_script/test.zl]
+199 FUNARG 2 [237 line:57,col:2,encrypt_script/test.zl]
+200 MOV AX "arg1 is " [245 line:58,col:9,encrypt_script/test.zl]
+201 MOV BX arg(0) [247 line:58,col:22,encrypt_script/test.zl]
+202 PLUS [246 line:58,col:20,encrypt_script/test.zl]
+203 PRINT AX [244 line:58,col:3,encrypt_script/test.zl]
+204 MOV AX "arg2 is " [250 line:59,col:9,encrypt_script/test.zl]
+205 MOV BX arg(1) [252 line:59,col:22,encrypt_script/test.zl]
+206 PLUS [251 line:59,col:20,encrypt_script/test.zl]
+207 PRINT AX [249 line:59,col:3,encrypt_script/test.zl]
+208 RET [237 line:57,col:2,encrypt_script/test.zl]
+209 JMP 213 [256 line:63,col:1,encrypt_script/test.zl]
+210 FUNARG 0 [256 line:63,col:1,encrypt_script/test.zl]
+211 PRINT "global init" [260 line:64,col:2,encrypt_script/test.zl]
+212 RET [256 line:63,col:1,encrypt_script/test.zl]
+213 PUSH ARG [266 line:67,col:9,encrypt_script/test.zl]
+214 PUSH LOC [266 line:67,col:9,encrypt_script/test.zl]
+215 PUSH ARGTMP [266 line:67,col:9,encrypt_script/test.zl]
+216 RESET ARGTMP [266 line:67,col:9,encrypt_script/test.zl]
+217 PUSH 221 [266 line:67,col:9,encrypt_script/test.zl]
+218 MOV ARG ARGTMP [266 line:67,col:9,encrypt_script/test.zl]
+219 RESET LOC [266 line:67,col:9,encrypt_script/test.zl]
+220 JMP 13 [266 line:67,col:9,encrypt_script/test.zl]
+221 PUSH ARG [271 line:68,col:7,encrypt_script/test.zl]
+222 PUSH LOC [271 line:68,col:7,encrypt_script/test.zl]
+223 PUSH ARGTMP [271 line:68,col:7,encrypt_script/test.zl]
+224 RESET ARGTMP [271 line:68,col:7,encrypt_script/test.zl]
+225 MOV AX "name" [273 line:68,col:23,encrypt_script/test.zl]
+226 PUSH AX [273 line:68,col:23,encrypt_script/test.zl]
+227 PUSH 231 [271 line:68,col:7,encrypt_script/test.zl]
+228 MOV ARG ARGTMP [271 line:68,col:7,encrypt_script/test.zl]
+229 RESET LOC [271 line:68,col:7,encrypt_script/test.zl]
+230 CALL "bltGetExtraData" [271 line:68,col:7,encrypt_script/test.zl]
+231 PRINT AX [270 line:68,col:1,encrypt_script/test.zl]
+232 PUSH ARG [277 line:69,col:7,encrypt_script/test.zl]
+233 PUSH LOC [277 line:69,col:7,encrypt_script/test.zl]
+234 PUSH ARGTMP [277 line:69,col:7,encrypt_script/test.zl]
+235 RESET ARGTMP [277 line:69,col:7,encrypt_script/test.zl]
+236 MOV AX "val" [279 line:69,col:23,encrypt_script/test.zl]
+237 PUSH AX [279 line:69,col:23,encrypt_script/test.zl]
+238 PUSH 242 [277 line:69,col:7,encrypt_script/test.zl]
+239 MOV ARG ARGTMP [277 line:69,col:7,encrypt_script/test.zl]
+240 RESET LOC [277 line:69,col:7,encrypt_script/test.zl]
+241 CALL "bltGetExtraData" [277 line:69,col:7,encrypt_script/test.zl]
+242 PRINT AX [276 line:69,col:1,encrypt_script/test.zl]
+243 PUSH ARG [282 line:71,col:1,encrypt_script/test.zl]
+244 PUSH LOC [282 line:71,col:1,encrypt_script/test.zl]
+245 PUSH ARGTMP [282 line:71,col:1,encrypt_script/test.zl]
+246 RESET ARGTMP [282 line:71,col:1,encrypt_script/test.zl]
+247 PUSH 251 [282 line:71,col:1,encrypt_script/test.zl]
+248 MOV ARG ARGTMP [282 line:71,col:1,encrypt_script/test.zl]
+249 RESET LOC [282 line:71,col:1,encrypt_script/test.zl]
+250 JMP 210 [282 line:71,col:1,encrypt_script/test.zl]
+251 MOV AX 5 [291 line:73,col:12,encrypt_script/test.zl]
+252 MOV (1) AX [289 line:73,col:1,encrypt_script/test.zl]
+253 MOV AX 4 [295 line:74,col:5,encrypt_script/test.zl]
+254 MOV (2) AX [293 line:74,col:1,encrypt_script/test.zl]
+255 MOV AX 3.677 [299 line:75,col:12,encrypt_script/test.zl]
+256 MOV (3) AX [297 line:75,col:1,encrypt_script/test.zl]
+257 MOV AX 8 [305 line:76,col:10,encrypt_script/test.zl]
+258 PUSH AX [302 line:76,col:5,encrypt_script/test.zl]
+259 PUSH ARRAY_ITEM [302 line:76,col:5,encrypt_script/test.zl]
+260 RESET ARRAY_ITEM [302 line:76,col:5,encrypt_script/test.zl]
+261 PUSH 0 [303 line:76,col:6,encrypt_script/test.zl]
+262 SET_ARRAY (0) [302 line:76,col:5,encrypt_script/test.zl]
+263 MOV AX 10 [311 line:77,col:10,encrypt_script/test.zl]
+264 PUSH AX [308 line:77,col:5,encrypt_script/test.zl]
+265 PUSH ARRAY_ITEM [308 line:77,col:5,encrypt_script/test.zl]
+266 RESET ARRAY_ITEM [308 line:77,col:5,encrypt_script/test.zl]
+267 PUSH 1 [309 line:77,col:6,encrypt_script/test.zl]
+268 SET_ARRAY (0) [308 line:77,col:5,encrypt_script/test.zl]
+269 MOV AX "test a is " [314 line:78,col:7,encrypt_script/test.zl]
+270 PUSH AX [317 line:78,col:25,encrypt_script/test.zl]
+271 PUSH ARRAY_ITEM [317 line:78,col:25,encrypt_script/test.zl]
+272 RESET ARRAY_ITEM [317 line:78,col:25,encrypt_script/test.zl]
+273 PUSH 0 [318 line:78,col:26,encrypt_script/test.zl]
+274 GET_ARRAY (0) [317 line:78,col:25,encrypt_script/test.zl]
+275 MOV BX AX [317 line:78,col:25,encrypt_script/test.zl]
+276 POP AX [317 line:78,col:25,encrypt_script/test.zl]
+277 PLUS [315 line:78,col:19,encrypt_script/test.zl]
+278 MOV BX " test.b is " [320 line:78,col:30,encrypt_script/test.zl]
+279 PLUS [319 line:78,col:28,encrypt_script/test.zl]
+280 PUSH AX [323 line:78,col:49,encrypt_script/test.zl]
+281 PUSH ARRAY_ITEM [323 line:78,col:49,encrypt_script/test.zl]
+282 RESET ARRAY_ITEM [323 line:78,col:49,encrypt_script/test.zl]
+283 PUSH 1 [324 line:78,col:50,encrypt_script/test.zl]
+284 GET_ARRAY (0) [323 line:78,col:49,encrypt_script/test.zl]
+285 MOV BX AX [323 line:78,col:49,encrypt_script/test.zl]
+286 POP AX [323 line:78,col:49,encrypt_script/test.zl]
+287 PLUS [321 line:78,col:43,encrypt_script/test.zl]
+288 PRINT AX [313 line:78,col:1,encrypt_script/test.zl]
+289 PUSH ARG [328 line:79,col:9,encrypt_script/test.zl]
+290 PUSH LOC [328 line:79,col:9,encrypt_script/test.zl]
+291 PUSH ARGTMP [328 line:79,col:9,encrypt_script/test.zl]
+292 RESET ARGTMP [328 line:79,col:9,encrypt_script/test.zl]
+293 MOV AX (0) [330 line:79,col:14,encrypt_script/test.zl]
+294 PUSH AX [330 line:79,col:14,encrypt_script/test.zl]
+295 PUSH 299 [328 line:79,col:9,encrypt_script/test.zl]
+296 MOV ARG ARGTMP [328 line:79,col:9,encrypt_script/test.zl]
+297 RESET LOC [328 line:79,col:9,encrypt_script/test.zl]
+298 JMP 13 [328 line:79,col:9,encrypt_script/test.zl]
+299 MOV AX 678 [335 line:81,col:5,encrypt_script/test.zl]
+300 MOV (4) AX [333 line:81,col:1,encrypt_script/test.zl]
+301 PUSH ARG [339 line:82,col:5,encrypt_script/test.zl]
+302 PUSH LOC [339 line:82,col:5,encrypt_script/test.zl]
+303 PUSH ARGTMP [339 line:82,col:5,encrypt_script/test.zl]
+304 RESET ARGTMP [339 line:82,col:5,encrypt_script/test.zl]
+305 MOV AX 11 [341 line:82,col:11,encrypt_script/test.zl]
+306 PUSH AX [341 line:82,col:11,encrypt_script/test.zl]
+307 MOV AX 22 [343 line:82,col:14,encrypt_script/test.zl]
+308 PUSH AX [343 line:82,col:14,encrypt_script/test.zl]
+309 PUSH 313 [339 line:82,col:5,encrypt_script/test.zl]
+310 MOV ARG ARGTMP [339 line:82,col:5,encrypt_script/test.zl]
+311 RESET LOC [339 line:82,col:5,encrypt_script/test.zl]
+312 CALL "array" [339 line:82,col:5,encrypt_script/test.zl]
+313 MOV (5) AX [337 line:82,col:1,encrypt_script/test.zl]
+314 PUSH ARG [348 line:83,col:8,encrypt_script/test.zl]
+315 PUSH LOC [348 line:83,col:8,encrypt_script/test.zl]
+316 PUSH ARGTMP [348 line:83,col:8,encrypt_script/test.zl]
+317 RESET ARGTMP [348 line:83,col:8,encrypt_script/test.zl]
+318 MOV AX "hello world" [350 line:83,col:14,encrypt_script/test.zl]
+319 PUSH AX [350 line:83,col:14,encrypt_script/test.zl]
+320 MOV AX 3 [352 line:83,col:28,encrypt_script/test.zl]
+321 PUSH AX [352 line:83,col:28,encrypt_script/test.zl]
+322 MOV AX 11.45 [354 line:83,col:30,encrypt_script/test.zl]
+323 PUSH AX [354 line:83,col:30,encrypt_script/test.zl]
+324 MOV AX (5) [356 line:83,col:36,encrypt_script/test.zl]
+325 PUSH AX [356 line:83,col:36,encrypt_script/test.zl]
+326 MOV AX "haha end" [358 line:83,col:38,encrypt_script/test.zl]
+327 PUSH AX [358 line:83,col:38,encrypt_script/test.zl]
+328 PUSH 332 [348 line:83,col:8,encrypt_script/test.zl]
+329 MOV ARG ARGTMP [348 line:83,col:8,encrypt_script/test.zl]
+330 RESET LOC [348 line:83,col:8,encrypt_script/test.zl]
+331 CALL "array" [348 line:83,col:8,encrypt_script/test.zl]
+332 MOV (0) AX [346 line:83,col:1,encrypt_script/test.zl]
+333 MOV AX 0 [365 line:84,col:7,encrypt_script/test.zl]
+334 MOV (2) AX [363 line:84,col:5,encrypt_script/test.zl]
+335 MOV AX (2) [367 line:84,col:9,encrypt_script/test.zl]
+336 MOV BX 4 [369 line:84,col:11,encrypt_script/test.zl]
+337 LESS [368 line:84,col:10,encrypt_script/test.zl]
+338 JE 347 [361 line:84,col:1,encrypt_script/test.zl]
+339 PUSH ARRAY_ITEM [375 line:85,col:8,encrypt_script/test.zl]
+340 RESET ARRAY_ITEM [375 line:85,col:8,encrypt_script/test.zl]
+341 MOV AX (2) [377 line:85,col:13,encrypt_script/test.zl]
+342 PUSH AX [377 line:85,col:13,encrypt_script/test.zl]
+343 GET_ARRAY (0) [375 line:85,col:8,encrypt_script/test.zl]
+344 PRINT AX [374 line:85,col:2,encrypt_script/test.zl]
+345 GETADD (2) [372 line:84,col:14,encrypt_script/test.zl]
+346 JMP 335 [361 line:84,col:1,encrypt_script/test.zl]
+347 PUSH ARRAY_ITEM [382 line:87,col:7,encrypt_script/test.zl]
+348 RESET ARRAY_ITEM [382 line:87,col:7,encrypt_script/test.zl]
+349 MOV AX 3 [384 line:87,col:12,encrypt_script/test.zl]
+350 PUSH AX [384 line:87,col:12,encrypt_script/test.zl]
+351 MOV AX 1 [386 line:87,col:14,encrypt_script/test.zl]
+352 PUSH AX [386 line:87,col:14,encrypt_script/test.zl]
+353 GET_ARRAY (0) [382 line:87,col:7,encrypt_script/test.zl]
+354 PRINT AX [381 line:87,col:1,encrypt_script/test.zl]
+355 PUSH ARG [389 line:88,col:1,encrypt_script/test.zl]
+356 PUSH LOC [389 line:88,col:1,encrypt_script/test.zl]
+357 PUSH ARGTMP [389 line:88,col:1,encrypt_script/test.zl]
+358 RESET ARGTMP [389 line:88,col:1,encrypt_script/test.zl]
+359 MOV AX (0) [391 line:88,col:15,encrypt_script/test.zl]
+360 PUSH AX [391 line:88,col:15,encrypt_script/test.zl]
+361 PUSH 365 [389 line:88,col:1,encrypt_script/test.zl]
+362 MOV ARG ARGTMP [389 line:88,col:1,encrypt_script/test.zl]
+363 RESET LOC [389 line:88,col:1,encrypt_script/test.zl]
+364 CALL "bltPrintArray" [389 line:88,col:1,encrypt_script/test.zl]
+365 PUSH ARG [394 line:89,col:1,encrypt_script/test.zl]
+366 PUSH LOC [394 line:89,col:1,encrypt_script/test.zl]
+367 PUSH ARGTMP [394 line:89,col:1,encrypt_script/test.zl]
+368 RESET ARGTMP [394 line:89,col:1,encrypt_script/test.zl]
+369 PUSH ARRAY_ITEM [397 line:89,col:14,encrypt_script/test.zl]
+370 RESET ARRAY_ITEM [397 line:89,col:14,encrypt_script/test.zl]
+371 MOV AX 0 [399 line:89,col:19,encrypt_script/test.zl]
+372 PUSH AX [399 line:89,col:19,encrypt_script/test.zl]
+373 GET_ARRAY_ADDR (0) [397 line:89,col:14,encrypt_script/test.zl]
+374 PUSH AX [396 line:89,col:13,encrypt_script/test.zl]
+375 MOV AX "test[0] is modify in bltTestAddr haha" [402 line:89,col:22,encrypt_script/test.zl]
+376 PUSH AX [402 line:89,col:22,encrypt_script/test.zl]
+377 PUSH 381 [394 line:89,col:1,encrypt_script/test.zl]
+378 MOV ARG ARGTMP [394 line:89,col:1,encrypt_script/test.zl]
+379 RESET LOC [394 line:89,col:1,encrypt_script/test.zl]
+380 CALL "bltTestAddr" [394 line:89,col:1,encrypt_script/test.zl]
+381 PUSH ARG [405 line:90,col:1,encrypt_script/test.zl]
+382 PUSH LOC [405 line:90,col:1,encrypt_script/test.zl]
+383 PUSH ARGTMP [405 line:90,col:1,encrypt_script/test.zl]
+384 RESET ARGTMP [405 line:90,col:1,encrypt_script/test.zl]
+385 ADDR (0) [408 line:90,col:16,encrypt_script/test.zl]
+386 PUSH AX [407 line:90,col:15,encrypt_script/test.zl]
+387 PUSH 391 [405 line:90,col:1,encrypt_script/test.zl]
+388 MOV ARG ARGTMP [405 line:90,col:1,encrypt_script/test.zl]
+389 RESET LOC [405 line:90,col:1,encrypt_script/test.zl]
+390 CALL "bltPrintArray" [405 line:90,col:1,encrypt_script/test.zl]
+391 MOV AX "i am test2" [413 line:91,col:9,encrypt_script/test.zl]
+392 MOV (6) AX [411 line:91,col:1,encrypt_script/test.zl]
+393 MOV AX "test2 is " [416 line:92,col:7,encrypt_script/test.zl]
+394 MOV BX (6) [418 line:92,col:19,encrypt_script/test.zl]
+395 PLUS [417 line:92,col:18,encrypt_script/test.zl]
+396 PRINT AX [415 line:92,col:1,encrypt_script/test.zl]
+397 PUSH ARG [420 line:93,col:1,encrypt_script/test.zl]
+398 PUSH LOC [420 line:93,col:1,encrypt_script/test.zl]
+399 PUSH ARGTMP [420 line:93,col:1,encrypt_script/test.zl]
+400 RESET ARGTMP [420 line:93,col:1,encrypt_script/test.zl]
+401 ADDR (6) [423 line:93,col:14,encrypt_script/test.zl]
+402 PUSH AX [422 line:93,col:13,encrypt_script/test.zl]
+403 MOV AX "test2 is modify in bltTestAddr haha" [425 line:93,col:20,encrypt_script/test.zl]
+404 PUSH AX [425 line:93,col:20,encrypt_script/test.zl]
+405 PUSH 409 [420 line:93,col:1,encrypt_script/test.zl]
+406 MOV ARG ARGTMP [420 line:93,col:1,encrypt_script/test.zl]
+407 RESET LOC [420 line:93,col:1,encrypt_script/test.zl]
+408 CALL "bltTestAddr" [420 line:93,col:1,encrypt_script/test.zl]
+409 MOV AX "test2 is " [429 line:94,col:7,encrypt_script/test.zl]
+410 MOV BX (6) [431 line:94,col:19,encrypt_script/test.zl]
+411 PLUS [430 line:94,col:18,encrypt_script/test.zl]
+412 PRINT AX [428 line:94,col:1,encrypt_script/test.zl]
+413 PUSH ARG [433 line:95,col:1,encrypt_script/test.zl]
+414 PUSH LOC [433 line:95,col:1,encrypt_script/test.zl]
+415 PUSH ARGTMP [433 line:95,col:1,encrypt_script/test.zl]
+416 RESET ARGTMP [433 line:95,col:1,encrypt_script/test.zl]
+417 MOV AX (0) [435 line:95,col:13,encrypt_script/test.zl]
+418 PUSH AX [435 line:95,col:13,encrypt_script/test.zl]
+419 MOV AX "hello Set Array" [437 line:95,col:18,encrypt_script/test.zl]
+420 PUSH AX [437 line:95,col:18,encrypt_script/test.zl]
+421 MOV AX 44 [439 line:95,col:36,encrypt_script/test.zl]
+422 PUSH AX [439 line:95,col:36,encrypt_script/test.zl]
+423 PUSH 427 [433 line:95,col:1,encrypt_script/test.zl]
+424 MOV ARG ARGTMP [433 line:95,col:1,encrypt_script/test.zl]
+425 RESET LOC [433 line:95,col:1,encrypt_script/test.zl]
+426 CALL "bltSetArray" [433 line:95,col:1,encrypt_script/test.zl]
+427 PUSH ARG [442 line:96,col:1,encrypt_script/test.zl]
+428 PUSH LOC [442 line:96,col:1,encrypt_script/test.zl]
+429 PUSH ARGTMP [442 line:96,col:1,encrypt_script/test.zl]
+430 RESET ARGTMP [442 line:96,col:1,encrypt_script/test.zl]
+431 MOV AX (0) [444 line:96,col:15,encrypt_script/test.zl]
+432 PUSH AX [444 line:96,col:15,encrypt_script/test.zl]
+433 PUSH 437 [442 line:96,col:1,encrypt_script/test.zl]
+434 MOV ARG ARGTMP [442 line:96,col:1,encrypt_script/test.zl]
+435 RESET LOC [442 line:96,col:1,encrypt_script/test.zl]
+436 CALL "bltPrintArray" [442 line:96,col:1,encrypt_script/test.zl]
+437 PUSH ARG [447 line:97,col:1,encrypt_script/test.zl]
+438 PUSH LOC [447 line:97,col:1,encrypt_script/test.zl]
+439 PUSH ARGTMP [447 line:97,col:1,encrypt_script/test.zl]
+440 RESET ARGTMP [447 line:97,col:1,encrypt_script/test.zl]
+441 MOV AX "test3.zl" [449 line:97,col:15,encrypt_script/test.zl]
+442 PUSH AX [449 line:97,col:15,encrypt_script/test.zl]
+443 PUSH 447 [447 line:97,col:1,encrypt_script/test.zl]
+444 MOV ARG ARGTMP [447 line:97,col:1,encrypt_script/test.zl]
+445 RESET LOC [447 line:97,col:1,encrypt_script/test.zl]
+446 CALL "bltLoadScript" [447 line:97,col:1,encrypt_script/test.zl]
+447 PRINT "i am test macro" [452 line:98,col:1,encrypt_script/test.zl]
+448 PRINT "test2 macro" [455 line:99,col:1,encrypt_script/test.zl]
+449 MOV AX "zengl version is v" [459 line:100,col:7,encrypt_script/test.zl]
+450 PUSH AX [461 line:100,col:30,encrypt_script/test.zl]
+451 PUSH ARG [461 line:100,col:30,encrypt_script/test.zl]
+452 PUSH LOC [461 line:100,col:30,encrypt_script/test.zl]
+453 PUSH ARGTMP [461 line:100,col:30,encrypt_script/test.zl]
+454 RESET ARGTMP [461 line:100,col:30,encrypt_script/test.zl]
+455 PUSH 459 [461 line:100,col:30,encrypt_script/test.zl]
+456 MOV ARG ARGTMP [461 line:100,col:30,encrypt_script/test.zl]
+457 RESET LOC [461 line:100,col:30,encrypt_script/test.zl]
+458 CALL "bltGetZLVersion" [461 line:100,col:30,encrypt_script/test.zl]
+459 MOV BX AX [461 line:100,col:30,encrypt_script/test.zl]
+460 POP AX [461 line:100,col:30,encrypt_script/test.zl]
+461 PLUS [460 line:100,col:28,encrypt_script/test.zl]
+462 PRINT AX [458 line:100,col:1,encrypt_script/test.zl]
+463 PUSH ARG [467 line:101,col:14,encrypt_script/test.zl]
+464 PUSH LOC [467 line:101,col:14,encrypt_script/test.zl]
+465 PUSH ARGTMP [467 line:101,col:14,encrypt_script/test.zl]
+466 RESET ARGTMP [467 line:101,col:14,encrypt_script/test.zl]
+467 PUSH 471 [467 line:101,col:14,encrypt_script/test.zl]
+468 MOV ARG ARGTMP [467 line:101,col:14,encrypt_script/test.zl]
+469 RESET LOC [467 line:101,col:14,encrypt_script/test.zl]
+470 JMP 486 [467 line:101,col:14,encrypt_script/test.zl]
+471 PUSH ARG [471 line:102,col:1,encrypt_script/test.zl]
+472 PUSH LOC [471 line:102,col:1,encrypt_script/test.zl]
+473 PUSH ARGTMP [471 line:102,col:1,encrypt_script/test.zl]
+474 RESET ARGTMP [471 line:102,col:1,encrypt_script/test.zl]
+475 MOV AX (7) [473 line:102,col:9,encrypt_script/test.zl]
+476 PUSH AX [473 line:102,col:9,encrypt_script/test.zl]
+477 MOV AX "dfsf" [475 line:102,col:13,encrypt_script/test.zl]
+478 PUSH AX [475 line:102,col:13,encrypt_script/test.zl]
+479 MOV AX 123 [477 line:102,col:20,encrypt_script/test.zl]
+480 PUSH AX [477 line:102,col:20,encrypt_script/test.zl]
+481 PUSH 485 [471 line:102,col:1,encrypt_script/test.zl]
+482 MOV ARG ARGTMP [471 line:102,col:1,encrypt_script/test.zl]
+483 RESET LOC [471 line:102,col:1,encrypt_script/test.zl]
+484 CALL "sdlInit" [471 line:102,col:1,encrypt_script/test.zl]
+485 JMP 490 [486 line:107,col:2,encrypt_script/test.zl]
+486 FUNARG 0 [486 line:107,col:2,encrypt_script/test.zl]
+487 PRINT "i am in testOther" [490 line:108,col:3,encrypt_script/test.zl]
+488 PRINT "hello zengl" [493 line:109,col:3,encrypt_script/test.zl]
+489 RET [486 line:107,col:2,encrypt_script/test.zl]
+490 MOV AX 4 [500 line:117,col:5,encrypt_script/test.zl]
+491 MOV BX -114 [502 line:117,col:9,encrypt_script/test.zl]
+492 PLUS [501 line:117,col:7,encrypt_script/test.zl]
+493 MOV (8) AX [498 line:117,col:1,encrypt_script/test.zl]
+494 MOV AX (8) [506 line:118,col:4,encrypt_script/test.zl]
+495 PUSH AX [508 line:118,col:9,encrypt_script/test.zl]
+496 MOV AX 0 [508 line:118,col:9,encrypt_script/test.zl]
+497 MOV BX 110 [509 line:118,col:10,encrypt_script/test.zl]
+498 MINIS [508 line:118,col:9,encrypt_script/test.zl]
+499 MOV BX AX [508 line:118,col:9,encrypt_script/test.zl]
+500 POP AX [508 line:118,col:9,encrypt_script/test.zl]
+501 EQUAL [507 line:118,col:6,encrypt_script/test.zl]
+502 JE 505 [504 line:118,col:1,encrypt_script/test.zl]
+503 PRINT "r is -110" [511 line:119,col:2,encrypt_script/test.zl]
+504 JMP 506 [504 line:118,col:1,encrypt_script/test.zl]
+505 PRINT "r not -110" [515 line:121,col:2,encrypt_script/test.zl]
+506 MOV AX (8) [520 line:124,col:7,encrypt_script/test.zl]
+507 PUSH AX [522 line:124,col:11,encrypt_script/test.zl]
+508 MOV AX 0 [522 line:124,col:11,encrypt_script/test.zl]
+509 MOV BX 10 [523 line:124,col:12,encrypt_script/test.zl]
+510 MINIS [522 line:124,col:11,encrypt_script/test.zl]
+511 MOV BX AX [522 line:124,col:11,encrypt_script/test.zl]
+512 POP AX [522 line:124,col:11,encrypt_script/test.zl]
+513 MINIS [521 line:124,col:9,encrypt_script/test.zl]
+514 PRINT AX [519 line:124,col:1,encrypt_script/test.zl]
+515 MOV AX "STR_TEST is " [526 line:126,col:7,encrypt_script/test.zl]
+516 MOV BX "23hello world" [528 line:126,col:24,encrypt_script/test.zl]
+517 PLUS [527 line:126,col:22,encrypt_script/test.zl]
+518 PRINT AX [525 line:126,col:1,encrypt_script/test.zl]
+519 END [529 line:126,col:32,encrypt_script/test.zl]
+
+ compile time:0.016 s totalsize: 88.2109375 Kbyte
+
+ run time:0 s totalsize: 53.1640625 Kbyte
+ VM time:0.125 s totalsize: 141.375 Kbyte

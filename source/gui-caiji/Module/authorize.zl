@@ -1,0 +1,28 @@
+class Auth
+	fun authorize(max_caijiNum,caiji_url)
+		auth_urls = ''; //授权网站url 格式：[www.xxx.xx] [bb.sx.xx] , [www.ddd.cn] 每个中括号定义一个域名
+		//auth_urls = '[www.destoongbk5.qq]';
+		if(auth_urls == '')
+			//max_caijiNum = 1;
+			//printf("目前为试用版，每个分类每次只能采集"+max_caijiNum+'条数据，要解除限制，则请联系作者购买授权!\n',1); //1为红色
+			return;
+		elif(Auth.DetectUrls(auth_urls,caiji_url))
+			return;
+		else
+			/*max_caijiNum = 1;
+			printf("授权认证失败! 本采集器已授权给如下域名：" + auth_urls + ' ，只有这些网站可以无限制采集，其余网站则为试用版，每个分类每次只能采集'+max_caijiNum+'条数据，请联系作者绑定'+caiji_url,1);*/
+			return;
+		endif
+	endfun
+
+	fun DetectUrls(auth_urls,caiji_url)
+		auth_url_array = array();
+		count = bltRegexMatches('\[(.*?)\]',1,auth_urls,auth_url_array,1,0);
+		for(i=0;i<count;i++)
+			if(auth_url_array[i] == caiji_url)
+				return 1;
+			endif
+		endfor
+		return 0;
+	endfun
+endclass

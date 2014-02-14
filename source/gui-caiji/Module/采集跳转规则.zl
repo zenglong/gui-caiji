@@ -1,0 +1,93 @@
+
+catid = bltGetArgString('catid'); //获取第二个参数，即当前关键词框对应的分类ID
+modid = bltGetArgString('modid'); //模块ID 
+selectedKey = bltGetArgString('selectedKey'); //所选择的关键词
+moduleName = bltGetArgString('moduleName'); //模块名
+buyScriptName = bltGetArgString('buyScriptName'); //buy求购模块对应的采集脚本文件名
+
+sql = "SELECT * FROM keywords WHERE catid='"+catid+"' AND name='"+bltSqlEscape(selectedKey)+"'";
+if(!bltSqlQuery(sql))
+	bltExit('查询'+sql+'失败');
+endif
+if(bltSqlMoveToNext())
+	needSuffix = bltConvToInt(bltSqlGetString('needSuffix'));
+	if(modid == "7" && bltStrFind(selectedKey,'行情') < 0 && needSuffix)
+		selectedKey += "行情";
+	elif(modid == "11" && bltStrFind(selectedKey,'专题') < 0 && needSuffix)
+		selectedKey += "专题";
+	elif(modid == "17" && bltStrFind(selectedKey,'团购') < 0 && needSuffix)
+		selectedKey += "团购";
+	elif(modid == "13" && bltStrFind(selectedKey,'品牌') < 0 && needSuffix)
+		selectedKey += "品牌";
+	elif(modid == "22" && bltStrFind(selectedKey,'招商') < 0 && needSuffix)
+		selectedKey += "招商";
+	endif
+else
+	bltExit('运行时错误: 在数据库的keywords表中没有找到关键词('+selectedKey+')');
+endif
+
+escape_keyword = bltCurlEncode(selectedKey);
+if(moduleName == "article" || moduleName == "quote" || moduleName == "special")
+	url1 = "http://search.china.alibaba.com/news/news_search.htm?keywords=";
+	url2 = "&newsTabParam=img&n=y";
+	url = url1 + escape_keyword + url2;
+	bltLaunchDefaultBrowser(url);
+elif(moduleName == "job")
+	url1 = "http://search.51job.com/jobsearch/search_result.php?fromJs=1&jobarea=000000%2C00&district=000000&funtype=0000&industrytype=00&issuedate=9&providesalary=99&keyword=";
+	url2 = "&keywordtype=2&curr_page=1&lang=c&stype=1&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=01&lonlat=0%2C0&radius=-1&ord_field=0&list_type=0&fromType=14";
+	escape_keyword = bltCurlEncode(bltToUTF8(selectedKey)); //51job使用的是UTF8的编码
+	url = url1 + escape_keyword + url2;
+	bltLaunchDefaultBrowser(url);
+elif(moduleName == "know")
+	url1 = "http://zhidao.baidu.com/search?lm=0&rn=10&pn=0&fr=search&ie=gbk&word=";
+	url2 = "&f=sug&rsp=";
+	url = url1 + escape_keyword + url2 + escape_keyword;
+	bltLaunchDefaultBrowser(url);
+elif(moduleName == "buy")
+	if(bltStrFind(buyScriptName,'生意宝') >= 0) //如果是生意宝求购
+		url1 = "http://so.toocle.com/web/trade.htm?c=11&terms=";
+		url2 = "&c1=&c2=&d=";
+		url = url1 + escape_keyword + url2;
+		bltLaunchDefaultBrowser(url);
+	else //否则是阿里巴巴求购
+		url1 = "http://search.china.alibaba.com/newbuyoffer/buyoffer_search.htm?keywords=";
+		url2 = "&n=y";
+		url = url1 + escape_keyword + url2;
+		bltLaunchDefaultBrowser(url);
+	endif
+elif(moduleName == "group")
+	url1 = "http://search.china.alibaba.com/selloffer/offer_search.htm?keywords=";
+	url2 = "&pageSize=40&showStyle=img&tab=pop&from=marketSearch&filt=y&lessThanQuantityBegin=true&n=y";
+	url = url1 + escape_keyword + url2;
+	bltLaunchDefaultBrowser(url);
+elif(moduleName == "exhibit")
+	url1 = "http://www.expo-china.com/web/exhi/exhi_search.aspx?Province=0&Industry=-1&Keywords=";
+	url2 = "";
+	escape_keyword = bltCurlEncode(bltToUTF8(selectedKey)); //expo-china使用的是UTF8的编码
+	url = url1 + escape_keyword + url2;
+	bltLaunchDefaultBrowser(url);
+elif(moduleName == "brand" || moduleName == "info" || moduleName == "sell" || moduleName == "mall")
+	url1 = "http://search.china.alibaba.com/selloffer/offer_search.htm?keywords=";
+	url2 = "&showStyle=img&from=marketSearch&n=y&filt=y";
+	url = url1 + escape_keyword + url2;
+	bltLaunchDefaultBrowser(url);
+elif(moduleName == "video")
+	url1 = "http://www.soku.com/search_video/q_";
+	url2 = "";
+	escape_keyword = bltCurlEncode(bltToUTF8(selectedKey)); //优库使用的是UTF8的编码
+	url = url1 + escape_keyword + url2;
+	bltLaunchDefaultBrowser(url);
+elif(moduleName == "photo")
+	url1 = "http://s.1688.com/news/news_search.htm?keywords=";
+	url2 = "&newsTabParam=shopwindow&n=y";
+	url = url1 + escape_keyword + url2;
+	bltLaunchDefaultBrowser(url);
+elif(moduleName == "down")
+	url1 = "http://www.skycn.com/s.php?q=";
+	url2 = "";
+	escape_keyword = bltCurlEncode(bltToUTF8(selectedKey)); //天空下载使用的是UTF8的编码
+	url = url1 + escape_keyword + url2;
+	bltLaunchDefaultBrowser(url);
+else
+	bltInfoBox('暂不支持'+moduleName+'模块');
+endif

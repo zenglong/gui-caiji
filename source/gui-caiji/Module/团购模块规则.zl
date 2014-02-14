@@ -1,0 +1,453 @@
+//本脚本采用zengl编程语言的语法 团购规则
+inc 'remote_local_img.zl'; //将远程图片下载到本地再上传的类
+inc 'sell_inc.zl'; //和供应共用一套规则
+tablename = "group";
+Max_CaijiNum = bltGetCaijiNum();
+catid = bltGetCatid();
+modid = bltGetModid();
+catname = bltGetCatName();
+keywords = array();
+mustwords = array();
+caiji_url = bltGetWebUrl();
+caiji_totalcount = 0;
+totalpostNum = 0;
+caiji_postfileName = bltGetInitManageUrl(); //获取采集的上传接口文件名 
+//maxCaijiImgs_Num = bltGetMaxUploadIMG(); //获取最多采集多少张图片
+
+//myPostDataToWeb(); //debug调试 
+//bltExit(); //debug调试 
+
+Auth.authorize(&Max_CaijiNum,caiji_url); //域名授权认证
+
+keywords_count = bltGetKeyWords(keywords,mustwords);
+if(keywords_count > 0)
+	for(i=0;i<keywords_count && caiji_totalcount < Max_CaijiNum;i++)
+		if(bltStrFind(keywords[i],'团购') < 0 && myCheckIsNeedSuffix(keywords[i]))
+			keywords[i] += '团购';
+		endif
+		print '关键词'+i+':'+keywords[i] + '\n必需包含词:'+
+			mustwords[i];
+		escape_keyword = bltCurlEncode(keywords[i]);
+		print '转义关键词:' + escape_keyword;
+		remote_url = 'http://search.china.alibaba.com/selloffer/offer_search.htm?keywords=' + escape_keyword + '&showStyle=img&from=marketSearch&n=y&filt=y';
+		print '采集分页：' + remote_url;
+		remote_content = bltCurlGetUrl(remote_url);
+		//print remote_content;
+		page_links = array(); //初始化分页链接数组
+		bltRegexMatches(sell_page_links_pattern,2,remote_content,page_links,1,0); /*根据分页链接规则获取底部分页的链接*/
+		pagecount = bltArrayInsertString(page_links,remote_url,0); //将当前页链接也压入分页链接数组中。
+		for(pageindex = 0 ;pageindex < pagecount && caiji_totalcount < Max_CaijiNum; pageindex++)
+			content_links = array(); //初始化内容链接数组
+			if(pageindex != 0)
+				remote_content = bltCurlGetUrl(page_links[pageindex]); //得到当前分页的内容链接页面。
+			endif
+			contentCount = bltRegexMatches(sell_content_links_pattern,2,remote_content,content_links,1,0); /*根据内容链接规则获取内容链接数组*/
+			for(contentIndex = 0 ; contentIndex < contentCount && caiji_totalcount < Max_CaijiNum; contentIndex++)
+				if(myCheckContentLinkExists())
+					continue;
+				endif
+				remote_content = bltCurlGetUrl(content_links[contentIndex]); //根据文章链接得到每篇文章的内容
+				print content_links[contentIndex]; //debug
+				title = sell_get_title(); //匹配标题
+				if(title =='') 
+					myInsertToDb_whenError(content_links[contentIndex] + '标题为空!\n');
+					continue;
+				elif(myDetectTitle(title) == 'Y')
+					myInsertToDb_whenError('<'+title+'>服务端标题已经存在!\n','titleExists');
+					continue;
+				endif
+				if(!bltCheckTitleMust(title,mustwords[i]))
+					myInsertToDb_whenError(content_links[contentIndex] + title +' 不包含必须词：'+bltStrReplace('&',' ',mustwords[i]) + '\n');
+					continue;
+				endif
+				model = sell_get_model(); //匹配型号
+				stand = sell_get_stand(); //匹配规格
+				brand = sell_get_brand(); //匹配品牌
+				content = sell_get_content(); //匹配内容
+				if(content =='') 
+					myInsertToDb_whenError(content_links[contentIndex] + '内容为空!\n');
+					continue;
+				endif
+				unit = sell_get_unit(); //匹配计量单位
+				price = sell_get_price(); //匹配价格
+				if(price =='') 
+					myInsertToDb_whenError(content_links[contentIndex] + '团购市场价格为空!\n');
+					continue;
+				endif
+				//min_num = sell_get_min_num(); //匹配最小起订量
+				min_num = bltRandom()%81 + 20;
+				//totalnum = sell_get_totalnum(); //匹配供货总量
+				totalnum = min_num + bltRandom()%81 + 20;
+				min_num = bltIntToStr(min_num,0,'0'); //最低人数
+				totalnum = bltIntToStr(totalnum,0,'0'); //最多人数
+				member = sell_get_member(); //匹配会员信息
+				member_company_name = sell_get_member_company_name();
+				if(member == '')
+					myInsertToDb_whenError(content_links[contentIndex] + '会员名为空!\n');
+					continue;
+				endif
+				if(member_company_name == '')
+					myInsertToDb_whenError(content_links[contentIndex] + '公司相关会员名为空!\n');
+					continue;
+				endif
+				thumb = sell_get_thumb(); //匹配缩略图信息
+				if(thumb == '')
+					myInsertToDb_whenError(content_links[contentIndex] + '缩略图为空!\n');
+					continue;
+				endif
+				sell_contact_old_url = 'http://' + member_company_name + '.cn.1688.com/page/contactinfo.htm'; //获取阿里巴巴联系页面的链接
+				sell_contact_old_content = bltCurlGetUrl(sell_contact_old_url); //旧的联系页面规则
+				sell_contact_url = 'http://' + member_company_name + '.cn.1688.com/page/creditdetail.htm'; //获取阿里巴巴公司档案的链接
+				sell_contact_content = bltCurlGetUrl(sell_contact_url);
+				company = sell_get_company(); //匹配供应公司名
+				if(company == '')
+					myInsertToDb_whenError(sell_contact_url + '公司名为空!\n');
+					continue;
+				endif
+				areaid = sell_get_areaid(); //匹配地区ID
+				if(areaid == '')
+					myInsertToDb_whenError(sell_contact_url + '所在地区为空!\n');
+					continue;
+				endif
+				contactname = sell_get_truename(); //匹配联系人
+				phone = sell_get_phone(); //获取联系电话
+				
+				areaname = sell_get_areaname(); //详细地址
+				if(areaname == '')
+					myInsertToDb_whenError(sell_contact_url + '公司地址为空!\n');
+					continue;
+				endif
+				/*print '标题：' + title + ' model:'+model+' stand:'+stand+' brand:'+brand + ' unit:'+unit +
+					' price:' + price + ' min_num:'+min_num + ' totalnum:'+totalnum + ' member:'+member + ' thumb:'+thumb + 
+					' company:' + company + ' areaid:'+areaid + ' contactname'+contactname + ' phone:'+phone + ' areaname:' + areaname;*/ //debug 调试
+				email = member + '@163.com'; //邮箱
+				random_password = gen_random_password(); //获取随机密码
+				company_sex = company_get_sex(); //获取性别
+				if(company_sex == '')
+					myInsertToDb_whenError(sell_contact_url + '性别为空!\n');
+					continue;
+				endif
+				company_department = company_get_department(); //获取部门
+				company_office = company_get_office(); //获取职位
+				company_mobile = company_get_mobile(); //获取手机号码
+				if(phone == '')
+					if(company_mobile == '')
+						myInsertToDb_whenError(sell_contact_url + '公司电话为空!\n');
+						continue;
+					else
+						phone = company_mobile;
+					endif
+				endif
+				company_type = company_get_random_type(); //获取公司类型
+				company_stand = company_get_random_stand(); //获取公司规模
+				company_money = company_get_random_money(); //获取公司注册资本
+				company_year = company_get_random_year(); //获取随机的公司成立年份
+				company_mailcode = company_get_mailcode(); //获取公司邮编
+				company_fax = company_get_fax(); //获取公司传真
+				company_website = company_get_website(); //获取公司网址
+				//sell_companyinfo_url = 'http://' + member + '.cn.alibaba.com/page/companyinfo.htm'; //获取阿里巴巴公司介绍页面的链接
+				//sell_companyinfo_url = 'http://' + member + '.cn.alibaba.com/page/creditdetail.htm'; //获取阿里巴巴公司介绍页面的链接
+				//company_info_content = bltCurlGetUrl(sell_companyinfo_url);
+				company_info_content = sell_contact_content; //公司信息就是档案信息
+				company_introduce = company_get_introduce(); //获取公司介绍
+				//print 'company_introduce:' + company_introduce; //debug
+				company_business = company_get_business(); //获取公司主营行业
+				if(company_business == '')
+					myInsertToDb_whenError(sell_companyinfo_url + '主营行业为空!\n');
+					continue;
+				endif
+				company_server = company_get_server(); //获取公司主营产品或服务
+				company_thumb = company_get_thumb(); //获取公司缩略图
+				/*print 'random_password:' + random_password + ' company_sex:'+company_sex+' company_department:'+company_department+
+					' company_office:'+company_office + ' company_mobile:' + company_mobile + ' company_type:'+company_type+' company_stand:'+company_stand+
+					' company_money:'+company_money + ' company_year:' + company_year + ' company_mailcode:'+company_mailcode+' company_fax:'+company_fax+
+					' company_website:'+company_website + ' company_introduce:'+company_introduce+' company_business:'+company_business+
+					' company_server:'+company_server; */ //debug 调试
+				myInsertToDb();
+				//break;
+			endfor
+			//break;
+		endfor
+		//break;
+	endfor
+elif(keywords_count == 0)
+	printf('分类的关键词为空\n',RED);
+else
+	printf('获取分类的关键词时发生错误\n',RED);
+endif
+
+bltCheckUserPause();
+myPostDataToWeb();
+bltTellSysCaijiStatus(caiji_totalcount,totalpostNum);
+print '\n分类['+catname+']一共采集了'+caiji_totalcount+'条信息！发布成功'+totalpostNum+'条信息//////////////////////////////';
+
+fun myCheckContentLinkExists()
+	global tablename,content_links,contentIndex,catid;
+	if(bltSqlTableExists(tablename))
+		sql = "SELECT * FROM '"+tablename+"' WHERE linkurl='"+bltSqlEscape(content_links[contentIndex])+"' AND catid='"+catid+"'";
+		if(!bltSqlQuery(sql))
+			bltExit('查询'+sql+'失败');
+		elif(bltSqlMoveToNext())
+			print bltSqlGetString('linkurl') + '["' + bltSqlGetString('title') + ']"采集地址已经存在！';
+			bltSqlRelease();
+			return TRUE;
+		endif
+		bltSqlRelease();
+		return FALSE;
+	else
+		bltSqlExec('CREATE TABLE \''+tablename+'\' (id INTEGER PRIMARY KEY ASC,catid,title,content,state,linkurl,model,stand,brand,unit,price,min_num,totalnum,member,contact_content,company,areaid,contactname,phone,areaname,thumb,ismember,status,time,hits,selltypeid,level,'+
+					'email,random_password,company_sex,company_department,company_office,company_mobile,company_type,company_stand,company_money,company_year,company_mailcode,'+
+					'company_fax,company_website,company_introduce,company_business,company_server,company_thumb)');
+		print '创建'+tablename+'数据库表！';
+		return FALSE;
+	endif
+endfun
+
+fun myCheckIsNeedSuffix(keyword) //判断是否需要后缀
+	global catid,catname;
+	sql = "SELECT * FROM keywords WHERE catid='"+catid+"' AND name='"+bltSqlEscape(keyword)+"'";
+	if(!bltSqlQuery(sql))
+		bltExit('查询'+sql+'失败');
+	endif
+	if(bltSqlMoveToNext())
+		ret = bltConvToInt(bltSqlGetString('needSuffix'));
+	else
+		bltExit('myCheckIsNeedSuffix运行时错误: 在数据库的keywords表中没有找到关键词('+keyword+')');
+	endif
+	bltSqlRelease();
+	return ret;
+	//bltInfoBox('结果：'+ printStr);
+endfun
+
+fun myInsertToDb()
+	global tablename,catname,catid,title,content,content_links,contentIndex,caiji_totalcount,
+		   model,stand,brand,unit,price,min_num,totalnum,member,thumb,company,areaid,contactname,phone,areaname,sell_contact_content,
+		   email,random_password,company_sex,company_department,company_office,company_mobile,company_type,company_stand,company_money,company_year,company_mailcode,
+		   company_fax,company_website,company_introduce,company_business,company_server,company_thumb;
+	sql = "INSERT INTO '"+ tablename +
+			"' (catid,title,content,state,linkurl,model,stand,brand,unit,price,min_num,totalnum,member,contact_content,company,areaid,contactname,phone,areaname,thumb,ismember,status,time,hits,selltypeid,level,"+
+			"email,random_password,company_sex,company_department,company_office,company_mobile,company_type,company_stand,company_money,company_year,company_mailcode,"+
+			"company_fax,company_website,company_introduce,company_business,company_server,company_thumb) VALUES ('" + 
+			catid + "','" +
+			bltSqlEscape(title) + "','" +
+			bltSqlEscape(content) + "','0','" +
+			bltSqlEscape(content_links[contentIndex]) + "','" +
+			bltSqlEscape(model) + "','" +
+			bltSqlEscape(stand) + "','" +
+			bltSqlEscape(brand) + "','" +
+			bltSqlEscape(unit) + "','" +
+			bltSqlEscape(price) + "','" +
+			bltSqlEscape(min_num) + "','" +
+			bltSqlEscape(totalnum) + "','" +
+			bltSqlEscape(member) + "','','" +
+			bltSqlEscape(company) + "','" +
+			bltSqlEscape(areaid) + "','" +
+			bltSqlEscape(contactname) + "','" +
+			bltSqlEscape(phone) + "','" +
+			bltSqlEscape(areaname) + "','" +
+			bltSqlEscape(thumb) + "','0','3','" +
+			bltGetTimeNow('%Y-%m-%d %H:%M:%S') + "','" +
+			bltIntToStr(bltRandom()%1000 + 200,0,'0') + "','0','1','" +
+			bltSqlEscape(email) + "','" +
+			random_password + "','" +
+			bltSqlEscape(company_sex) + "','" +
+			bltSqlEscape(company_department) + "','" +
+			bltSqlEscape(company_office) + "','" +
+			bltSqlEscape(company_mobile) + "','" +
+			bltSqlEscape(company_type) + "','" +
+			bltSqlEscape(company_stand) + "','" +
+			bltSqlEscape(company_money) + "','" +
+			bltSqlEscape(company_year) + "','" +
+			bltSqlEscape(company_mailcode) + "','" +
+			bltSqlEscape(company_fax) + "','" +
+			bltSqlEscape(company_website) + "','" +
+			bltSqlEscape(company_introduce) + "','" +
+			bltSqlEscape(company_business) + "','" +
+			bltSqlEscape(company_server) + "','" +
+			bltSqlEscape(company_thumb) + "')";
+	//bltInfoBox(sql);
+	if(!bltSqlExec(sql))
+		bltExit('执行'+sql+'失败');
+	endif
+	caiji_totalcount++;
+	bltAddProgress(1);
+	printf('采集(' + title + ')到本地数据库的['+catname+']分类中\n',GREEN);
+endfun
+
+fun myInsertToDb_whenError(errorStr,extraInfo)
+	global tablename,catid,content_links,contentIndex;
+	extraInfo += ''; //当extraInfo没提供参数时，为默认的整数0，此时需要转为字符串格式，和字符串相加就可以转为字符串。
+	if(bltCheckAutoPass() || extraInfo == 'titleExists')
+		errorStr = '系统自动过滤:' + errorStr;
+		sql = "INSERT INTO '"+ tablename +
+			"' (catid,title,content,state,linkurl,model,stand,brand,unit,price,min_num,totalnum,member,contact_content,company,areaid,contactname,phone,areaname,thumb,ismember,status,time,hits,selltypeid,level,"+
+			"email,random_password,company_sex,company_department,company_office,company_mobile,company_type,company_stand,company_money,company_year,company_mailcode,"+
+			"company_fax,company_website,company_introduce,company_business,company_server,company_thumb) VALUES ('" + 
+			catid + "','" +
+			bltSqlEscape(errorStr) + "','','1','" +
+			bltSqlEscape(content_links[contentIndex]) + "','','','','','','','','','','','','','','','','0','3','','','0','1','','','" +
+			"" + "','','','','','','','','','','','','','','')";
+		if(!bltSqlExec(sql))
+			bltExit('执行'+sql+'失败');
+		endif
+	endif
+	if(extraInfo == 'titleExists')
+		printf(errorStr,NORMAL);
+	else
+		printf(errorStr,RED);
+	endif
+endfun
+
+fun myPostDataToWeb()
+	global tablename,catid,modid,caiji_url,catname,totalpostNum,caiji_postfileName,maxCaijiImgs_Num;
+	totalRowCount = myGetTotalNum();
+	if(totalRowCount <= 0)
+		printf('本地数据库的采集量为0，目前['+catname+"]分类没采集到数据！跳过不继续发布！\n",RED);
+		return;
+	endif
+	if(bltGetMenuCheck("倒序发布"))
+		sql = "SELECT * FROM '"+tablename+"' WHERE catid='" + catid + "' AND state='0' order by id desc";
+	else
+		sql = "SELECT * FROM '"+tablename+"' WHERE catid='" + catid + "' AND state='0'";
+	endif
+	if(!bltSqlQuery(sql))
+		bltExit('查询'+sql+'失败');
+	endif
+	url = "http://" + caiji_url + "/"+caiji_postfileName;
+	forward = "http://"+ caiji_url +"/"+caiji_postfileName+"/action/left";
+	RowCount = 0;
+	for(;bltSqlMoveToNext();bltAddProgressEx(RowCount,totalRowCount))
+		RowCount++;
+		//bltAddProgressEx(RowCount,totalRowCount);
+		title = bltSqlGetString('title');
+		if(myDetectTitle(title) == 'Y')
+			print title + '已经采集过了跳过！';
+			sql = "UPDATE '"+tablename+"' SET state='1' WHERE id='"+bltSqlGetString('id')+"'";
+			if(!bltSqlExec(sql))
+				bltExit('执行'+sql+'失败');
+			endif
+			continue;
+		endif
+		username = myDetectCompanyUser(bltSqlGetString('company'));
+		if(username != 'the company is none!!!')
+			isRepeatCompany = TRUE;
+		else
+			username = bltSqlGetString('member');
+			isRepeatCompany = FALSE;
+		endif
+		group_rate = (bltRandom()%65 + 30)/100.0;
+		tuangou_price = (bltSqlGetString('price')-0.0) * group_rate + ''; //计算后转为字符串格式
+		maxCaijiImgs_Num = bltGetMaxUploadIMG(); //获取最多采集多少张图片
+		if(bltGetMenuCheck("发布到待审核"))
+			status = '2';
+		else
+			status = '3';
+		endif
+		printf('发布中...',GREEN);
+		thumb = IMG.Post(bltSqlGetString('thumb'),'album'); //album生成大中小三张图片，可以用于图片预览功能
+		content = IMG.PostAll(bltSqlGetString('content'));
+		if(bltGetMenuCheck("图片下载到本地再上传"))
+			remote = '';
+		else
+			remote = thumb;
+		endif
+		ret = bltPostData(url,array('moduleid',bltIntToStr(modid,0,'0'),
+							'file','index',
+							'action','add',
+							'itemid',"0",
+							'forward',forward,
+							"post[typeid]",bltSqlGetString('selltypeid'),
+							"post[title]",title,
+							"post[level]",bltSqlGetString('level'),
+							"post[catid]",bltIntToStr(catid,0,'0'),
+							"post[model]",bltSqlGetString('model'),
+							"post[standard]",bltSqlGetString('stand'),
+							"post[brand]",bltSqlGetString('brand'),
+							"post[content]",content,
+							"post[thumb]",thumb,
+							"remote",remote,
+							'from','album',
+							"post[unit]",bltSqlGetString('unit'),
+							"post[marketprice]",bltSqlGetString('price'),
+							"post[price]",tuangou_price,
+							"post[minamount]",bltSqlGetString('min_num'),
+							"post[amount]",bltSqlGetString('totalnum'),
+							'post[logistic]', '', //是否需要物流
+							'post[orders]' , '', //团购人数
+							"ismember",bltSqlGetString('ismember'),
+							"post[username]",username,
+							"post[company]",bltSqlGetString('company'),
+							"post[areaid]",bltSqlGetString('areaid'),
+							"post[truename]",bltSqlGetString('contactname'),
+							"post[mobile]",bltSqlGetString('phone'),
+							"post[address]",bltSqlGetString('areaname'),
+							"post[status]",status,
+							"post[hits]",bltSqlGetString('hits'),
+							//"post[addtime]",bltSqlGetString('time'),
+							"post[addtime]",bltGetTimeNow('%Y-%m-%d %H:%M:%S'),
+							'post[clear_link]','1',
+							"post[save_remotepic]","1",
+							"post[maxcaiji_num]",maxCaijiImgs_Num,
+							"submit","确定"
+							),&output);
+		if(ret > 0)
+			if(bltRegexMatchFirst('<div class="head">.*?<div.*?>(提示信息)</',1,output,&match,1) < 0)
+				printf('【'+ title + '】发布成功！\n',GREEN);
+				if(bltCheckCaijiCompany() && isRepeatCompany == FALSE) //检测用户是否需要采集公司信息
+					company_PostDataToWeb(); //发布公司信息
+				endif
+				sql = "UPDATE '"+tablename+"' SET state='1' WHERE id='"+bltSqlGetString('id')+"'";
+				if(!bltSqlExec(sql))
+					bltExit('执行'+sql+'失败');
+				endif
+				totalpostNum++;
+			else
+				if(bltRegexMatchFirst('<div class="content">\\s*?(.*?)\\s*?<div',1,output,&match,1) >= 0)
+					printf('【'+ title + '】发布失败！原因：' + match + '\n',RED);
+				else
+					printf('【'+ title + '】发布失败！原因未知，请在对应模块脚本中使用print或printf或bltInfoBox等进行调试分析\n' ,RED);
+				endif
+			endif
+		else
+			printf('【'+ title + '】发布未知！\n',RED);
+		endif
+		//break;
+	endfor
+	bltSqlRelease();
+endfun
+
+fun myDetectTitle(title)
+	global tablename,caiji_url,modid,catid;
+	detectUrl = "http://"+ caiji_url +"/mydetectTitle.php";
+	bltPostData(detectUrl,array(
+					"_zlmy_detectTable",tablename,
+					"_zlmy_detectTitle",title,
+					"_zlmy_catid",bltIntToStr(catid,0,'0')
+					),&output);
+	return output;
+endfun
+
+fun myDetectCompanyUser(companyname)
+	global caiji_url;
+	detectUrl = "http://"+ caiji_url +"/mydetectTitle.php?_zlmy_get_action=CheckCompanyUser";
+	bltPostData(detectUrl,array(
+					"_zlmy_detectCompany",companyname
+					),&output);
+	return output;
+endfun
+
+fun myGetTotalNum()
+	global tablename,catid;
+	sql = "SELECT count(*) as MyTotalCnt FROM '"+tablename+"' WHERE catid='" + catid + "' AND state='0'";
+	if(!bltSqlTableExists(tablename))
+		return 0;
+	endif
+	if(!bltSqlQuery(sql))
+		bltExit('查询'+sql+'失败');
+	endif
+	if(bltSqlMoveToNext())
+		return bltConvToInt(bltSqlGetString('MyTotalCnt'));
+	else
+		return 0;
+	endif
+endfun

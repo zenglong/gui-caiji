@@ -1,0 +1,100 @@
+use builtin;
+def TRUE 1;
+def FALSE 0;
+def NORMAL 0;
+def RED 1;
+def GREEN 2;
+
+/*当前页下面的分页链接规则*/
+buy_page_links_pattern = 'href=(["|\']?)(http://s\\.1688\\.com/newbuyoffer/-[^ "\'>]+\\.html\\?.*beginPage=\\d+.*)\\1.*target=';
+/*当前页面中内容的链接规则*/
+buy_content_links_pattern = 'href=(["|\']?)(http://go\\.1688\\.com/buyoffer/\\d+\\.htm)\\1';
+buy_title_pattern = '<!-- 标题区块 begin -->\\s*?<div class="mod-title">\\s*?<h1>(.*)</h1>'; //标题规则1
+buy_title_pattern2 = '<title>([^<]+)</title>'; //标题规则2
+//buy_content_pattern = '<div class="pro-detail">.*?</div>(.*)</div>\\s*?<!-- 留言 begin -->'; //求购内容规则
+buy_content_pattern = '<div class="content detail">(.*?)</div>'; //求购内容规则
+buy_amount_pattern = '数量/预计数量</.*?>.*?</.*?>.*?</.*?>.*?</.*?>.*?</.*?>.*?<.*?>(.*?)</.*?>'; //采购量
+buy_price_pattern = '目标价.*?</th>\\s*?</tr>\\s*?<tr>.*?</td>.*?</td>.*?</td>\\s*?<td>(.*?)</td>'; //采购价格
+buy_stand_pattern = '<li>采购类型：(.*?)\\s*?</li>'; //采购类型
+buy_pack_pattern = '包装要求：</li><li class="six1">(.*?)</li>'; //包装要求
+buy_area_pattern = '<.*?>收货地：(.*?)</.*?>'; //所在地区 匹配所有
+buy_thumb_pattern = '<div class="pic-box">\\s*?<img.*?src="([^"]+)"[^>]+>\\s*?</div>'; //缩略图 匹配所有
+buy_content_thumb_pattern = '<img.*?src="([^"]+)"[^>]*?>'; //内容里的图片
+
+fun buy_get_title()
+	global buy_title_pattern,buy_title_pattern2,remote_content;
+	if(bltRegexMatchFirst(buy_title_pattern,1,remote_content,&title,0) >=0) //匹配标题
+		return bltTrim(title);
+	elif(bltRegexMatchFirst(buy_title_pattern2,1,remote_content,&title,0) >=0)
+		title = bltRegexReplace('^[^-]*?-','',title,0); //...-标题
+		title = bltRegexReplace('-{1}.*?$','',title,0); //标题-....
+		return bltTrim(bltStrReplace('尽在阿里巴巴','',title)); //去掉阿里巴巴的内容
+	endif
+	return '';
+endfun
+
+fun buy_get_content()
+	global buy_content_pattern,remote_content;
+	if(bltRegexMatchFirst(buy_content_pattern,1,remote_content,&match,1) >=0) //匹配内容
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun buy_get_amount()
+	global buy_amount_pattern,remote_content;
+	if(bltRegexMatchFirst(buy_amount_pattern,1,remote_content,&match,1) >=0) //匹配采购量
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun buy_get_price()
+	global buy_price_pattern,remote_content;
+	if(bltRegexMatchFirst(buy_price_pattern,1,remote_content,&match,1) >=0) //匹配采购价格
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun buy_get_stand()
+	global buy_stand_pattern,remote_content;
+	if(bltRegexMatchFirst(buy_stand_pattern,1,remote_content,&match,0) >=0) //匹配采购类型
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun buy_get_pack()
+	global buy_pack_pattern,remote_content;
+	if(bltRegexMatchFirst(buy_pack_pattern,1,remote_content,&match,1) >=0) //匹配包装要求
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun buy_get_areaid()
+	global buy_area_pattern,remote_content,buy_areaname;
+	buy_areaname = '';
+	if(bltRegexMatchFirst(buy_area_pattern,1,remote_content,&match,1) >=0) //匹配所在地区
+		buy_areaname = match;
+		buy_areaname = bltTrim(buy_areaname);
+		buy_areaname = bltStrReplace('\t','',buy_areaname);
+		buy_areaname = bltStrReplace('\r','',buy_areaname);
+		buy_areaname = bltStrReplace('\n','',buy_areaname);
+		buy_areaname = bltStrReplace('&nbsp;','',buy_areaname);
+		return bltTrim(bltGetAreaID(match));
+	endif
+	return '0';
+endfun
+
+fun buy_get_thumb()
+	global buy_content_thumb_pattern,buy_thumb_pattern,buy_content,remote_content;
+	if(bltRegexMatchFirst(buy_content_thumb_pattern,1,buy_content,&match,1) >=0) //匹配内容中的缩略图
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(buy_thumb_pattern,0,remote_content,&match,1) >=0 && bltStrFind(match,'alt="没有图片"') < 0)
+		bltRegexMatchFirst(buy_thumb_pattern,1,remote_content,&match,1);
+		return bltTrim(match);
+	endif
+	return '';
+endfun

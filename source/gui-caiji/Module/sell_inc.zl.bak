@@ -1,0 +1,215 @@
+inc 'company.zl';
+/*当前页下面的分页链接规则*/
+//sell_page_links_pattern = 'href=(["|\']?)(http://search\\.china\\.alibaba\\.com/selloffer/-[^ "\'>]+\\.html\\?.*beginPage=\\d+.*)\\1.*target=';
+sell_page_links_pattern = 'href=(["|\']?)(http://s\\.1688\\.com/selloffer/-[^ "\'>]+\\.html\\?.*beginPage=\\d+.*)\\1.*target=';
+/*当前页面中内容的链接规则*/
+sell_content_links_pattern = 'href=(["|\']?)(http://detail\\.1688\\.com/(buyer/)?offer\\S*?/\\d+\\.html)\\1';
+sell_title_pattern = '<title>([^<]+)</title>'; //内容页标题的规则
+sell_title_pattern2 = '<div class="mod-detail-hd" id="mod-detail-hd">\s*?<h1.*?>(.*?)</h1'; //标题规则2
+sell_brand_pattern = '<td class="de-td1">\\s*?<span class="label">品牌：\\s*?</span></td>\\s*?<td><span class="value">(.*?)</span></td>';//产品品牌规则
+sell_brand_pattern2 = '<td class="de-feature">(品种|品牌)：(.*?)</td>';//产品品牌规则2
+//sell_brand_pattern3 = '<td class="de-feature">品牌：(.*?)</td>';//产品品牌规则3
+sell_model_pattern = '<td class="de-td1">\\s*?<span class="label">型号：\\s*?</span></td>\\s*?<td><span class="value">(.*?)</span></td>'; //产品型号规则
+sell_model_pattern2 = '<td class="de-feature">(等级|颜色)：(.*?)</td>';//产品型号规则2
+sell_stand_pattern = '<td class="de-td1">\\s*?<span class="label">(直径|尺寸|尺码)：\\s*?</span></td>\\s*?<td><span class="value">(.*?)</span></td>';//产品规格规则
+sell_stand_pattern2 = '<td class="de-feature">(成熟度|规格)：(.*?)</td>';//产品规格规则2
+sell_offerid_pattern = "\'offerid\':\'(\\d+)\',";
+sell_content_pattern = '\\(\\{"message":"","offerDesc":"(.*?)","success":true\\}\\)'; //产品详情规则,小数点需要匹配换行符
+sell_unit_pattern = '<tr>\\s*?<th>订货量\\((.*?)\\)</th>\\s*?<th>'; //计量单位规则
+sell_price_pattern = '<span class="de-pnum-ep">(.*?)</span>\\s*?<span class="de-pnum">(.*?)</span>'; //产品单价规则
+sell_min_num_pattern = '<input type="text" value="(\\d+)" class="amount-input" id="J_AmountInput" name="" maxlength="\\d+">';//供应最小起订量规则
+//sell_totalnum_pattern = '可售数量：<em id="dt-sku-can-sold">(\\d+)</em>'; //供货总量
+sell_totalnum_pattern = 'canBookCount":"(.*?)"'; //供货总量
+//sell_totalnum_pattern2 = '可售数量.*?<em.*?>(\\d+)</'; //供货总量规则2
+sell_totalnum_pattern2 = '（可售(\\d+)'; //供货总量规则2 6月21日更新
+sell_totalnum_pattern3 = '供货总量.*?<.*?>(\\d+).*?</'; //供货总量规则3 
+sell_member_pattern = '\'feedbackUid\':\'(.*?)\','; //会员名
+sell_member_company_name = 'http://(.*?).1688.com/page/creditdetail.htm'; //获取会员的和公司信息相关的用户名
+//sell_thumb_pattern = '样？来看看吧&pic=(.*)">人人网</a>'; //供应产品默认缩略图规则
+sell_thumb_pattern = 'preview".*?"(.*?)"'; //供应产品默认缩略图规则
+//sell_company_pattern = 'compname"><span class="info">(.*)</span>'; //供应公司名
+sell_company_pattern = 'company-title" >.*?>\\s*(.*?)\\s*<'; //供应公司名
+sell_truename_pattern = '联&nbsp;系&nbsp;人&nbsp;：</span>(.*?)&nbsp'; //供应联系人规则
+sell_phone_pattern = '固定电话：</span>(.*?)</'; //供应电话
+//sell_areaname_pattern = '<dd class = "address">中国(.*)\\s*?</dd>'; //详细地址
+sell_areaname_pattern = '经营地址：</span>(.*?)<'; //详细地址 即阿里巴巴公司档案里的经营地址
+sell_area_pattern = sell_areaname_pattern; //供应地区和经营地址一样
+
+fun sell_get_title()
+	global sell_title_pattern,sell_title_pattern2,remote_content;
+	if(bltRegexMatchFirst(sell_title_pattern,1,remote_content,&title,0) >=0 && bltStrFind(title,'...') < 0) //匹配标题
+		title = bltRegexReplace('^[^-]*?-','',title,0); //...-标题
+		title = bltRegexReplace('-{1}.*?$','',title,0); //标题-....
+		return bltTrim(bltStrReplace('尽在阿里巴巴','',title)); //去掉阿里巴巴的内容
+	elif(bltRegexMatchFirst(sell_title_pattern2,1,remote_content,&title,0) >=0)
+		return bltTrim(title);
+	endif
+	return '';
+endfun
+
+fun sell_get_model()
+	global sell_model_pattern,sell_model_pattern2,remote_content;
+	if(bltRegexMatchFirst(sell_model_pattern,1,remote_content,&match,FALSE) >=0) //匹配产品型号
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(sell_model_pattern2,2,remote_content,&match,FALSE) >=0)
+		return bltTrim(match); 
+	endif
+	return '';
+endfun
+
+fun sell_get_stand()
+	global sell_stand_pattern,sell_stand_pattern2,remote_content;
+	if(bltRegexMatchFirst(sell_stand_pattern,2,remote_content,&match,FALSE) >=0) //匹配产品规格
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(sell_stand_pattern2,2,remote_content,&match,FALSE) >=0)
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun sell_get_brand()
+	global sell_brand_pattern,sell_brand_pattern2,sell_brand_pattern3,remote_content;
+	if(bltRegexMatchFirst(sell_brand_pattern,1,remote_content,&match,FALSE) >=0) //匹配产品品牌
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(sell_brand_pattern2,2,remote_content,&match,FALSE) >=0) //规则2
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun sell_get_content()
+	global sell_offerid_pattern,sell_content_pattern,remote_content;
+	if(bltRegexMatchFirst(sell_offerid_pattern,1,remote_content,&offerid,0) >=0) //匹配offerid
+		url = 'http://laputa.china.alibaba.com/offer/ajax/OfferDesc.do?offerId='+offerid+'&callback=rnd13100973461251';
+		ret = bltCurlGetUrl(url);
+		if(bltRegexMatchFirst(sell_content_pattern,1,ret,&content,1) >=0) //匹配内容
+			content = bltStrReplace('\\"','"',content); //将\"变为"
+			content = delScript(content);
+			content = bltStrReplace('<img alt="" src="about:blank" />', '',content);
+			content = bltRegexReplace("<div class=\"mall_c\" style=\"display:none;\" id=\"c_comment\">\\s*?<center>正在载入评论详细...</center>\\s*?</div>","",
+						content,1);
+			content = bltRegexReplace("<div class=\"mall_c\" style=\"display:none;\" id=\"c_order\">\\s*?<center>正在载入交易记录...</center>\\s*?</div>","",
+						content,1);
+			content = bltTrim(content);
+			content = bltStrReplace('\t','',content);
+			content = bltStrReplace('\r','',content);
+			content = bltStrReplace('\n','',content);
+			return content;
+		endif
+	endif
+	return '';
+endfun
+
+fun sell_get_unit()
+	global sell_unit_pattern,remote_content;
+	if(bltRegexMatchFirst(sell_unit_pattern,1,remote_content,&match,0) >=0) //匹配计量单位
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun sell_get_price()
+	global sell_price_pattern,remote_content;
+	if(bltRegexMatchFirst(sell_price_pattern,1,remote_content,&match1,0) >=0) //匹配价格第一部分
+		match1 = bltTrim(match1);
+		if(bltRegexMatchFirst(sell_price_pattern,2,remote_content,&match2,0) >=0) //匹配价格第二部分
+			return match1 + bltTrim(match2);
+		endif
+		return match1;
+	elif(bltRegexMatchFirst('(等待卖家报价)',1,remote_content,&match,0) >= 0)
+		return '1';
+	endif
+	return '';
+endfun
+
+fun sell_get_min_num()
+	global sell_min_num_pattern,remote_content;
+	if(bltRegexMatchFirst(sell_min_num_pattern,1,remote_content,&match,0) >=0) //匹配最小起订量
+		return bltTrim(match);
+	endif
+	return '1';
+endfun
+
+fun sell_get_totalnum()
+	global sell_totalnum_pattern,sell_totalnum_pattern2,sell_totalnum_pattern3,remote_content;
+	if(bltRegexMatchFirst(sell_totalnum_pattern,1,remote_content,&match,0) >=0) //匹配供货总量
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(sell_totalnum_pattern2,1,remote_content,&match,0) >=0)
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(sell_totalnum_pattern3,1,remote_content,&match,1) >=0)
+		return bltTrim(match); 
+	elif(bltRegexMatchFirst('(等待卖家报价)',1,remote_content,&match,0) >= 0)
+		return '1';
+	endif
+	return '1';
+endfun
+
+fun sell_get_member()
+	global sell_member_pattern,remote_content;
+	if(bltRegexMatchFirst(sell_member_pattern,1,remote_content,&match,0) >=0) //匹配会员信息
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun sell_get_member_company_name()
+	global sell_member_company_name,remote_content;
+	if(bltRegexMatchFirst(sell_member_company_name,1,remote_content,&match,0) >=0) //匹配公司信息相关的用户名
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun sell_get_thumb()
+	global sell_thumb_pattern,remote_content;
+	if(bltRegexMatchFirst(sell_thumb_pattern,1,remote_content,&match,0) >=0) //匹配缩略图信息
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun sell_get_company()
+	global sell_company_pattern,sell_contact_content;
+	if(bltRegexMatchFirst(sell_company_pattern,1,sell_contact_content,&match,1) >=0) //匹配供应公司名
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun sell_get_areaid()
+	global sell_area_pattern,sell_contact_content;
+	if(bltRegexMatchFirst(sell_area_pattern,1,sell_contact_content,&match,0) >=0) //匹配地区
+		return bltTrim(bltGetAreaID(match));
+	endif
+	return '0';
+endfun
+
+fun sell_get_truename()
+	global sell_truename_pattern,sell_contact_content;
+	if(bltRegexMatchFirst(sell_truename_pattern,1,sell_contact_content,&match,0) >=0) //匹配联系人
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun sell_get_phone()
+	global sell_phone_pattern,sell_contact_content;
+	if(bltRegexMatchFirst(sell_phone_pattern,1,sell_contact_content,&match,0) >=0) //匹配电话
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun sell_get_areaname()
+	global sell_areaname_pattern,sell_contact_content;
+	if(bltRegexMatchFirst(sell_areaname_pattern,1,sell_contact_content,&match,0) >=0) //匹配详细地址
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun delScript(content)
+	content = bltRegexReplace('<script.*>.*</script>','',content,1);
+	content = bltRegexReplace('on(mousewheel|mouseover|click|load|onload|submit|focus|blur)="[^"]*"','',content,1);
+	return content;
+endfun

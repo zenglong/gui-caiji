@@ -1,0 +1,35 @@
+use builtin;
+def TRUE 1;
+def FALSE 0;
+def NORMAL 0;
+def RED 1;
+def GREEN 2;
+
+/*当前页下面的分页链接规则*/
+know_page_links_pattern = 'href="(/search\\?word=.*?pn=.*?)"';
+/*当前页面中内容的链接规则*/
+know_content_links_pattern = 'href=(["|\']?)(http://zhidao\\.baidu\\.com/question/\\d+.html)\\1';
+know_title_pattern = '<title>([^<]+?)_百度知道</title>'; //标题规则
+know_content_pattern = 'con: \'(.*?)\',answerNum:'; //知道提问内容规则
+know_answer_pattern = '<pre[^>]+?"aContent"[^>]+?>(.*?)</pre>'; //知道回答规则
+
+fun know_get_title() //获取标题
+	global know_title_pattern,remote_content;
+	if(bltRegexMatchFirst(know_title_pattern,1,remote_content,&title,0) >=0) //匹配标题
+		return bltTrim(title);
+	endif
+	return '';
+endfun
+
+fun know_get_content() //匹配内容
+	global know_content_pattern,know_answer_pattern,remote_content;
+	bltRegexMatchFirst(know_content_pattern,1,remote_content,&question,1); //匹配内容
+	bltRegexMatchFirst(know_answer_pattern,1,remote_content,&answer,1); //匹配答案
+	ret = question + '<br/><br/><strong>[推荐答案]：</strong><p>' + answer + '</p>';
+	return bltTrim(ret);
+endfun
+
+fun know_get_areaid() //获取地区ID
+	global title,know_content;
+	return bltTrim(bltGetAreaID(title + know_content));
+endfun

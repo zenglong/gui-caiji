@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gui-caiji", "gui-caiji\gui-caiji.vcproj", "{AA515C24-4CAB-432E-8693-C20D99FC3EDB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2E9A1D5B-66B1-4553-9B0E-8EE9A42E5632} = {2E9A1D5B-66B1-4553-9B0E-8EE9A42E5632}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zengl", "zengl\zengl.vcproj", "{2E9A1D5B-66B1-4553-9B0E-8EE9A42E5632}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test\test.vcproj", "{C3952AB6-9BCA-4168-BC93-57E57A0450F6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2E9A1D5B-66B1-4553-9B0E-8EE9A42E5632} = {2E9A1D5B-66B1-4553-9B0E-8EE9A42E5632}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "encrypt", "encrypt\encrypt.vcproj", "{045B4D7A-98D6-4A54-B4F7-8CB3777102FA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2E9A1D5B-66B1-4553-9B0E-8EE9A42E5632} = {2E9A1D5B-66B1-4553-9B0E-8EE9A42E5632}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA515C24-4CAB-432E-8693-C20D99FC3EDB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AA515C24-4CAB-432E-8693-C20D99FC3EDB}.Debug|Win32.Build.0 = Debug|Win32
+		{AA515C24-4CAB-432E-8693-C20D99FC3EDB}.Release|Win32.ActiveCfg = Release|Win32
+		{AA515C24-4CAB-432E-8693-C20D99FC3EDB}.Release|Win32.Build.0 = Release|Win32
+		{2E9A1D5B-66B1-4553-9B0E-8EE9A42E5632}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2E9A1D5B-66B1-4553-9B0E-8EE9A42E5632}.Debug|Win32.Build.0 = Debug|Win32
+		{2E9A1D5B-66B1-4553-9B0E-8EE9A42E5632}.Release|Win32.ActiveCfg = Release|Win32
+		{2E9A1D5B-66B1-4553-9B0E-8EE9A42E5632}.Release|Win32.Build.0 = Release|Win32
+		{C3952AB6-9BCA-4168-BC93-57E57A0450F6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C3952AB6-9BCA-4168-BC93-57E57A0450F6}.Debug|Win32.Build.0 = Debug|Win32
+		{C3952AB6-9BCA-4168-BC93-57E57A0450F6}.Release|Win32.ActiveCfg = Release|Win32
+		{C3952AB6-9BCA-4168-BC93-57E57A0450F6}.Release|Win32.Build.0 = Release|Win32
+		{045B4D7A-98D6-4A54-B4F7-8CB3777102FA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{045B4D7A-98D6-4A54-B4F7-8CB3777102FA}.Debug|Win32.Build.0 = Debug|Win32
+		{045B4D7A-98D6-4A54-B4F7-8CB3777102FA}.Release|Win32.ActiveCfg = Release|Win32
+		{045B4D7A-98D6-4A54-B4F7-8CB3777102FA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

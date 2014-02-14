@@ -1,0 +1,497 @@
+//本脚本采用zengl编程语言的语法 视频模块规则
+inc 'remote_local_img.zl'; //将远程图片下载到本地再上传的类
+use builtin;
+def TRUE 1;
+def FALSE 0;
+def NORMAL 0;
+def RED 1;
+def GREEN 2;
+def RG_UNIQUE 1;
+def RG_NO_UNIQUE 0;
+def RG_DOTANY 1;
+def RG_NO_DOTANY 0;
+
+//图库相关类
+class PhotoPattern
+	lstPages;
+	contentLinks;
+	title;
+	title2;
+	content;
+	thumb;
+endclass
+
+class Photo
+	PhotoPattern p;
+	title;
+	content;
+	thumb;
+	/*其他杂项*/
+	level;
+	style;
+	username;
+	status;
+	note;
+	open;
+	password;
+	question;
+	answer;
+	addtime;
+	hits;
+	fee;
+	template;
+	/*图片下载缓存路径*/
+	cache;
+
+	fun InitPatterns(obj)
+		Photo obj;
+		obj.p.lstPages = 'a\\s.*?href=(["|\']?)(http://s\\.1688\\.com/news/-[^ "\'>]+\\.html\\?pageSize=\\d+&newsTabParam=shopwindow&beginPage=\\d+)\\1';
+		obj.p.contentLinks = 'a\\s.*?href=(["|\']?)(http://info\\.1688\\.com/news/detail/v\\d+-[^ "\'>]+\\.html)\\1';
+		obj.p.title = 'titles-content".*?>(.*?)</';
+		obj.p.title2 = '<title>(.*?) - 阿里巴巴资讯画报</';
+		obj.p.content = 'div class="desc">(.*?)</div';
+		obj.p.thumb = '"url":"(.*?)"';
+		obj.cache = 'cache/img.jpg';
+	endfun
+
+	fun GetPages(obj)
+		Photo obj;
+		global remote_content,page_links;
+		bltRegexMatches(obj.p.lstPages,2,remote_content,page_links,RG_UNIQUE,RG_NO_DOTANY); /*根据分页链接规则获取底部分页的链接*/
+	endfun
+
+	fun GetTitle(obj)
+		Photo obj;
+		global remote_content;
+		if(bltRegexMatchFirst(obj.p.title,1,remote_content,&match,RG_NO_DOTANY) >=0) //匹配标题
+			return obj.title = bltTrim(match);
+		elif(bltRegexMatchFirst(obj.p.title2,1,remote_content,&match,RG_NO_DOTANY) >=0) //匹配标题
+			return obj.title = bltTrim(match);
+		endif
+		return obj.title = '';
+	endfun
+
+	fun GetContent(obj)
+		Photo obj;
+		global remote_content;
+		if(bltRegexMatchFirst(obj.p.content,1,remote_content,&match,RG_DOTANY) >=0) //匹配内容
+			match = bltTrim(match);
+			match = bltRegexReplace('<.*?>','',match,RG_NO_DOTANY);
+			return obj.content = match;
+		endif
+		return obj.content = '';
+	endfun
+
+	fun GetThumb(obj)
+		Photo obj;
+		global remote_content;
+		if(bltRegexMatchFirst(obj.p.thumb,1,remote_content,&match,RG_DOTANY) >=0) //匹配缩略图
+			return obj.thumb = bltTrim(match);
+		endif
+		return obj.thumb = '';
+	endfun
+
+	fun GetOthers(obj)
+		Photo obj;
+
+		obj.level = '0';
+		obj.style = '';
+		obj.username = 'admin';
+		obj.status = '3';
+		obj.note = '';
+		obj.open = '3';
+		obj.password = '';
+		obj.question = '';
+		obj.answer = '';
+		obj.addtime = bltGetTimeNow('%Y-%m-%d %H:%M:%S');
+		obj.hits = bltIntToStr(bltRandom()%1000 + 200,0,'0');
+		obj.fee = '';
+		obj.template = '';
+	endfun
+
+	fun Debug(obj)
+		Photo obj;
+		bltInfoBox( '\n title: ' + obj.title +
+			'\n content: ' +  obj.content +
+			'\n thumb: ' +  obj.thumb +
+			/**其他杂项*/
+			'\n style: ' +  obj.style +
+			'\n username: ' +  obj.username +
+			'\n status: ' +  obj.status +
+			'\n note: ' +  obj.note +
+			'\n open: ' +  obj.open +
+			'\n password: ' +  obj.password +
+			'\n question: ' +  obj.question +
+			'\n answer: ' +  obj.answer +
+			'\n addtime: ' +  obj.addtime +
+			'\n hits: ' +  obj.hits +
+			'\n fee: ' +  obj.fee +
+			'\n template: ' +  obj.template
+			  );
+	endfun
+
+	fun GetItemId(title)
+		global tablename,modid,catid,caiji_url;
+		output = '';
+		detectUrl = "http://"+ caiji_url +"/mydetectTitle.php?_zlmy_get_action=GetItemId";
+		ret = bltPostData(detectUrl,array(
+				"_zlmy_detectTable",tablename,
+				"_zlmy_detectTitle",title,
+				"_zlmy_modid",bltIntToStr(modid,0,'0'),
+				"_zlmy_catid",bltIntToStr(catid,0,'0')
+				),&output);
+		//print 'itemid:' + output; //调试
+		if(ret > 0)
+			return output;
+		else
+			return 'N';
+		endif
+	endfun
+
+	fun PostImg(obj,title,imgurl,content)
+		Photo obj;
+		global caiji_url,caiji_postfileName,modid;
+		itemid = Photo.GetItemId(title);
+		if(itemid == 'N')
+			return -1;
+		endif
+		bltCurlDownload(obj.cache,imgurl);
+		url = "http://" + caiji_url + "/"+caiji_postfileName;
+		ret = bltPostData(url,array('from','photo',
+							'remote','http://',
+							'width','100',
+							'height','100',
+							'upalbum','@'+obj.cache,
+							'post[_zlpost_pic]','yes'
+							),&output);
+		if(ret <= 0)
+			return -1;
+		endif
+		thumb = output;
+		//print 'thumb:' + thumb; //调试
+		forward = "http://"+ caiji_url +"/"+caiji_postfileName+"/action/left";
+		ret = bltPostData(url,array('moduleid',bltIntToStr(modid,0,'0'),
+							'file','index',
+							'action','item',
+							'itemid',itemid,
+							'forward',forward,
+							'update','1',
+							'swf_upload','',
+							"post[0][thumb]",thumb,
+							"post[0][introduce]",content,
+							"post[0][listorder]",'0',
+							"submit"," 更 新 "
+							//),&output);
+							),&output,"ZDEDebuggerPresent=php,phtml,php3;PHPSESSID=5593e83de0f9e0b6510f56283d3f1610;debug_host=192.168.1.102,192.168.56.1,127.0.0.1; debug_fastfile=1; debug_port=10137; start_debug=1; send_debug_header=1; send_sess_end=1; debug_jit=1; original_url=http://www.destoongbk5.qq/zenglangel_login.php; debug_stop=1; use_remote=1; debug_session_id=101142605; debug_start_session=1"); //添加调试cookie，触发zend studio进行调试分析
+		if(ret <= 0)
+			return -1;
+		else
+			return 0;
+		endif
+	endfun
+
+endclass
+
+tablename = 'photo';
+Max_CaijiNum = bltGetCaijiNum();
+catid = bltGetCatid();
+modid = bltGetModid();
+catname = bltGetCatName();
+keywords = array();
+mustwords = array();
+caiji_url = bltGetWebUrl();
+caiji_totalcount = 0;
+totalpostNum = 0;
+caiji_postfileName = bltGetInitManageUrl(); //获取采集的上传接口文件名
+
+Auth.authorize(&Max_CaijiNum,caiji_url); //域名授权认证
+
+keywords_count = bltGetKeyWords(keywords,mustwords);
+if(keywords_count > 0)
+	for(i=0;i<keywords_count && caiji_totalcount < Max_CaijiNum;i++)
+		print '关键词'+i+':'+keywords[i] + '\n必需包含词:'+
+			mustwords[i];
+		escape_keyword = bltCurlEncode(keywords[i]);
+		print '转义关键词:' + escape_keyword;
+		remote_url = 'http://s.1688.com/news/news_search.htm?keywords=' + escape_keyword + '&newsTabParam=shopwindow&n=y';
+		print '采集分页：' + remote_url;
+		remote_content = bltCurlGetUrl(remote_url);
+		page_links = array(); //初始化分页链接数组
+		Photo P;
+		Photo.InitPatterns(&P);
+		Photo.GetPages(P);
+		pagecount = bltArrayInsertString(page_links,remote_url,0); //将当前页链接也压入分页链接数组中
+		for(pageindex = 0 ;pageindex < pagecount && caiji_totalcount < Max_CaijiNum; pageindex++)
+			content_links = array(); //初始化内容链接数组
+			if(pageindex != 0)
+				print pageindex + ' 采集分页：' + page_links[pageindex];
+				remote_content = bltCurlGetUrl(page_links[pageindex]); //得到当前分页的内容链接页面。
+			endif
+			contentCount = bltRegexMatches(P.p.contentLinks,2,remote_content,content_links,RG_UNIQUE,RG_NO_DOTANY); /*根据内容链接规则获取内容链接数组*/
+			for(contentIndex = 0 ; contentIndex < contentCount && caiji_totalcount < Max_CaijiNum; contentIndex++)
+				if(myCheckContentLinkExists())
+					continue;
+				endif
+				remote_content = bltCurlGetUrl(content_links[contentIndex],TRUE); //根据文章链接得到每篇文章的内容
+				print '采集内容页: ' + content_links[contentIndex];
+
+				Photo.GetTitle(P); //匹配标题
+				if(P.title =='') 
+					myInsertToDb_whenError(content_links[contentIndex] + '标题为空!\n');
+					continue;
+				elif(myDetectTitle(P.title) == 'Y')
+					myInsertToDb_whenError('<'+ P.title +'>服务端标题已经存在!\n','titleExists');
+					continue;
+				endif
+				if(!bltCheckTitleMust(P.title,mustwords[i]))
+					myInsertToDb_whenError(content_links[contentIndex] + P.title +' 不包含必须词：'+bltStrReplace('&',' ',mustwords[i]) + '\n');
+					continue;
+				endif
+				Photo.GetContent(P); //匹配内容
+				if(P.content =='') 
+					myInsertToDb_whenError(content_links[contentIndex] + '内容为空!\n');
+					continue;
+				endif
+				Photo.GetThumb(P); //获取标题图片
+				if(P.thumb =='') 
+					myInsertToDb_whenError(content_links[contentIndex] + '标题图片为空!\n');
+					continue;
+				endif
+				Photo.GetOthers(P); //获取其他杂项
+				//Photo.Debug(P); //调试
+				//bltExit("调试..."); //调试
+
+				myInsertToDb();
+				//break;
+			endfor
+			//break;
+		endfor
+		//break;
+	endfor
+elif(keywords_count == 0)
+	printf('分类的关键词为空\n',RED);
+else
+	printf('获取分类的关键词时发生错误\n',RED);
+endif
+
+bltCheckUserPause();
+myPostDataToWeb();
+bltTellSysCaijiStatus(caiji_totalcount,totalpostNum);
+print '\n分类['+catname+']一共采集了'+caiji_totalcount+'条信息！发布成功'+totalpostNum+'条信息//////////////////////////////';
+
+fun myCheckContentLinkExists()
+	global tablename,content_links,contentIndex,catid;
+	if(bltSqlTableExists(tablename))
+		sql = "SELECT * FROM "+tablename+" WHERE linkurl='"+bltSqlEscape(content_links[contentIndex])+"' AND catid='"+catid+"'";
+		if(!bltSqlQuery(sql))
+			bltExit('查询'+sql+'失败');
+		elif(bltSqlMoveToNext())
+			print bltSqlGetString('linkurl') + '["' + bltSqlGetString('title') + ']"采集地址已经存在！';
+			bltSqlRelease();
+			return TRUE;
+		endif
+		bltSqlRelease();
+		return FALSE;
+	else
+		bltSqlExec('CREATE TABLE '+tablename+' (id INTEGER PRIMARY KEY ASC,catid,title,content,state,linkurl,level,style,thumb,username,status,note,open,password,question,answer,addtime,hits,fee,template)');
+		print '创建'+tablename+'数据库表！';
+		return FALSE;
+	endif
+endfun
+
+fun myCheckIsNeedSuffix() //判断是否需要后缀
+	global catid,catname;
+	sql = "SELECT * FROM keywords WHERE catid='"+catid+"'";
+	if(!bltSqlQuery(sql))
+		bltExit('查询'+sql+'失败');
+	endif
+	if(bltSqlMoveToNext())
+		ret = bltConvToInt(bltSqlGetString('needSuffix'));
+	else
+		bltExit('myCheckIsNeedSuffix运行时错误: 在数据库的keywords表中没有找到分类('+catname+') 对应catid为'+catid);
+	endif
+	bltSqlRelease();
+	return ret;
+	//bltInfoBox('结果：'+ printStr);
+endfun
+
+fun myInsertToDb()
+	global tablename,catname,catid,P,content_links,contentIndex,caiji_totalcount;
+	Photo P;
+
+	sql = "INSERT INTO "+ tablename +
+			" (catid,title,content,state,linkurl,level,style,thumb,username,status,note,open,password,question,answer,addtime,hits,fee,template) VALUES ('" + 
+			catid + "','" +
+			bltSqlEscape(P.title) + "','" +
+			bltSqlEscape(P.content) + "','0','" +
+			bltSqlEscape(content_links[contentIndex]) + "','" +
+			bltSqlEscape(P.level) + "','" +
+			bltSqlEscape(P.style) + "','" +
+			bltSqlEscape(P.thumb) + "','" +
+			bltSqlEscape(P.username) + "','" +
+			bltSqlEscape(P.status) + "','" +
+			bltSqlEscape(P.note) + "','" +
+			bltSqlEscape(P.open) + "','" +
+			bltSqlEscape(P.password) + "','" +
+			bltSqlEscape(P.question) + "','" +
+			bltSqlEscape(P.answer) + "','" +
+			bltSqlEscape(P.addtime) + "','" +
+			bltSqlEscape(P.hits) + "','" +
+			bltSqlEscape(P.fee) + "','" +
+			bltSqlEscape(P.template) + "')";
+
+	//bltInfoBox(sql);
+	if(!bltSqlExec(sql))
+		bltExit('执行'+sql+'失败');
+	endif
+	caiji_totalcount++;
+	bltAddProgress(1);
+	printf('采集(' + P.title + ')到本地数据库的['+catname+']分类中\n',GREEN);
+endfun
+
+fun myInsertToDb_whenError(errorStr = '',extraInfo = '')
+	global tablename,catid,content_links,contentIndex;
+	if(bltCheckAutoPass() || extraInfo == 'titleExists')
+		errorStr = '系统自动过滤:' + errorStr;
+		sql = "INSERT INTO "+ tablename +
+			" (catid,title,content,state,linkurl,level,style,thumb,username,status,note,open,password,question,answer,addtime,hits,fee,template) VALUES ('" + 
+			catid + "','" +
+			bltSqlEscape(errorStr) + "','','1','" +
+			bltSqlEscape(content_links[contentIndex]) + "','','','','','','','','','','','','','','')";
+		if(!bltSqlExec(sql))
+			bltExit('执行'+sql+'失败');
+		endif
+	endif
+	if(extraInfo == 'titleExists')
+		printf(errorStr,NORMAL);
+	else
+		printf(errorStr,RED);
+	endif
+endfun
+
+fun myPostDataToWeb()
+	global tablename,catid,modid,caiji_url,catname,totalpostNum,caiji_postfileName,maxCaijiImgs_Num,P;
+	Photo P;
+	totalRowCount = myGetTotalNum();
+	if(totalRowCount <= 0)
+		printf('本地数据库的采集量为0，目前['+catname+"]分类没采集到数据！跳过不继续发布！\n",RED);
+		return;
+	endif
+	if(bltGetMenuCheck("倒序发布"))
+		sql = "SELECT * FROM "+tablename+" WHERE catid='" + catid + "' AND state='0' order by id desc";
+	else
+		sql = "SELECT * FROM "+tablename+" WHERE catid='" + catid + "' AND state='0'";
+	endif
+	//sql = "SELECT * FROM "+tablename+" WHERE catid='" + catid + "' AND state='0'";
+	if(!bltSqlQuery(sql))
+		bltExit('查询'+sql+'失败');
+	endif
+	url = "http://" + caiji_url + "/"+caiji_postfileName;
+	forward = "http://"+ caiji_url +"/"+caiji_postfileName+"/action/left";
+	RowCount = 0;
+	for(;bltSqlMoveToNext();bltAddProgressEx(RowCount,totalRowCount))
+		RowCount++;
+		title = bltSqlGetString('title');
+		if(myDetectTitle(title) == 'Y')
+			print title + '已经采集过了跳过！';
+			sql = "UPDATE "+tablename+" SET state='1' WHERE id='"+bltSqlGetString('id')+"'";
+			if(!bltSqlExec(sql))
+				bltExit('执行'+sql+'失败');
+			endif
+			continue;
+		endif
+		maxCaijiImgs_Num = bltGetMaxUploadIMG(); //获取最多采集多少张图片
+		if(bltGetMenuCheck("发布到待审核"))
+			status = '2';
+		else
+			status = '3';
+		endif
+		printf('发布中...',GREEN);
+		thumb = bltSqlGetString('thumb');
+		content = bltSqlGetString('content');
+		if(bltGetMenuCheck("图片下载到本地再上传"))
+			remote = '';
+		else
+			remote = thumb;
+		endif
+		ret = bltPostData(url,array('moduleid',bltIntToStr(modid,0,'0'),
+							'file','index',
+							'action','add',
+							'itemid',"0",
+							'forward',forward,
+							"post[title]",title,
+							"post[content]",IMG.PostAll(content),
+							"post[level]",bltSqlGetString('level'),
+							"post[catid]",bltIntToStr(catid,0,'0'),
+							"post[style]",bltSqlGetString('style'),
+							"post[thumb]",IMG.Post(thumb,'thumb'),
+							"remote",remote,
+							'from','thumb',
+							"post[username]",bltSqlGetString('username'),
+							"post[status]",status,
+							"post[note]",bltSqlGetString('note'),
+							"post[open]",bltSqlGetString('open'),
+							"post[password]",bltSqlGetString('password'),
+							"post[question]",bltSqlGetString('question'),
+							"post[answer]",bltSqlGetString('answer'),
+							//"post[addtime]",bltSqlGetString('addtime'),
+							"post[addtime]",bltGetTimeNow('%Y-%m-%d %H:%M:%S'),
+							"post[hits]",bltSqlGetString('hits'),
+							"post[fee]",bltSqlGetString('fee'),
+							"post[template]",bltSqlGetString('template'),
+							'post[clear_link]','1',
+							"post[save_remotepic]","1",
+							"post[maxcaiji_num]",maxCaijiImgs_Num,
+							"submit","确定"
+							),&output);
+		if(ret > 0)
+			if(bltRegexMatchFirst('<div class="head">.*?<div.*?>(提示信息)</',1,output,&match,1) < 0)
+				Photo.PostImg(P,title,thumb,content); //发布该图库里的具体图片
+				printf('【'+ title + '】发布成功！\n',GREEN);
+				sql = "UPDATE "+tablename+" SET state='1' WHERE id='"+bltSqlGetString('id')+"'";
+				if(!bltSqlExec(sql))
+					bltExit('执行'+sql+'失败');
+				endif
+				totalpostNum++;
+			else
+				if(bltRegexMatchFirst('<div class="content">\\s*?(.*?)\\s*?<div',1,output,&match,1) >= 0)
+					printf('【'+ title + '】发布失败！原因：' + match + '\n',RED);
+				else
+					printf('【'+ title + '】发布失败！原因未知，请在对应模块脚本中使用print或printf或bltInfoBox等进行调试分析\n' ,RED);
+				endif
+			endif
+		else
+			printf('【'+ title + '】发布未知！\n',RED);
+		endif
+		//break;
+	endfor
+	bltSqlRelease();
+endfun
+
+fun myDetectTitle(title)
+	global tablename,caiji_url,modid,catid;
+	detectUrl = "http://"+ caiji_url +"/mydetectTitle.php";
+	bltPostData(detectUrl,array(
+					"_zlmy_detectTable",tablename,
+					"_zlmy_detectTitle",title,
+					"_zlmy_modid",bltIntToStr(modid,0,'0'),
+					"_zlmy_catid",bltIntToStr(catid,0,'0')
+					),&output);
+	return output;
+endfun
+
+fun myGetTotalNum()
+	global tablename,catid;
+	sql = "SELECT count(*) as MyTotalCnt FROM "+tablename+" WHERE catid='" + catid + "' AND state='0'";
+	if(!bltSqlTableExists(tablename))
+		return 0;
+	endif
+	if(!bltSqlQuery(sql))
+		bltExit('查询'+sql+'失败');
+	endif
+	if(bltSqlMoveToNext())
+		return bltConvToInt(bltSqlGetString('MyTotalCnt'));
+	else
+		return 0;
+	endif
+endfun

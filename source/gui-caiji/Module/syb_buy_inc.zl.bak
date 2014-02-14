@@ -1,0 +1,487 @@
+inc 'company.zl';
+
+/*当前页下面的分页链接规则*/
+buy_page_links_pattern = '(/web/trade.htm\\?c=11&terms=.*?&c1=&c2=&n=\\d+?&d=&p=\\d+)"';
+/*当前页面中内容的链接规则*/
+buy_content_links_pattern = 'http://china.toocle.com/trade/pdetail--\\d+.html';
+buy_content_jmp_link_pattern = 'url=(.*?)\'>'; //页面刷新跳转规则
+buy_title_pattern = 'title=".*?"><h2>(.*?)</h2>'; //标题规则1
+buy_title_pattern2 = '<h1><span>【产品求购】</span>(.*?)<'; //标题规则2
+buy_title_pattern3 = '【产品求购】.*?title="(.*?)"'; //标题规则3 第三套页面模板里的规则
+buy_content_pattern = '<div class="t12 height_22p cle">(.*?)</div>\\s*?</div>\\s*?</div>\\s*?</div>\\s*?<div class="bg3 cle"></div>'; //求购内容规则
+buy_content_pattern2 = '信息内容</h2></div>\\s*?<div.*?><div.*?>(.*?)</div></div>'; //求购内容规则2
+buy_content_pattern3 = '<td class="t150">(.*?)</td'; //求购内容规则3
+buy_amount_pattern = '求购数量：</td>.*?>(.*?)<'; //采购量
+buy_amount_pattern2 = '求购数量：</li><li.*?>(.*?)<'; //采购量2
+buy_price_pattern = '价格要求：</td>.*?>(.*?)<'; //采购价格
+buy_price_pattern2 = '价格要求：</li><li.*?>(.*?)<'; //采购价格2
+buy_stand_pattern = '产品规格：</td>.*?>(.*?)<'; //产品规格
+buy_stand_pattern2 = '产品规格：</li><li.*?>(.*?)<'; //产品规格2
+buy_pack_pattern = '包装要求：</td>.*?>(.*?)<'; //包装要求
+buy_pack_pattern2 = '包装要求：</li><li.*?>(.*?)<'; //包装要求2
+buy_area_pattern = '>地址：</li>.*?>(.*?)<'; //所在地区 匹配所有
+buy_area_pattern2 = '所在地区：(.*?)</'; //所在地区2
+buy_thumb_pattern = '<div class="cle">.*?<img src="(.*?)"'; //缩略图 匹配所有
+buy_thumb_pattern2 = '<div class="textcenter.*?img\\s*?src="(.*?)"'; //缩略图2
+buy_thumb_pattern3 = 'td class="t150 de01"><img\\s*?src="(.*?)"'; //缩略图3
+buy_company_pattern = '"><span class="mtext">(.*?)<'; //匹配公司名
+buy_company_pattern2 = '>公司：</li>.*?>(.*?)<'; //匹配公司名2
+buy_company_pattern3 = '公司名称:</font></td>.*?>(.*?)</td'; //匹配公司名3
+buy_truename_pattern = '联 系 人：</li><li class="w_lx1">(.*?)<'; //匹配联系人
+buy_truename_pattern2 = '>联系人：(.*?)<'; //匹配联系人2
+buy_truename_pattern3 = '联 系 人:</font></td>.*?>(.*?)</td'; //匹配联系人3
+buy_phone_pattern = '手　　机：</li><li class="w_lx1">(.*?)<'; //匹配联系电话
+buy_phone_pattern2 = '>手机：</li>.*?>(.*?)<'; //匹配联系电话2
+buy_phone_pattern3 = '手　　机:</font></td>.*?>(.*?)</td'; //匹配联系电话3
+
+/********************************/
+
+fun buy_get_title()
+	global buy_title_pattern,remote_content,buy_title_pattern2,buy_is_single_template,buy_title_pattern3;
+	if(bltRegexMatchFirst(buy_title_pattern,1,remote_content,&title,0) >=0) //匹配标题
+		return bltTrim(title);
+	elif(bltRegexMatchFirst(buy_title_pattern2,1,remote_content,&title,0) >=0) //匹配标题
+		buy_is_single_template = TRUE;
+		return bltTrim(title);
+	elif(bltRegexMatchFirst(buy_title_pattern3,1,remote_content,&title,0) >=0) //匹配标题
+		return bltTrim(title);
+	endif
+	return '';
+endfun
+
+fun buy_get_content()
+	global buy_content_pattern,remote_content,buy_content_pattern2,buy_content_pattern3,buy_is_template3;
+	if(bltRegexMatchFirst(buy_content_pattern,1,remote_content,&match,1) >=0) //匹配内容
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(buy_content_pattern2,1,remote_content,&match,1) >=0) //匹配内容
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(buy_content_pattern3,1,remote_content,&match,1) >=0) //匹配内容
+		buy_is_template3 = TRUE; 
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun buy_get_amount()
+	global buy_amount_pattern,remote_content,buy_amount_pattern2;
+	if(bltRegexMatchFirst(buy_amount_pattern,1,remote_content,&match,1) >=0) //匹配采购量
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(buy_amount_pattern2,1,remote_content,&match,0) >=0) //匹配采购量
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun buy_get_price()
+	global buy_price_pattern,remote_content,buy_price_pattern2;
+	if(bltRegexMatchFirst(buy_price_pattern,1,remote_content,&match,1) >=0) //匹配采购价格
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(buy_price_pattern2,1,remote_content,&match,0) >=0)
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun buy_get_stand()
+	global buy_stand_pattern,remote_content,buy_stand_pattern2;
+	if(bltRegexMatchFirst(buy_stand_pattern,1,remote_content,&match,1) >=0) //匹配产品规格
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(buy_stand_pattern2,1,remote_content,&match,0) >=0) //匹配产品规格
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun buy_get_pack()
+	global buy_pack_pattern,remote_content,buy_pack_pattern2;
+	if(bltRegexMatchFirst(buy_pack_pattern,1,remote_content,&match,1) >=0) //匹配包装要求
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(buy_pack_pattern2,1,remote_content,&match,0) >=0) //匹配包装要求
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun buy_get_areaid()
+	global buy_area_pattern,remote_content,buy_areaname,buy_area_pattern2;
+	buy_areaname = '';
+	if(bltRegexMatchFirst(buy_area_pattern,1,remote_content,&match,0) >=0) //匹配所在地区
+		buy_areaname = match;
+		return bltTrim(bltGetAreaID(match));
+	elif(bltRegexMatchFirst(buy_area_pattern2,1,remote_content,&match,1) >=0) //匹配所在地区
+		buy_areaname = bltStrReplace('\t','',match);
+		buy_areaname = bltStrReplace('\r','',match);
+		buy_areaname = bltStrReplace('\n','',match);
+		buy_areaname = bltTrim(bltStrReplace(' ','',match));
+		return bltTrim(bltGetAreaID(buy_areaname));
+	endif
+	return '0';
+endfun
+
+fun buy_get_thumb()
+	global buy_thumb_pattern,remote_content,buy_thumb_pattern2,buy_thumb_pattern3;
+	if(bltRegexMatchFirst(buy_thumb_pattern,1,remote_content,&match,0) >=0)
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(buy_thumb_pattern2,1,remote_content,&match,0) >=0)
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(buy_thumb_pattern3,1,remote_content,&match,0) >=0)
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun buy_get_company()
+	global buy_company_pattern,remote_content,buy_company_pattern2,buy_company_pattern3;
+	if(bltRegexMatchFirst(buy_company_pattern,1,remote_content,&match,0) >=0)
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(buy_company_pattern2,1,remote_content,&match,0) >=0)
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(buy_company_pattern3,1,remote_content,&match,1) >=0)
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun buy_get_truename()
+	global buy_truename_pattern,remote_content,buy_truename_pattern2,buy_truename_pattern3;
+	if(bltRegexMatchFirst(buy_truename_pattern,1,remote_content,&match,0) >=0)
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(buy_truename_pattern2,1,remote_content,&match,0) >=0)
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(buy_truename_pattern3,1,remote_content,&match,1) >=0)
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+fun buy_get_phone()
+	global buy_phone_pattern,remote_content,buy_phone_pattern2,buy_phone_pattern3;
+	if(bltRegexMatchFirst(buy_phone_pattern,1,remote_content,&match,0) >=0)
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(buy_phone_pattern2,1,remote_content,&match,0) >=0)
+		return bltTrim(match);
+	elif(bltRegexMatchFirst(buy_phone_pattern3,1,remote_content,&match,1) >=0)
+		return bltTrim(match);
+	endif
+	return '';
+endfun
+
+/********************************/
+
+/*下面是和注册公司信息有关的函数和类*/
+
+class sybBuyMemberPattern
+	member; //会员名规则
+	email;	//邮箱规则
+	comContent; //公司介绍内容页链接规则
+	comThumb; //公司缩略图规则
+	comThumb2; //公司缩略图规则2
+	business; //公司主营行业规则
+	business2; //公司主营行业规则2
+	business3; //公司主营行业规则3
+	stand;	//公司规模规则
+	year; //注册年份规则
+	year2; //注册年份规则2
+	mailCode; //邮政编码规则
+	mailCode2; //邮政编码规则2
+	mailCode3; //邮政编码规则3
+	fax; //传真规则
+	fax2; //传真规则2
+	fax3; //传真规则3
+	webSite; //网址规则
+	webSite2; //网址规则2
+	introduce; //公司介绍规则
+endclass
+
+class sybBuyMember
+	sybBuyMemberPattern patterns;
+	member; //注册会员名
+	email; //注册邮箱
+	password; //注册会员密码
+	sex; //性别
+	department; //公司部门
+	office; //职位
+	mobile; //手机号
+	comType; //公司类型
+	comContent; //公司介绍内容
+	comThumb; //公司缩略图
+	business; //公司主营行业
+	server; //主营产品或服务
+	stand;	//公司规模
+	money; //公司注册资本
+	year; //注册年份
+	mailCode; //邮政编码
+	fax; //传真
+	webSite; //网址
+	introduce; //公司介绍
+
+	/*初始化*/
+	fun InitPatterns(obj)
+		sybBuyMember obj;
+		global buy_is_template3;
+		obj.patterns.member = 'target=_blank>(.*?)@';
+		obj.patterns.email = 'target=_blank>(.*?@.*?)<';
+		if(buy_is_template3 == TRUE) //第三套模板的公司简介页链接规则
+			print '第三套模板buy_is_template3: ' + buy_is_template3; //调试
+			obj.patterns.comContent = '公司首页.*?href="(.*?)#intro".*?>公司简介</a>';
+			bltExit("调试..."); //调试
+		else
+			obj.patterns.comContent = 'href="(.*?)".*?公司简介<';
+		endif
+		obj.patterns.comThumb = '<div class="gsjj3">\\s*?<img\\s*?src="(.*?)"';
+		obj.patterns.comThumb2 =  '<div class="flo_aleft.*?img\\s*?src="(.*?)"';
+		obj.patterns.business = '行业类别：(.*?)<';
+		obj.patterns.business2 = '>行业类别：</li>.*?>(.*?)<';
+		obj.patterns.business3 = '行业类别：</td>.*?>(.*?)<';
+		obj.patterns.stand = '公司规模：(.*?)</';
+		obj.patterns.year = '成立年份：(.*?)年';
+		obj.patterns.year2 = '成立年份：(.*?)<';
+		obj.patterns.mailCode = '邮政编码：</li>.*?>(.*?)<';
+		obj.patterns.mailCode2 = '>邮编：</li>.*?>(.*?)<';
+		obj.patterns.mailCode3 = '邮政编码：</td>.*?>(.*?)</td';
+		obj.patterns.fax = '联系传真：</li>.*?>(.*?)<';
+		obj.patterns.fax2 = '>传真：</li>.*?>(.*?)<';
+		obj.patterns.fax3 = '联系传真：</td>.*?>(.*?)</td';
+		obj.patterns.webSite = '网　　址：<.*?href="(.*?)"';
+		obj.patterns.webSite2 = '>网址：</li>.*?>(.*?)<';
+		obj.patterns.introduce = '<div class="gsjj3">(.*?)</div></div></div>\\s*?<div class="bg3 cle"></div>\\s*?<div class="';
+	endfun
+
+	/*获取公司会员名*/
+	fun GetMember(obj)
+		sybBuyMember obj;
+		global remote_content;
+		if(bltRegexMatchFirst(obj.patterns.member,1,remote_content,&match,0) >=0)
+			obj.member = bltTrim(match);
+			return;
+		endif
+		obj.member = gen_random_password();
+	endfun
+
+	/*获取公司会员名的随机密码*/
+	fun GetPassword(obj)
+		sybBuyMember obj;
+		obj.password = gen_random_password();
+	endfun
+
+	/*获取公司会员的邮箱*/
+	fun GetEmail(obj)
+		sybBuyMember obj;
+		global remote_content;
+		if(bltRegexMatchFirst(obj.patterns.email,1,remote_content,&match,0) >=0)
+			obj.email = bltTrim(match);
+			return;
+		endif
+		obj.email = obj.member + '@163.com';
+	endfun
+	
+	/*获取随机的性别*/
+	fun GetSex(obj)
+		sybBuyMember obj;
+		global buy_truename;
+		if(bltStrFind(buy_truename,'先生') >=0)
+			return obj.sex = '1';
+		elif(bltStrFind(buy_truename,'女士') >=0)
+			return obj.sex = '2';
+		else
+			return obj.sex = bltIntToStr(bltRandom()%2 + 1 , 0, '0');
+		endif
+	endfun
+	
+	/*获取部门职位手机号*/
+	fun GetDepartmentOfficeMobile(obj)
+		sybBuyMember obj;
+		global buy_phone;
+		obj.department = '采购部';
+		obj.office = '经理';
+		obj.mobile = buy_phone;
+	endfun
+	
+	/*获取公司类型*/
+	fun GetComType(obj)
+		sybBuyMember obj;
+		obj.comType = company_get_random_type();
+	endfun
+
+	/*获取公司介绍页面的内容*/
+	fun GetComContent(obj)
+		sybBuyMember obj;
+		global remote_content;
+		if(bltRegexMatchFirst(obj.patterns.comContent,1,remote_content,&match,0) >=0)
+			comContentUrl = 'http://china.toocle.com/company/show/' + bltTrim(match);
+			obj.comContent = bltCurlGetUrl(comContentUrl);
+			if(obj.comContent != '')
+				return 0;
+			endif
+		endif
+		obj.comContent = '';
+		return -1;
+	endfun
+
+	/*获取公司缩略图*/
+	fun GetComThumb(obj)
+		sybBuyMember obj;
+		global buy_is_single_template,remote_content,buy_thumburl;
+		if(bltRegexMatchFirst(obj.patterns.comThumb,1,obj.comContent,&match,0) >=0)
+			obj.comThumb = bltTrim(match);
+			return;
+		elif(buy_is_single_template == TRUE && 
+			bltRegexMatchFirst(obj.patterns.comThumb2,1,remote_content,&match,0) >=0)
+			obj.comThumb = bltTrim(match);
+			return;
+		endif
+		obj.comThumb = buy_thumburl;
+	endfun
+	
+	/*获取主营行业和产品服务*/
+	fun GetBusinessServer(obj)
+		sybBuyMember obj;
+		global remote_content;
+		if(bltRegexMatchFirst(obj.patterns.business,1,remote_content,&match,0) >=0)
+			obj.server = obj.business = bltTrim(bltStrReplace('/','|',match));
+			return 0;
+		elif(bltRegexMatchFirst(obj.patterns.business2,1,remote_content,&match,0) >=0)
+			obj.server = obj.business = bltTrim(bltStrReplace('/','|',match));
+			return 0;
+		elif(bltRegexMatchFirst(obj.patterns.business3,1,remote_content,&match,1) >=0)
+			obj.server = obj.business = bltTrim(bltStrReplace('/','|',match));
+			return 0;
+		endif
+		return -1;
+	endfun
+	
+	/*获取公司规模*/
+	fun GetStand(obj)
+		sybBuyMember obj;
+		global remote_content;
+		if(bltRegexMatchFirst(obj.patterns.stand,1,obj.comContent,&match,0) >=0)
+			obj.stand = bltTrim(match);
+			return;
+		elif(bltRegexMatchFirst(obj.patterns.stand,1,remote_content,&match,0) >=0) //第三个模板
+			obj.stand = bltTrim(match);
+			return;
+		endif
+		obj.stand = company_get_random_stand();
+	endfun
+
+	/*获取公司的注册资本*/
+	fun GetMoney(obj)
+		sybBuyMember obj;
+		obj.money = company_get_random_money();
+	endfun
+
+	/*获取注册年份*/
+	fun GetYear(obj)
+		sybBuyMember obj;
+		global remote_content;
+		if(bltRegexMatchFirst(obj.patterns.year,1,obj.comContent,&match,0) >=0)
+			obj.year = bltTrim(match);
+			return;
+		elif(bltRegexMatchFirst(obj.patterns.year2,1,obj.comContent,&match,0) >=0)
+			obj.year = bltTrim(match);
+			return;
+		elif(bltRegexMatchFirst(obj.patterns.year2,1,remote_content,&match,0) >=0) //第三个模板
+			obj.year = bltTrim(match);
+			return;
+		endif
+		obj.year = company_get_random_year();
+	endfun
+
+	/*获取邮编*/
+	fun GetMailCode(obj)
+		sybBuyMember obj;
+		global remote_content;
+		if(bltRegexMatchFirst(obj.patterns.mailCode,1,obj.comContent,&match,0) >=0)
+			obj.mailCode = bltTrim(match);
+			return;
+		elif(bltRegexMatchFirst(obj.patterns.mailCode2,1,remote_content,&match,0) >=0)
+			obj.mailCode = bltTrim(match);
+			return;
+		elif(bltRegexMatchFirst(obj.patterns.mailCode3,1,remote_content,&match,1) >=0)
+			obj.mailCode = bltTrim(match);
+			return;
+		endif
+		obj.mailCode = '';
+	endfun
+
+	/*获取传真*/
+	fun GetFax(obj)
+		sybBuyMember obj;
+		global remote_content;
+		if(bltRegexMatchFirst(obj.patterns.fax,1,obj.comContent,&match,0) >=0)
+			obj.fax = bltTrim(match);
+			return;
+		elif(bltRegexMatchFirst(obj.patterns.fax2,1,remote_content,&match,0) >=0)
+			obj.fax = bltTrim(match);
+			return;
+		elif(bltRegexMatchFirst(obj.patterns.fax3,1,remote_content,&match,1) >=0)
+			obj.fax = bltTrim(match);
+			return;
+		endif
+		obj.fax = '';
+	endfun
+
+	/*获取公司网址*/
+	fun GetWebSite(obj)
+		sybBuyMember obj;
+		global remote_content;
+		if(bltRegexMatchFirst(obj.patterns.webSite,1,obj.comContent,&match,0) >=0)
+			obj.webSite = bltTrim(match);
+			return;
+		elif(bltRegexMatchFirst(obj.patterns.webSite2,1,remote_content,&match,0) >=0)
+			obj.webSite = bltTrim(match);
+			return;
+		endif
+		obj.webSite = '';
+	endfun
+	
+	/*获取公司介绍*/
+	fun GetIntroduce(obj)
+		sybBuyMember obj;
+		global buy_content;
+		if(bltRegexMatchFirst(obj.patterns.introduce,1,obj.comContent,&match,1) >=0)
+			match = bltRegexReplace("<img.*?>","",match,0); //去掉介绍里的图片
+			obj.introduce = bltTrim(match);
+			return;
+		endif
+		obj.introduce = '';
+	endfun
+
+	/*检查是否注册了重复的公司名*/
+	fun DetectComUser(companyname)
+		global caiji_url;
+		detectUrl = "http://"+ caiji_url +"/mydetectTitle.php?_zlmy_get_action=CheckCompanyUser";
+		bltPostData(detectUrl,array(
+						"_zlmy_detectCompany",companyname
+						),&output);
+		return output;
+	endfun
+
+	/*打印调试信息*/
+	fun PrintDebugInfo(obj)
+		sybBuyMember obj;
+		bltInfoBox( '\n member: ' + obj.member +
+			  '\n email: ' + obj.email +
+			  '\n password: ' + obj.password +
+			  '\n sex: ' + obj.sex +
+			  '\n department: ' + obj.department +
+			  '\n office: ' + obj.office +
+			  '\n mobile: ' + obj.mobile +
+			  '\n comType: ' + obj.comType +
+			  '\n comContent: ' + obj.comContent +
+			  '\n comThumb: ' + obj.comThumb +
+			  '\n business: ' + obj.business +
+			  '\n server: ' + obj.server +
+			  '\n stand: ' + obj.stand +
+			  '\n money: ' + obj.money +
+			  '\n year: ' + obj.year +
+			  '\n mailCode: ' + obj.mailCode +
+			  '\n fax: ' + obj.fax +
+			  '\n webSite: ' + obj.webSite +
+			  '\n introduce: ' + obj.introduce
+			  );
+	endfun
+
+endclass
+
+/*上面是和注册公司信息有关的函数和类*/

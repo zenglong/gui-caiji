@@ -1,0 +1,79 @@
+inc 'authorize.zl';
+
+//将远程图片下载到本地，和上传本地图片的类
+class IMG
+
+	//将图片上传到网站
+	fun Post(imgurl='',from = '',width = '',height = '',Ext = '',printMsg = 1)
+		global caiji_url,caiji_postfileName,modid;
+		if(!bltGetMenuCheck("图片下载到本地再上传"))
+			return imgurl;
+		endif
+		imgExtPattern = '(.jpg|.jpeg|.gif|.png|.swf|.bmp)$';
+		if(bltRegexMatchFirst(imgExtPattern,1,imgurl,&match,0) >=0) //匹配文件类型
+			imgExt = bltTrim(match);
+			cache = 'cache/img' + imgExt;
+		elif(Ext != '')
+			cache = 'cache/img' + Ext;
+		else
+			return imgurl;
+		endif
+		ret = bltCurlDownload(cache,imgurl);
+		if(ret > 0)
+			url = "http://" + caiji_url + "/"+caiji_postfileName;
+			ret = bltPostData(url,array('moduleid',bltIntToStr(modid,0,'0'),
+								'from',from,
+								'remote','upload', //这里不能用 http:// 在某些系统上会出现资源无法访问的错误 由 Frankie 用户发现和提出
+								'width',width,
+								'height',height,
+								'upalbum','@' + cache,
+								'post[_zlpost_pic]','yes'
+								),&output);
+			if(ret > 0)
+				if(printMsg == 1)
+					printf('...上传图片..OK ',GREEN);
+				endif
+				return output;
+			else
+				return imgurl;
+			endif 
+		else
+			return imgurl;
+		endif //if(ret > 0)
+	endfun //fun PostThumb(imgurl,width = '',height = '')
+
+	//将内容中的所有图片都下载后再上传
+	fun PostAll(content='',pre='')
+		if(!bltGetMenuCheck("图片下载到本地再上传"))
+			return content;
+		endif
+		global maxCaijiImgs_Num;
+		imgPattern = 'img.*?src=(["\'])(.*?)\\1';
+		imgs = array();
+		count = bltRegexMatches(imgPattern,2,content,imgs,1,1);
+		/*if(count > 0)
+			bltInfoBox(content);
+		endif*/
+		if((tmpMaxcaiji = bltConvToInt(maxCaijiImgs_Num)) != 0)
+			if(tmpMaxcaiji > 0)
+				count = tmpMaxcaiji;
+			endif
+		elif(maxCaijiImgs_Num == '0')
+			count = 0;
+		endif
+		for(i=0;i<count;i++)
+			if(imgs[i] == '')
+				continue;
+			endif
+			printf('...上传图片['+(i+1)+']',GREEN);
+			retUrl = IMG.Post(pre + imgs[i],'','','','',0);
+			content = bltStrReplace(imgs[i],retUrl,content);
+			printf('..OK',GREEN);
+		endfor
+		/*if(count > 0)
+			bltInfoBox(content);
+		endif*/
+		return content;
+	endfun
+
+endclass //class IMG

@@ -1,0 +1,34 @@
+//本脚本采用zengl编程语言的语法 初始化发布接口文件名，及各模块的采集规则脚本的相对路径
+
+bltSetInitManageUrl('zengl_caiji.php'); //采集器在服务端的发布接口文件名
+
+bltSetModulePath('article','Module/资讯模块规则.zlencrypt'); //设置资讯模块规则路径，以.zl结尾
+
+bltSetModulePath('quote','Module/行情模块规则.zlencrypt'); //行情模块规则
+
+bltSetModulePath('special','Module/专题模块规则.zlencrypt'); //专题模块规则
+
+bltSetModulePath('info','Module/招商模块规则.zlencrypt'); //招商模块规则
+
+bltSetModulePath('brand','Module/品牌模块规则.zlencrypt'); //品牌模块规则
+
+bltSetModulePath('mall','Module/商城模块规则.zlencrypt'); //商城模块规则
+
+bltSetModulePath('group','Module/团购模块规则.zlencrypt'); //团购模块规则
+
+bltSetModulePath('sell','Module/供应模块规则.zlencrypt'); //供应模块规则
+
+//bltSetModulePath('buy','Module/求购模块规则.zlencrypt'); //求购模块规则
+bltSetModulePath('buy','Module/生意宝求购模块规则.zlencrypt'); //求购模块规则
+
+bltSetModulePath('exhibit','Module/展会模块规则.zlencrypt'); //展会模块规则
+
+bltSetModulePath('job','Module/人才招聘模块规则.zlencrypt'); //人才招聘模块规则
+
+bltSetModulePath('know','Module/知道模块规则.zl'); //知道模块规则
+
+bltSetModulePath('photo','Module/图库模块规则.zlencrypt'); //图库模块规则
+
+bltSetModulePath('video','Module/优库视频模块规则.zlencrypt'); //视频模块规则
+
+bltSetModulePath('down','Module/天空下载模块规则.zlencrypt'); //下载模块规则
